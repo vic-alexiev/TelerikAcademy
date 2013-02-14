@@ -1,6 +1,3 @@
-#TelerikAcademy
-==============
-
 #C# Fundamentals I
 
 ##Homework Assignments

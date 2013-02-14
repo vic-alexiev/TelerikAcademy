@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97270024-A32B-4605-8F65-6798F3B25C0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MiscUtil.UnitTests</RootNamespace>
+    <AssemblyName>MiscUtil.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DOTNET35</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework">
+      <HintPath>lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Rhino.Mocks">
+      <HintPath>lib\Rhino.Mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="ApplicationChooserTest.cs" />
+    <Compile Include="CachingBufferManagerTest.cs" />
+    <Compile Include="Collections\ComparisonComparerTest.cs" />
+    <Compile Include="Collections\DictionaryByTypeTest.cs" />
+    <Compile Include="Collections\Extensions\ComparerExtTest.cs" />
+    <Compile Include="Collections\Extensions\DictionaryExtTest.cs" />
+    <Compile Include="Collections\Extensions\RangeBasedExtTest.cs" />
+    <Compile Include="Collections\ProjectionComparerTest.cs" />
+    <Compile Include="Collections\ProjectionEqualityComparerTest.cs" />
+    <Compile Include="Collections\RandomAccessQueueTest.cs" />
+    <Compile Include="Collections\RangeIteratorTest.cs" />
+    <Compile Include="Collections\RangeTest.cs" />
+    <Compile Include="Collections\ReverseComparerTest.cs" />
+    <Compile Include="Collections\SmartEnumerableTest.cs" />
+    <Compile Include="Conversion\TestDoubleConverter.cs" />
+    <Compile Include="Conversion\TestLittleEndianBitConverter.cs" />
+    <Compile Include="Extensions\ReferenceExtTest.cs" />
+    <Compile Include="Extensions\TimeRelated\DateTimeBasedExtTest.cs" />
+    <Compile Include="Extensions\TimeRelated\TimeSpanBasedExtTest.cs" />
+    <Compile Include="GenericMathTest.cs" />
+    <Compile Include="IO\EndianBinaryReaderTest.cs" />
+    <Compile Include="IO\LineReaderTest.cs" />
+    <Compile Include="IO\ReverseLineReaderTest.cs" />
+    <Compile Include="IO\StreamStub.cs" />
+    <Compile Include="IO\StreamUtilTest.cs" />
+    <Compile Include="IO\StringWriterWithEncodingTest.cs" />
+    <Compile Include="Linq\DataProducerTest.cs" />
+    <Compile Include="Linq\EditableLookupTest.cs" />
+    <Compile Include="Linq\ExampleUsage.cs" />
+    <Compile Include="Linq\Extensions\DataProducerExtTest.Conversion.cs" />
+    <Compile Include="Linq\Extensions\DataProducerExtTest.cs" />
+    <Compile Include="Linq\Extensions\DataProducerExtTest.Grouping.cs" />
+    <Compile Include="Linq\Extensions\DataProducerExtTest.Math.cs" />
+    <Compile Include="Linq\Extensions\DataProducerExtTest.NullArguments.cs" />
+    <Compile Include="Linq\Extensions\DataProducerExtTest.Pipeline.cs" />
+    <Compile Include="Linq\Extensions\DataProducerExtTest.SingleReturn.cs" />
+    <Compile Include="Linq\Extensions\EnumerableExtTest.cs" />
+    <Compile Include="Linq\FutureProxyTest.cs" />
+    <Compile Include="Linq\FutureTest.cs" />
+    <Compile Include="Linq\OrderedDataProducerTest.cs" />
+    <Compile Include="Linq\ProducerGroupingTest.cs" />
+    <Compile Include="Linq\SimpleLinq.cs" />
+    <Compile Include="Linq\TypeExtTest.cs" />
+    <Compile Include="NonNullableTest.cs" />
+    <Compile Include="OperatorTest.cs" />
+    <Compile Include="PartialComparerTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomGrabber.cs" />
+    <Compile Include="Reflection\PropertyCopyTest.cs" />
+    <Compile Include="StaticRandomTest.cs" />
+    <Compile Include="Text\UnicodeRangeTest.cs" />
+    <Compile Include="Text\Utf32StringTest.cs" />
+    <Compile Include="Threading\OrderedLockTest.cs" />
+    <Compile Include="Threading\SyncLockTest.cs" />
+    <Compile Include="Xml\Linq\Extensions\ObjectExtTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="IO\samplefile.txt" />
+    <Content Include="lib\nunit.framework.dll" />
+    <Content Include="lib\Rhino.Mocks.dll" />
+    <Content Include="lib\Rhino.Mocks.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\000. MiscUtil\000. MiscUtil.csproj">
+      <Project>{94f2e185-ea1b-4490-9c0f-2ada342aaec8}</Project>
+      <Name>000. MiscUtil</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86091380-F845-4BDB-B038-DFB9DAEA10C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MethodsTestProject</RootNamespace>
+    <AssemblyName>MethodsTestProject</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Choose>
+    <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Compile Include="TestCountNumberOccurrencesInArray.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestCheckIfElementIsLocalMax.cs" />
+    <Compile Include="TestGetFirstLocalMaxInArray.cs" />
+    <Compile Include="TestReverseNumberDigits.cs" />
+    <Compile Include="TestAddPositiveIntegersAsArrays.cs" />
+    <Compile Include="TestFindMaximumElementInArray.cs" />
+    <Compile Include="TestCalculateNFactorialUsingIntArrays.cs" />
+    <Compile Include="TestPolynomialAddition.cs" />
+    <Compile Include="TestPolynomialSubtractionAndMultiplication.cs" />
+    <Compile Include="TestStatisticalMethods.cs" />
+    <Compile Include="TestGenericStatisticalMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\000. MiscUtil\000. MiscUtil.csproj">
+      <Project>{94f2e185-ea1b-4490-9c0f-2ada342aaec8}</Project>
+      <Name>000. MiscUtil</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\04. CountNumberOccurrencesInArray\04. CountNumberOccurrencesInArray.csproj">
+      <Project>{04e7fc83-60ed-4cc0-8ea8-b8a2310e2a96}</Project>
+      <Name>04. CountNumberOccurrencesInArray</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\05. CheckIfElementIsLocalMax\05. CheckIfElementIsLocalMax.csproj">
+      <Project>{0a5ab1b2-4fa9-4e6d-a094-59dc281ed710}</Project>
+      <Name>05. CheckIfElementIsLocalMax</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\06. GetFirstLocalMaxInArray\06. GetFirstLocalMaxInArray.csproj">
+      <Project>{f59c5f0b-487d-4151-a299-58a59a00b8e1}</Project>
+      <Name>06. GetFirstLocalMaxInArray</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\07. ReverseNumberDigits\07. ReverseNumberDigits.csproj">
+      <Project>{b675291c-b816-43bd-ab50-d65409aa5128}</Project>
+      <Name>07. ReverseNumberDigits</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\08. AddPositiveIntegersAsArrays\08. AddPositiveIntegersAsArrays.csproj">
+      <Project>{24e42f08-d430-44a1-a6a9-cebf74278fd6}</Project>
+      <Name>08. AddPositiveIntegersAsArrays</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\09. FindMaximumElementInArray\09. FindMaximumElementInArray.csproj">
+      <Project>{98af79db-928a-4667-8000-747698837393}</Project>
+      <Name>09. FindMaximumElementInArray</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\10. CalculateNFactorialUsingIntArrays\10. CalculateNFactorialUsingIntArrays.csproj">
+      <Project>{c431f84a-9a14-4242-8039-fa5bbd749083}</Project>
+      <Name>10. CalculateNFactorialUsingIntArrays</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\11. PolynomialAddition\11. PolynomialAddition.csproj">
+      <Project>{01a49260-5509-45cf-bb0d-5a21bd0be340}</Project>
+      <Name>11. PolynomialAddition</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\12. PolynomialSubtractionAndMultiplication\12. PolynomialSubtractionAndMultiplication.csproj">
+      <Project>{a182cd49-456e-4a99-8db8-9faa67eaabd5}</Project>
+      <Name>12. PolynomialSubtractionAndMultiplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\14. StatisticalMethods\14. StatisticalMethods.csproj">
+      <Project>{26b95547-44aa-4753-8c1a-f485a7cb340d}</Project>
+      <Name>14. StatisticalMethods</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\15. GenericStatisticalMethods\15. GenericStatisticalMethods.csproj">
+      <Project>{0977d227-3d51-4435-add2-3adb1542e921}</Project>
+      <Name>15. GenericStatisticalMethods</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
+      <ItemGroup>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.CodedUITestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITest.Extension, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+        <Reference Include="Microsoft.VisualStudio.TestTools.UITesting, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <Private>False</Private>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

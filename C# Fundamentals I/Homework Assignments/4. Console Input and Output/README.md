@@ -12,3 +12,4 @@
 * Write a program which calculates the sum (with error of 0.001) <i>1 + 1/2 - 1/3 + 1/4 - 1/5 + ...</i>
 * \*Implement the "Falling Rocks" game as a console application. A dwarf stays at the bottom of the screen and moves left or right (use the arrows keys). Rocks of different sizes and shapes constantly fall down and the dwarf has to avoid them. The rocks contain the following characters: <i>^</i>, <i>@</i>, <i>*</i>, <i>&</i>, <i>+</i>, <i>%</i>, <i>$</i>, <i>#</i>, <i>!</i>, <i>.</i>, <i>;</i>, distributed with appropriate density. The string <code>(O)</code> is used to represent the dwarf. Ensure a constant game speed by <code>Thread.Sleep(150)</code>. Implement collision detection and a scoring system.
 
+![Falling Rocks](https://raw.github.com/vic-alexiev/TelerikAcademy/master/C%23%20Fundamentals%20I/Homework%20Assignments/4.%20Console%20Input%20and%20Output/11.%20FallingRocks/FallingRocks.png)

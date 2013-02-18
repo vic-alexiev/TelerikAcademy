@@ -9,7 +9,7 @@
 * Write a program which finds the greatest of 5 given numbers.
 * Write a program which, depending on the user's choice, reads an `int`, a `double` or a `string` variable. If the variable is an integer or a double, add 1 to its value. If the variable is a `string`, append an asterisk (`*`) to it. The program must show the value of the variable as a console output. Use a `switch` statement.
 * We are given 5 integers. Write a program which checks if they have a non-empty subset that sums to 0. Example: 3, -2, 1, 1, 8 -> 1+1-2=0.
-* Write a program that applies a bonus to a given score in the range [1, 9]. The program reads a digit as an input.
+* Write a program that applies a bonus to a given score in the range [1..9]. The program reads a digit as an input.
     * If the digit is between 1 and 3, multiply it by 10;
     * If it is between 4 and 6, multiply it by 100;
     * If it is between 7 and 9, multiply it by 1000;

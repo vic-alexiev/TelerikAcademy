@@ -11,7 +11,7 @@
 * In combinatorial mathematics, the *Catalan numbers* are calculated by the following formula:
 
     ![Catalan Number](https://raw.github.com/vic-alexiev/TelerikAcademy/master/C%23%20Fundamentals%20I/Homework%20Assignments/6.%20Loops/09.%20PrintNthCatalanNumber/CatalanNumber.png)
-    Write a program which calculates the N<sup>th</sup> Catalan number by given `N`.
+  * Write a program which calculates the N<sup>th</sup> Catalan number by given `N`.
 * Write a program which prints all possible cards from a standard 52-card deck (no jokers). Use nested `for` loops and `switch-case` statements.
 * Write a program which reads from the console a positive integer `N` (N < 20) and outputs a matrix populated in the following manner:
 	* N = 3

@@ -28,8 +28,8 @@
     * The expected result: `"********* announced its next generation *** compiler today.`<br/>
       `It is based on .NET Framework 4.0 and is implemented as a dynamic language in ***."`
 * Write a program that converts a string into a sequence of C# Unicode character literals. Use format strings.
-   * Sample input: `Hi!`.
-   * Expected output: `\u0048\u0069\u0021`.
+   * Sample input: `"Hi!"`.
+   * Expected output: `"\u0048\u0069\u0021"`.
 * Write a program that reads a number and prints it in decimal and hexadecimal format, as percentage and in scientific notation. The output should be aligned right in a space of 15 characters.
 * Write a program that parses a URL address given in the format: `[protocol]://[server]/[resource]`. Example:
     * `URL = "http://www.devbg.org/forum/index.php"`
@@ -40,18 +40,18 @@
     * `"C# is not C++, not PHP and not Delphi!"`
     * `"Delphi not and PHP, not C++ not is C#!"`
 * A dictionary is stored as a sequence of text lines containing words and their explanations. Write a program that reads a word from the console and translates it by using the dictionary. Sample dictionary:
-    * `.NET – platform for applications from Microsoft`
-    * `CLR – managed execution environment for .NET`
-    * `namespace – hierarchical organization of classes`
+    * `".NET" – "platform for applications from Microsoft"`
+    * `"CLR" – "managed execution environment for .NET"`
+    * `"namespace" – "hierarchical organization of classes"`
 * Write a program that replaces in an HTML document given as string all the tags `<a href="...">...</a>` with the tags `[URL=...]...[/URL]`.
     * Sample HTML fragment: `"<p>Please visit <a href="http://academy.telerik. com">our site</a> to choose`<br/> 
       `a training course. Also visit <a href="forums.academy.telerik.com">our forum</a> to discuss the courses.</p>"`
     * Sample ouput: `"<p>Please visit [URL=http://academy.telerik. com]our site[/URL] to choose`<br/>
       `a training course. Also visit [URL=forums.academy.telerik.com]our forum[/URL] to discuss the courses.</p>"`
 * Write a program that reads two dates in the format: `day.month.year` and calculates the number of days between them. Example:
-    * `Enter the first date: 27.02.2006`
-    * `Enter the second date: 3.03.2006`
-    * `Distance: 4 days`
+    * `"Enter the first date: 27.02.2006"`
+    * `"Enter the second date: 3.03.2006"`
+    * `"Distance: 4 days"`
 * Write a program that reads a date and time given in the format `day.month.year hour:minute:second` and prints the date and time after 6 hours and 30 minutes (in the same format) along with the day of week in Bulgarian.
 * Write a program that extracts all email addresses from a given text. All substrings that match the format `<identifier>@<host>...<domain>` should be recognized as emails.
 * Write a program that extracts from a given text all dates that match the format `DD.MM.YYYY`. Display them in the standard date format for Canada.

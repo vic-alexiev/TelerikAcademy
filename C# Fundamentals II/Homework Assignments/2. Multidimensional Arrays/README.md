@@ -153,47 +153,48 @@
 * Write a program which reads from the console an array of `N` integers and an integer `K`, sorts the array and using the method `Array.BinarySearch()` finds the largest number in the array which is ≤ K.
 * You are given an array of strings. Write a method that sorts the array by the length of its elements.
 * \* Write a class *Matrix* which holds a matrix of integers. Overload the operators for addition, subtraction and multiplication of matrices, indexer for accessing the matrix elements and override the method `ToString()`.
-* \* Write a program which finds the largest area of equal neighbor elements in a rectangular matrix and prints its size. Example:
-<table>
-    <tr>
-        <td>1</td>
-        <td>`3`</td>
-        <td>2</td>
-        <td>2</td>
-        <td>2</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>`3`</td>
-        <td>`3`</td>
-        <td>`3`</td>
-        <td>2</td>
-        <td>4</td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>`3`</td>
-        <td>1</td>
-        <td>2</td>
-        <td>`3`</td>
-        <td>`3`</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>`3`</td>
-        <td>1</td>
-        <td>`3`</td>
-        <td>`3`</td>
-        <td>1</td>
-    </tr>
-    <tr>
-        <td>4</td>
-        <td>`3`</td>
-        <td>`3`</td>
-        <td>`3`</td>
-        <td>1</td>
-        <td>1</td>
-    </tr>
-</table>
-Hint: You can use the algorithms *depth-first search (DFS)* or *breadth-first search (BFS)*.
+* \* Write a program which finds the largest area of equal neighbor elements in a rectangular matrix and prints its size.
+ * Example:
+ <table>
+   <tr>
+	<td>1</td>
+	<td>`3`</td>
+	<td>2</td>
+	<td>2</td>
+	<td>2</td>
+	<td>4</td>
+   </tr>
+   <tr>
+	<td>`3`</td>
+	<td>`3`</td>
+	<td>`3`</td>
+	<td>2</td>
+	<td>4</td>
+	<td>4</td>
+   </tr>
+   <tr>
+	<td>4</td>
+	<td>`3`</td>
+	<td>1</td>
+	<td>2</td>
+	<td>`3`</td>
+	<td>`3`</td>
+   </tr>
+   <tr>
+	<td>4</td>
+	<td>`3`</td>
+	<td>1</td>
+	<td>`3`</td>
+	<td>`3`</td>
+	<td>1</td>
+   </tr>
+   <tr>
+	<td>4</td>
+	<td>`3`</td>
+	<td>`3`</td>
+	<td>`3`</td>
+	<td>1</td>
+	<td>1</td>
+   </tr>
+ </table>
+ Hint: You can use the algorithms *depth-first search (DFS)* or *breadth-first search (BFS)*.

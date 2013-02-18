@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 class ExtractXmlFileData
 {
@@ -20,6 +22,31 @@ class ExtractXmlFileData
         return matchesList;
     }
 
+    private static string GetInnerText(XmlNode node)
+    {
+        if (node == null)
+        {
+            return String.Empty;
+        }
+
+        if (!node.HasChildNodes)
+        {
+            return String.Format("\n{0}", node.InnerText);
+        }
+        else
+        {
+            StringBuilder innerTextBuilder = new StringBuilder();
+
+            foreach (XmlNode child in node.ChildNodes)
+            {
+                string childText = GetInnerText(child);
+                innerTextBuilder.AppendFormat(childText);
+            }
+
+            return innerTextBuilder.ToString();
+        }
+    }
+
     static void Main()
     {
         string filePath;
@@ -31,6 +58,14 @@ class ExtractXmlFileData
         }
         while (!File.Exists(filePath));
 
+        // I solution
+        //XmlDocument document = new XmlDocument();
+        //document.Load(filePath);
+
+        //string innerText = GetInnerText(document.DocumentElement);
+        //Console.WriteLine(innerText);
+
+        // II solution
         try
         {
             string fileContents = File.ReadAllText(filePath);

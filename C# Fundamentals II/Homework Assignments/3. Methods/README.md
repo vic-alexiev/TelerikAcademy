@@ -21,6 +21,6 @@
   Create appropriate methods. Provide a simple text-based menu for the user to select the task they want to solve. Validate the input data:
     * The decimal number should be non-negative;
     * The sequence should not be empty;
-    * a should not be equal to 0.
+    * *a* should not be equal to *0*.
 * Write methods which find/calculate the minimum, maximum, average, sum and product of a set of integers. Use variable number of arguments.
 * \* Modify the previous program and make it work for any number type, not just `int` (e.g., `decimal`, `float`, `byte`, etc.). Use generic methods.

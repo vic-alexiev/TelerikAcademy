@@ -91,7 +91,7 @@ namespace MobilePhone
 
         #endregion
 
-        #region Private Mthods
+        #region Private Methods
 
         private string ColorsToString(ColorDepth colorDepth)
         {

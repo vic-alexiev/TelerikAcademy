@@ -23,7 +23,6 @@ namespace MobilePhone
 
         #endregion
 
-
         #region Properties
 
         public MobilePhoneManufacturer Manufacturer
@@ -86,6 +85,10 @@ namespace MobilePhone
             }
             private set
             {
+                if (value.HasValue && value.Value <= 0.0M)
+                {
+                    throw new MobilePhoneException("The price must be a positive number.");
+                }
                 price = value;
             }
         }

@@ -118,7 +118,7 @@ namespace MobilePhone
 
             if (diagonal.HasValue)
             {
-                return String.Format("Display size: {0:F1} inches", diagonal.Value);
+                return String.Format("Display size: {0} inches", diagonal.Value);
             }
 
             return "[no display size specified]";

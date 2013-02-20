@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MobilePhone.Battery">
+    <Position X="5.5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQEAAAAAAAAAAAAMAEAAAAAAAAABAAAAAQAAAAEBABA=</HashCode>
+      <FileName>Battery.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="type" />
+      <Field Name="standByTime" />
+      <Field Name="talkTime" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobilePhone.BatteryLife">
+    <Position X="3" Y="0.5" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABQAAAEQAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BatteryLife.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobilePhone.Call">
+    <Position X="11.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAIAAAACAAAEAAAAAAAAAAAAAAABAAAAAQBAAAA=</HashCode>
+      <FileName>Call.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MobilePhone.Display">
+    <Position X="8" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAgAAMAIAAAAAAAAAAAACAAAAAgAAAABA=</HashCode>
+      <FileName>Display.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="size" />
+      <Field Name="colors" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobilePhone.DisplaySize">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAMAEAAAABAAAAAAAIAEAACABAAABA=</HashCode>
+      <FileName>DisplaySize.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MobilePhone.Gsm">
+    <Position X="8.25" Y="3.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAkBAQCYAQEIgQAEAQAAgQAAAgEAAAIAAAAAgAABAAA=</HashCode>
+      <FileName>Gsm.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="manufacturer" />
+      <Field Name="battery" />
+      <Field Name="display" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="callHistory" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MobilePhone.MobilePhoneException">
+    <Position X="4.5" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MobilePhoneException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="MobilePhone.Enums.BatteryType" Collapsed="true">
+    <Position X="5.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAACAAAAAABAAAAABQ=</HashCode>
+      <FileName>Enums\BatteryType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MobilePhone.Enums.ColorDepth" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAACAABABAAAABAAAAABAAAAAgAgAAAAAAAIAABA=</HashCode>
+      <FileName>Enums\ColorDepth.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MobilePhone.Enums.MobilePhoneManufacturer" Collapsed="true">
+    <Position X="4.5" Y="7.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AEAAAQAAAABAAIABAAAAAQAIAECAAAAQAAAAAAAAABA=</HashCode>
+      <FileName>Enums\MobilePhoneManufacturer.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

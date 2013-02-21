@@ -5,7 +5,7 @@ namespace MobilePhone
 {
     public class Battery : ICloneable
     {
-        #region PrivateFields
+        #region Private Fields
 
         private string brand;
         private BatteryType type;

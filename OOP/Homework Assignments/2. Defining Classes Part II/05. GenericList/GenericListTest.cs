@@ -5,15 +5,9 @@ class GenericListTest
     private static T Min<T>(GenericList<T> list)
         where T : IComparable<T>
     {
-        if (list == null)
+        if (list == null || list.Count == 0)
         {
-            throw new ArgumentException("The list cannot be null.");
-        }
-
-        if (list.Count == 0)
-        {
-            T t = default(T);
-            return t;
+            throw new ArgumentException("The list cannot be null or empty.");
         }
 
         if (list.Count == 1)
@@ -37,15 +31,9 @@ class GenericListTest
     private static T Max<T>(GenericList<T> list)
         where T : IComparable<T>
     {
-        if (list == null)
+        if (list == null || list.Count == 0)
         {
-            throw new ArgumentException("The list cannot be null.");
-        }
-
-        if (list.Count == 0)
-        {
-            T t = default(T);
-            return t;
+            throw new ArgumentException("The list cannot be null or empty.");
         }
 
         if (list.Count == 1)

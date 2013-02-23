@@ -247,8 +247,7 @@ class GenericList<T>
     {
         if (this.size == 0)
         {
-            T t = default(T);
-            return t;
+            throw new InvalidOperationException("Sequence contains no elements.");
         }
 
         if (this.size == 1)
@@ -280,8 +279,7 @@ class GenericList<T>
     {
         if (this.size == 0)
         {
-            T t = default(T);
-            return t;
+            throw new InvalidOperationException("Sequence contains no elements.");
         }
 
         if (this.size == 1)

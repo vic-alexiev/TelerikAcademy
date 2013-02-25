@@ -2,19 +2,17 @@
 using MobilePhone.Enums;
 using System;
 
-namespace MobilePhoneDemo
+static class GsmTest
 {
-    internal static class GsmTest
+    /// <summary>
+    /// For a complete list of the mobile phone brands, go to http://www.gsmarena.com/makers.php3
+    /// </summary>
+    public static void RunTests()
     {
-        /// <summary>
-        /// For a complete list of the mobile phone brands, go to http://www.gsmarena.com/makers.php3
-        /// </summary>
-        public static void RunTests()
+        try
         {
-            try
-            {
-                // create an array of instances of the Gsm class
-                Gsm[] mobilePhones = new Gsm[]
+            // create an array of instances of the Gsm class
+            Gsm[] mobilePhones = new Gsm[]
                 {
                     new Gsm(
                         MobilePhoneManufacturer.Nokia,
@@ -35,23 +33,22 @@ namespace MobilePhoneDemo
                         "Robert De Niro")
                 };
 
-                // display information about each GSM in the array
-                foreach (Gsm phone in mobilePhones)
-                {
-                    Console.WriteLine("{0}\n", phone);
-                }
+            // display information about each GSM in the array
+            foreach (Gsm phone in mobilePhones)
+            {
+                Console.WriteLine("{0}\n", phone);
+            }
 
-                // display information about the static property IPhone4S
-                Console.WriteLine(Gsm.IPhone4S);
-            }
-            catch (MobilePhoneException mpex)
-            {
-                Console.WriteLine(mpex.Message);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            // display information about the static property IPhone4S
+            Console.WriteLine(Gsm.IPhone4S);
+        }
+        catch (MobilePhoneException mpex)
+        {
+            Console.WriteLine(mpex.Message);
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
         }
     }
 }

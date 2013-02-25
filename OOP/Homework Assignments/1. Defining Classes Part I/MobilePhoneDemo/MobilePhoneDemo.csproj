@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="GsmCallHistoryTest.cs" />
     <Compile Include="GsmTest.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="MobilePhoneDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

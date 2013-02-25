@@ -1,9 +1,10 @@
-﻿using MobilePhone.Enums;
+﻿using MobilePhone;
+using MobilePhone.Enums;
 using System;
 
-namespace MobilePhone.Tests
+namespace MobilePhoneDemo
 {
-    public static class GsmTest
+    internal static class GsmTest
     {
         /// <summary>
         /// For a complete list of the mobile phone brands, go to http://www.gsmarena.com/makers.php3

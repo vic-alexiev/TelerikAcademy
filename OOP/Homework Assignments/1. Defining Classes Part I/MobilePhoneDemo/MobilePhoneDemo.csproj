@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8575D79A-5894-4FB5-A2D0-083E53FFB934}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{2F665286-2483-49D5-95EF-4841F1DBB4D6}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MobilePhone</RootNamespace>
-    <AssemblyName>MobilePhone</AssemblyName>
+    <RootNamespace>MobilePhoneDemo</RootNamespace>
+    <AssemblyName>MobilePhoneDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,9 +31,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -44,20 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Battery.cs" />
-    <Compile Include="BatteryLife.cs" />
-    <Compile Include="Call.cs" />
-    <Compile Include="Display.cs" />
-    <Compile Include="DisplaySize.cs" />
-    <Compile Include="Enums\BatteryType.cs" />
-    <Compile Include="Enums\ColorDepth.cs" />
-    <Compile Include="Enums\MobilePhoneManufacturer.cs" />
-    <Compile Include="Gsm.cs" />
-    <Compile Include="MobilePhoneException.cs" />
+    <Compile Include="GsmCallHistoryTest.cs" />
+    <Compile Include="GsmTest.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagrams\MobilePhone.cd" />
+    <ProjectReference Include="..\MobilePhone\MobilePhone.csproj">
+      <Project>{8575d79a-5894-4fb5-a2d0-083e53ffb934}</Project>
+      <Name>MobilePhone</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

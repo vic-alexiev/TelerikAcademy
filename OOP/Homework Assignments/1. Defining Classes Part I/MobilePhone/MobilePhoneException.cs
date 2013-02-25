@@ -2,7 +2,7 @@
 
 namespace MobilePhone
 {
-    class MobilePhoneException : ApplicationException
+    public class MobilePhoneException : ApplicationException
     {
         public MobilePhoneException()
             : base()

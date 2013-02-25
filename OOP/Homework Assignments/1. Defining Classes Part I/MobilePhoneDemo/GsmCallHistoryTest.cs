@@ -1,9 +1,10 @@
-﻿using MobilePhone.Enums;
+﻿using MobilePhone;
+using MobilePhone.Enums;
 using System;
 
-namespace MobilePhone.Tests
+namespace MobilePhoneDemo
 {
-    public static class GsmCallHistoryTest
+    internal static class GsmCallHistoryTest
     {
         public static void RunTests()
         {

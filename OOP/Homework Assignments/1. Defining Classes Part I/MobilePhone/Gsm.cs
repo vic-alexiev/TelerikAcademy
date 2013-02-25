@@ -33,6 +33,10 @@ namespace MobilePhone
             }
             private set
             {
+                if (value == MobilePhoneManufacturer.Unknown)
+                {
+                    throw new MobilePhoneException("No manufacturer specified.");
+                }
                 manufacturer = value;
             }
         }
@@ -45,7 +49,14 @@ namespace MobilePhone
             }
             private set
             {
-                battery = value;
+                if (value != null)
+                {
+                    battery = value.Clone();
+                }
+                else
+                {
+                    battery = new Battery();
+                }
             }
         }
 
@@ -57,7 +68,14 @@ namespace MobilePhone
             }
             private set
             {
-                display = value;
+                if (value != null)
+                {
+                    display = value.Clone();
+                }
+                else
+                {
+                    display = new Display();
+                }
             }
         }
 
@@ -142,17 +160,8 @@ namespace MobilePhone
         public Gsm(MobilePhoneManufacturer manufacturer, Battery battery, Display display, string brand, decimal? price, string owner)
         {
             this.Manufacturer = manufacturer;
-
-            if (battery != null)
-            {
-                this.Battery = battery.Clone();
-            }
-
-            if (display != null)
-            {
-                this.Display = display.Clone();
-            }
-
+            this.Battery = battery;
+            this.Display = display;
             this.Brand = brand;
             this.Price = price;
             this.Owner = owner;
@@ -247,7 +256,7 @@ namespace MobilePhone
                 ManufacturerToString(manufacturer),
                 battery == null ? "[no battery specified]" : battery.ToString(),
                 display == null ? "[no display specified]" : display.ToString(),
-                price.HasValue ? price.Value.ToString("C2", CultureInfo.InvariantCulture) : "[no price specified]",
+                price.HasValue ? price.Value.ToString("C2", CultureInfo.GetCultureInfo("en-US")) : "[no price specified]",
                 owner);
         }
 

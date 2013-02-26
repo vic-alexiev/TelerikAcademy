@@ -3,7 +3,7 @@ using System;
 using System.Globalization;
 using System.Threading;
 
-class Point3DTest
+class Points3DDemo
 {
     static void Main()
     {
@@ -25,7 +25,7 @@ class Point3DTest
         {
             for (int j = i + 1; j < points.Count; j++)
             {
-                double distance = DistanceFinder.CalcDistance(points[-1], points[j]);
+                double distance = DistanceFinder.CalcDistance(points[i], points[j]);
 
                 if (shortestDistance > distance)
                 {

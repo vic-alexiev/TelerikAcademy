@@ -28,7 +28,7 @@ class MatrixDemo
             Console.WriteLine(m1 + m2);
             Console.WriteLine(m1 - m2);
             Console.WriteLine(m1 * m2);
-            Console.WriteLine(Matrix<int>.Transpose(m1));
+            Console.WriteLine(m1.Transpose());
             Console.WriteLine(m1 * 5);
 
             if (m1)

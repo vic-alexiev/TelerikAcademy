@@ -166,22 +166,16 @@ public class Matrix<T>
     /// turns the rows of a matrix A into columns of A-transposed,
     /// or equivalently turns the columns of A into rows of A-transposed.
     /// </summary>
-    /// <param name="m"></param>
     /// <returns></returns>
-    public static Matrix<T> Transpose(Matrix<T> m)
+    public Matrix<T> Transpose()
     {
-        if (m == null)
-        {
-            throw new MatrixException("The matrix cannot be null.");
-        }
+        Matrix<T> transposed = new Matrix<T>(cols, rows);
 
-        Matrix<T> transposed = new Matrix<T>(m.cols, m.rows);
-
-        for (int row = 0; row < m.rows; row++)
+        for (int row = 0; row < rows; row++)
         {
-            for (int col = 0; col < m.cols; col++)
+            for (int col = 0; col < cols; col++)
             {
-                transposed[col, row] = m[row, col];
+                transposed[col, row] = data[row, col];
             }
         }
 
@@ -205,6 +199,18 @@ public class Matrix<T>
         }
 
         return copy;
+    }
+
+    /// <summary>
+    /// Returns the matrix contents as a two-dimensional array of T.
+    /// </summary>
+    /// <returns></returns>
+    public T[,] GetData()
+    {
+        T[,] dataCopied = new T[rows, cols];
+        Array.Copy(this.data, 0, dataCopied, 0, this.data.Length);
+
+        return dataCopied;
     }
 
     /// <summary>

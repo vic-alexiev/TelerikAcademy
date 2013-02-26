@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3CEB466F-4C4F-47A7-80D0-5A457A7EF798}</ProjectGuid>
+    <ProjectGuid>{0DF03A08-236E-4FFB-807B-A4BC35EC28B9}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_11.VersionsDemo</RootNamespace>
-    <AssemblyName>_11.VersionsDemo</AssemblyName>
+    <RootNamespace>GenericListDemo</RootNamespace>
+    <AssemblyName>GenericListDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="VersionsDemo.cs" />
+    <Compile Include="GenericListDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\11. Versions\11. Versions.csproj">
-      <Project>{1b6a70aa-553a-43fe-906e-9b1743c7d951}</Project>
-      <Name>11. Versions</Name>
+    <ProjectReference Include="..\05. GenericList\05. GenericList.csproj">
+      <Project>{e713dcac-1033-404d-a55a-fddaeeedd842}</Project>
+      <Name>05. GenericList</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

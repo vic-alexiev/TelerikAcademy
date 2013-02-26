@@ -7,8 +7,9 @@
     <ProjectGuid>{77534005-0724-45B5-8F87-EE2D506C089A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_08.SampleMatrixImplementation</RootNamespace>
-    <AssemblyName>_08.SampleMatrixImplementation</AssemblyName>
+    <RootNamespace>MatrixDemo</RootNamespace>
+    <RootNamespace>MatrixDemo</RootNamespace>
+    <AssemblyName>MatrixDemo</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,10 +42,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Matrix.cs" />
-    <Compile Include="MatrixException.cs" />
-    <Compile Include="SampleMatrixImplementation.cs" />
+    <Compile Include="MatrixDemo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\08. Matrix\08. Matrix.csproj">
+      <Project>{32d46bcf-ecb3-4865-aabb-2e0b1d66b3aa}</Project>
+      <Name>08. Matrix</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

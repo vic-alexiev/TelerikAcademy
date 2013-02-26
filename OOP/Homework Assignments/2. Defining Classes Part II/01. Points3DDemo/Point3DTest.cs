@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Points3D;
+using System;
 using System.Globalization;
 using System.Threading;
 
@@ -20,18 +21,15 @@ class Point3DTest
         double shortestDistance = Double.MaxValue;
 
         // find the distance between the closest points
-        foreach (Point3D pointA in points)
+        for (int i = 0; i < points.Count - 1; i++)
         {
-            foreach (Point3D pointB in points)
+            for (int j = i + 1; j < points.Count; j++)
             {
-                if (pointA != pointB)
-                {
-                    double distance = DistanceFinder.CalcDistance(pointA, pointB);
+                double distance = DistanceFinder.CalcDistance(points[-1], points[j]);
 
-                    if (shortestDistance > distance)
-                    {
-                        shortestDistance = distance;
-                    }
+                if (shortestDistance > distance)
+                {
+                    shortestDistance = distance;
                 }
             }
         }

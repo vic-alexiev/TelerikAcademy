@@ -1,6 +1,6 @@
 ﻿using System;
 
-class GenericList<T>
+public class GenericList<T>
 {
     #region Private Fields
 

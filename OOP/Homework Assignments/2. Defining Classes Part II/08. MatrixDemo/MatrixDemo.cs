@@ -1,6 +1,6 @@
 ﻿using System;
 
-class SampleMatrixImplementation
+class MatrixDemo
 {
     static void Main()
     {

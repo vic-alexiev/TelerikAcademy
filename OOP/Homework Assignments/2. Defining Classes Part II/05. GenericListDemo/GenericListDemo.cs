@@ -1,6 +1,6 @@
 ﻿using System;
 
-class GenericListTest
+class GenericListDemo
 {
     private static T Min<T>(GenericList<T> list)
         where T : IComparable<T>

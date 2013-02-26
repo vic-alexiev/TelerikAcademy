@@ -188,6 +188,11 @@ namespace MobilePhone
         {
         }
 
+        public Gsm(MobilePhoneManufacturer manufacturer, string brand)
+            : this(manufacturer, null, null, brand, null, null)
+        {
+        }
+
         #endregion
 
         #region Public Methods

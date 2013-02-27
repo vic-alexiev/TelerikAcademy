@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 class TimerDemo
 {
@@ -12,7 +13,8 @@ class TimerDemo
 
         Console.WriteLine("Timer started for {0} ticks, a tick occurring once every {1} second(s).", ticksCount, interval / 1000);
 
-        timer.Run();
+        Thread timerThread = new Thread(new ThreadStart(timer.Run));
+        timerThread.Start();
     }
 
     static void PrintTicksLeft(int ticksLeft)

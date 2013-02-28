@@ -52,9 +52,9 @@ class StudentDemo
 
         // Find the first and last name of all students from 18 to 24 years old.
 
-        //var firstAndLastNames = 
+        //var firstAndLastNames =
         //    from student in students
-        //    where student.Age >= 18 && student.Age <= 24
+        //    where student.GetAge() >= 18 && student.GetAge() <= 24
         //    select new { FirstName = student.FirstName, LastName = student.LastName };
 
         //foreach (var fullName in firstAndLastNames)

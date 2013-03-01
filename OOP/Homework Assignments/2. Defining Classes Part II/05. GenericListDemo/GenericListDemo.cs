@@ -80,14 +80,16 @@ class GenericListDemo
 
         Console.WriteLine("{0} is at index {1}", value, pos);
 
+        // using the member methods
         double min1 = list1.Min();
 
         Console.WriteLine("Min: {0}", min1);
 
-        double max = list1.Max();
+        double max1 = list1.Max();
 
-        Console.WriteLine("Max: {0}", max);
+        Console.WriteLine("Max: {0}", max1);
 
+        // using the external methods
         double min2 = Min(list1);
 
         Console.WriteLine("Min: {0}", min2);
@@ -95,5 +97,14 @@ class GenericListDemo
         double max2 = Max(list1);
 
         Console.WriteLine("Max: {0}", max2);
+
+        // using the extension methods
+        double min3 = list1.GetMin();
+
+        Console.WriteLine("Min: {0}", min3);
+
+        double max3 = list1.GetMax();
+
+        Console.WriteLine("Max: {0}", max3);
     }
 }

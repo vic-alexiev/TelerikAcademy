@@ -38,7 +38,6 @@ class MatrixDemo
 
             Matrix<decimal> matrixOfDecimals = new Matrix<decimal>(10, 10);
             Console.WriteLine(matrixOfDecimals);
-
         }
         catch (MatrixException ex)
         {

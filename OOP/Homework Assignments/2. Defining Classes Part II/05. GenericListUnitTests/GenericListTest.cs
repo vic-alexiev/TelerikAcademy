@@ -146,6 +146,21 @@ namespace GenericListUnitTests
         }
 
         [TestMethod]
+        public void TestGetMin()
+        {
+            GenericList<int> numbers = new GenericList<int>();
+            numbers.Add(3);
+            numbers.Add(5);
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(4);
+
+            int min = numbers.GetMin();
+
+            Assert.AreEqual(1, min);
+        }
+
+        [TestMethod]
         public void TestMax()
         {
             GenericList<int> numbers = new GenericList<int>();
@@ -156,6 +171,21 @@ namespace GenericListUnitTests
             numbers.Add(4);
 
             int max = numbers.Max();
+
+            Assert.AreEqual(5, max);
+        }
+
+        [TestMethod]
+        public void TestGetMax()
+        {
+            GenericList<int> numbers = new GenericList<int>();
+            numbers.Add(3);
+            numbers.Add(5);
+            numbers.Add(1);
+            numbers.Add(2);
+            numbers.Add(4);
+
+            int max = numbers.GetMax();
 
             Assert.AreEqual(5, max);
         }

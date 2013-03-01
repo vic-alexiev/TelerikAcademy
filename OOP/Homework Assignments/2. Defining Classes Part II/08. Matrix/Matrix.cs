@@ -228,6 +228,11 @@ public class Matrix<T>
 
     private static Matrix<T> Multiply(Matrix<T> m1, Matrix<T> m2)
     {
+        if (m1 == null || m2 == null)
+        {
+            throw new MatrixException("Matrices are not initialized.");
+        }
+
         if (m1.cols != m2.rows)
         {
             throw new MatrixException("Invalid dimensions of matrices!");
@@ -268,6 +273,11 @@ public class Matrix<T>
     /// <returns></returns>
     private static Matrix<T> Multiply(int c, Matrix<T> m)
     {
+        if (m == null)
+        {
+            throw new MatrixException("Matrix is not initialized.");
+        }
+
         try
         {
             Matrix<T> result = new Matrix<T>(m.rows, m.cols);
@@ -293,6 +303,11 @@ public class Matrix<T>
 
     private static Matrix<T> Add(Matrix<T> m1, Matrix<T> m2)
     {
+        if (m1 == null || m2 == null)
+        {
+            throw new MatrixException("Matrices are not initialized.");
+        }
+
         if (m1.rows != m2.rows || m1.cols != m2.cols)
         {
             throw new MatrixException("Matrices must have the same dimensions.");

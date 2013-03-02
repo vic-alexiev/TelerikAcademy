@@ -48,6 +48,8 @@
     <Compile Include="Cat.cs" />
     <Compile Include="Dog.cs" />
     <Compile Include="Frog.cs" />
+    <Compile Include="IVocal.cs" />
+    <Compile Include="Kitten.cs" />
     <Compile Include="Pussycat.cs" />
     <Compile Include="Tomcat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-public class SchoolClass
+public class SchoolClass : Annotation
 {
     public string Id { get; private set; }
 

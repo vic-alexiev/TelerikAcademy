@@ -63,8 +63,6 @@ public abstract class Animal
             this.GetType().Name, this.Name, this.Age, this.IsMale ? "male" : "female");
     }
 
-    public abstract string GetTypicalSound();
-
     public static Type GetAnimalType(string sound)
     {
         switch (sound)
@@ -80,6 +78,10 @@ public abstract class Animal
             case "meow":
                 {
                     return typeof(Pussycat);
+                }
+            case "miaou":
+                {
+                    return typeof(Kitten);
                 }
             case "purr":
                 {

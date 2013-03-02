@@ -1,27 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 class AnimalsDemo
 {
-    private static double GetAverageAge(IEnumerable<Animal> animalCollection)
+    private static IEnumerable<Tuple<string, double>> GetAverageAges(Animal[] animals)
     {
-        long sum = 0;
-        int count = 0;
-        foreach (Animal animal in animalCollection)
-        {
-            count++;
-            sum += animal.Age;
-        }
+        var averageAges =
+            from animal in animals
+            group animal by animal.GetType() into animalType
+            select new Tuple<string, double>(animalType.Key.Name, animalType.Average(a => a.Age));
 
-        return (double)sum / count;
+        return averageAges;
     }
 
     static void Main()
     {
-        Animal[] animals = new Animal[]
+        IVocal[] noisyCreatures = new IVocal[]
         {
             new Dog("Rex", 5, true),
             new Frog("Kermit", 58, true),
@@ -31,15 +26,29 @@ class AnimalsDemo
             new Dog("Caesar", 3, true),
         };
 
-        double averageAge = GetAverageAge(animals);
-        Console.WriteLine("Average age: {0} years", averageAge);
-
-        foreach (Animal animal in animals)
+        foreach (IVocal noisyCreature in noisyCreatures)
         {
-            string sound = animal.GetTypicalSound();
-            Console.WriteLine("I'm a {0}", Animal.GetAnimalType(sound).Name);
-            Console.WriteLine(animal);
-            Console.WriteLine(sound);
+            Console.WriteLine(noisyCreature.GetTypicalSound());
+        }
+
+        Animal[] animals = new Animal[]
+        {
+            new Dog("Rex", 5, true),
+            new Frog("Kermit", 58, true),
+            new Dog("Stella", 2, false),
+            new Tomcat("Hoho", 8),
+            new Tomcat("George", 3),
+            new Tomcat("Garfield", 10),
+            new Pussycat("Cleopatra", 5),
+            new Dog("Betty", 12, false),
+            new Dog("Mike", 7, true),
+            new Dog("Caesar", 3, true),
+        };
+
+        var averageAges = GetAverageAges(animals);
+        foreach (var tuple in averageAges)
+        {
+            Console.WriteLine("Animal: {0}, Average Age: {1:F2}", tuple.Item1, tuple.Item2);
         }
     }
 }

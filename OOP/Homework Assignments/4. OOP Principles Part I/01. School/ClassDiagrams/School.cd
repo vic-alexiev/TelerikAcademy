@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Person">
-    <Position X="3.25" Y="8.25" Width="1.5" />
+    <Position X="1.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
-      <FileName>Classes\Person.cs</FileName>
+      <FileName>Person.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Student">
     <Position X="1" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Student.cs</FileName>
+      <FileName>Student.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Teacher">
     <Position X="5.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
-      <FileName>Classes\Teacher.cs</FileName>
+      <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Courses" />
@@ -28,7 +28,7 @@
     <Position X="3.25" Y="1" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAEAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\School.cs</FileName>
+      <FileName>School.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Classes" />
@@ -45,7 +45,7 @@
     </AssociationLine>
     <TypeIdentifier>
       <HashCode>AAICAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
-      <FileName>Classes\SchoolClass.cs</FileName>
+      <FileName>SchoolClass.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Students" />
@@ -56,7 +56,14 @@
     <Position X="8" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAEAEAAFAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Classes\Course.cs</FileName>
+      <FileName>Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Annotation">
+    <Position X="5.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Annotation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

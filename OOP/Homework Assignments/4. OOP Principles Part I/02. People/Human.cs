@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Human
+public abstract class Human : IComparable
 {
     public string FirstName { get; private set; }
 
@@ -10,6 +10,26 @@ public class Human
     {
         this.FirstName = firstName;
         this.LastName = lastName;
+    }
+
+    public int CompareTo(object obj)
+    {
+        if (obj == null) return 1;
+
+        Human otherHuman = obj as Human;
+        if (otherHuman != null)
+        {
+            if (this.FirstName.CompareTo(otherHuman.FirstName) == 0)
+            {
+                return this.LastName.CompareTo(otherHuman.LastName);
+            }
+
+            return this.FirstName.CompareTo(otherHuman.FirstName);
+        }
+        else
+        {
+            throw new ArgumentException("Object is not a Human.");
+        }
     }
 
     public override string ToString()

@@ -36,7 +36,7 @@ namespace PeopleUnitTests
             Student student2 = new Student("Mihail", "Petrov", 19.75);
 
 
-            Assert.AreEqual(-1, student2.CompareTo(student1));
+            Assert.AreEqual(1, student2.CompareTo(student1));
         }
 
         [TestMethod]
@@ -70,7 +70,7 @@ namespace PeopleUnitTests
             Worker worker2 = new Worker("Nikolay", "Alexiev", 295);
 
 
-            Assert.AreEqual(1, worker1.CompareTo(worker2));
+            Assert.AreEqual(-1, worker1.CompareTo(worker2));
         }
     }
 }

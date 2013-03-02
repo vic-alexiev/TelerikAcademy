@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Student : Human, IComparable
+public class Student : Human
 {
     private double grade;
 
@@ -29,20 +29,5 @@ public class Student : Human, IComparable
     public override string ToString()
     {
         return String.Format("{0}, grade = {1:F3}", base.ToString(), this.Grade);
-    }
-
-    public int CompareTo(object obj)
-    {
-        if (obj == null) return 1;
-
-        Student otherStudent = obj as Student;
-        if (otherStudent != null)
-        {
-            return this.Grade.CompareTo(otherStudent.Grade);
-        }
-        else
-        {
-            throw new ArgumentException("Object is not a Student.");
-        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Worker : Human, IComparable
+public class Worker : Human
 {
     #region Private Fields
 
@@ -97,21 +97,6 @@ public class Worker : Human, IComparable
     {
         return String.Format("{0}, week salary = {1:F2}, money per hour = {2:F2}",
             base.ToString(), this.WeekSalary, this.MoneyPerHour);
-    }
-
-    public int CompareTo(object obj)
-    {
-        if (obj == null) return 1;
-
-        Worker otherWorker = obj as Worker;
-        if (otherWorker != null)
-        {
-            return this.MoneyPerHour.CompareTo(otherWorker.MoneyPerHour);
-        }
-        else
-        {
-            throw new ArgumentException("Object is not a Worker.");
-        }
     }
 
     #endregion

@@ -1,11 +1,11 @@
-﻿public class Frog : Animal
+﻿public class Frog : Animal, IVocal
 {
     public Frog(string name, int age, bool isMale)
         : base(name, age, isMale)
     {
     }
 
-    public override string GetTypicalSound()
+    public string GetTypicalSound()
     {
         return "ribbit, ribbit";
     }

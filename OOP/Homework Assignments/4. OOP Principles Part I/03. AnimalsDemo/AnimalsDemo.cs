@@ -45,6 +45,9 @@ class AnimalsDemo
             new Dog("Caesar", 3, true),
         };
 
+        decimal averageAge = Animal.GetAverageAge(animals);
+        Console.WriteLine("Average age: {0:F2}", averageAge);
+
         var averageAges = GetAverageAges(animals);
         foreach (var tuple in averageAges)
         {

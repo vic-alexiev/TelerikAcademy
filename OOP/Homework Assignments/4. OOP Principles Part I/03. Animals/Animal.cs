@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 public abstract class Animal
 {
@@ -91,6 +92,32 @@ public abstract class Animal
                 {
                     return typeof(Animal);
                 }
+        }
+    }
+
+    public static decimal GetAverageAge(IEnumerable<Animal> source)
+    {
+        if (source == null)
+        {
+            throw new ArgumentNullException("source");
+        }
+
+        decimal sum = 0;
+        long count = 0L;
+
+        foreach (Animal animal in source)
+        {
+            sum += animal.Age;
+            count++;
+        }
+
+        if (count == 0L)
+        {
+            throw new InvalidOperationException("Sequence contains no elements.");
+        }
+        else
+        {
+            return sum / count;
         }
     }
 }

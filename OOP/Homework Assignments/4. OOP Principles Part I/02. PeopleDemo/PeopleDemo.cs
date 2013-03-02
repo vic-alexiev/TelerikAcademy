@@ -86,16 +86,22 @@ class PeopleDemo
 
         #region Task: Merge the lists and sort them by first name and last name.
 
-        List<Human> humanStudents = new List<Human>(students);
+        List<Human> humans = new List<Human>(students);
         List<Human> humanWorkers = new List<Human>(workers);
 
-        // I solution
-        var humans = humanStudents.Concat(humanWorkers).OrderBy(h => h.FirstName).ThenBy(h => h.LastName);
-        // II solution
-        List<Human> humansList = humanStudents.Concat(humanWorkers).ToList();
-        humansList.Sort();
+        humans = humans.Concat(humanWorkers).ToList();
 
-        foreach (var human in humansList)
+        // I solution
+        humans = humans.OrderBy(h => h.FirstName).ThenBy(h => h.LastName).ToList();
+        // II solution
+        humans.Sort(); // uses CompareTo() method in Human
+        // III solution
+        humans =
+            (from human in humans
+             orderby human.FirstName, human.LastName
+             select human).ToList();
+
+        foreach (var human in humans)
         {
             Console.WriteLine(human);
         }

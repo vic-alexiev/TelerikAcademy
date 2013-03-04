@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Person : Annotation
+public class Person
 {
     public string FirstName { get; private set; }
 

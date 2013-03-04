@@ -1,8 +1,10 @@
 ﻿using System;
 
-public class Student : Person
+public class Student : Person, IAnnotation
 {
     public int Id { get; private set; }
+
+    public string Tag { get; set; }
 
     public Student(string firstName, string lastName, int id)
         : base(firstName, lastName)

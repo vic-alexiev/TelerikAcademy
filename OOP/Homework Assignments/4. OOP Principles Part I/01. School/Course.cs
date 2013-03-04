@@ -1,12 +1,14 @@
 ﻿using System;
 
-public class Course : Annotation
+public class Course : IAnnotation
 {
     public string Title { get; private set; }
 
     public int Lectures { get; private set; }
 
     public int Exercises { get; private set; }
+
+    public string Tag { get; set; }
 
     public Course(string title, int lectures, int exercises)
     {

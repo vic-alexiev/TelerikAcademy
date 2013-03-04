@@ -1,13 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-public class SchoolClass : Annotation
+public class SchoolClass : IAnnotation
 {
     public string Id { get; private set; }
 
     public List<Student> Students { get; private set; }
 
     public List<Teacher> Teachers { get; private set; }
+
+    public string Tag { get; set; }
 
     public SchoolClass(string id, Student[] students, Teacher[] teachers)
     {

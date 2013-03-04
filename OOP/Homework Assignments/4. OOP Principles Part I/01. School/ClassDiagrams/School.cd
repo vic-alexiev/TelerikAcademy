@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Person">
-    <Position X="1.5" Y="8.25" Width="1.5" />
+    <Position X="3.25" Y="8.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAEAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
       <FileName>Person.cs</FileName>
@@ -10,19 +10,21 @@
   <Class Name="Student">
     <Position X="1" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAACAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Teacher">
     <Position X="5.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
       <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Courses" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="School">
     <Position X="3.25" Y="1" Width="1.5" />
@@ -44,27 +46,29 @@
       </Path>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAICAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
+      <HashCode>AAICAAAAAAAgAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAA=</HashCode>
       <FileName>SchoolClass.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Students" />
       <Property Name="Teachers" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Course">
     <Position X="8" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAEAAFAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAEAEAAFAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Course.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
-  <Class Name="Annotation">
-    <Position X="5.5" Y="9" Width="1.5" />
+  <Interface Name="IAnnotation">
+    <Position X="6.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Annotation.cs</FileName>
+      <FileName>IAnnotation.cs</FileName>
     </TypeIdentifier>
-  </Class>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

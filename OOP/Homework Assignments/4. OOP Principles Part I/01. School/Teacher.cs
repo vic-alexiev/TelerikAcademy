@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Text;
 
-public class Teacher : Person
+public class Teacher : Person, IAnnotation
 {
     public List<Course> Courses { get; private set; }
+
+    public string Tag { get; set; }
 
     public Teacher(string firstName, string lastName, Course[] courses)
         : base(firstName, lastName)

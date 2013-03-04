@@ -44,7 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Annotation.cs" />
+    <Compile Include="IAnnotation.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="School.cs" />

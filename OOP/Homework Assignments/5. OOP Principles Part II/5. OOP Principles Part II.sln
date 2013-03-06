@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. Bank", "02. Bank\02. Ba
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. BankDemo", "02. BankDemo\02. BankDemo.csproj", "{6AE8ADB6-4716-4536-BA59-A89C09CE5D52}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. InvalidRangeException", "03. InvalidRangeException\03. InvalidRangeException.csproj", "{CE125017-2356-4E41-A38F-4961F7D54ABB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. InvalidRangeExceptionDemo", "03. InvalidRangeExceptionDemo\03. InvalidRangeExceptionDemo.csproj", "{77218F53-0B31-4213-A932-4020A9F7EB40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{6AE8ADB6-4716-4536-BA59-A89C09CE5D52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AE8ADB6-4716-4536-BA59-A89C09CE5D52}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AE8ADB6-4716-4536-BA59-A89C09CE5D52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE125017-2356-4E41-A38F-4961F7D54ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE125017-2356-4E41-A38F-4961F7D54ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE125017-2356-4E41-A38F-4961F7D54ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE125017-2356-4E41-A38F-4961F7D54ABB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77218F53-0B31-4213-A932-4020A9F7EB40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77218F53-0B31-4213-A932-4020A9F7EB40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77218F53-0B31-4213-A932-4020A9F7EB40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77218F53-0B31-4213-A932-4020A9F7EB40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

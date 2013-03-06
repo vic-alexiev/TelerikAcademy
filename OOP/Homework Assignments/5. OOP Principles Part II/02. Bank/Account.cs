@@ -5,10 +5,18 @@ namespace Bank
 {
     public abstract class Account
     {
-        protected Customer owner;
+        private Customer owner;
         protected decimal balance;
         private decimal monthlyInterestRate; // percent
         protected IInterestCalculator interestCalculator;
+
+        public Customer Owner
+        {
+            get
+            {
+                return this.owner;
+            }
+        }
 
         public decimal Balance
         {
@@ -22,6 +30,7 @@ namespace Bank
                 {
                     throw new ArgumentException("Balance must be positive.");
                 }
+                this.balance = value;
             }
         }
 
@@ -37,7 +46,7 @@ namespace Bank
                 {
                     throw new ArgumentException("Interest rate cannot be negative.");
                 }
-                monthlyInterestRate = value;
+                this.monthlyInterestRate = value;
             }
         }
 

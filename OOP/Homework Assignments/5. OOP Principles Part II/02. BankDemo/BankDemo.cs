@@ -44,12 +44,17 @@ class BankDemo
             36);
 
         decimal depositInterest = depositAccount.CalculateInterest(3);
-        Console.WriteLine(depositInterest.ToString("C2"));
+        Console.WriteLine("Deposit account interest: {0:C2}", depositInterest);
+
+        (depositAccount as IDepositable).Deposit(459.76M);
+        (depositAccount as IWithdrawable).Withdraw(400.76M);
+
+        Console.WriteLine("Deposit account balance: {0:C2}", depositAccount.Balance);
 
         decimal loanInterest = loanAccount.CalculateInterest(10);
-        Console.WriteLine(loanInterest.ToString("C2"));
+        Console.WriteLine("Loan account interest: {0:C2}", loanInterest);
 
         decimal mortgageLoanInterest = mortgageLoanAccount.CalculateInterest(10);
-        Console.WriteLine(mortgageLoanInterest.ToString("C2"));
+        Console.WriteLine("Mortgage loan account interest: {0:C2}", mortgageLoanInterest);
     }
 }

@@ -46,8 +46,7 @@ namespace Points3D
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            foreach (Point3D point in pointsList)
-                yield return point;
+            return ((IEnumerable<Point3D>)this).GetEnumerator();
         }
     }
 }

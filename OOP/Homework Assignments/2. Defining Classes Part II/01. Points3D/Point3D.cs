@@ -63,12 +63,12 @@ namespace Points3D
 
         public static bool operator ==(Point3D p1, Point3D p2)
         {
-            return p1.Equals(p2);
+            return Point3D.Equals(p1, p2);
         }
 
         public static bool operator !=(Point3D p1, Point3D p2)
         {
-            return !p1.Equals(p2);
+            return !(Point3D.Equals(p1, p2));
         }
 
         #endregion
@@ -77,18 +77,17 @@ namespace Points3D
 
         public override int GetHashCode()
         {
-            byte[] xBytes = BitConverter.GetBytes(x);
-            byte[] yBytes = BitConverter.GetBytes(y);
-            byte[] zBytes = BitConverter.GetBytes(z);
+            int prime = 83;
+            int result = 1;
 
-            int result = 0;
-
-            for (int i = 0; i < sizeof(double); i++)
+            unchecked
             {
-                result ^= (xBytes[i] ^ yBytes[i] ^ zBytes[i]);
+                result = result * prime + x.GetHashCode();
+                result = result * prime + y.GetHashCode();
+                result = result * prime + z.GetHashCode();
             }
 
-            return base.GetHashCode();
+            return result;
         }
 
         public override bool Equals(object obj)

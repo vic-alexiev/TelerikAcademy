@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Person
+public abstract class Person
 {
     public string FirstName { get; private set; }
 
@@ -8,9 +8,14 @@ public class Person
 
     public Person(string firstName, string lastName)
     {
-        if (String.IsNullOrWhiteSpace(firstName) || String.IsNullOrWhiteSpace(lastName))
+        if (String.IsNullOrWhiteSpace(firstName))
         {
-            throw new ArgumentException("Names cannot be null or empty.");
+            throw new ArgumentException("First name cannot be null or empty.");
+        }
+
+        if (String.IsNullOrWhiteSpace(lastName))
+        {
+            throw new ArgumentException("Last name cannot be null or empty.");
         }
 
         this.FirstName = firstName;

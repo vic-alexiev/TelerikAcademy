@@ -1,0 +1,41 @@
+﻿namespace StudentInfo.Enums
+{
+    public enum Speciality
+    {
+        AeronauticsAndAstronautics,
+        Anthropology,
+        Architecture,
+        BiologicalEngineering,
+        Biology,
+        BrainAndCognitiveSciences,
+        Business,
+        ChemicalEngineering,
+        Chemistry,
+        CivilAndEnvironmentalEngineering,
+        ComparativeMediaStudies,
+        ComputationalAndSystemsBiology,
+        ComputationForDesignAndOptimization,
+        EarthAtmosphericAndPlanetarySciences,
+        Economics,
+        ElectricalEngineeringAndComputerScience,
+        EngineeringSystemsDivision,
+        ForeignLanguagesAndLiteratures,
+        HealthSciencesAndTechnology,
+        History,
+        LinguisticsAndPhilosophy,
+        Literature,
+        Management,
+        MaterialsScienceAndEngineering,
+        Mathematics,
+        MechanicalEngineering,
+        MediaArtsAndSciences,
+        MusicAndTheaterArts,
+        NuclearScienceAndEngineering,
+        OperationsResearch,
+        Physics,
+        PoliticalScience,
+        ScienceTechnologyAndSociety,
+        UrbanStudiesAndPlanning,
+        WomensAndGenderStudies
+    }
+}

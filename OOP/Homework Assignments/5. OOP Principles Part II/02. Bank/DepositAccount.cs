@@ -1,21 +1,15 @@
-﻿using Bank.Enums;
-using System;
+﻿using System;
 
 namespace Bank
 {
     public class DepositAccount : Account, IDepositable, IWithdrawable
     {
         public DepositAccount(
-            string ownerId,
-            string ownerName,
-            string ownerLastName,
-            string ownerAddress,
-            string ownerPhone,
-            CustomerType customerType,
+            Customer owner,
             decimal balance,
             decimal monthlyInterestRate,
             int periodInMonths)
-            : base(ownerId, ownerName, ownerLastName, ownerAddress, ownerPhone, customerType, balance, monthlyInterestRate)
+            : base(owner, balance, monthlyInterestRate)
         {
             this.interestCalculator = new DepositAccountInterestCalculator(
                 balance, monthlyInterestRate, periodInMonths);

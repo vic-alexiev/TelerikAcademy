@@ -1,5 +1,4 @@
-﻿using Bank.Enums;
-using System;
+﻿using System;
 
 namespace Bank
 {
@@ -85,11 +84,11 @@ namespace Bank
         #region Constructors
 
         public LoanAccountInterestCalculator(
-            CustomerType customerType, decimal principal, decimal monthlyInterestRate, int periodInMonths)
+            Customer owner, decimal principal, decimal monthlyInterestRate, int periodInMonths)
         {
             this.Principal = principal;
 
-            if (customerType == CustomerType.Individual)
+            if (owner is IndividualCustomer)
             {
                 this.InterestFreePeriodInMonths = 3;
             }

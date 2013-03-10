@@ -1,23 +1,16 @@
-﻿using Bank.Enums;
-
-namespace Bank
+﻿namespace Bank
 {
     public class LoanAccount : Account, IDepositable
     {
         public LoanAccount(
-            string ownerId,
-            string ownerName,
-            string ownerLastName,
-            string ownerAddress,
-            string ownerPhone,
-            CustomerType customerType,
+            Customer owner,
             decimal balance,
             decimal monthlyInterestRate,
             int periodInMonths)
-            : base(ownerId, ownerName, ownerLastName, ownerAddress, ownerPhone, customerType, balance, monthlyInterestRate)
+            : base(owner, balance, monthlyInterestRate)
         {
             this.interestCalculator = new LoanAccountInterestCalculator(
-                customerType, balance, monthlyInterestRate, periodInMonths);
+                owner, balance, monthlyInterestRate, periodInMonths);
         }
 
         public void Deposit(decimal amount)

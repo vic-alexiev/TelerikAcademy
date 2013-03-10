@@ -1,5 +1,4 @@
-﻿using Bank.Enums;
-using System;
+﻿using System;
 
 namespace Bank
 {
@@ -34,7 +33,7 @@ namespace Bank
             }
         }
 
-        protected decimal MonthlyInterestRate
+        public decimal MonthlyInterestRate
         {
             get
             {
@@ -50,25 +49,9 @@ namespace Bank
             }
         }
 
-        public Account(
-            string ownerId,
-            string ownerName,
-            string ownerLastName,
-            string ownerAddress,
-            string ownerPhone,
-            CustomerType customerType,
-            decimal balance,
-            decimal monthlyInterestRate)
+        public Account(Customer owner, decimal balance, decimal monthlyInterestRate)
         {
-            if (customerType == CustomerType.Individual)
-            {
-                this.owner = new IndividualCustomer(ownerId, ownerName, ownerLastName, ownerAddress, ownerPhone);
-            }
-            else
-            {
-                this.owner = new CorporateCustomer(ownerId, ownerName, ownerAddress, ownerPhone);
-            }
-
+            this.owner = owner;
             this.Balance = balance;
             this.MonthlyInterestRate = monthlyInterestRate;
         }

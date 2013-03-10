@@ -44,7 +44,6 @@
     <Compile Include="Customer.cs" />
     <Compile Include="DepositAccount.cs" />
     <Compile Include="DepositAccountInterestCalculator.cs" />
-    <Compile Include="Enums\CustomerType.cs" />
     <Compile Include="IDepositable.cs" />
     <Compile Include="IInterestCalculator.cs" />
     <Compile Include="IndividualCustomer.cs" />

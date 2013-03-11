@@ -51,7 +51,7 @@ public abstract class Animal
         }
     }
 
-    public Animal(string name, int age, bool isMale)
+    protected Animal(string name, int age, bool isMale)
     {
         this.Name = name;
         this.Age = age;

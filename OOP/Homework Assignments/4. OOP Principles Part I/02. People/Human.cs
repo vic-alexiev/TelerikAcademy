@@ -6,7 +6,7 @@ public abstract class Human : IComparable
 
     public string LastName { get; private set; }
 
-    public Human(string firstName, string lastName)
+    protected Human(string firstName, string lastName)
     {
         this.FirstName = firstName;
         this.LastName = lastName;

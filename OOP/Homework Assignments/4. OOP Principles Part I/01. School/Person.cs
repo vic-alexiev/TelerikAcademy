@@ -6,7 +6,7 @@ public abstract class Person
 
     public string LastName { get; private set; }
 
-    public Person(string firstName, string lastName)
+    protected Person(string firstName, string lastName)
     {
         if (String.IsNullOrWhiteSpace(firstName))
         {

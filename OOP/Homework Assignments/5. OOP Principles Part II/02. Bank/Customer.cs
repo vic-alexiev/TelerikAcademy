@@ -100,7 +100,7 @@ namespace Bank
 
         #region Constructors
 
-        public Customer(string id, string name, string lastName, string address, string phone)
+        protected Customer(string id, string name, string lastName, string address, string phone)
         {
             this.id = id;
             this.name = name;

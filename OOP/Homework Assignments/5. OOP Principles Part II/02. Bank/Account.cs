@@ -49,7 +49,7 @@ namespace Bank
             }
         }
 
-        public Account(Customer owner, decimal balance, decimal monthlyInterestRate)
+        protected Account(Customer owner, decimal balance, decimal monthlyInterestRate)
         {
             this.owner = owner;
             this.Balance = balance;

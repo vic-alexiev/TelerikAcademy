@@ -20,45 +20,45 @@ namespace AcademyPopcorn
 
             #region Add some layers of ordinary blocks and a layer of exploding block in the middle
 
-            //for (int i = startCol; i < endCol; i++)
-            //{
-            //    Block currBlock1 = new Block(new MatrixCoords(startRow, i));
-            //    Block currBlock2 = new Block(new MatrixCoords(startRow + 1, i));
-            //    Block currBlock3 = new Block(new MatrixCoords(startRow + 2, i));
+            for (int i = startCol; i < endCol; i++)
+            {
+                Block currBlock1 = new Block(new MatrixCoords(startRow, i));
+                Block currBlock2 = new Block(new MatrixCoords(startRow + 1, i));
+                Block currBlock3 = new Block(new MatrixCoords(startRow + 2, i));
 
-            //    engine.AddObject(currBlock1);
-            //    engine.AddObject(currBlock2);
-            //    engine.AddObject(currBlock3);
-            //}
+                engine.AddObject(currBlock1);
+                engine.AddObject(currBlock2);
+                engine.AddObject(currBlock3);
+            }
 
-            //for (int i = startCol; i < endCol; i++)
-            //{
-            //    ExplodingBlock currBlock = new ExplodingBlock(new MatrixCoords(startRow + 3, i));
+            for (int i = startCol; i < endCol; i++)
+            {
+                ExplodingBlock currBlock = new ExplodingBlock(new MatrixCoords(startRow + 3, i));
 
-            //    engine.AddObject(currBlock);
-            //}
+                engine.AddObject(currBlock);
+            }
 
-            //for (int i = startCol; i < endCol; i++)
-            //{
-            //    Block currBlock1 = new Block(new MatrixCoords(startRow + 4, i));
-            //    Block currBlock2 = new Block(new MatrixCoords(startRow + 5, i));
-            //    Block currBlock3 = new Block(new MatrixCoords(startRow + 6, i));
+            for (int i = startCol; i < endCol; i++)
+            {
+                Block currBlock1 = new Block(new MatrixCoords(startRow + 4, i));
+                Block currBlock2 = new Block(new MatrixCoords(startRow + 5, i));
+                Block currBlock3 = new Block(new MatrixCoords(startRow + 6, i));
 
-            //    engine.AddObject(currBlock1);
-            //    engine.AddObject(currBlock2);
-            //    engine.AddObject(currBlock3);
-            //}
+                engine.AddObject(currBlock1);
+                engine.AddObject(currBlock2);
+                engine.AddObject(currBlock3);
+            }
 
             #endregion
 
             #region Add a layer of gift objects
 
-            for (int i = startCol; i < endCol; i++)
-            {
-                GiftBlock currBlock = new GiftBlock(new MatrixCoords(startRow, i));
+            //for (int i = startCol; i < endCol; i++)
+            //{
+            //    GiftBlock currBlock = new GiftBlock(new MatrixCoords(startRow, i));
 
-                engine.AddObject(currBlock);
-            }
+            //    engine.AddObject(currBlock);
+            //}
 
             #endregion
 

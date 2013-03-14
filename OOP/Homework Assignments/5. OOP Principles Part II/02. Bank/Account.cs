@@ -25,10 +25,6 @@ namespace Bank
             }
             private set
             {
-                if (value <= 0)
-                {
-                    throw new ArgumentException("Balance must be positive.");
-                }
                 this.balance = value;
             }
         }

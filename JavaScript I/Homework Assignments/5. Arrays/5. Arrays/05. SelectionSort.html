@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Selection sort</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="textBoxNumbers">Numbers (separated with commas): </label>
+    <input type="text" id="textBoxNumbers" />
+    <br />
+    <button onclick="onButtonClick()">Sort</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function selectSort(value) {
+
+            var size = value.length;
+
+            for (var i = 0; i < size - 1; i++) {
+                var k = i;
+                var min = value[k];
+
+                for (var j = i + 1; j < size; j++) {
+                    if (value[j] < min) {
+                        k = j;
+                        min = value[k];
+                    }
+                }
+
+                value[k] = value[i];
+                value[i] = min;
+            }
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputNumbers = jsConsole.read("#textBoxNumbers");
+            var inputValues = inputNumbers.split(",");
+
+            var size = inputValues.length;
+
+            var numbers = new Array(size);
+
+            for (var i = 0; i < size; i++) {
+                numbers[i] = parseFloat(inputValues[i]);
+            }
+
+            selectSort(numbers);
+
+            jsConsole.writeLine("The array sorted using selection sort: " + numbers.join(", "));
+        }
+    </script>
+</body>
+</html>

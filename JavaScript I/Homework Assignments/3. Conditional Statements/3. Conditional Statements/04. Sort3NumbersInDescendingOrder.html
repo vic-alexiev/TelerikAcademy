@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sort 3 numbers in descending order</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxFirstNumber">First number: </label>
+    <input type="text" id="textBoxFirstNumber" />
+    <label for="textBoxSecondNumber">Second number: </label>
+    <input type="text" id="textBoxSecondNumber" />
+    <label for="textBoxThirdNumber">Third number: </label>
+    <input type="text" id="textBoxThirdNumber" />
+    <br />
+    <button onclick="onButtonClick()">Sort descending</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var a = jsConsole.readFloat("#textBoxFirstNumber");
+            var b = jsConsole.readFloat("#textBoxSecondNumber");
+            var c = jsConsole.readFloat("#textBoxThirdNumber");
+
+            var validA = true;
+            var validB = true;
+            var validC = true;
+
+            if (isNaN(a)) {
+                validA = false;
+                jsConsole.writeLine("First number must be a valid number.");
+            }
+
+            if (isNaN(b)) {
+                validB = false;
+                jsConsole.writeLine("Second number must be a valid number.");
+            }
+
+            if (isNaN(c)) {
+                validC = false;
+                jsConsole.writeLine("Third number must be a valid number.");
+            }
+
+            if (validA && validB && validC) {
+                jsConsole.write("The numbers in descending order: ");
+
+                if (a >= b) {
+                    if (b >= c) {
+                        jsConsole.writeLine(sprintf("%f %f %f", a, b, c));
+                    }
+                    else if (a >= c) {
+                        jsConsole.writeLine(sprintf("%f %f %f", a, c, b));
+                    }
+                    else {
+                        jsConsole.writeLine(sprintf("%f %f %f", c, a, b));
+                    }
+                }
+                else if (b >= c) {
+                    if (a >= c) {
+                        jsConsole.writeLine(sprintf("%f %f %f", b, a, c));
+                    }
+                    else {
+                        jsConsole.writeLine(sprintf("%f %f %f", b, c, a));
+                    }
+                }
+                else {
+                    jsConsole.writeLine(sprintf("%f %f %f", c, b, a));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

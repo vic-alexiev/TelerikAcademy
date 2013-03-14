@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print digit name</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="textBoxDigit">Digit: </label>
+    <input type="text" id="textBoxDigit" />
+    <br />
+    <button onclick="onButtonClick()">Print digit name</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var digit = jsConsole.readInteger("#textBoxDigit");
+
+            if (isNaN(digit) || digit < 0 || digit > 9) {
+                jsConsole.writeLine("Enter a valid digit (a number between 0 and 9).");
+            }
+            else {
+                var digitName;
+                switch (digit) {
+                    case 0:
+                        digitName = "Zero"; break;
+                    case 1:
+                        digitName = "One"; break;
+                    case 2:
+                        digitName = "Two"; break;
+                    case 3:
+                        digitName = "Three"; break;
+                    case 4:
+                        digitName = "Four"; break;
+                    case 5:
+                        digitName = "Five"; break;
+                    case 6:
+                        digitName = "Six"; break;
+                    case 7:
+                        digitName = "Seven"; break;
+                    case 8:
+                        digitName = "Eight"; break;
+                    case 9:
+                        digitName = "Nine"; break;
+                    default:
+                        digitName = "No such digit";
+                }
+
+                jsConsole.writeLine(digitName);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check prime</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body onload="siftPrimes()">
+    <label for="textBoxNumber">Number: </label>
+    <input type="text" id="textBoxNumber" />
+    <br />
+    <button onclick="onButtonClick()">Check prime</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        var prime;
+        var upperLimit = 10000;
+
+        // finds the primes in [1...10000] using the Sieve of Eratosthenes
+        function siftPrimes() {
+            prime = new Array(upperLimit + 1);
+
+            // initialize array
+            prime[0] = false;
+            prime[1] = false;
+
+            for (var i = 2; i <= upperLimit; i++) {
+                prime[i] = true;
+            }
+
+            var sqrtOfUpperLimit = Math.sqrt(upperLimit);
+            for (var i = 2; i <= sqrtOfUpperLimit; i++) {
+                if (prime[i] == true) {
+                    for (var j = i * 2; j <= upperLimit; j += i) {
+                        prime[j] = false;
+                    }
+                }
+            }
+        }
+
+        // II solution - check the divisors of the specified number
+        function isPrime(number) {
+            for (var i = 2; i * i <= number; i++) {
+                if (number % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var number = jsConsole.readInteger("#textBoxNumber");
+
+            if (isNaN(number) || number <= 1 || number > upperLimit) {
+                jsConsole.writeLine(sprintf("Enter a valid integer greater than 1 and less than or equal to %d.",
+                    upperLimit));
+            }
+            else {
+                if (prime[number]) {
+                    jsConsole.writeLine(sprintf("%d is prime.", number));
+                }
+                else {
+                    jsConsole.writeLine(sprintf("%d is not prime.", number));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

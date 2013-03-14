@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find most frequent element</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxNumbers">Numbers (separated with commas): </label>
+    <input type="text" id="textBoxNumbers" />
+    <br />
+    <button onclick="onButtonClick()">Find most frequent</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getMostFrequentElement(array) {
+
+            var size = array.length;
+            var maxCount = 1;
+            var item = array[0];
+            var count = 1;
+
+            for (var i = 0; i < size; i++) {
+                count = 1;
+                for (var j = i + 1; j < size; j++) {
+                    if (array[j] === array[i]) {
+                        count++;
+                    }
+                }
+
+                if (maxCount < count) {
+                    maxCount = count;
+                    item = array[i];
+                }
+            }
+
+            return { element: item, occurrences: maxCount };
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputNumbers = jsConsole.read("#textBoxNumbers");
+            var inputValues = inputNumbers.split(",");
+
+            var size = inputValues.length;
+
+            var numbers = new Array(size);
+
+            for (var i = 0; i < size; i++) {
+                numbers[i] = parseFloat(inputValues[i]);
+            }
+
+            var result = getMostFrequentElement(numbers);
+
+            jsConsole.writeLine(sprintf("The most frequent number is %f (%d occurrence(s)).",
+                result.element, result.occurrences));
+        }
+    </script>
+</body>
+</html>

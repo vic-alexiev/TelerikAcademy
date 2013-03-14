@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Longest sequence of equal elements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxNumbers">Numbers (separated with commas): </label>
+    <input type="text" id="textBoxNumbers" />
+    <br />
+    <button onclick="onButtonClick()">Find longest sequence of equal elements</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getLongestSequenceOfEqualElements(array) {
+
+            var size = array.length;
+            var currentLength = 1;
+            var startIndex = 0;
+            var length = 1;
+            var start = 0;
+
+            for (var i = 1; i < size; i++) {
+                if (array[i] === array[i - 1]) {
+                    currentLength++;
+                }
+
+                // the adjacent elements are different - 
+                // check if the sequence which has just finished
+                // is the longest sequence so far
+                if (array[i] !== array[i - 1] || i === size - 1) {
+                    if (length < currentLength) {
+                        length = currentLength;
+                        start = startIndex;
+                    }
+
+                    if (i < size - 1) {
+                        startIndex = i;
+                        currentLength = 1;
+                    }
+                }
+            }
+
+            return { maxStart: start, maxLength: length };
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputNumbers = jsConsole.read("#textBoxNumbers");
+            var inputValues = inputNumbers.split(",");
+
+            var size = inputValues.length;
+
+            var numbers = new Array(size);
+
+            for (var i = 0; i < size; i++) {
+                numbers[i] = parseFloat(inputValues[i]);
+            }
+
+            var result = getLongestSequenceOfEqualElements(numbers);
+
+            jsConsole.writeLine(sprintf("Longest subsequence of equal elements (length = %d): %s",
+                result.maxLength, numbers.slice(result.maxStart, result.maxStart + result.maxLength).join(", ")));
+        }
+    </script>
+</body>
+</html>

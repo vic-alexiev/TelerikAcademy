@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Compare arrays lexicographically</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxFirstWord">First word: </label>
+    <input type="text" id="textBoxFirstWord" />
+    <label for="textBoxSecondWord">Second word: </label>
+    <input type="text" id="textBoxSecondWord" />
+    <br />
+    <button onclick="onButtonClick()">Compare</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var word1 = jsConsole.read("#textBoxFirstWord");
+            var word2 = jsConsole.read("#textBoxSecondWord");
+
+            if (word1 === word2) {
+                jsConsole.writeLine("These words are one and the same.");
+            }
+            else if (word1 < word2) {
+                jsConsole.writeLine(sprintf("'%s' would appear in a dictionary before '%s'.", word1, word2));
+            }
+            else {
+                jsConsole.writeLine(sprintf("'%s' would appear in a dictionary before '%s'.", word2, word1));
+            }
+        }
+    </script>
+</body>
+</html>

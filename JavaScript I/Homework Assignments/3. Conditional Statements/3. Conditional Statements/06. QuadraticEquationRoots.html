@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Quadratic equation roots</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxQuadraticCoefficient">Quadratic coefficient: </label>
+    <input type="text" id="textBoxQuadraticCoefficient" />
+    <label for="textBoxLinearCoefficient">Linear coefficient: </label>
+    <input type="text" id="textBoxLinearCoefficient" />
+    <label for="textBoxFreeTerm">Free term: </label>
+    <input type="text" id="textBoxFreeTerm" />
+    <br />
+    <button onclick="onButtonClick()">Find roots</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var a = jsConsole.readFloat("#textBoxQuadraticCoefficient");
+            var b = jsConsole.readFloat("#textBoxLinearCoefficient");
+            var c = jsConsole.readFloat("#textBoxFreeTerm");
+
+            var validA = true;
+            var validB = true;
+            var validC = true;
+
+            if (isNaN(a) || Math.round(a) === 0) {
+                validA = false;
+                jsConsole.writeLine("The quadratic coefficient must be a valid real number different from 0.");
+            }
+
+            if (isNaN(b)) {
+                validB = false;
+                jsConsole.writeLine("The linear coefficient must be a valid real number.");
+            }
+
+            if (isNaN(c)) {
+                validC = false;
+                jsConsole.writeLine("The free term must be a valid real number.");
+            }
+
+            if (validA && validB && validC) {
+
+                var discriminant;
+                var sqrtOfDiscriminant;
+                var x1;
+                var rez1;
+                var imz1;
+                var x2;
+                var rez2;
+                var imz2;
+
+                // calculate the discriminant
+                discriminant = b * b - 4 * a * c;
+
+                // If the discriminant is zero, then there is exactly one distinct real root.
+                if (Math.round(discriminant) === 0) {
+
+                    x1 = x2 = -b / (2 * a);
+                    jsConsole.writeLine(sprintf("The quadratic equation has a double real root: %f.", x1));
+                }
+                else if (discriminant < 0) {
+
+                    // If the discriminant is negative, then there are no real roots. 
+                    // Rather, there are two distinct (non-real) complex roots, which are complex conjugates of each other.
+                    sqrtOfDiscriminant = Math.sqrt(-discriminant);
+                    rez1 = rez2 = -b / (2 * a);
+                    imz1 = sqrtOfDiscriminant / (2 * a);
+                    imz2 = -imz1;
+
+                    jsConsole.writeLine(sprintf("The quadratic equation has two complex roots: (%f, %f) and (%f, %f).", rez1, imz1, rez2, imz2));
+                }
+                else {
+
+                    // If the discriminant is positive, then there are two distinct roots, both of which are real numbers.
+                    sqrtOfDiscriminant = Math.sqrt(discriminant);
+                    x1 = (-b + sqrtOfDiscriminant) / (2 * a);
+                    x2 = (-b - sqrtOfDiscriminant) / (2 * a);
+
+                    jsConsole.writeLine(sprintf("The quadratic equation has two distinct real roots: %f and %f.", x1, x2));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

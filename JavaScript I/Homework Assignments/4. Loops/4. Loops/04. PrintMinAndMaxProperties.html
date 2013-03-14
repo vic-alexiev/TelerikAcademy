@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print min and max properties</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        (function () {
+            printMinAndMaxProperties(document);
+            printMinAndMaxProperties(window);
+            printMinAndMaxProperties(navigator);
+        })();
+
+        function printMinAndMaxProperties(object) {
+            var flag = false;
+            var min = new String();
+            var max = new String();
+
+            for (var property in object) {
+                if (!flag) {
+                    min = property;
+                    max = property;
+                    flag = true;
+                }
+                else {
+                    if (min > property) {
+                        min = property;
+                    }
+
+                    if (max < property) {
+                        max = property;
+                    }
+                }
+            }
+
+            jsConsole.writeLine(sprintf("Object: %s", object));
+            jsConsole.writeLine(sprintf("Lexically first property: %s", min));
+            jsConsole.writeLine(sprintf("Lexically last property: %s", max));
+        }
+    </script>
+</body>
+</html>

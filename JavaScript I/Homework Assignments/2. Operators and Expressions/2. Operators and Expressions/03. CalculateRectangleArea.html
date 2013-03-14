@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculate rectangle area</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="textBoxWidth">Width: </label>
+    <input type="text" id="textBoxWidth" />
+    <label for="textBoxHeight">Height: </label>
+    <input type="text" id="textBoxHeight" />
+    <br />
+    <button onclick="onButtonClick()">Calculate area</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var width = jsConsole.readFloat("#textBoxWidth");
+            var height = jsConsole.readFloat("#textBoxHeight");
+
+            var validWidth = true;
+            var validHeight = true;
+
+            if (isNaN(width) || width <= 0) {
+                validWidth = false;
+                jsConsole.writeLine("Width must be a positive number.");
+            }
+
+            if (isNaN(height) || height <= 0) {
+                validHeight = false;
+                jsConsole.writeLine("Height must be a positive number.");
+            }
+
+            if (validWidth && validHeight) {
+                var area = width * height;
+                jsConsole.writeLine("Rectangle's area: " + area);
+            }
+        }
+    </script>
+</body>
+</html>

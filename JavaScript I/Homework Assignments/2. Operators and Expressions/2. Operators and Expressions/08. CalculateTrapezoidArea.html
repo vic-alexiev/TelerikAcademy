@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Calculate trapezoid area</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxBaseA">Base a: </label>
+    <input type="text" id="textBoxBaseA" />
+    <label for="textBoxBaseB">Base b: </label>
+    <input type="text" id="textBoxBaseB" />
+    <label for="textBoxHeight">Height: </label>
+    <input type="text" id="textBoxHeight" />
+    <br />
+    <button onclick="onButtonClick()">Calculate trapezoid area</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function calculateTrapezoidArea(baseA, baseB, height) {
+            var area = 0.5 * (baseA + baseB) * height;
+            return area;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var baseA = jsConsole.readFloat("#textBoxBaseA");
+            var baseB = jsConsole.readFloat("#textBoxBaseB");
+            var height = jsConsole.readFloat("#textBoxHeight");
+
+            var validBaseA = true;
+            var validBaseB = true;
+            var validHeight = true;
+
+            if (isNaN(baseA) || baseA <= 0) {
+                validBaseA = false;
+                jsConsole.writeLine("Base a must be a valid positive number.");
+            }
+
+            if (isNaN(baseB) || baseB <= 0) {
+                validBaseB = false;
+                jsConsole.writeLine("Base b must be a valid positive number.");
+            }
+
+            if (isNaN(height) || height <= 0) {
+                validHeight = false;
+                jsConsole.writeLine("Height must be a valid positive number.");
+            }
+
+            if (validBaseA && validBaseB && validHeight) {
+                jsConsole.writeLine(sprintf("Trapezoid's area is %f.",
+                    calculateTrapezoidArea(baseA, baseB, height)));
+            }
+        }
+    </script>
+</body>
+</html>

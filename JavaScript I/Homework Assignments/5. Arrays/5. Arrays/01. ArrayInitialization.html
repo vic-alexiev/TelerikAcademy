@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Array initialization</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        (function () {
+            var multiplier = 5;
+            var length = 20;
+            initializeAndPrintArray(multiplier, length);
+        })();
+
+        function initializeAndPrintArray(multiplier, length) {
+            var array = new Array(length);
+
+            for (var i = 0; i < length; i++) {
+                array[i] = i * multiplier;
+            }
+
+            jsConsole.writeLine(array.join(", "));
+        }
+    </script>
+</body>
+</html>

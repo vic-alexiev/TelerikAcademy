@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Is point in circle and not in rectangle</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxPointX">X coordinate: </label>
+    <input type="text" id="textBoxPointX" />
+    <label for="textBoxPointY">Y coordinate: </label>
+    <input type="text" id="textBoxPointY" />
+    <br />
+    <button onclick="onButtonClick()">Is in circle and not in rectangle?</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function isInCircle(pointX, pointY, centerX, centerY, radius) {
+            var isInCircle =
+            ((pointX - centerX) * (pointX - centerX) + (pointY - centerY) * (pointY - centerY) <= radius * radius);
+
+            return isInCircle;
+        }
+
+        function isInRectangle(pointX, pointY, left, top, width, height) {
+            var isInRectangle =
+            ((pointX >= left) && (pointX <= left + width) && (pointY <= top) && (pointY >= top - height));
+            return isInRectangle;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var pointX = jsConsole.readFloat("#textBoxPointX");
+            var pointY = jsConsole.readFloat("#textBoxPointY");
+
+            var validPointX = true;
+            var validPointY = true;
+
+            if (isNaN(pointX)) {
+                validPointX = false;
+                jsConsole.writeLine("X coordinate must be a valid number.");
+            }
+
+            if (isNaN(pointY)) {
+                validPointY = false;
+                jsConsole.writeLine("Y coordinate must be a valid number.");
+            }
+
+            if (validPointX && validPointY) {
+                var centerX = 1;
+                var centerY = 1;
+                var radius = 3;
+                var top = 1;
+                var left = -1;
+                var width = 6;
+                var height = 2;
+
+                var inCircle = isInCircle(pointX, pointY, centerX, centerY, radius);
+                var inRectangle = isInRectangle(pointX, pointY, left, top, width, height);
+
+                if (inCircle && !inRectangle) {
+                    jsConsole.writeLine(sprintf(
+                        "The point is in the region defined by the interior of the circle K(C(%d, %d), %d) " +
+                        "and the exterior of the rectangle R(top: %d, left: %d, width: %d, height: %d).",
+                        centerX, centerY, radius, top, left, width, height));
+                }
+                else {
+                    jsConsole.writeLine(sprintf(
+                        "The point is not in the region defined by the interior of the circle K(C(%d, %d), %d) " +
+                        "and the exterior of the rectangle R(top: %d, left: %d, width: %d, height: %d).",
+                        centerX, centerY, radius, top, left, width, height));
+                }
+            }
+        }
+    </script>
+</body>
+</html>

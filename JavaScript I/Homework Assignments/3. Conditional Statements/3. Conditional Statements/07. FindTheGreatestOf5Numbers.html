@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find greatest of 5 numbers</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxNumbers">Numbers (separated with commas): </label>
+    <input type="text" id="textBoxNumbers" />
+    <br />
+    <button onclick="onButtonClick()">Print greatest</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputNumbers = jsConsole.read("#textBoxNumbers");
+            var inputValues = inputNumbers.split(",");
+
+            if (inputValues.length != 5) {
+                jsConsole.writeLine("You must enter exactly 5 real numbers separated with commas.");
+                return;
+            }
+
+            var numbers = new Array(5);
+
+            for (var i = 0; i < 5; i++) {
+                numbers[i] = parseFloat(inputValues[i]);
+            }
+
+            var max = Number.MIN_VALUE;
+
+            for (var i = 0; i < 5; i++) {
+                if (max < numbers[i]) {
+                    max = numbers[i];
+                }
+            }
+
+            jsConsole.writeLine(sprintf("The greatest number is %f.", max));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Print min and max</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxNumbers">Numbers (separated with commas): </label>
+    <input type="text" id="textBoxNumbers" />
+    <br />
+    <button onclick="onButtonClick()">Print min & max</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputNumbers = jsConsole.read("#textBoxNumbers");
+            var inputValues = inputNumbers.split(",");
+
+            var size = inputValues.length;
+
+            var numbers = new Array(size);
+
+            for (var i = 0; i < size; i++) {
+                numbers[i] = parseFloat(inputValues[i]);
+            }
+
+            var max = Number.MIN_VALUE;
+            var min = Number.MAX_VALUE;
+
+            for (var i = 0; i < size; i++) {
+                if (min > numbers[i]) {
+                    min = numbers[i];
+                }
+
+                if (max < numbers[i]) {
+                    max = numbers[i];
+                }
+            }
+
+            jsConsole.writeLine(sprintf("The least number is %f.", min));
+            jsConsole.writeLine(sprintf("The greatest number is %f.", max));
+        }
+    </script>
+</body>
+</html>

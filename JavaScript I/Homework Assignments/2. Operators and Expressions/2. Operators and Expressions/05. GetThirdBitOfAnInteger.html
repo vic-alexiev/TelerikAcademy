@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Get third bit</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxNumber">Number: </label>
+    <input type="text" id="textBoxNumber" />
+    <br />
+    <button onclick="onButtonClick()">Check bit 3</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getBit(number, bitIndex) {
+
+            var mask = 1 << bitIndex;
+
+            var numberWithMaskApplied = number & mask;
+
+            if (numberWithMaskApplied === 0) {
+                return 0;
+            }
+            else {
+                return 1;
+            }
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var number = jsConsole.readInteger("#textBoxNumber");
+
+            if (isNaN(number) || number < 0) {
+                jsConsole.writeLine("Enter a non-negative integer.");
+            }
+            else {
+                var bitIndex = 3;
+
+                jsConsole.writeLine(sprintf("Your number in binary representation is %s.<br />"
+                    + "The bit at index %d (counting from 0, right to left) is %d.",
+                    number.toString(2), bitIndex, getBit(number, bitIndex)));
+            }
+        }
+    </script>
+</body>
+</html>

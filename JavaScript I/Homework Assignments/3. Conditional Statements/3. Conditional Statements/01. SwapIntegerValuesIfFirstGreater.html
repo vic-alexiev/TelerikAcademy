@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Swap integer values</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxFirstNumber">First number: </label>
+    <input type="text" id="textBoxFirstNumber" />
+    <label for="textBoxSecondNumber">Second number: </label>
+    <input type="text" id="textBoxSecondNumber" />
+    <br />
+    <button onclick="onButtonClick()">Swap values (if first is greater)</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var a = jsConsole.readInteger("#textBoxFirstNumber");
+            var b = jsConsole.readInteger("#textBoxSecondNumber");
+
+            var validFirstNumber = true;
+            var validSecondNumber = true;
+
+            if (isNaN(a)) {
+                validFirstNumber = false;
+                jsConsole.writeLine("First number must be a valid integer.");
+            }
+
+            if (isNaN(b)) {
+                validSecondNumber = false;
+                jsConsole.writeLine("Second number must be a valid integer.");
+            }
+
+            if (validFirstNumber && validSecondNumber) {
+                if (a > b) {
+                    //int buf = a;
+                    //a = b;
+                    //b = buf;
+
+                    //a ^= b;
+                    //b ^= a;
+                    //a ^= b;
+
+                    a = a + b;
+                    b = a - b;
+                    a = a - b;
+                }
+                jsConsole.writeLine(sprintf("First number: %d<br />Second number: %d", a, b));
+            }
+        }
+    </script>
+</body>
+</html>

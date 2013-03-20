@@ -39,10 +39,10 @@ namespace JustPacman
             this.inputDevice = inputDevice;
             this.sleepTimeout = sleepTimeout;
 
-            inputDevice.LeftArrowKeyPressed += new EventHandler(this.inputDevice_LeftArrowKeyPressed);
-            inputDevice.RightArrowKeyPressed += new EventHandler(this.inputDevice_RightArrowKeyPressed);
-            inputDevice.UpArrowKeyPressed += new EventHandler(this.inputDevice_UpArrowKeyPressed);
-            inputDevice.DownArrowKeyPressed += new EventHandler(this.inputDevice_DownArrowKeyPressed);
+            this.inputDevice.LeftArrowKeyPressed += new EventHandler(this.inputDevice_LeftArrowKeyPressed);
+            this.inputDevice.RightArrowKeyPressed += new EventHandler(this.inputDevice_RightArrowKeyPressed);
+            this.inputDevice.UpArrowKeyPressed += new EventHandler(this.inputDevice_UpArrowKeyPressed);
+            this.inputDevice.DownArrowKeyPressed += new EventHandler(this.inputDevice_DownArrowKeyPressed);
 
             InitMaze();
 

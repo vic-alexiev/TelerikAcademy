@@ -9,7 +9,9 @@ namespace JustPacman
 
         private const int MAZE_ROWS = 23;
         private const int MAZE_COLS = 40;
-        private const int MAX_POINTS = 2600;
+
+        // all the points which can be gathered in the maze
+        private int maxPoints;
 
         private int sleepTimeout;
         private MazeObject[,] maze = new MazeObject[MAZE_ROWS, MAZE_COLS];
@@ -95,7 +97,7 @@ namespace JustPacman
                 Thread.Sleep(this.sleepTimeout);
 
                 // all points have been gathered - Pac-Man wins
-                if (pacman.Points == MAX_POINTS)
+                if (pacman.Points == maxPoints)
                 {
                     PrintGameOver();
                     return;
@@ -201,6 +203,8 @@ namespace JustPacman
                         maze[rowIndex, MAZE_COLS - 1 - colIndex] = new MazeObject(MazeObjectType.Pellet, 10);
                         Draw(rowIndex, MAZE_COLS - 1 - colIndex, '.', ConsoleColor.Yellow);
                     }
+
+                    this.maxPoints += maze[rowIndex, MAZE_COLS - 1 - colIndex].Points;
                 }
             }
 

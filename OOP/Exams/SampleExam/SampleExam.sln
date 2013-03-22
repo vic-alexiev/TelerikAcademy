@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSystem", "DocumentSystem\DocumentSystem.csproj", "{A2A8D2BB-B4EF-401E-9EED-756F2BFEBD21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSystemDemo", "DocumentSystemDemo\DocumentSystemDemo.csproj", "{0E903C2F-A67B-4476-8DBF-C415606443AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyGeometry", "AcademyGeometry\AcademyGeometry.csproj", "{42F2C4A0-352A-4813-B11B-917C9720964D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyGeometryDemo", "AcademyGeometryDemo\AcademyGeometryDemo.csproj", "{3856647A-46FD-4B66-B84F-7ED2C7843965}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentSystemForBGCoder", "DocumentSystemForBGCoder\DocumentSystemForBGCoder.csproj", "{FCCB8B2C-F7B1-4F14-8868-759494BA4F7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcademyGeometryForBGCoder", "AcademyGeometryForBGCoder\AcademyGeometryForBGCoder.csproj", "{1AC2026D-449F-4EAC-BD92-A650BB2AE90A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2A8D2BB-B4EF-401E-9EED-756F2BFEBD21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2A8D2BB-B4EF-401E-9EED-756F2BFEBD21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2A8D2BB-B4EF-401E-9EED-756F2BFEBD21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2A8D2BB-B4EF-401E-9EED-756F2BFEBD21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E903C2F-A67B-4476-8DBF-C415606443AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E903C2F-A67B-4476-8DBF-C415606443AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E903C2F-A67B-4476-8DBF-C415606443AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E903C2F-A67B-4476-8DBF-C415606443AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42F2C4A0-352A-4813-B11B-917C9720964D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42F2C4A0-352A-4813-B11B-917C9720964D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42F2C4A0-352A-4813-B11B-917C9720964D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42F2C4A0-352A-4813-B11B-917C9720964D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3856647A-46FD-4B66-B84F-7ED2C7843965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3856647A-46FD-4B66-B84F-7ED2C7843965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3856647A-46FD-4B66-B84F-7ED2C7843965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3856647A-46FD-4B66-B84F-7ED2C7843965}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCCB8B2C-F7B1-4F14-8868-759494BA4F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCCB8B2C-F7B1-4F14-8868-759494BA4F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCCB8B2C-F7B1-4F14-8868-759494BA4F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCCB8B2C-F7B1-4F14-8868-759494BA4F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AC2026D-449F-4EAC-BD92-A650BB2AE90A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC2026D-449F-4EAC-BD92-A650BB2AE90A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC2026D-449F-4EAC-BD92-A650BB2AE90A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC2026D-449F-4EAC-BD92-A650BB2AE90A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

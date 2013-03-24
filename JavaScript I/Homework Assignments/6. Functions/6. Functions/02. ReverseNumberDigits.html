@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reverse number digits</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="textBoxNumber">Number: </label>
+    <input type="text" id="textBoxNumber" />
+    <br />
+    <button onclick="onButtonClick()">Reverse</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function reverseInteger2(value) {
+            if (value === 0) {
+                return 0;
+            }
+
+            var number = Math.abs(value).toString();
+            var reversed = new Array(number.length);
+
+            for (var i = number.length - 1; i >= 0; i--) {
+                reversed[number.length - i - 1] = number[i];
+            }
+
+            if (value < 0) {
+                reversed.unshift("-");
+            }
+
+            return reversed.join("");
+        }
+
+        function reverseInteger1(value) {
+            if (value === 0) {
+                return 0;
+            }
+
+            var number = Math.abs(value);
+            var numberReversed = 0;
+
+            while (number > 0) {
+                var remainder = number % 10;
+
+                numberReversed = 10 * numberReversed + remainder;
+
+                number = Math.floor(number / 10);
+            }
+
+            if (value < 0) {
+                numberReversed = -numberReversed;
+            }
+
+            return numberReversed;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var number = jsConsole.readInteger("#textBoxNumber");
+
+            if (isNaN(number)) {
+                jsConsole.writeLine("Enter a valid integer.");
+            }
+            else {
+                var numberReversed = reverseInteger2(number);
+                jsConsole.writeLine(numberReversed);
+            }
+        }
+    </script>
+</body>
+</html>

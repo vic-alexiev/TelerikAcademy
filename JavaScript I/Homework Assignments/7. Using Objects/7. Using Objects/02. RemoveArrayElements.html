@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Remove array elements</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="textBoxElements">Elements (separated with commas): </label>
+    <input type="text" id="textBoxElements" />
+    <label for="textBoxElementToRemove">Element to remove: </label>
+    <input type="text" id="textBoxElementToRemove" />
+    <br />
+    <button onclick="onButtonClick()">Remove element</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        (function () {
+            if (!Array.prototype.remove) {
+                Array.prototype.remove = function (value) {
+                    if (this == null) {
+                        throw new TypeError();
+                    }
+
+                    var result = [];
+
+                    var size = this.length;
+                    for (var i = 0; i < size; i++) {
+                        if (this[i] !== value) {
+                            result.push(this[i]);
+                        }
+                    }
+
+                    return result;
+                }
+            }
+        })();
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputElements = jsConsole.read("#textBoxElements");
+            var elements = inputElements.match(/[^\s,]+/g);
+
+            var elementToRemove = jsConsole.read("#textBoxElementToRemove");
+
+            var result = elements.remove(elementToRemove);
+
+            jsConsole.writeLine("Result: " + result);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Geometry objects</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        (function () {
+            var a = new Point(0, 0);
+            var b = new Point(4, 0);
+            var c = new Point(0, 3);
+
+            jsConsole.writeLine(a);
+            jsConsole.writeLine(b);
+            jsConsole.writeLine(c);
+
+            var segmentA = new LineSegment(b, c);
+            var segmentB = new LineSegment(a, c);
+            var segmentC = new LineSegment(a, b);
+
+            jsConsole.writeLine(sprintf("%s, length: %f", segmentA, segmentA.getLength()));
+            jsConsole.writeLine(sprintf("%s, length: %f", segmentB, segmentB.getLength()));
+            jsConsole.writeLine(sprintf("%s, length: %f", segmentC, segmentC.getLength()));
+
+            jsConsole.writeLine("Do these line segments form a triangle? " + canMakeTriangle(segmentA, segmentB, segmentC));
+        })();
+
+        function Point(x, y) {
+            this.x = x;
+            this.y = y;
+            this.getDistance = function (p) {
+                return Math.sqrt((this.x - p.x) * (this.x - p.x) + (this.y - p.y) * (this.y - p.y));
+            };
+            this.toString = function () {
+                return sprintf("point(%f, %f)", this.x, this.y);
+            };
+        }
+
+        function LineSegment(p1, p2) {
+            this.start = p1;
+            this.end = p2;
+            this.getLength = function () {
+                return this.start.getDistance(this.end);
+            };
+            this.toString = function () {
+                return sprintf("line-segment(%s, %s)", this.start, this.end);
+            };
+        }
+
+        function canMakeTriangle(ls1, ls2, ls3) {
+            var a = ls1.getLength();
+            var b = ls2.getLength();
+            var c = ls3.getLength();
+
+            return a + b > c && a + c > b && b + c > a;
+        }
+    </script>
+</body>
+</html>

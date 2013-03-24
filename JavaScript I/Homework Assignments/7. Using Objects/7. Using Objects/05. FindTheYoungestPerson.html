@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Find the youngest person</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Person(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.toString = function () {
+                return sprintf("%s %s (age %d)", this.firstName, this.lastName, this.age);
+            }
+        }
+
+        function getYoungestPerson1(people) {
+            if (people.length === 0) return null;
+            if (people.length === 1) return people[0];
+
+            return people.reduce(function (p, q) {
+                return (p.age < q.age ? p : q);
+            });
+        }
+
+        function getYoungestPerson2(people) {
+            if (people.length === 0) return null;
+            if (people.length === 1) return people[0];
+
+            var youngest = new Person("", "", Number.MAX_VALUE);
+
+            people.forEach(function (element, index, array) {
+                if (element.age < youngest.age) youngest = element;
+            });
+
+            return youngest;
+        }
+
+        function getYoungestPerson3(people, comparer) {
+            if (people.length === 0) return null;
+            if (people.length === 1) return people[0];
+
+            var v = people[0];
+
+            for (var i = 1; i < people.length; i++) {
+                v = comparer(people[i], v);
+            }
+
+            return v;
+        }
+
+        (function () {
+
+            var people = [];
+            people.push(new Person("Scott", "Guthrie", 38));
+            people.push(new Person("Scott", "Hanselman", 39));
+            people.push(new Person("Jesse", "Liberty", 57));
+            people.push(new Person("Jon", "Skeet", 36));
+            people.push(new Person("Anders", "Hejlsberg", 52));
+            people.push(new Person("Bjarne", "Stroustrup", 62));
+
+            // I solution
+            var youngestPerson = getYoungestPerson1(people);
+            // II solution
+            //var youngestPerson = getYoungestPerson2(people);
+            // III solution
+            //var youngestPerson = getYoungestPerson3(people, function (p, q) { return (p.age < q.age ? p : q); });
+
+            jsConsole.writeLine(sprintf("The youngest person in the list is %s.", youngestPerson));
+        })();
+    </script>
+</body>
+</html>

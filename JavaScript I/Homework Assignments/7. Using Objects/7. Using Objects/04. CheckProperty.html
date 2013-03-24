@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Check if object has a property</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        (function () {
+            var prop = "length";
+
+            var obj = new Array();
+
+            if (hasProperty(obj, prop)) {
+                jsConsole.writeLine(sprintf("The object has a property '%s'.", prop));
+            }
+            else {
+                jsConsole.writeLine(sprintf("The object doesn't have a property '%s'.", prop));
+            }
+        })();
+
+        function hasProperty(obj, prop) {
+            if (obj.hasOwnProperty(prop)) {
+                return true;
+            }
+
+            if (prop in obj) {
+                return true;
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Is local max</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxNumbers">Numbers (separated with commas): </label>
+    <input type="text" id="textBoxNumbers" />
+    <label for="textBoxIndex">Element index: </label>
+    <input type="text" id="textBoxIndex" />
+    <br />
+    <button onclick="onButtonClick()">Is local max</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function isLocalMax(array, elementIndex) {
+
+            var size = array.length;
+
+            if (size === 1) {
+                return true;
+            }
+
+            if (elementIndex === 0) {
+                return array[0] > array[1];
+            }
+
+            if (elementIndex === size - 1) {
+                return array[size - 1] > array[size - 2];
+            }
+
+            return array[elementIndex] > array[elementIndex - 1]
+                && array[elementIndex] > array[elementIndex + 1];
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputNumbers = jsConsole.read("#textBoxNumbers");
+            var inputValues = inputNumbers.split(",");
+
+            var size = inputValues.length;
+
+            var numbers = new Array(size);
+
+            for (var i = 0; i < size; i++) {
+                numbers[i] = parseInt(inputValues[i]);
+            }
+
+            var index = jsConsole.readInteger("#textBoxIndex");
+
+            if (isNaN(index) || index < 0 || index >= size) {
+                jsConsole.writeLine(sprintf("Enter a valid index in the range [0 ... %d].", size - 1));
+            }
+            else {
+                var isLocMax = isLocalMax(numbers, index);
+
+                jsConsole.writeLine(sprintf("The element at index %d is%s a local maximum.",
+                    index, isLocMax ? "" : " not"));
+            }
+        }
+    </script>
+</body>
+</html>

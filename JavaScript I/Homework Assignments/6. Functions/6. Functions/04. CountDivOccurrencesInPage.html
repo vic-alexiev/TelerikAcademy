@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Divs count</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body onload="printDivsCount()">
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function printDivsCount() {
+            var tagName = "div";
+            var elementsCount = getElementsCount(tagName);
+            jsConsole.writeLine(sprintf("The current page contains %d '%s' element(s).", elementsCount, tagName));
+        };
+
+        function getElementsCount(tagName) {
+            var nodes = document.getElementsByTagName(tagName);
+            return nodes.length;
+        }
+    </script>
+    <div></div>
+</body>
+</html>

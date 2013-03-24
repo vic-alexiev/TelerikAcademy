@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Group people</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function Person(firstName, lastName, age) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.toString = function () {
+                return sprintf("%s %s (age %d)", this.firstName, this.lastName, this.age);
+            }
+        }
+
+        function group(people, prop) {
+            switch (prop) {
+                case "firstName":
+                case "lastName":
+                case "age":
+                    {
+                        var groups = {};
+
+                        people.map(function (p) {
+                            if (!groups[p[prop]])
+                                groups[p[prop]] = new Array();
+                            groups[p[prop]].push(p);
+                        });
+
+                        return groups;
+                    }
+                default:
+                    throw new Error("No such property in Person.");
+            }
+        }
+
+        (function () {
+
+            var people = [];
+
+            people.push(new Person("Scott", "Guthrie", 38));
+            people.push(new Person("Scott", "Hanselman", 39));
+            people.push(new Person("Jesse", "Liberty", 57));
+            people.push(new Person("Jon", "Skeet", 36));
+            people.push(new Person("Anders", "Hejlsberg", 52));
+            people.push(new Person("Bjarne", "Stroustrup", 62));
+            people.push(new Person("Erik", "Meijer", 49));
+            people.push(new Person("Adam", "Nathan", 42));
+            people.push(new Person("Jeffrey", "Richter", 52));
+            people.push(new Person("Charles", "Petzold", 60));
+            people.push(new Person("Jon", "Galloway", 42));
+            people.push(new Person("Adam", "Freeman", 42));
+            people.push(new Person("Scott", "Mitchell", 34));
+
+            var groups = group(people, "firstName");
+
+            for (var entry in groups) {
+                jsConsole.writeLine(sprintf("Group '%s': %s", entry, groups[entry]));
+            }
+        })();
+    </script>
+</body>
+</html>

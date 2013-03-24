@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Word occurrences</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textAreaContent">Text:</label>
+    <textarea style="width: 300px; height: 100px" id="textAreaContent"></textarea>
+    <br />
+    <label for="textBoxWord">Word: </label>
+    <input type="text" id="textBoxWord" />
+    <br />
+    <button onclick="onButtonClick()">Count occurrences</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getWordOccurrences(words, word, ignoreCase) {
+
+            function getWordCountCaseSensitive() {
+                var count = 0;
+                for (var i = 0; i < words.length; i++) {
+                    if (word === words[i]) {
+                        count++;
+                    }
+                }
+
+                return count;
+            }
+
+            function getWordCountCaseInsensitive() {
+                var count = 0;
+                for (var i = 0; i < words.length; i++) {
+                    if (word.toLowerCase() === words[i].toLowerCase()) {
+                        count++;
+                    }
+                }
+
+                return count;
+            }
+
+            switch (arguments.length) {
+                case 2:
+                    return getWordCountCaseSensitive();
+                case 3:
+                    return ignoreCase ? getWordCountCaseInsensitive() : getWordCountCaseSensitive();
+            }
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var content = jsConsole.read("#textAreaContent");
+            var word = jsConsole.read("#textBoxWord");
+
+            var words = content.split(/[\s.,;!?:"]+/);
+
+            var occurrences = getWordOccurrences(words, word, true);
+
+            jsConsole.writeLine(sprintf("The word %s occurs %d times in the text.", word, occurrences));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>First local max</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxNumbers">Numbers (separated with commas): </label>
+    <input type="text" id="textBoxNumbers" />
+    <br />
+    <button onclick="onButtonClick()">First local max</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function isLocalMax(array, elementIndex) {
+
+            var size = array.length;
+
+            if (size === 1) {
+                return true;
+            }
+
+            if (elementIndex === 0) {
+                return array[0] > array[1];
+            }
+
+            if (elementIndex === size - 1) {
+                return array[size - 1] > array[size - 2];
+            }
+
+            return array[elementIndex] > array[elementIndex - 1]
+                && array[elementIndex] > array[elementIndex + 1];
+        }
+
+        function getFirstLocalMax(array) {
+            for (var i = 0; i < array.length; i++) {
+                if (isLocalMax(array, i)) {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var inputNumbers = jsConsole.read("#textBoxNumbers");
+            var inputValues = inputNumbers.split(",");
+
+            var size = inputValues.length;
+
+            var numbers = new Array(size);
+
+            for (var i = 0; i < size; i++) {
+                numbers[i] = parseInt(inputValues[i]);
+            }
+
+            var firstLocalMax = getFirstLocalMax(numbers);
+
+            if (firstLocalMax !== -1) {
+                jsConsole.writeLine(sprintf("The element at index %d is the first local maximum.", firstLocalMax));
+            }
+            else {
+                jsConsole.writeLine("The sequence does not contain a local maximum.");
+            }
+        }
+    </script>
+</body>
+</html>

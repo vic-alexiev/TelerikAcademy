@@ -3,18 +3,19 @@
   <Class Name="Bank.Account">
     <Position X="6.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>EAACAAAAAhAAgAAAAAgAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>EAACAACAAhAAgAAAAAgAAAAIAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>Account.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="interestCalculator" />
       <Field Name="owner" />
+      <Field Name="interestCalculator" />
     </ShowAsAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Bank.DepositAccount">
     <Position X="5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DepositAccount.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -22,18 +23,16 @@
   <Class Name="Bank.LoanAccount">
     <Position X="7" Y="4.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>LoanAccount.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Bank.MortgageLoanAccount">
     <Position X="9" Y="4.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>MortgageLoanAccount.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Bank.LoanAccountInterestCalculator">
     <Position X="11.75" Y="2.75" Width="2.25" />
@@ -88,14 +87,14 @@
     </TypeIdentifier>
   </Interface>
   <Interface Name="Bank.IDepositable">
-    <Position X="4.5" Y="3" Width="1.5" />
+    <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
       <FileName>IDepositable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Bank.IWithdrawable">
-    <Position X="8.5" Y="3" Width="1.5" />
+    <Position X="4.75" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>IWithdrawable.cs</FileName>

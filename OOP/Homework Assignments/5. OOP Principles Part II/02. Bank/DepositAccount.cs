@@ -2,7 +2,7 @@
 
 namespace Bank
 {
-    public class DepositAccount : Account, IDepositable, IWithdrawable
+    public class DepositAccount : Account, IWithdrawable
     {
         public DepositAccount(
             Customer owner,
@@ -15,16 +15,11 @@ namespace Bank
                 balance, monthlyInterestRate, periodInMonths);
         }
 
-        public void Deposit(decimal amount)
-        {
-            this.balance += amount;
-        }
-
         public void Withdraw(decimal amount)
         {
             if (this.balance < amount)
             {
-                throw new ArgumentException("Not enough money.");
+                throw new ArgumentException("Balance too low.");
             }
             this.balance -= amount;
         }

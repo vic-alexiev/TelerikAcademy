@@ -156,13 +156,13 @@ namespace BankUnitTests
                 "1 Microsoft Way, Redmond, WA",
                 "1-888-553-6562");
 
-            Account account = new DepositAccount(
+            DepositAccount account = new DepositAccount(
                 accountCustomer,
                 2500,
                 1.0825M,
                 12);
 
-            (account as IWithdrawable).Withdraw(400M);
+            account.Withdraw(400M);
 
             Assert.AreEqual(2100M, account.Balance);
         }
@@ -183,7 +183,7 @@ namespace BankUnitTests
                 1.0825M,
                 12);
 
-            (account as IDepositable).Deposit(459M);
+            account.Deposit(459M);
 
             Assert.AreEqual(32959M, account.Balance);
         }

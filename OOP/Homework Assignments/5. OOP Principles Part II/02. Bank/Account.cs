@@ -2,7 +2,7 @@
 
 namespace Bank
 {
-    public abstract class Account
+    public abstract class Account : IDepositable
     {
         private Customer owner;
         protected decimal balance;
@@ -60,6 +60,11 @@ namespace Bank
             }
 
             return (this.interestCalculator.CalculateInterest() / this.interestCalculator.PeriodInMonths) * months;
+        }
+
+        public void Deposit(decimal amount)
+        {
+            this.balance += amount;
         }
     }
 }

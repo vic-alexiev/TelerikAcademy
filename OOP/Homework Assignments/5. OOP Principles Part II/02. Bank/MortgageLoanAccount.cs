@@ -1,6 +1,6 @@
 ﻿namespace Bank
 {
-    public class MortgageLoanAccount : Account, IDepositable
+    public class MortgageLoanAccount : Account
     {
         public MortgageLoanAccount(
             Customer owner,
@@ -11,11 +11,6 @@
         {
             this.interestCalculator = new MortgageLoanAccountInterestCalculator(
                 owner, balance, monthlyInterestRate, periodInMonths);
-        }
-
-        public void Deposit(decimal amount)
-        {
-            this.balance += amount;
         }
     }
 }

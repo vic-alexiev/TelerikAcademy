@@ -16,7 +16,7 @@ class BankDemo
             "1 Microsoft Way, Redmond, WA",
             "1-888-553-6562");
 
-        Account depositAccount = new DepositAccount(
+        DepositAccount depositAccount = new DepositAccount(
             depositAccountCustomer,
             2500,
             1.0825M,
@@ -50,8 +50,8 @@ class BankDemo
         decimal depositInterest = depositAccount.CalculateInterest(3);
         Console.WriteLine("Deposit account interest: {0:C2}", depositInterest);
 
-        (depositAccount as IDepositable).Deposit(459.76M);
-        (depositAccount as IWithdrawable).Withdraw(400.76M);
+        depositAccount.Deposit(459.76M);
+        depositAccount.Withdraw(400.76M);
 
         Console.WriteLine("Deposit account balance: {0:C2}", depositAccount.Balance);
 

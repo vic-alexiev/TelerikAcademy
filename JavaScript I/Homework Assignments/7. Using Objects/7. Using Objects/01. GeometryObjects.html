@@ -38,11 +38,14 @@
             this.toString = function () {
                 return sprintf("point(%f, %f)", this.x, this.y);
             };
+            this.clone = function () {
+                return new Point(this.x, this.y);
+            }
         }
 
         function LineSegment(p1, p2) {
-            this.start = p1;
-            this.end = p2;
+            this.start = p1.clone();
+            this.end = p2.clone();
             this.getLength = function () {
                 return this.start.getDistance(this.end);
             };

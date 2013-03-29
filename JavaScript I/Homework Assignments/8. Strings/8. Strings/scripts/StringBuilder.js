@@ -1,6 +1,5 @@
-﻿// Initializes a new instance of the StringBuilder class
-// and appends the given value if supplied.
-function StringBuilder(value) {
+﻿// Initializes a new instance of the StringBuilder class.
+function StringBuilder() {
 
     var chunkChars = [];
     var length = 0;

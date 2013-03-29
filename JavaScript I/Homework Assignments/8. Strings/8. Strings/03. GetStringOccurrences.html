@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>String occurrences</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textAreaContent">Text:</label>
+    <textarea style="width: 300px; height: 100px" id="textAreaContent"></textarea>
+    <br />
+    <label for="textBoxString">String: </label>
+    <input type="text" id="textBoxString" />
+    <br />
+    <button onclick="onButtonClick()">Count occurrences</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getStringOccurrences(text, stringToFind, ignoreCase) {
+
+            if (ignoreCase) {
+                text = text.toUpperCase();
+                stringToFind = stringToFind.toUpperCase();
+            }
+
+            var count = 0;
+            var index = text.indexOf(stringToFind, 0);
+
+            while (index != -1) {
+                count++;
+                index = text.indexOf(stringToFind, index + 1);
+            }
+
+            return count;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var content = jsConsole.read("#textAreaContent");
+            var stringToFind = jsConsole.read("#textBoxString");
+
+            if (content) {
+                if (stringToFind) {
+                    var occurrences = getStringOccurrences(content, stringToFind, true);
+
+                    jsConsole.writeLine(sprintf("The string '%s' occurs %d times in the text.", stringToFind, occurrences));
+                }
+                else {
+                    jsConsole.writeLine("Enter some string to search for.");
+                }
+            }
+            else {
+                jsConsole.writeLine("Enter some text.");
+            }
+        }
+    </script>
+</body>
+</html>

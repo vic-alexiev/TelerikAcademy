@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Expression checker</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxExpression">Expression: </label>
+    <input type="text" id="textBoxExpression" />
+    <br />
+    <button onclick="onButtonClick()">Check</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function isBalanced(expression) {
+            var len = expression.length;
+            var level = 0;
+
+            for (var i = 0; i < len; i++) {
+                if (expression[i] === ')') {
+                    if (level === 0) {
+                        return false;
+                    }
+                    level--;
+                }
+                else if (expression[i] === '(') {
+                    level++;
+                }
+            }
+
+            return level === 0;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var expression = jsConsole.read("#textBoxExpression");
+
+            if (expression.trim().length === 0) {
+                jsConsole.writeLine("Enter a non-empty string.");
+            }
+            else {
+                var balanced = isBalanced(expression);
+                jsConsole.writeLine(sprintf("This expression is%s balanced.", balanced ? "" : " not"));
+            }
+        }
+    </script>
+</body>
+</html>

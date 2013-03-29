@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Reverse string</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/StringBuilder.js"></script>
+</head>
+<body>
+    <label for="textBoxString">String: </label>
+    <input type="text" id="textBoxString" />
+    <br />
+    <button onclick="onButtonClick()">Reverse</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function reverseString1(value) {
+            return value.split("").reverse().join("");
+        }
+
+        function reverseString2(value) {
+            var builder = new StringBuilder();
+
+            var len = value.length;
+
+            for (var i = 0; i < len; i++) {
+                builder.insert(0, value[i]);
+            }
+
+            return builder.toString();
+        }
+
+        function reverseString3(value) {
+            var len = value.length;
+            var reversed = [];
+
+            for (var i = len - 1; i >= 0; i--) {
+                reversed[len - i - 1] = value[i];
+            }
+
+            return reversed.join("");
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var input = jsConsole.read("#textBoxString");
+
+            if (input.trim().length === 0) {
+                jsConsole.writeLine("Enter a non-empty string.");
+            }
+            else {
+                var inputReversed = reverseString3(input);
+                jsConsole.writeLine(inputReversed);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -41,7 +41,7 @@ class ExtractHtmlFileData
 
         do
         {
-            Console.WriteLine("Enter the path of a local HTMl file:");
+            Console.WriteLine("Enter the path of a local HTML file:");
             htmlFilePath = Console.ReadLine();
         }
         while (!File.Exists(htmlFilePath) ||

@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Replace anchor tags</title>
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textAreaHtml">HTML: </label>
+    <textarea style="width: 300px; height: 100px" id="textAreaHtml"></textarea>
+    <br />
+    <button onclick="onButtonClick()">Replace anchor tags</button>
+    <br />
+    <label for="textAreaResult">Result:</label>
+    <textarea style="width: 300px; height: 100px" id="textAreaResult"></textarea>
+    <br />
+    <script>
+        function replaceAnchorTags(input) {
+            // this matches the 'a href=' part
+            var aHrefPart = /<\s*a\s[^>]*?\bhref\s*=\s*/;
+
+            // this matches the value of the href attribute, e.g. 'www.devbg.org'
+            var urlPart = /(?:'([^']*)'|\"([^\"]*)\"|(\S*))[^>]*>/;
+
+            // the text between the opening and closing tag, e.g. 'our site'
+            var linkTextPart = /([^<]*)<\s*\/a\s*>/;
+
+            var anchorPattern = new RegExp(aHrefPart.source + urlPart.source + linkTextPart.source, "gi");
+
+            var result = input.replace(anchorPattern, function (match, url1, url2, url3, linkText) {
+                var url = url1 + url2 + url3;
+                return sprintf("[URL=%s]%s[/URL]", url, linkText);
+            });
+
+            return result;
+        }
+
+        function onButtonClick() {
+            var htmlArea = document.querySelector("#textAreaHtml");
+
+            var input = htmlArea.value;
+
+            if (input.trim().length === 0) {
+                alert("Enter some text.");
+            }
+            else {
+                var resultArea = document.querySelector("#textAreaResult");
+                resultArea.value = replaceAnchorTags(input);
+            }
+        }
+    </script>
+</body>
+</html>

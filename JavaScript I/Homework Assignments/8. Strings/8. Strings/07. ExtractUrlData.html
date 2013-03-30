@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Extract URL data</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/sprintf-0.7-beta1.js"></script>
+</head>
+<body>
+    <label for="textBoxUrl">URL: </label>
+    <input type="text" id="textBoxUrl" />
+    <br />
+    <button onclick="onButtonClick()">Extract data</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getUrlData(url) {
+            // this matches 'http://' at the beginning
+            var protocolPart = /^(?:([a-z]+):\/\/)?/;
+
+            // this matches a sequence of 1 or more characters, which can be
+            // alphanumeric, dot and hyphen - 'www.devbg.org'
+            var serverPart = /([\w\.\-]+)/;
+
+            // this matches a sequence of 1 or more characters, which can be
+            // alphanumeric, dot, hash, equals, ampersand, plus, minus, per cent,
+            // slash, question mark; this sequence can be missing however
+            var resourcePart = /([\w\.#=&\+\-%\/\?]+)?$/;
+
+            var pattern = new RegExp(protocolPart.source + serverPart.source + resourcePart.source);
+
+            var match = url.match(pattern);
+
+            return {
+                protocol: match[1],
+                server: match[2],
+                resource: match[3]
+            };
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var url = jsConsole.read("#textBoxUrl");
+
+            if (url.trim().length === 0) {
+                jsConsole.writeLine("Enter a non-empty string.");
+            }
+            else {
+                var urlData = getUrlData(url.trim());
+
+                jsConsole.writeLine(sprintf("Protocol: %s<br />Server: %s<br />Resource: %s",
+                urlData.protocol, urlData.server, urlData.resource));
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Format string</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function formatString(value, arg0, arg1, arg2) {
+            var result = value;
+
+            for (var i = 0, len = arguments.length; i < len - 1; i++) {
+                var pattern = "\\{" + i + "\\}";
+                var regex = new RegExp(pattern, "g");
+
+                result = result.replace(regex, arguments[i + 1]);
+            }
+
+            return result;
+        }
+
+        (function () {
+            //var formattedString = formatString("Hail {0}!", "Caesar");
+
+            var format = "{0}, {1}, {0} text {2}";
+            var formattedString = formatString(format, 1, "Claudius", "Nero");
+
+            jsConsole.writeLine(formattedString);
+        })();
+    </script>
+</body>
+</html>

@@ -22,7 +22,10 @@ function StringBuilder() {
     // Appends a formatted string to the stringbuilder's internal array.  
     this.appendFormat = function (value, arg0, arg1, arg2) {
         for (var i = 0, len = arguments.length; i < len - 1; i++) {
-            value = value.replace("{" + i + "}", arguments[i + 1]);
+            var pattern = "\\{" + i + "\\}";
+            var regex = new RegExp(pattern, "g");
+
+            value = value.replace(regex, arguments[i + 1]);
         }
 
         return this.append(value);

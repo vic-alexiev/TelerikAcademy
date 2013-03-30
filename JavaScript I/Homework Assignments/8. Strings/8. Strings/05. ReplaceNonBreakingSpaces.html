@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Replace non-breaking spaces</title>
+</head>
+<body>
+    <label for="textAreaContent">Text:</label>
+    <textarea style="width: 300px; height: 100px" id="textAreaContent"></textarea>
+    <br />
+    <button onclick="onButtonClick()">Replace non-breaking spaces</button>
+    <br />
+    <label for="textAreaResult">Result:</label>
+    <textarea style="width: 300px; height: 100px" id="textAreaResult"></textarea>
+    <br />
+    <script>
+        function replaceNonBreakingSpaces(input, newValue) {
+            var textSize = input.length;
+            var result = "";
+            for (var i = 0; i < textSize; i++) {
+                if (input[i] === " ") {
+                    result += newValue;
+                }
+                else {
+                    result += input[i];
+                }
+            }
+
+            return result;
+        }
+
+        function onButtonClick() {
+            var contentArea = document.querySelector("#textAreaContent");
+
+            var input = contentArea.value;
+
+            if (input.length > 0) {
+                var resultArea = document.querySelector("#textAreaResult");
+                resultArea.value = replaceNonBreakingSpaces(input, "&nbsp;");
+            }
+            else {
+                alert("Enter some text.");
+            }
+        }
+    </script>
+</body>
+</html>

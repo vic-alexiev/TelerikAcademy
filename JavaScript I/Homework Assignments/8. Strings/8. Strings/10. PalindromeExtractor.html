@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Palindrome extractor</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="textAreaContent">Text: </label>
+    <textarea style="width: 300px; height: 100px" id="textAreaContent"></textarea>
+    <br />
+    <button onclick="onButtonClick()">Extract palindromes</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getPalindromes(input) {
+            var regex = /\b\w+\b/g;
+
+            var matches = [];
+            var match;
+            while (match = regex.exec(input)) {
+
+                if (match[0] === match[0].split("").reverse().join("")) {
+                    matches.push(match[0]);
+                }
+            }
+
+            return matches;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var input = jsConsole.read("#textAreaContent");
+
+            if (input.trim().length === 0) {
+                jsConsole.writeLine("Enter a some text.");
+            }
+            else {
+                var palindromes = getPalindromes(input);
+
+                if (palindromes.length > 0) {
+                    jsConsole.writeLine("Palindromes:");
+                    for (var i = 0; i < palindromes.length; i++) {
+                        jsConsole.writeLine(palindromes[i]);
+                    }
+                }
+                else {
+                    jsConsole.writeLine("The text doesn't contain palindromes.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

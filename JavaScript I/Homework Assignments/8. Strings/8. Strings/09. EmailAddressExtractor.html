@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Email address extractor</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+</head>
+<body>
+    <label for="textAreaContent">Text: </label>
+    <textarea style="width: 300px; height: 100px" id="textAreaContent"></textarea>
+    <br />
+    <button onclick="onButtonClick()">Extract emails</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function getEmailAddresses(input) {
+            var regex = /\b\w+[\w\-]*(\.\w+[\w\-]*)*@[a-z0-9]+[a-z0-9-]*(\.[a-z0-9]+[a-z0-9-]*)*(\.[a-z]{2,6})\b/g;
+
+            var matches = [];
+            var match;
+            while (match = regex.exec(input)) {
+                matches.push(match[0]);
+            }
+
+            return matches;
+        }
+
+        function onButtonClick() {
+            jsConsole.clear();
+
+            var input = jsConsole.read("#textAreaContent");
+
+            if (input.trim().length === 0) {
+                jsConsole.writeLine("Enter a some text.");
+            }
+            else {
+                var emails = getEmailAddresses(input);
+
+                if (emails.length > 0) {
+                    jsConsole.writeLine("Email addresses:");
+                    for (var i = 0; i < emails.length; i++) {
+                        jsConsole.writeLine(emails[i]);
+                    }
+                }
+                else {
+                    jsConsole.writeLine("The text doesn't contain valid email addresses.");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

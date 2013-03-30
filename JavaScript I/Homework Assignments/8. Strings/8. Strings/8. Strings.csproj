@@ -61,6 +61,14 @@
     <Content Include="02. ExpressionChecker.html" />
     <Content Include="03. GetStringOccurrences.html" />
     <Content Include="04. ChangeTextCasing.html" />
+    <Content Include="05. ReplaceNonBreakingSpaces.html" />
+    <Content Include="06. ExtractHtmlFileData.html" />
+    <Content Include="07. ExtractUrlData.html" />
+    <Content Include="08. AnchorTagsReplacement.html" />
+    <Content Include="09. EmailAddressExtractor.html" />
+    <Content Include="10. PalindromeExtractor.html" />
+    <Content Include="11. FormatString.html" />
+    <Content Include="12. CreateHtmlUnorderedListUsingTemplate.html" />
     <Content Include="scripts\js-console.js" />
     <Content Include="scripts\sprintf-0.7-beta1.js" />
     <Content Include="scripts\StringBuilder.js" />

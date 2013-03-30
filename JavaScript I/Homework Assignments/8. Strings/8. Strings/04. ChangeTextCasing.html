@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Change text casing</title>
+    <script src="scripts/StringBuilder.js"></script>
+</head>
+<body onload="onBodyLoad()">
+    <label for="textAreaContent">Text:</label>
+    <textarea style="width: 300px; height: 100px" id="textAreaContent"></textarea>
+    <br />
+    <button onclick="onButtonClick()">Change casing</button>
+    <br />
+    <label for="textAreaResult">Result:</label>
+    <textarea style="width: 300px; height: 100px" id="textAreaResult"></textarea>
+    <br />
+    <script>
+        function onBodyLoad() {
+            if (!String.prototype.toMixedCase) {
+                String.prototype.toMixedCase = function myfunction() {
+                    if (this == null) {
+                        throw new TypeError();
+                    }
+
+                    var casing;
+                    var size = this.length;
+                    var builder = new StringBuilder();
+
+                    for (var i = 0; i < size; i++) {
+                        casing = getRandomInt(0, 1);
+                        if (casing === 0) {
+                            builder.append(this[i].toLowerCase());
+                        }
+                        else {
+                            builder.append(this[i].toUpperCase());
+                        }
+                    }
+
+                    return builder.toString();
+                }
+            }
+        }
+
+        // Returns a random integer between min and max
+        // Using Math.round() will give you a non-uniform distribution!
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // works only for non-nested tags
+        function changeTextCasing1(input) {
+            var upperCasePattern = /<upcase>([^<>]+)<\/upcase>/g;
+            var lowerCasePattern = /<lowcase>([^<>]+)<\/lowcase>/g;
+            var mixedCasePattern = /<mixcase>([^<>]+)<\/mixcase>/g;
+
+            var result = input;
+
+            result = result.replace(upperCasePattern, function (match, capture) {
+                return capture.toUpperCase();
+            });
+
+            result = result.replace(lowerCasePattern, function (match, capture) {
+                return capture.toLowerCase();
+            });
+
+            result = result.replace(mixedCasePattern, function (match, capture) {
+                return capture.toMixedCase();
+            });
+
+            return result;
+        }
+
+        function changeTextCasing2(input) {
+            var builder = new StringBuilder();
+
+            // an associative array of functions
+            // which can be invoked using the property name
+            var functions = {
+                upcase: function (item) {
+                    return item.toUpperCase();
+                },
+                lowcase: function (item) {
+                    return item.toLowerCase();
+                },
+                mixcase: function (item) {
+                    return item.toMixedCase();
+                },
+            };
+
+            var textSize = input.length;
+            var index = -1;
+            var modes = [];
+            var modesLength = 0;
+
+            while (index < textSize - 1) {
+                index++;
+
+                if (input[index] === "<") {
+                    switch (input[index + 1]) {
+                        case "u":
+                            {
+                                modes[modesLength++] = "upcase";
+                                break;
+                            }
+                        case "l":
+                            {
+                                modes[modesLength++] = "lowcase";
+                                break;
+                            }
+                        case "m":
+                            {
+                                modes[modesLength++] = "mixcase";
+                                break;
+                            }
+                        case "/":
+                            {
+                                modes.length--;
+                                modesLength--;
+                            }
+                    }
+
+                    index = input.indexOf(">", index);
+                }
+                else {
+                    if (modesLength === 0) {
+                        builder.append(input[index]);
+                    }
+                    else {
+                        // invoke the function that is at the top of the stack
+                        // for the current input character
+                        var modeFunction = functions[modes[modesLength - 1]];
+                        builder.append(modeFunction(input[index]));
+                    }
+                }
+            }
+
+            return builder.toString();
+        }
+
+        function onButtonClick() {
+            var contentArea = document.querySelector("#textAreaContent");
+
+            var input = contentArea.value.trim();
+
+            if (input.length > 0) {
+                var resultArea = document.querySelector("#textAreaResult");
+                resultArea.value = changeTextCasing2(input);
+            }
+            else {
+                alert("Enter some text.");
+            }
+        }
+    </script>
+</body>
+</html>

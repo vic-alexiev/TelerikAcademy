@@ -3,6 +3,7 @@
 <head>
     <title>Create an unordered list</title>
     <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/StringBuilder.js"></script>
 </head>
 <body onload="onBodyLoad()">
     <div data-type="template" id="list-item" style="display: none">
@@ -13,20 +14,22 @@
     <script>
         function onBodyLoad(input) {
             var template = document.getElementById("list-item").innerHTML;
+            template = template.trim();
+
             var people = [
                 { name: "Ritchie Blackmore", age: 67 },
                 { name: "Candice Night", age: 41 },
                 { name: "David Coverdale", age: 61 }
             ];
 
-            var ul = generateUnorderedList(people, template.trim());
+            var pattern = /-{(\w+)}-/g;
+
+            var ul = createUnorderedList(people, template, pattern);
             jsConsole.writeLine(ul);
         }
 
-        function createListItem(obj, template) {
+        function createListItem(obj, template, pattern) {
             var result = "<li>";
-
-            var pattern = /-{(\w+)}-/g;
 
             result += template.replace(pattern, function (match, capture) { return obj[capture]; });
 
@@ -34,20 +37,20 @@
             return result;
         }
 
-        function generateUnorderedList(objects, template) {
-            var list = [];
-            list.push("<ul>");
+        function createUnorderedList(objects, template, pattern) {
+            var ulBuilder = new StringBuilder();
+            ulBuilder.append("<ul>");
 
             var len = objects.length;
 
             for (var index = 0; index < len; index++) {
-                var listItem = createListItem(objects[index], template);
-                list.push(listItem);
+                var listItem = createListItem(objects[index], template, pattern);
+                ulBuilder.append(listItem);
             }
 
-            list.push("</ul>");
+            ulBuilder.append("</ul>");
 
-            return list.join("");
+            return ulBuilder.toString();
         }
     </script>
 </body>

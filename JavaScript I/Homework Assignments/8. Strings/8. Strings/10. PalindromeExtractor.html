@@ -31,9 +31,10 @@
             jsConsole.clear();
 
             var input = jsConsole.read("#textAreaContent");
+            input = input.trim();
 
-            if (input.trim().length === 0) {
-                jsConsole.writeLine("Enter a some text.");
+            if (input.length === 0) {
+                jsConsole.writeLine("Enter some text.");
             }
             else {
                 var palindromes = getPalindromes(input);

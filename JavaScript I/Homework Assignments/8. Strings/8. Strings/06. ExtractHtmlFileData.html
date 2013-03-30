@@ -47,8 +47,9 @@
             jsConsole.clear();
 
             var input = jsConsole.read("#textAreaHtml");
+            input = input.trim();
 
-            if (input.trim().length === 0) {
+            if (input.length === 0) {
                 jsConsole.writeLine("Enter a non-empty string.");
             }
             else {

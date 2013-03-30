@@ -16,7 +16,7 @@
     <script>
         function onBodyLoad() {
             if (!String.prototype.toMixedCase) {
-                String.prototype.toMixedCase = function myfunction() {
+                String.prototype.toMixedCase = function () {
                     if (this == null) {
                         throw new TypeError();
                     }
@@ -36,7 +36,7 @@
                     }
 
                     return builder.toString();
-                }
+                };
             }
         }
 
@@ -69,6 +69,8 @@
             return result;
         }
 
+        // the rule for the nested tags is that the internal tags
+        // overrule the casing specified by their parent
         function changeTextCasing2(input) {
             var builder = new StringBuilder();
 
@@ -78,12 +80,14 @@
                 upcase: function (item) {
                     return item.toUpperCase();
                 },
+
                 lowcase: function (item) {
                     return item.toLowerCase();
                 },
+
                 mixcase: function (item) {
                     return item.toMixedCase();
-                },
+                }
             };
 
             var textSize = input.length;

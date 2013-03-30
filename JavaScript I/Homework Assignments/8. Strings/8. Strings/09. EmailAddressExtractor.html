@@ -28,9 +28,10 @@
             jsConsole.clear();
 
             var input = jsConsole.read("#textAreaContent");
+            input = input.trim();
 
-            if (input.trim().length === 0) {
-                jsConsole.writeLine("Enter a some text.");
+            if (input.length === 0) {
+                jsConsole.writeLine("Enter some text containing email addresses.");
             }
             else {
                 var emails = getEmailAddresses(input);

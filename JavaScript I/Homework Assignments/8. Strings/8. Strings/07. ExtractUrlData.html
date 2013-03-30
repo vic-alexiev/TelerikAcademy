@@ -41,12 +41,13 @@
             jsConsole.clear();
 
             var url = jsConsole.read("#textBoxUrl");
+            url = url.trim();
 
-            if (url.trim().length === 0) {
+            if (url.length === 0) {
                 jsConsole.writeLine("Enter a non-empty string.");
             }
             else {
-                var urlData = getUrlData(url.trim());
+                var urlData = getUrlData(url);
 
                 jsConsole.writeLine(sprintf("Protocol: %s<br />Server: %s<br />Resource: %s",
                 urlData.protocol, urlData.server, urlData.resource));

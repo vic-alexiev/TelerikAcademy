@@ -40,8 +40,11 @@
             var content = jsConsole.read("#textAreaContent");
             var stringToFind = jsConsole.read("#textBoxString");
 
-            if (content) {
-                if (stringToFind) {
+            content = content.trim();
+            stringToFind = stringToFind.trim();
+
+            if (content.length > 0) {
+                if (stringToFind.length > 0) {
                     var occurrences = getStringOccurrences(content, stringToFind, true);
 
                     jsConsole.writeLine(sprintf("The string '%s' occurs %d times in the text.", stringToFind, occurrences));

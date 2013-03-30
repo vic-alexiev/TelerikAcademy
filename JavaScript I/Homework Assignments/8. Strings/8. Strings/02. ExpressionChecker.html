@@ -13,18 +13,18 @@
     <div id="js-console"></div>
     <script src="scripts/js-console.js"></script>
     <script>
-        function isBalanced(expression) {
+        function isBalanced(expression, leftBracket, rightBracket) {
             var len = expression.length;
             var level = 0;
 
             for (var i = 0; i < len; i++) {
-                if (expression[i] === ')') {
+                if (expression[i] === rightBracket) {
                     if (level === 0) {
                         return false;
                     }
                     level--;
                 }
-                else if (expression[i] === '(') {
+                else if (expression[i] === leftBracket) {
                     level++;
                 }
             }
@@ -36,12 +36,13 @@
             jsConsole.clear();
 
             var expression = jsConsole.read("#textBoxExpression");
+            expression = expression.trim();
 
-            if (expression.trim().length === 0) {
-                jsConsole.writeLine("Enter a non-empty string.");
+            if (expression.length === 0) {
+                jsConsole.writeLine("Enter an expression containing parentheses.");
             }
             else {
-                var balanced = isBalanced(expression);
+                var balanced = isBalanced(expression, "(", ")");
                 jsConsole.writeLine(sprintf("This expression is%s balanced.", balanced ? "" : " not"));
             }
         }

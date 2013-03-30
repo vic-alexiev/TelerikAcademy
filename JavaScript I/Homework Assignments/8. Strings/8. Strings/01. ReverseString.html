@@ -44,12 +44,13 @@
             jsConsole.clear();
 
             var input = jsConsole.read("#textBoxString");
+            input = input.trim();
 
-            if (input.trim().length === 0) {
+            if (input.length === 0) {
                 jsConsole.writeLine("Enter a non-empty string.");
             }
             else {
-                var inputReversed = reverseString2(input);
+                var inputReversed = reverseString3(input);
                 jsConsole.writeLine(inputReversed);
             }
         }

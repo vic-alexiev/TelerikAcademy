@@ -14,6 +14,13 @@
     <textarea style="width: 300px; height: 100px" id="textAreaResult"></textarea>
     <br />
     <script>
+        function fix(str) {
+            if (str) {
+                return str;
+            }
+            return "";
+        }
+
         function replaceAnchorTags(input) {
             // this matches the 'a href=' part
             var aHrefPart = /<\s*a\s[^>]*?\bhref\s*=\s*/;
@@ -27,7 +34,7 @@
             var anchorPattern = new RegExp(aHrefPart.source + urlPart.source + linkTextPart.source, "gi");
 
             var result = input.replace(anchorPattern, function (match, url1, url2, url3, linkText) {
-                var url = url1 + url2 + url3;
+                var url = fix(url1) + fix(url2) + fix(url3);
                 return sprintf("[URL=%s]%s[/URL]", url, linkText);
             });
 
@@ -37,9 +44,9 @@
         function onButtonClick() {
             var htmlArea = document.querySelector("#textAreaHtml");
 
-            var input = htmlArea.value;
+            var input = htmlArea.value.trim();
 
-            if (input.trim().length === 0) {
+            if (input.length === 0) {
                 alert("Enter some text.");
             }
             else {

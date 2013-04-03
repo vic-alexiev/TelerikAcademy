@@ -31,13 +31,17 @@
             if (people.length === 0) return null;
             if (people.length === 1) return people[0];
 
-            var youngest = new Person("", "", Number.MAX_VALUE);
+            var minAge = Number.MAX_VALUE;
+            var minIndex = 0;
 
             people.forEach(function (element, index, array) {
-                if (element.age < youngest.age) youngest = element;
+                if (element.age < minAge) {
+                    minAge = element.age;
+                    minIndex = index;
+                }
             });
 
-            return youngest;
+            return people[minIndex];
         }
 
         function getYoungestPerson3(people, comparer) {
@@ -64,9 +68,9 @@
             people.push(new Person("Bjarne", "Stroustrup", 62));
 
             // I solution
-            var youngestPerson = getYoungestPerson1(people);
+            //var youngestPerson = getYoungestPerson1(people);
             // II solution
-            //var youngestPerson = getYoungestPerson2(people);
+            var youngestPerson = getYoungestPerson2(people);
             // III solution
             //var youngestPerson = getYoungestPerson3(people, function (p, q) { return (p.age < q.age ? p : q); });
 

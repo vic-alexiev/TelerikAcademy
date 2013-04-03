@@ -16,21 +16,42 @@
     <script>
         (function () {
             if (!Array.prototype.remove) {
+                // I solution - the result is returned as another object
+                //Array.prototype.remove = function (value) {
+                //    if (this == null) {
+                //        throw new TypeError();
+                //    }
+
+                //    var result = [];
+
+                //    var size = this.length;
+                //    for (var i = 0; i < size; i++) {
+                //        if (this[i] !== value) {
+                //            result.push(this[i]);
+                //        }
+                //    }
+
+                //    return result;
+                //}
+
+                // II solution - the result is kept in the same object
                 Array.prototype.remove = function (value) {
                     if (this == null) {
                         throw new TypeError();
                     }
 
-                    var result = [];
 
                     var size = this.length;
+
                     for (var i = 0; i < size; i++) {
-                        if (this[i] !== value) {
-                            result.push(this[i]);
+                        if (this[i] === value) {
+                            this.splice(i, 1);
+                            size--;
+                            i--;
                         }
                     }
 
-                    return result;
+                    return this;
                 }
             }
         })();
@@ -43,9 +64,13 @@
 
             var elementToRemove = jsConsole.read("#textBoxElementToRemove");
 
-            var result = elements.remove(elementToRemove);
+            // I solution
+            //var result = elements.remove(elementToRemove);
+            //jsConsole.writeLine("Result: " + result);
 
-            jsConsole.writeLine("Result: " + result);
+            // II solution
+            elements.remove(elementToRemove);
+            jsConsole.writeLine("Result: " + elements);
         }
     </script>
 </body>

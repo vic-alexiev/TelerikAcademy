@@ -11,9 +11,9 @@ namespace Events
         /// <summary>
         /// Creates an event and adds it in the list.
         /// </summary>
-        /// <param name="dateAndTime"></param>
-        /// <param name="title"></param>
-        /// <param name="location"></param>
+        /// <param name="dateAndTime">The event's date and time.</param>
+        /// <param name="title">The event's title.</param>
+        /// <param name="location">The event's location.</param>
         public void AddEvent(DateTime dateAndTime, string title, string location)
         {
             Event newEvent = new Event(dateAndTime, title, location);
@@ -26,7 +26,7 @@ namespace Events
         /// Deletes all events that have the specified title.
         /// Performs a case-insensitive search.
         /// </summary>
-        /// <param name="titleToDelete"></param>
+        /// <param name="titleToDelete">The title to delete.</param>
         public void DeleteEvents(string titleToDelete)
         {
             string title = titleToDelete.ToLower();
@@ -36,6 +36,7 @@ namespace Events
                 removed++;
                 byDateAndTime.Remove(eventToRemove);
             }
+
             byTitle.Remove(title);
             Messages.EventDeleted(removed);
         }
@@ -43,7 +44,7 @@ namespace Events
         /// <summary>
         /// Adds in the output events that have the specified timestamp.
         /// </summary>
-        /// <param name="dateAndTime"></param>
+        /// <param name="dateAndTime">The date and time of the event.</param>
         /// <param name="count">The number of events to be added.</param>
         public void ListEvents(DateTime dateAndTime, int count)
         {

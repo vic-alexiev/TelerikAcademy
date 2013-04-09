@@ -4,6 +4,9 @@ using System.Text;
 
 namespace Events
 {
+    /// <summary>
+    /// A class which represents an event (conference, meeting, lunch, etc.).
+    /// </summary>
     public class Event : IComparable
     {
         #region Private Fields
@@ -16,18 +19,27 @@ namespace Events
 
         #region Properties
 
+        /// <summary>
+        /// Gets the date and time of the event.
+        /// </summary>
         public DateTime DateAndTime
         {
             get { return dateAndTime; }
             private set { dateAndTime = value; }
         }
 
+        /// <summary>
+        /// Gets the title of the event.
+        /// </summary>
         public string Title
         {
             get { return title; }
             private set { title = value; }
         }
 
+        /// <summary>
+        /// Gets the location of the event.
+        /// </summary>
         public string Location
         {
             get { return location; }
@@ -89,7 +101,7 @@ namespace Events
         /// Returns event data in the following format:
         /// {Date and Time} | {Title} [| {Location}]
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The event data as a string.</returns>
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();

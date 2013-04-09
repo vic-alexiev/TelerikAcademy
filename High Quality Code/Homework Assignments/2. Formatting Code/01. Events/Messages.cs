@@ -22,9 +22,14 @@ namespace Events
 
         public static void EventDeleted(int count)
         {
-            if (count == 0) NoEventsFound();
-
-            else output.AppendFormat("{0} event(s) deleted{1}", count, Environment.NewLine);
+            if (count == 0)
+            {
+                NoEventsFound();
+            }
+            else
+            {
+                output.AppendFormat("{0} event(s) deleted{1}", count, Environment.NewLine);
+            }
         }
 
         public static void NoEventsFound()

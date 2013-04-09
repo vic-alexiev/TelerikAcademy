@@ -1,8 +1,16 @@
 ﻿using Events;
 using System;
 
-class EventsDemo
+/// <summary>
+/// A class which demonstrates the use of events - adding an event 
+/// to the event holder, deleting an event and displaying all 
+/// events in the event holder.
+/// </summary>
+internal class EventsDemo
 {
+    /// <summary>
+    /// An EventHolder object which keeps the events.
+    /// </summary>
     private static EventHolder events = new EventHolder();
 
     /// <summary>
@@ -18,7 +26,11 @@ class EventsDemo
     /// </summary>
     static void Main()
     {
-        while (ExecuteNextCommand()) { }
+        while (ExecuteNextCommand())
+        {
+            // nothing to do
+        }
+
         Console.WriteLine(Messages.Output);
     }
 
@@ -78,8 +90,12 @@ class EventsDemo
         events.AddEvent(dateAndTime, title, location);
     }
 
-    private static void GetParameters(string commandForExecution, string commandType,
-        out DateTime dateAndTime, out string eventTitle, out string eventLocation)
+    private static void GetParameters(
+        string commandForExecution,
+        string commandType,
+        out DateTime dateAndTime,
+        out string eventTitle,
+        out string eventLocation)
     {
         dateAndTime = GetDateAndTime(commandForExecution, commandType);
 
@@ -99,6 +115,12 @@ class EventsDemo
         }
     }
 
+    /// <summary>
+    /// Extracts the date and time from the command specified.
+    /// </summary>
+    /// <param name="command">The command text.</param>
+    /// <param name="commandType">The command type.</param>
+    /// <returns>The date and time as a single DateTime object.</returns>
     private static DateTime GetDateAndTime(string command, string commandType)
     {
         DateTime dateAndTime = DateTime.Parse(command.Substring(commandType.Length + 1, 20));

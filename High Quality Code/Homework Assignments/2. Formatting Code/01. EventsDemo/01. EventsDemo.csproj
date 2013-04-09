@@ -45,9 +45,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\01. Events\01. Events.csproj">
       <Project>{64b59957-0086-47f4-ad69-6771a5bf487f}</Project>
       <Name>01. Events</Name>

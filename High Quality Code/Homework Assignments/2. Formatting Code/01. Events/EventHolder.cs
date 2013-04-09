@@ -5,8 +5,8 @@ namespace Events
 {
     public class EventHolder
     {
-        MultiDictionary<string, Event> byTitle = new MultiDictionary<string, Event>(true);
-        OrderedBag<Event> byDateAndTime = new OrderedBag<Event>();
+        private MultiDictionary<string, Event> byTitle = new MultiDictionary<string, Event>(true);
+        private OrderedBag<Event> byDateAndTime = new OrderedBag<Event>();
 
         /// <summary>
         /// Creates an event and adds it in the list.
@@ -49,19 +49,19 @@ namespace Events
         {
             OrderedBag<Event>.View eventsToShow = byDateAndTime.RangeFrom(new Event(dateAndTime, String.Empty, String.Empty), true);
 
-            int showed = 0;
+            int shown = 0;
             foreach (var eventToShow in eventsToShow)
             {
-                if (showed == count)
+                if (shown == count)
                 {
                     break;
                 }
 
                 Messages.PrintEvent(eventToShow);
-                showed++;
+                shown++;
             }
 
-            if (showed == 0)
+            if (shown == 0)
             {
                 Messages.NoEventsFound();
             }

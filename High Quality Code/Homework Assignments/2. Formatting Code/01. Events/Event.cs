@@ -85,6 +85,11 @@ namespace Events
             }
         }
 
+        /// <summary>
+        /// Returns event data in the following format:
+        /// {Date and Time} | {Title} [| {Location}]
+        /// </summary>
+        /// <returns></returns>
         public override string ToString()
         {
             StringBuilder stringBuilder = new StringBuilder();

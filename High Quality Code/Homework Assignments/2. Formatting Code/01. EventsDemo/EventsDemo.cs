@@ -3,16 +3,16 @@ using System;
 
 class EventsDemo
 {
-    static EventHolder events = new EventHolder();
+    private static EventHolder events = new EventHolder();
 
     /// <summary>
     /// Executes commands from the command line.
     /// <example>
-    /// AddEvent 2013-04-09T12:54:12 | High quality code lecture | Telerik Academy
-    /// AddEvent 2013-04-09T12:54:12 | JS lecture | Telerik Academy
-    /// AddEvent 2013-04-09T12:54:12 | CMS lecture | Telerik Academy
+    /// AddEvent 2013-04-09 13:00:00 | High quality code lecture | Telerik Academy
+    /// AddEvent 2013-04-09 09:00:00 | JS lecture | Telerik Academy
+    /// AddEvent 2013-04-09 10:00:00 | CMS lecture | Telerik Academy
     /// DeleteEvents CMS lecture
-    /// ListEvents 2013-04-09T12:54:12 | 10
+    /// ListEvents 2013-04-09 12:54:00 | 10
     /// End
     /// </example>
     /// </summary>

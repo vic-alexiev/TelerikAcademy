@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. TelerikStringExtensions", "01. TelerikStringExtensions\01. TelerikStringExtensions.csproj", "{3FFE9411-0D88-4879-A1C3-0BCA4809C0EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. TelerikStringExtensionsDemo", "01. TelerikStringExtensionsDemo\01. TelerikStringExtensionsDemo.csproj", "{766BE4DB-F9D8-4AC8-BC80-02462E8AF1FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. TelerikStringExtensionsUnitTests", "01. TelerikStringExtensionsUnitTests\01. TelerikStringExtensionsUnitTests.csproj", "{76740552-A9C4-4780-A9D1-CD0C0DDC18D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3FFE9411-0D88-4879-A1C3-0BCA4809C0EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFE9411-0D88-4879-A1C3-0BCA4809C0EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFE9411-0D88-4879-A1C3-0BCA4809C0EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFE9411-0D88-4879-A1C3-0BCA4809C0EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766BE4DB-F9D8-4AC8-BC80-02462E8AF1FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766BE4DB-F9D8-4AC8-BC80-02462E8AF1FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766BE4DB-F9D8-4AC8-BC80-02462E8AF1FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766BE4DB-F9D8-4AC8-BC80-02462E8AF1FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76740552-A9C4-4780-A9D1-CD0C0DDC18D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76740552-A9C4-4780-A9D1-CD0C0DDC18D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76740552-A9C4-4780-A9D1-CD0C0DDC18D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76740552-A9C4-4780-A9D1-CD0C0DDC18D7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

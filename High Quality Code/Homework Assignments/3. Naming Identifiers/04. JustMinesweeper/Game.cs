@@ -428,6 +428,7 @@
             }
             while (command != "exit");
 
+            PrintCopyrightInfo();
             Console.Read();
         }
     }

@@ -4,8 +4,8 @@
     using System.Text;
 
     /// <summary>
-    /// Contains the messages which are created when adding/deleting
-    /// <see cref="Event"/>s in the <see cref="EventHolder"/>.
+    /// Keeps a log of the messages which are created when adding/deleting
+    /// <see cref="Event"/>s in an event holder.
     /// </summary>
     public static class Messages
     {

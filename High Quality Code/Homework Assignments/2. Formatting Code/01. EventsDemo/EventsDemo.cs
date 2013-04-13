@@ -24,7 +24,7 @@ internal class EventsDemo
     /// End
     /// </example>
     /// </summary>
-    static void Main()
+    private static void Main()
     {
         while (ExecuteNextCommand())
         {
@@ -69,7 +69,7 @@ internal class EventsDemo
         int pipeIndex = command.IndexOf('|');
         string countAsString = command.Substring(pipeIndex + 1);
 
-        int count = Int32.Parse(countAsString);
+        int count = int.Parse(countAsString);
 
         events.ListEvents(dateAndTime, count);
     }
@@ -106,7 +106,7 @@ internal class EventsDemo
         if (firstPipeIndex == lastPipeIndex)
         {
             eventTitle = commandForExecution.Substring(firstPipeIndex + 1).Trim();
-            eventLocation = String.Empty;
+            eventLocation = string.Empty;
         }
         else
         {

@@ -1,9 +1,9 @@
-﻿using System;
-using System.IO;
-using System.Text;
-
-namespace Events
+﻿namespace Events
 {
+    using System;
+    using System.IO;
+    using System.Text;
+
     /// <summary>
     /// A class which represents an event (conference, meeting, lunch, etc.).
     /// </summary>
@@ -17,39 +17,14 @@ namespace Events
 
         #endregion
 
-        #region Properties
-
-        /// <summary>
-        /// Gets the date and time of the event.
-        /// </summary>
-        public DateTime DateAndTime
-        {
-            get { return dateAndTime; }
-            private set { dateAndTime = value; }
-        }
-
-        /// <summary>
-        /// Gets the title of the event.
-        /// </summary>
-        public string Title
-        {
-            get { return title; }
-            private set { title = value; }
-        }
-
-        /// <summary>
-        /// Gets the location of the event.
-        /// </summary>
-        public string Location
-        {
-            get { return location; }
-            private set { location = value; }
-        }
-
-        #endregion
-
         #region Constructors
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="Event"/> class.
+        /// </summary>
+        /// <param name="dateAndTime">The date and time of the event.</param>
+        /// <param name="title">The title of the event.</param>
+        /// <param name="location">The location of the event.</param>
         public Event(DateTime dateAndTime, string title, string location)
         {
             this.DateAndTime = dateAndTime;
@@ -59,8 +34,47 @@ namespace Events
 
         #endregion
 
+        #region Properties
+
+        /// <summary>
+        /// Gets/sets the date and time of the event.
+        /// </summary>
+        /// <value>Serves as a wrapper of the dateAndTime field.</value>
+        public DateTime DateAndTime
+        {
+            get { return this.dateAndTime; }
+            private set { this.dateAndTime = value; }
+        }
+
+        /// <summary>
+        /// Gets/sets the title of the event.
+        /// </summary>
+        /// <value>Serves as a wrapper of the title field.</value>
+        public string Title
+        {
+            get { return this.title; }
+            private set { this.title = value; }
+        }
+
+        /// <summary>
+        /// Gets/sets the location of the event.
+        /// </summary>
+        /// <value>Serves as a wrapper of the location field.</value>
+        public string Location
+        {
+            get { return this.location; }
+            private set { this.location = value; }
+        }
+
+        #endregion
+
         #region Public Methods
 
+        /// <summary>
+        /// Overrides the <see cref="System.IComparable"/> method.
+        /// </summary>
+        /// <param name="obj">The object to compare this instance with.</param>
+        /// <returns>A value that indicates the relative order of the objects being compared.</returns>
         public int CompareTo(object obj)
         {
             if (obj == null)
@@ -110,7 +124,7 @@ namespace Events
 
             stringBuilder.Append(" | " + this.Title);
 
-            if (!String.IsNullOrWhiteSpace(this.Location))
+            if (!string.IsNullOrWhiteSpace(this.Location))
             {
                 stringBuilder.Append(" | " + this.Location);
             }

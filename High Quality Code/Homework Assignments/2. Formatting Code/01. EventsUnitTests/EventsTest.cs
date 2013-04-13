@@ -1,9 +1,9 @@
-﻿using Events;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-
-namespace EventsUnitTests
+﻿namespace EventsUnitTests
 {
+    using Events;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using System;
+
     [TestClass]
     public class EventsTest
     {
@@ -38,7 +38,7 @@ namespace EventsUnitTests
         [TestMethod]
         public void TestEventToString2()
         {
-            Event seminar = new Event(new DateTime(2013, 4, 9, 9, 0, 0), "Algorithms & Data Structures", String.Empty);
+            Event seminar = new Event(new DateTime(2013, 4, 9, 9, 0, 0), "Algorithms & Data Structures", string.Empty);
             Assert.AreEqual("2013-04-09T09:00:00 | Algorithms & Data Structures", seminar.ToString());
         }
 

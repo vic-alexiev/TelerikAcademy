@@ -1,8 +1,11 @@
-﻿using System;
-using Wintellect.PowerCollections;
-
-namespace Events
+﻿namespace Events
 {
+    using System;
+    using Wintellect.PowerCollections;
+
+    /// <summary>
+    /// Represents a collection of <see cref="Event"/> objects.
+    /// </summary>
     public class EventHolder
     {
         private MultiDictionary<string, Event> byTitle = new MultiDictionary<string, Event>(true);
@@ -17,8 +20,8 @@ namespace Events
         public void AddEvent(DateTime dateAndTime, string title, string location)
         {
             Event newEvent = new Event(dateAndTime, title, location);
-            byTitle.Add(title.ToLower(), newEvent);
-            byDateAndTime.Add(newEvent);
+            this.byTitle.Add(title.ToLower(), newEvent);
+            this.byDateAndTime.Add(newEvent);
             Messages.EventAdded();
         }
 
@@ -31,13 +34,13 @@ namespace Events
         {
             string title = titleToDelete.ToLower();
             int removed = 0;
-            foreach (var eventToRemove in byTitle[title])
+            foreach (var eventToRemove in this.byTitle[title])
             {
                 removed++;
-                byDateAndTime.Remove(eventToRemove);
+                this.byDateAndTime.Remove(eventToRemove);
             }
 
-            byTitle.Remove(title);
+            this.byTitle.Remove(title);
             Messages.EventDeleted(removed);
         }
 
@@ -48,7 +51,7 @@ namespace Events
         /// <param name="count">The number of events to be added.</param>
         public void ListEvents(DateTime dateAndTime, int count)
         {
-            OrderedBag<Event>.View eventsToShow = byDateAndTime.RangeFrom(new Event(dateAndTime, String.Empty, String.Empty), true);
+            OrderedBag<Event>.View eventsToShow = this.byDateAndTime.RangeFrom(new Event(dateAndTime, string.Empty, string.Empty), true);
 
             int shown = 0;
             foreach (var eventToShow in eventsToShow)

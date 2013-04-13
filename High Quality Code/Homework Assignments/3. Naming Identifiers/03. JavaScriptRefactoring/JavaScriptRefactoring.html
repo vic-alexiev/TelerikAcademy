@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JavaScript Refactoring</title>
+</head>
+<body>
+    <input type="button" title="Just do it!" value="Click me!" onclick="onButtonClick()" />
+</body>
+<script>
+    function onButtonClick(event) {
+        var browserCodeName = window.navigator.appCodeName;
+        if (browserCodeName === "Mozilla") {
+            alert("This is Mozilla");
+        } else {
+            alert("This is not Mozilla");
+        }
+    }
+</script>
+</html>

@@ -211,12 +211,12 @@
 
         /// <summary>
         /// Returns a substring which is between <paramref name="startString"/>
-        /// and <paramref name="endString"/> searching from <paramref name="startFrom"/> index.
+        /// and <paramref name="endString"/>. Search starts from <paramref name="startFrom"/> index.
         /// </summary>
         /// <param name="input">This instance.</param>
         /// <param name="startString">The left delimiter of the result string.</param>
         /// <param name="endString">The right delimiter of the result string.</param>
-        /// <param name="startFrom">The search starting position.</param>
+        /// <param name="startFrom">The start position of the search.</param>
         /// <returns>A string that is equivalent to the substring which is between <paramref name="startString"/>
         /// and <paramref name="endString"/> searching from <paramref name="startFrom"/> or System.String.Empty 
         /// if <paramref name="startString"/> or <paramref name="endString"/> don't occur within this instance.</returns>

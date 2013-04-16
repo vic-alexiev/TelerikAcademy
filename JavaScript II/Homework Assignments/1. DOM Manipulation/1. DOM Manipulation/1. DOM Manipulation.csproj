@@ -66,11 +66,14 @@
     <Content Include="images\collapsed.png" />
     <Content Include="images\expanded.png" />
     <Content Include="resources\sample-tag-cloud.txt" />
+    <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\Polyfill.js" />
     <Content Include="scripts\sizzle.js" />
+    <Content Include="scripts\spectrum.js" />
     <Content Include="scripts\Tree.js" />
     <Content Include="scripts\utils.js" />
     <Content Include="05. TagCloud.html" />
+    <Content Include="styles\spectrum.css" />
     <Content Include="styles\TreeView.css" />
     <Content Include="Web.config" />
   </ItemGroup>

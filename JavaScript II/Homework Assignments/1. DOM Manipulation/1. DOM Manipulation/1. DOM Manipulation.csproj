@@ -74,7 +74,7 @@
     <Content Include="scripts\utils.js" />
     <Content Include="05. TagCloud.html" />
     <Content Include="styles\spectrum.css" />
-    <Content Include="styles\TreeView.css" />
+    <Content Include="styles\Tree.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

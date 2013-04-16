@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tag cloud</title>
+    <script src="scripts/utils.js"></script>
+</head>
+<body>
+    <label for="textAreaTags">Tags: </label>
+    <textarea id="textAreaTags"></textarea>
+    <br />
+    <button onclick="onButtonClick()">Create tag cloud</button>
+    <div id="wrapper"></div>
+    <script>
+        function setElementStyle(element, width, padding, borderWidth, borderColor, borderRadius) {
+            // set the width
+            element.style.width = width + "px";
+
+            // set the padding
+            element.style.padding = padding + "px";
+
+            // set the border
+            element.style.border = borderWidth + "px solid " + borderColor;
+
+            // set the border radius
+            var radiusInPixels = borderRadius + "px";
+
+            element.style.borderRadius = radiusInPixels; // standard
+            element.style.MozBorderRadius = radiusInPixels; // Mozilla
+            element.style.WebkitBorderRadius = radiusInPixels; // WebKit
+        }
+
+        function generateLinkElement(fontSize, text, occurrences) {
+            var link = document.createElement("a");
+
+            link.style.fontSize = fontSize + "px";
+            link.style.textDecoration = "none";
+            link.style.color = generateRandomColor();
+            link.innerHTML = text;
+
+            // set the link attributes
+            link.setAttribute("href", "#");
+            link.setAttribute("title", occurrences + " occurrence(s)");
+
+            return link;
+        }
+
+        function generateTagCloud(tags, minFontSize, maxFontSize) {
+            var tagCloud = document.createElement("div");
+            tagCloud.id = "tagCloud";
+            setElementStyle(tagCloud, 200, 5, 1, "black", 5);
+
+            // keeps how many times each tag occurs in the list
+            var tagsTable = {};
+            var len = tags.length;
+
+            for (var i = 0; i < len; i++) {
+                var key = tags[i].toUpperCase();
+                if (!tagsTable[key]) {
+                    tagsTable[key] = { count: 1, used: false };
+                }
+                else {
+                    tagsTable[key].count++;
+                }
+            }
+
+            // get the occurrences of the least frequent
+            // and most frequent tag
+            var maxCount = Number.MIN_VALUE;
+            var minCount = Number.MAX_VALUE;
+
+            for (var j = 0; j < len; j++) {
+                var key = tags[j].toUpperCase();
+                if (minCount > tagsTable[key].count) {
+                    minCount = tagsTable[key].count;
+                }
+
+                if (maxCount < tagsTable[key].count) {
+                    maxCount = tagsTable[key].count;
+                }
+            }
+
+            // calculate the increment in font size for
+            // the tags which appear more frequently than the
+            // rarest tag and less frequently than the most common tag
+            var fontSizesRange = maxFontSize - minFontSize;
+            var occurrencesRange = maxCount - minCount;
+            var fontSizeIncrement = parseInt(fontSizesRange / occurrencesRange);
+
+            for (var k = 0; k < len; k++) {
+                var key = tags[k].toUpperCase();
+                if (!tagsTable[key].used) {
+                    var fontSize;
+                    if (tagsTable[key].count === minCount) {
+                        fontSize = minFontSize;
+                    }
+                    else if (tagsTable[key].count === maxCount) {
+                        fontSize = maxFontSize;
+                    }
+                    else {
+                        fontSize = minFontSize + (tagsTable[key].count - minCount) * fontSizeIncrement;
+                    }
+
+                    // create a link for each tag
+                    var link = generateLinkElement(fontSize, tags[k], tagsTable[key].count);
+
+                    // add the link to its parent container
+                    tagCloud.appendChild(link);
+
+                    // put a space after each link so that the words
+                    // can be carried over to the next line
+                    var space = document.createTextNode(" ");
+                    tagCloud.appendChild(space);
+
+                    // mark the tag as used
+                    tagsTable[key].used = true;
+                }
+            }
+
+            return tagCloud;
+        }
+
+        // Sample tags can be found in resources/sample-tag-cloud.txt
+        function onButtonClick() {
+            var wrapper = document.getElementById("wrapper");
+
+            // remove the previous tag cloud from the wrapper
+            if (wrapper.hasChildNodes()) {
+                wrapper.removeChild(wrapper.querySelector("#tagCloud"));
+            }
+
+            var tagsAsString = document.getElementById("textAreaTags").value;
+            var tags = tagsAsString.split(",");
+
+            var tagsTrimmed = [];
+
+            for (var i = 0; i < tags.length; i++) {
+                tagsTrimmed.push(tags[i].trim());
+            }
+
+            var tagCloud = generateTagCloud(tagsTrimmed, 17, 42);
+            wrapper.appendChild(tagCloud);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+/*cannot be done via JS in IE*/
+ul {
+    list-style-type: none;
+}

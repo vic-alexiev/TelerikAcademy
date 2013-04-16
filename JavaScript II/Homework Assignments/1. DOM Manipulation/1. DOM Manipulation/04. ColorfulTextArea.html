@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Colorful text area</title>
+    <style>
+        textarea {
+            width: 900px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <label for="fontColorPicker">Font color:</label>
+    <input type="color" id="fontColorPicker" onchange="changeFontColor()" />
+    <br />
+    <label for="backgroundColorPicker">Background color:</label>
+    <input type="color" id="backgroundColorPicker" onchange="changeBackgroundColor()" />
+    <br />
+    <br />
+    <textarea id="content">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu quam non orci facilisis semper.
+        Pellentesque eleifend leo nec ante egestas pharetra. Fusce sagittis, ante cursus congue bibendum, 
+        metus ipsum dignissim magna, vel varius lectus ante et velit. Etiam faucibus faucibus neque. 
+        Pellentesque volutpat vulputate ligula in varius. Nulla vehicula leo vel leo cursus lobortis.
+        Aliquam at justo dolor, rhoncus scelerisque felis. Suspendisse quis diam turpis, a imperdiet sem.
+    </textarea>
+    <script>
+        function changeFontColor() {
+            var fontColor = document.getElementById("fontColorPicker").value;
+            var contentArea = document.getElementById("content");
+            contentArea.style.color = fontColor;
+        }
+
+        function changeBackgroundColor() {
+            var backgroundColor = document.getElementById("backgroundColorPicker").value;
+            var contentArea = document.getElementById("content");
+            contentArea.style.backgroundColor = backgroundColor;
+        }
+    </script>
+</body>
+</html>

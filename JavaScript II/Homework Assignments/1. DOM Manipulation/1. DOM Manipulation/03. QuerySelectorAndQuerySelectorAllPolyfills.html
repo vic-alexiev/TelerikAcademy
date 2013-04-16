@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>querySelector & querySelectorAll shims</title>
+    <!-- I solution -->
+    <!--<script src="scripts/Polyfill.js"></script>-->
+    <!-- II solution -->
+    <script src="scripts/sizzle.js"></script>
+</head>
+<body onload="onBodyLoad()">
+    <header>
+        <nav id="main-nav">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Profile</a>
+                </li>
+                <li>
+                    <a href="#">Friends</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div id="para1" class="para">1. Lorem ipsum dolor sit amet...</div>
+    <div id="para2" class="para">2. Sed ut perspiciatis unde omnis...</div>
+    <script>
+        function addShims() {
+            if (!document.querySelector) {
+                document.querySelector = function (selector) {
+                    return Sizzle(selector)[0];
+                };
+            }
+
+            if (!document.querySelectorAll) {
+                document.querySelectorAll = function (selector) {
+                    return Sizzle(selector);
+                };
+            }
+        }
+
+        function onBodyLoad() {
+            addShims();
+
+            console.log(document.querySelector('#para2').innerHTML);
+            console.log(document.querySelector('ul > li > a').innerHTML);
+
+            var navItems = document.querySelectorAll('ul > li > a');
+            for (var i = 0; i < navItems.length; i++) {
+                console.log(navItems[i].innerHTML)
+            }
+
+            var paragraphs = document.querySelectorAll('.para');
+            for (var i = 0; i < paragraphs.length; i++) {
+                console.log(paragraphs[i].innerHTML)
+            }
+        }
+    </script>
+</body>
+</html>

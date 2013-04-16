@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Divs dial</title>
+    <script src="scripts/utils.js"></script>
+</head>
+<body onload="generateDivs()">
+    <div id="wrapper">
+        <button id="start-button" onclick="onStartButtonClick(event)">Start</button>
+        <button id="stop-button" onclick="onStopButtonClick(event)">Stop</button>
+    </div>
+    <script>
+        var timer;
+        var count = 5;
+        var width = 50;
+        var height = 50;
+        var borderRadius = 30;
+        var centerTop = parseInt((screen.height - 300) / 2);
+        var centerLeft = parseInt((screen.width - 100) / 2);
+        var pathRadius = 120;
+        var minutes = [];
+
+        function moveClockwise(element, centerTop, centerLeft, radius, minutes) {
+            // calculate the coordinates of the element as if it's at the end
+            // of a clock's minute hand
+            var minuteHandAngle = (minutes % 60) * (2 * Math.PI / 60);
+
+            var left = parseInt(centerLeft + radius * Math.sin(minuteHandAngle));
+            element.style.left = left + "px";
+
+            var top = parseInt(centerTop - radius * Math.cos(minuteHandAngle));
+            element.style.top = top + "px";
+        }
+
+        function setElementStyle(element, width, height, borderRadius) {
+            // set the width
+            element.style.width = width + "px";
+
+            // set the height
+            element.style.height = height + "px";
+
+            // set the background color
+            element.style.backgroundColor = generateRandomColor();
+
+            // set the screen position
+            element.style.position = "absolute";
+
+            // set the border radius
+            var radiusInPixels = borderRadius + "px";
+
+            element.style.borderRadius = radiusInPixels; // standard
+            element.style.MozBorderRadius = radiusInPixels; // Mozilla
+            element.style.WebkitBorderRadius = radiusInPixels; // WebKit
+        }
+
+        function generateDivs() {
+            var wrapper = document.getElementById("wrapper");
+
+            var initialMinutes = 0;
+            var minutesIncrement = parseInt(60 / count);
+
+            for (var i = 0; i < count; i++) {
+                var circle = document.createElement("div");
+                circle.classList.add("circle");
+                setElementStyle(circle, width, height, borderRadius);
+
+                moveClockwise(circle, centerTop, centerLeft, pathRadius, initialMinutes);
+                minutes.push(initialMinutes);
+
+                initialMinutes += minutesIncrement;
+
+                wrapper.appendChild(circle);
+            }
+        }
+
+        function onStartButtonClick(event) {
+            if (!event) event = window.event;
+
+            document.getElementById("start-button").disabled = true;
+            document.getElementById("stop-button").disabled = false;
+
+            var divs = document.getElementsByClassName("circle");
+
+            timer = setInterval(function () {
+                for (var i = 0, len = divs.length; i < len; i++) {
+                    minutes[i] += 3;
+                    if (minutes[i] >= 60) {
+                        minutes[i] = minutes[i] % 60;
+                    }
+                    moveClockwise(divs[i], centerTop, centerLeft, pathRadius, minutes[i]);
+                }
+            }, 100);
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+
+            return false;
+        }
+
+        function onStopButtonClick(event) {
+            if (!event) event = window.event;
+
+            clearInterval(timer);
+            document.getElementById("start-button").disabled = false;
+            document.getElementById("stop-button").disabled = true;
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

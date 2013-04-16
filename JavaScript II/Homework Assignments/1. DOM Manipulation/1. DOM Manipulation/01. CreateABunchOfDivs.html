@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Create a bunch of divs</title>
+    <script src="scripts/utils.js"></script>
+</head>
+<body onload="generateDivs()">
+    <div id="wrapper">
+        <button id="start-button" onclick="onStartButtonClick(event)">Start</button>
+        <button id="stop-button" onclick="onStopButtonClick(event)">Stop</button>
+    </div>
+    <script>
+        var timer;
+        var count = 100;
+        var minSize = 20;
+        var maxSize = 100;
+        var minBorderWidth = 1;
+        var maxBorderWidth = 20;
+        var maxBorderRadius = 100;
+        var maxTop = screen.height - 300;
+        var maxLeft = screen.width - 100;
+
+        function setElementStyle(
+            element,
+            minSize,
+            maxSize,
+            maxTop,
+            maxLeft,
+            maxBorderRadius,
+            minBorderWidth,
+            maxBorderWidth) {
+
+            // set the width
+            var width = getRandomInt(minSize, maxSize);
+            element.style.width = width + "px";
+
+            // set the height
+            var height = getRandomInt(minSize, maxSize);
+            element.style.height = height + "px";
+
+            // set the background color
+            element.style.backgroundColor = generateRandomColor();
+
+            // set the font color
+            element.style.color = generateRandomColor();
+
+            // set the screen position
+            element.style.position = "absolute";
+
+            var top = getRandomInt(0, maxTop - height);
+            element.style.top = top + "px";
+
+            var left = getRandomInt(0, maxLeft - width);
+            element.style.left = left + "px";
+
+            // set a strong element inside
+            element.innerHTML = "<strong>" + element.tagName + "</strong>";
+
+            // set the border radius
+            var radius = getRandomInt(0, maxBorderRadius);
+            var radiusInPixels = radius + "px";
+
+            element.style.borderRadius = radiusInPixels; // standard
+            element.style.MozBorderRadius = radiusInPixels; // Mozilla
+            element.style.WebkitBorderRadius = radiusInPixels; // WebKit
+
+            // set the border
+            var borderWidth = getRandomInt(minBorderWidth, maxBorderWidth);
+            var borderWidthInPixels = borderWidth + "px";
+
+            element.style.border = borderWidthInPixels + " solid " + generateRandomColor();
+        }
+
+        function generateDivs() {
+            var wrapper = document.getElementById("wrapper");
+            var fragment = document.createDocumentFragment();
+
+            for (var i = 0; i < count; i++) {
+                var crazyDiv = document.createElement("div");
+                crazyDiv.classList.add("crazy-div");
+
+                setElementStyle(crazyDiv, minSize, maxSize, maxTop, maxLeft, maxBorderRadius, minBorderWidth, maxBorderWidth);
+
+                fragment.appendChild(crazyDiv);
+            }
+
+            wrapper.appendChild(fragment);
+        }
+
+        function onStartButtonClick(event) {
+            if (!event) event = window.event;
+
+            document.getElementById("start-button").disabled = true;
+            document.getElementById("stop-button").disabled = false;
+
+            var divs = document.getElementsByClassName("crazy-div");
+
+            timer = setInterval(function () {
+                for (var i = 0, len = divs.length; i < len; i++) {
+                    setElementStyle(divs[i], minSize, maxSize, maxTop, maxLeft, maxBorderRadius, minBorderWidth, maxBorderWidth);
+                }
+            }, 100);
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+
+            return false;
+        }
+
+        function onStopButtonClick(event) {
+            if (!event) event = window.event;
+
+            clearInterval(timer);
+            document.getElementById("start-button").disabled = false;
+            document.getElementById("stop-button").disabled = true;
+
+            if (event.preventDefault) {
+                event.preventDefault();
+            }
+
+            return false;
+        }
+    </script>
+</body>
+</html>

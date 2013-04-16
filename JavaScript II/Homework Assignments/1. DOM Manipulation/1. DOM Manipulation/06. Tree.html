@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Sample Tree</title>
+    <script src="scripts/Tree.js"></script>
+    <link href="styles/TreeView.css" rel="stylesheet" />
+</head>
+<body onload="createTree()">
+    <div id="wrapper"></div>
+    <script>
+        function createTree() {
+            var mySubSubTree = new Tree();
+            mySubSubTree.addTreeItem("my subSubTree item A");
+            mySubSubTree.addTreeItem("my subSubTree item B");
+
+            var mySubTree = new Tree();
+            mySubTree.addTreeItem(mySubSubTree, "my subSubTree");
+            mySubTree.addTreeItem("my subTree item B");
+
+            var mySubTree2 = new Tree();
+            mySubTree2.addTreeItem("my subTree 2 item A");
+            mySubTree2.addTreeItem("my subTree 2 item B");
+
+            var mySubTree3 = new Tree();
+            mySubTree3.addTreeItem("my subTree 3 item A");
+            mySubTree3.addTreeItem("my subTree 3 item B");
+
+            var myTree = new Tree();
+            myTree.addTreeItem(mySubTree, "my subTree");
+            myTree.addTreeItem(mySubTree2, "my subTree 2");
+            myTree.addTreeItem(mySubTree3, "my subTree 3");
+            myTree.addTreeItem("my last tree item");
+
+            // put the tree in the DOM
+            myTree.setParent("wrapper");
+        }
+    </script>
+</body>
+</html>

@@ -14,7 +14,7 @@ namespace Kitchen
     public class Chef
     {
         /// <summary>
-        /// Keeps the actions performed while cooking.
+        /// Keeps the actions that are performed while cooking.
         /// </summary>
         private CookingLog cookingLog = new CookingLog();
 

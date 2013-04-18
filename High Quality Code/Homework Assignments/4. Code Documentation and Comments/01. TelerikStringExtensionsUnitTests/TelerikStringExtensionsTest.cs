@@ -1,8 +1,14 @@
-﻿namespace TelerikStringExtensionsUnitTests
+﻿// ********************************
+// <copyright file="TelerikStringExtensionsTest.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace TelerikStringExtensionsUnitTests
 {
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System;
     using System.Text;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using TelerikStringExtensions;
 
     /// <summary>

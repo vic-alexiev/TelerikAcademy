@@ -1,4 +1,10 @@
-﻿using System;
+﻿// ********************************
+// <copyright file="TelerikStringExtensionsDemo.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+using System;
 using System.Linq;
 using System.Text;
 using TelerikStringExtensions;
@@ -8,6 +14,9 @@ using TelerikStringExtensions;
 /// </summary>
 internal class TelerikStringExtensionsDemo
 {
+    /// <summary>
+    /// The entry point of the application.
+    /// </summary>
     private static void Main()
     {
         string value1 = "Telerik Academy";

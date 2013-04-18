@@ -1,4 +1,10 @@
-﻿namespace TelerikStringExtensions
+﻿// ********************************
+// <copyright file="StringExtensions.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace TelerikStringExtensions
 {
     using System;
     using System.Collections.Generic;

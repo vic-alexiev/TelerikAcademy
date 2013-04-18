@@ -1,5 +1,5 @@
 ﻿// ********************************
-// <copyright file="Messages.cs" company="Telerik Academy">
+// <copyright file="MessageLog.cs" company="Telerik Academy">
 // Copyright (c) 2013 Telerik Academy. All rights reserved.
 // </copyright>
 //
@@ -13,28 +13,28 @@ namespace Events
     /// Keeps a log of the messages which are created when
     /// adding or deleting events in an event holder.
     /// </summary>
-    public static class Messages
+    public class MessageLog
     {
-        private static StringBuilder output = new StringBuilder();
+        private StringBuilder output = new StringBuilder();
 
         /// <summary>
         /// Gets all the messages in the log.
         /// </summary>
         /// <value>The Output property gets the string representation of the output field.</value> 
-        public static string Output
+        public string Output
         {
             get
             {
-                return output.ToString();
+                return this.output.ToString();
             }
         }
 
         /// <summary>
         /// Add a message "Event added" to the message log.
         /// </summary>
-        public static void EventAdded()
+        public void EventAdded()
         {
-            output.Append("Event added" + Environment.NewLine);
+            this.output.Append("Event added" + Environment.NewLine);
         }
 
         /// <summary>
@@ -42,36 +42,36 @@ namespace Events
         /// or "No events found" if no events have been deleted.
         /// </summary>
         /// <param name="count">The number of deleted events.</param>
-        public static void EventDeleted(int count)
+        public void EventDeleted(int count)
         {
             if (count == 0)
             {
-                NoEventsFound();
+                this.NoEventsFound();
             }
             else
             {
-                output.AppendFormat("{0} event(s) deleted{1}", count, Environment.NewLine);
+                this.output.AppendFormat("{0} event(s) deleted{1}", count, Environment.NewLine);
             }
         }
 
         /// <summary>
         /// Adds a message to the log saying "No events found".
         /// </summary>
-        public static void NoEventsFound()
+        public void NoEventsFound()
         {
-            output.Append("No events found" + Environment.NewLine);
+            this.output.Append("No events found" + Environment.NewLine);
         }
 
         /// <summary>
         /// Adds the string representation of the <see cref="Event"/>
         /// to the message log.
         /// </summary>
-        /// <param name="eventToPrint">The event to print.</param>
-        public static void PrintEvent(Event eventToPrint)
+        /// <param name="eventToAdd">The event which will be added in the log.</param>
+        public void AddEvent(Event eventToAdd)
         {
-            if (eventToPrint != null)
+            if (eventToAdd != null)
             {
-                output.Append(eventToPrint + Environment.NewLine);
+                this.output.Append(eventToAdd + Environment.NewLine);
             }
         }
     }

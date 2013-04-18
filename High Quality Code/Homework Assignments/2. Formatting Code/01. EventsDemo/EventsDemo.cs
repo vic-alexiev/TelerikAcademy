@@ -51,7 +51,7 @@ internal class EventsDemo
         }
         while (validCommand);
 
-        Console.WriteLine(Messages.Output);
+        Console.WriteLine(events.Log);
     }
 
     private static bool ExecuteNextCommand()

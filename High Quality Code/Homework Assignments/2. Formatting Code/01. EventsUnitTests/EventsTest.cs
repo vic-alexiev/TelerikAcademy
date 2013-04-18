@@ -84,7 +84,7 @@ namespace EventsUnitTests
             EventHolder eventHolder = new EventHolder();
             eventHolder.AddEvent(new DateTime(2013, 4, 21, 11, 30, 0), "3D Graphics", "Ultimate Hall");
 
-            Assert.AreEqual("Event added" + Environment.NewLine, Messages.Output);
+            Assert.AreEqual("Event added" + Environment.NewLine, eventHolder.Log);
         }
 
         [TestMethod]
@@ -93,7 +93,7 @@ namespace EventsUnitTests
             EventHolder eventHolder = new EventHolder();
             eventHolder.ListEvents(new DateTime(2013, 4, 21, 11, 30, 0), 10);
 
-            Assert.AreEqual(true, Messages.Output.EndsWith("No events found" + Environment.NewLine));
+            Assert.AreEqual(true, eventHolder.Log.EndsWith("No events found" + Environment.NewLine));
         }
 
         [TestMethod]
@@ -102,7 +102,7 @@ namespace EventsUnitTests
             EventHolder eventHolder = new EventHolder();
             eventHolder.AddEvent(new DateTime(2013, 6, 21, 11, 30, 0), "WPF", "Ultimate Hall");
             eventHolder.DeleteEvents("WPF");
-            Assert.AreEqual(true, Messages.Output.EndsWith("1 event(s) deleted" + Environment.NewLine));
+            Assert.AreEqual(true, eventHolder.Log.EndsWith("1 event(s) deleted" + Environment.NewLine));
         }
     }
 }

@@ -17,6 +17,19 @@ namespace Events
         private MultiDictionary<string, Event> byTitle = new MultiDictionary<string, Event>(true);
         private OrderedBag<Event> byDateAndTime = new OrderedBag<Event>();
 
+        private MessageLog messageLog = new MessageLog();
+
+        /// <summary>
+        /// Gets the contents of the message log.
+        /// </summary>
+        public string Log
+        {
+            get
+            {
+                return this.messageLog.Output;
+            }
+        }
+
         /// <summary>
         /// Creates an event and adds it in the event holder.
         /// An "Event added" message is also added to the message log.
@@ -29,7 +42,7 @@ namespace Events
             Event newEvent = new Event(dateAndTime, title, location);
             this.byTitle.Add(title.ToLower(), newEvent);
             this.byDateAndTime.Add(newEvent);
-            Messages.EventAdded();
+            this.messageLog.EventAdded();
         }
 
         /// <summary>
@@ -49,7 +62,7 @@ namespace Events
             }
 
             this.byTitle.Remove(title);
-            Messages.EventDeleted(removed);
+            this.messageLog.EventDeleted(removed);
         }
 
         /// <summary>
@@ -71,13 +84,13 @@ namespace Events
                     break;
                 }
 
-                Messages.PrintEvent(eventToShow);
+                this.messageLog.AddEvent(eventToShow);
                 shown++;
             }
 
             if (shown == 0)
             {
-                Messages.NoEventsFound();
+                this.messageLog.NoEventsFound();
             }
         }
     }

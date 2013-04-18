@@ -1,4 +1,10 @@
-﻿namespace Events
+﻿// ********************************
+// <copyright file="EventHolder.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace Events
 {
     using System;
     using Wintellect.PowerCollections;
@@ -27,7 +33,7 @@
         }
 
         /// <summary>
-        /// Deletes all events that have the specified title.
+        /// Deletes all events which have the specified title.
         /// Performs a case-insensitive search.
         /// A message telling the number of deleted events is added to the log.
         /// </summary>

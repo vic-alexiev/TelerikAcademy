@@ -1,9 +1,18 @@
-﻿namespace EventsUnitTests
+﻿// ********************************
+// <copyright file="EventsTest.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace EventsUnitTests
 {
+    using System;
     using Events;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using System;
 
+    /// <summary>
+    /// Contains methods testing the events functionality.
+    /// </summary>
     [TestClass]
     public class EventsTest
     {

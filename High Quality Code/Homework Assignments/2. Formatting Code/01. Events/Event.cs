@@ -1,4 +1,10 @@
-﻿namespace Events
+﻿// ********************************
+// <copyright file="Event.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace Events
 {
     using System;
     using System.IO;
@@ -11,6 +17,7 @@
     {
         #region Private Fields
 
+        private readonly string dateAndTimeFormat = "yyyy-MM-ddTHH:mm:ss";
         private DateTime dateAndTime;
         private string title;
         private string location;
@@ -39,11 +46,18 @@
         /// <summary>
         /// Gets/sets the date and time of the event.
         /// </summary>
-        /// <value>Serves as a wrapper of the dateAndTime field.</value>
+        /// <value>Serves as a wrapper of the <see cref="System.DateTime"/> field, dateAndTime.</value>
         public DateTime DateAndTime
         {
-            get { return this.dateAndTime; }
-            private set { this.dateAndTime = value; }
+            get
+            {
+                return this.dateAndTime;
+            }
+
+            private set
+            {
+                this.dateAndTime = value;
+            }
         }
 
         /// <summary>
@@ -52,8 +66,15 @@
         /// <value>Serves as a wrapper of the title field.</value>
         public string Title
         {
-            get { return this.title; }
-            private set { this.title = value; }
+            get
+            {
+                return this.title;
+            }
+
+            private set
+            {
+                this.title = value;
+            }
         }
 
         /// <summary>
@@ -62,8 +83,15 @@
         /// <value>Serves as a wrapper of the location field.</value>
         public string Location
         {
-            get { return this.location; }
-            private set { this.location = value; }
+            get
+            {
+                return this.location;
+            }
+
+            private set
+            {
+                this.location = value;
+            }
         }
 
         #endregion
@@ -71,7 +99,9 @@
         #region Public Methods
 
         /// <summary>
-        /// Overrides the <see cref="System.IComparable"/> method.
+        /// Overrides the corresponding method in <see cref="System.IComparable"/>.
+        /// The events are first compared by date and time, then by title and
+        /// eventually by location.
         /// </summary>
         /// <param name="obj">The object to compare this instance with.</param>
         /// <returns>A value that indicates the relative order of the objects being compared.</returns>
@@ -118,18 +148,18 @@
         /// <returns>The event data as a string.</returns>
         public override string ToString()
         {
-            StringBuilder stringBuilder = new StringBuilder();
+            StringBuilder eventBuilder = new StringBuilder();
 
-            stringBuilder.Append(this.DateAndTime.ToString("yyyy-MM-ddTHH:mm:ss"));
+            eventBuilder.Append(this.DateAndTime.ToString(this.dateAndTimeFormat));
 
-            stringBuilder.Append(" | " + this.Title);
+            eventBuilder.Append(" | " + this.Title);
 
             if (!string.IsNullOrWhiteSpace(this.Location))
             {
-                stringBuilder.Append(" | " + this.Location);
+                eventBuilder.Append(" | " + this.Location);
             }
 
-            return stringBuilder.ToString();
+            return eventBuilder.ToString();
         }
 
         #endregion

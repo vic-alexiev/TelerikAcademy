@@ -1,24 +1,41 @@
-﻿using Events;
+﻿// ********************************
+// <copyright file="EventsDemo.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
 using System;
+using System.Globalization;
+using Events;
 
 /// <summary>
 /// A class which demonstrates the use of events - adding an event 
 /// to the event holder, deleting an event and displaying all 
-/// events in the event holder.
+/// events which are in the event holder.
 /// </summary>
 internal class EventsDemo
 {
     /// <summary>
-    /// An EventHolder object which keeps the events.
+    /// The permissible formats for the date and time part of the commands.
+    /// </summary>
+    private static readonly string[] DateAndTimeFormats = new string[] 
+    {
+        "yyyy-MM-dd HH:mm:ss",
+        "yyyy-MM-dd HH:mm",
+        "yyyy-MM-dd"
+    };
+
+    /// <summary>
+    /// An event holder which keeps the events.
     /// </summary>
     private static EventHolder events = new EventHolder();
 
     /// <summary>
     /// Executes commands from the command line.
     /// <example>
-    /// AddEvent 2013-04-09 13:00:00 | High quality code lecture | Telerik Academy
-    /// AddEvent 2013-04-09 09:00:00 | JS lecture | Telerik Academy
-    /// AddEvent 2013-04-09 10:00:00 | CMS lecture | Telerik Academy
+    /// AddEvent 2013-04-09 13:00:00 | High quality code lecture | Enterprise Hall
+    /// AddEvent 2013-04-09 09:00:00 | JS lecture | Ultimate Hall
+    /// AddEvent 2013-04-09 10:00:00 | CMS lecture | Enterprise Hall
     /// DeleteEvents CMS lecture
     /// ListEvents 2013-04-09 12:54:00 | 10
     /// End
@@ -26,10 +43,13 @@ internal class EventsDemo
     /// </summary>
     private static void Main()
     {
-        while (ExecuteNextCommand())
+        bool validCommand;
+
+        do
         {
-            // nothing to do
+            validCommand = ExecuteNextCommand();
         }
+        while (validCommand);
 
         Console.WriteLine(Messages.Output);
     }
@@ -37,6 +57,11 @@ internal class EventsDemo
     private static bool ExecuteNextCommand()
     {
         string command = Console.ReadLine();
+
+        if (string.IsNullOrWhiteSpace(command))
+        {
+            return false;
+        }
 
         switch (command[0])
         {
@@ -120,10 +145,15 @@ internal class EventsDemo
     /// </summary>
     /// <param name="command">The command text.</param>
     /// <param name="commandType">The command type.</param>
-    /// <returns>The date and time as a single DateTime object.</returns>
+    /// <returns>The date and time as a single <see cref="System.DateTime"/> object.</returns>
     private static DateTime GetDateAndTime(string command, string commandType)
     {
-        DateTime dateAndTime = DateTime.Parse(command.Substring(commandType.Length + 1, 20));
+        int firstPipeIndex = command.IndexOf('|');
+        int dateAndTimePartLength = firstPipeIndex - commandType.Length - 1;
+
+        string dateAndTimePart = command.Substring(commandType.Length + 1, dateAndTimePartLength).Trim();
+        DateTime dateAndTime = DateTime.ParseExact(
+            dateAndTimePart, DateAndTimeFormats, CultureInfo.InvariantCulture, DateTimeStyles.None);
         return dateAndTime;
     }
 }

@@ -1,11 +1,17 @@
-﻿namespace Events
+﻿// ********************************
+// <copyright file="Messages.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace Events
 {
     using System;
     using System.Text;
 
     /// <summary>
-    /// Keeps a log of the messages which are created when adding/deleting
-    /// <see cref="Event"/>s in an event holder.
+    /// Keeps a log of the messages which are created when
+    /// adding or deleting events in an event holder.
     /// </summary>
     public static class Messages
     {
@@ -14,6 +20,7 @@
         /// <summary>
         /// Gets all the messages in the log.
         /// </summary>
+        /// <value>The Output property gets the string representation of the output field.</value> 
         public static string Output
         {
             get
@@ -32,7 +39,7 @@
 
         /// <summary>
         /// Add a message to the log which tells the number of deleted events
-        /// or "No events found" if no event has been deleted.
+        /// or "No events found" if no events have been deleted.
         /// </summary>
         /// <param name="count">The number of deleted events.</param>
         public static void EventDeleted(int count)
@@ -56,7 +63,7 @@
         }
 
         /// <summary>
-        /// Adds the string representation of the <see cref="Event"/> object
+        /// Adds the string representation of the <see cref="Event"/>
         /// to the message log.
         /// </summary>
         /// <param name="eventToPrint">The event to print.</param>

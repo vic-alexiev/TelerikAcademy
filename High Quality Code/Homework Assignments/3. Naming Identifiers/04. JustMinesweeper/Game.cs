@@ -1,4 +1,10 @@
-﻿namespace JustMinesweeper
+﻿// ********************************
+// <copyright file="Game.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace JustMinesweeper
 {
     using System;
     using System.Collections.Generic;
@@ -71,6 +77,7 @@
         /// </summary>
         /// <param name="rows">The number of rows.</param>
         /// <param name="cols">The number of columns.</param>
+        /// <param name="mines">The number of mines that should be put on the field.</param>
         /// <returns>A 2D char array representing the mine field.</returns>
         private static char[,] CreateMineField(int rows, int cols, int mines)
         {

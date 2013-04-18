@@ -1,4 +1,10 @@
-﻿using System.Reflection;
+﻿// ********************************
+// <copyright file="AssemblyInfo.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 

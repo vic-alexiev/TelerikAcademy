@@ -1,15 +1,21 @@
-﻿using System.Reflection;
+﻿// ********************************
+// <copyright file="AssemblyInfo.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("02. CSharpRefactoring")]
+[assembly: AssemblyTitle("01. CSharpRefactoring")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("02. CSharpRefactoring")]
+[assembly: AssemblyProduct("01. CSharpRefactoring")]
 [assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +26,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("e56bdcd0-2959-44ae-bb17-0920556fc069")]
+[assembly: Guid("6e7d5fd0-a2af-4d6d-9028-a9f206b3591d")]
 
 // Version information for an assembly consists of the following four values:
 //

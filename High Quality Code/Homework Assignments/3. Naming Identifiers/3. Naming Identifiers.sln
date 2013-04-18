@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. CSharpRefactoring", "01. CSharpRefactoring\01. CSharpRefactoring.csproj", "{61464CEC-47CF-4270-83C4-E273A744CDD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. ConsolePrinterDemo", "01. ConsolePrinterDemo\01. ConsolePrinterDemo.csproj", "{61464CEC-47CF-4270-83C4-E273A744CDD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. CSharpRefactoring", "02. CSharpRefactoring\02. CSharpRefactoring.csproj", "{AD1F564D-DF5E-4A8C-A1B8-995FFADB7786}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. PersonFactoryDemo", "02. PersonFactoryDemo\02. PersonFactoryDemo.csproj", "{AD1F564D-DF5E-4A8C-A1B8-995FFADB7786}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. JavaScriptRefactoring", "03. JavaScriptRefactoring\03. JavaScriptRefactoring.csproj", "{0436970F-736A-49C0-B464-5A6F4DCEE1C5}"
 EndProject

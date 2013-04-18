@@ -1,4 +1,10 @@
-﻿namespace JustMinesweeper
+﻿// ********************************
+// <copyright file="Result.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
+namespace JustMinesweeper
 {
     /// <summary>
     /// Keeps the name and score of a player.
@@ -44,21 +50,37 @@
         #region Properties
 
         /// <summary>
-        /// Gets or sets the name of the player.
+        /// Gets the name of the player.
         /// </summary>
+        /// <value>The Name property gets/sets the value of the name field.</value>
         public string Name
         {
-            get { return this.name; }
-            set { this.name = value; }
+            get
+            {
+                return this.name;
+            }
+
+            private set
+            {
+                this.name = value;
+            }
         }
 
         /// <summary>
-        /// Gets or sets the score of the player.
+        /// Gets the score of the player.
         /// </summary>
+        /// <value>The Score property gets/sets the value of the score field.</value>
         public int Score
         {
-            get { return this.score; }
-            set { this.score = value; }
+            get
+            {
+                return this.score;
+            }
+
+            private set
+            {
+                this.score = value;
+            }
         }
 
         #endregion

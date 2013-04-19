@@ -48,6 +48,30 @@ namespace JustMinesweeper
         }
 
         /// <summary>
+        /// Returns a two-dimensional char array which represents 
+        /// a rectangular ground whose cells are marked with the 
+        /// specified character.
+        /// </summary>
+        /// <param name="rows">The number of rows.</param>
+        /// <param name="cols">The number of columns.</param>
+        /// <param name="cellCharacter">The character used to fill each cell.</param>
+        /// <returns>A 2D char array representing the ground.</returns>
+        private static char[,] InitGround(int rows, int cols, char cellCharacter)
+        {
+            char[,] ground = new char[rows, cols];
+
+            for (int row = 0; row < rows; row++)
+            {
+                for (int col = 0; col < cols; col++)
+                {
+                    ground[row, col] = cellCharacter;
+                }
+            }
+
+            return ground;
+        }
+
+        /// <summary>
         /// Returns a two-dimensional char array
         /// which represents the board.
         /// </summary>
@@ -56,16 +80,7 @@ namespace JustMinesweeper
         /// <returns>A 2D char array representing the game board.</returns>
         private static char[,] CreateBoard(int rows, int cols)
         {
-            char[,] board = new char[rows, cols];
-
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < cols; col++)
-                {
-                    board[row, col] = '?';
-                }
-            }
-
+            char[,] board = InitGround(rows, cols, '?');
             return board;
         }
 
@@ -81,15 +96,7 @@ namespace JustMinesweeper
         /// <returns>A 2D char array representing the mine field.</returns>
         private static char[,] CreateMineField(int rows, int cols, int mines)
         {
-            char[,] mineField = new char[rows, cols];
-
-            for (int row = 0; row < rows; row++)
-            {
-                for (int col = 0; col < cols; col++)
-                {
-                    mineField[row, col] = '-';
-                }
-            }
+            char[,] mineField = InitGround(rows, cols, '-');
 
             List<int> randomNumbers = new List<int>();
 

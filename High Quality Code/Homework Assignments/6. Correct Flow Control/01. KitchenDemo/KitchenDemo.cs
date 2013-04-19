@@ -18,8 +18,8 @@ internal class KitchenDemo
     private static void Main()
     {
         Chef theDev = new Chef();
-        string operationResult = theDev.MakeSoup();
+        theDev.MakeSoup();
 
-        Console.WriteLine(operationResult);
+        Console.WriteLine(theDev.Log);
     }
 }

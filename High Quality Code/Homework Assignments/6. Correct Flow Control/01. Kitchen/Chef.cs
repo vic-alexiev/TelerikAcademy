@@ -13,25 +13,43 @@ namespace Kitchen
     /// </summary>
     public class Chef
     {
+        #region Private Fields
+
         /// <summary>
         /// Keeps the actions that are performed while cooking.
         /// </summary>
         private CookingLog cookingLog = new CookingLog();
 
+        #endregion
+
+        #region Properties
+
+        /// <summary>
+        /// Gets the contents of the cooking log.
+        /// </summary>
+        public string Log
+        {
+            get
+            {
+                return this.cookingLog.ToString();
+            }
+        }
+
+        #endregion
+
         #region Public Methods
 
         /// <summary>
-        /// Describes the algorithm for making soup.
+        /// Describes the sequence of steps necessary to complete
+        /// the soup-making process.
         /// </summary>
-        /// <returns>The result of the soup-making process.</returns>
-        public string MakeSoup()
+        public void MakeSoup()
         {
             Pot pot = this.GetPot();
 
             this.FillWithWater(pot);
 
             Potato potato = this.GetPotato();
-            //potato.IsRotten = true;
 
             if (!potato.IsRotten)
             {
@@ -46,11 +64,10 @@ namespace Kitchen
             else
             {
                 this.MaybeNextTime(potato);
-                return this.cookingLog.ToString();
+                return;
             }
 
             Carrot carrot = this.GetCarrot();
-            //carrot.IsRotten = true;
 
             if (!carrot.IsRotten)
             {
@@ -65,7 +82,7 @@ namespace Kitchen
             else
             {
                 this.MaybeNextTime(carrot);
-                return this.cookingLog.ToString();
+                return;
             }
 
             this.PutIn(pot, potato);
@@ -74,32 +91,12 @@ namespace Kitchen
             this.Boil(30);
 
             this.Success();
-            return this.cookingLog.ToString();
+            return;
         }
 
         #endregion
 
         #region Private Methods
-
-        private void Success()
-        {
-            this.cookingLog.Add("Bon appetit, mon ami!");
-        }
-
-        private void PutIn(Utensil utensil, Vegetable vegetable)
-        {
-            string result = utensil.Add(vegetable);
-            this.cookingLog.Add(result);
-        }
-
-        private void MaybeNextTime(Vegetable vegetable)
-        {
-            this.cookingLog.Add(
-                string.Format(
-                "The {0} is rotten.\r\n" +
-                "(They betrayed meeee! Wish I knew who bought this.)",
-                vegetable));
-        }
 
         private Pot GetPot()
         {
@@ -132,6 +129,15 @@ namespace Kitchen
             return potato;
         }
 
+        private void MaybeNextTime(Vegetable vegetable)
+        {
+            this.cookingLog.Add(
+                string.Format(
+                "The {0} is rotten.\r\n" +
+                "(They betrayed meeee! Wish I knew who bought this.)",
+                vegetable));
+        }
+
         private void Peel(Vegetable vegetable)
         {
             vegetable.IsPeeled = true;
@@ -160,6 +166,12 @@ namespace Kitchen
                 vegetable));
         }
 
+        private void PutIn(Utensil utensil, Vegetable vegetable)
+        {
+            string result = utensil.Add(vegetable);
+            this.cookingLog.Add(result);
+        }
+
         private void Boil(int minutes)
         {
             this.cookingLog.Add(
@@ -167,6 +179,11 @@ namespace Kitchen
                 "Wait for {0} minutes and then...\r\n" +
                 "What would my wife do without me?",
                 minutes));
+        }
+
+        private void Success()
+        {
+            this.cookingLog.Add("Bon appetit, mon ami!");
         }
 
         #endregion

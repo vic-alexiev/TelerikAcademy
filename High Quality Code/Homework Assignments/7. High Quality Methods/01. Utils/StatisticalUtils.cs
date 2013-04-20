@@ -36,15 +36,17 @@ namespace Utils
                 throw new ArgumentException("No arguments specified.");
             }
 
-            for (int i = 1; i < args.Length; i++)
+            int max = Int32.MinValue;
+
+            for (int i = 0; i < args.Length; i++)
             {
-                if (args[i] > args[0])
+                if (args[i] > max)
                 {
-                    args[0] = args[i];
+                    max = args[i];
                 }
             }
 
-            return args[0];
+            return max;
         }
     }
 }

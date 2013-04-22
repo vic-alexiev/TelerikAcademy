@@ -3,7 +3,7 @@
     // an associative array of document fragments
     var fragmentsBuffer = [];
     // maximum size of a document fragment
-    var MAX_FRAGMENT_SIZE = 10;
+    var MAX_FRAGMENT_SIZE = 100;
 
     // for private use
     function createElement(tagName, attributes, innerHTML) {

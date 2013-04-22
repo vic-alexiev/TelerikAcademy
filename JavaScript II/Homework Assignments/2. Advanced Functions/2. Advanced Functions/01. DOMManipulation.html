@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DOM Manipulation module</title>
+    <script src="scripts/dom-manipulation.js"></script>
+</head>
+<body onload="onBodyLoad()">
+    <div id="wrapper">
+        <ul id="table-of-contents">
+            <li><a href="#">Chapter 1.</a></li>
+            <li><a href="#">Chapter 2.</a></li>
+            <li><a href="#">Chapter 3.</a></li>
+            <li><a href="#">Chapter 4.</a></li>
+        </ul>
+    </div>
+    <button>Click me!</button>
+    <script>
+        function onBodyLoad() {
+            var attributes = {
+                "id": "chapter-5",
+                "class": "chapters"
+            };
+
+            dom.addElement("#table-of-contents", "li", attributes, "<a href='#'>Chapter 5.</a>");
+            dom.removeElement("li:first-child");
+            dom.attachEvent("button", "click", function () { alert("Button clicked."); });
+
+            for (var i = 0; i < 20; i++) {
+                dom.addElementViaBuffer("#wrapper", "div", null, "div" + i);
+
+                if (i % 2 === 0) {
+                    dom.addElementViaBuffer("#table-of-contents", "li", null, "<a href='#'>Item" + i + ".</a>");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

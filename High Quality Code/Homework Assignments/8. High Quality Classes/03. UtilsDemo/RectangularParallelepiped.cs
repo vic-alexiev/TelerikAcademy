@@ -20,6 +20,8 @@ public class RectangularParallelepiped
     /// <param name="width">The length along the x-axis.</param>
     /// <param name="height">The length along the y-axis.</param>
     /// <param name="depth">The length along the z-axis.</param>
+    /// <exception cref="System.ArgumentException">Thrown when <paramref name="width"/>,
+    /// <paramref name="height"/> or <paramref name="depth"/> is negative.</exception>
     public RectangularParallelepiped(double width, double height, double depth)
     {
         if (width < 0 || height < 0 || depth < 0)

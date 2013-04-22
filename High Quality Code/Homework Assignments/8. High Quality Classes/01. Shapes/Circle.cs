@@ -17,6 +17,7 @@ namespace Shapes
         /// Initializes a new instance of the <see cref="Circle"/> class.
         /// </summary>
         /// <param name="radius">The radius of the circle.</param>
+        /// <exception cref="System.ArgumentException">Thrown when <paramref name="radius"/> is negative.</exception>
         public Circle(double radius)
         {
             if (radius < 0)

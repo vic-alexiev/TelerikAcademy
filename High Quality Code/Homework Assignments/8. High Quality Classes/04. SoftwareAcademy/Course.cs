@@ -59,6 +59,7 @@ namespace SoftwareAcademy
         /// Gets or sets the name of the course.
         /// </summary>
         /// <value>Gets or sets the value of the name field.</value>
+        /// <exception cref="System.ArgumentException">Thrown when value is null or empty.</exception>
         public string Name
         {
             get

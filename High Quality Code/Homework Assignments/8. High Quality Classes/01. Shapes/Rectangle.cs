@@ -18,6 +18,8 @@ namespace Shapes
         /// </summary>
         /// <param name="width">The width of the rectangle.</param>
         /// <param name="height">The height of the rectangle.</param>
+        /// <exception cref="System.ArgumentException">Thrown when <paramref name="width"/> 
+        /// or <paramref name="height"/> is negative.</exception>        
         public Rectangle(double width, double height)
         {
             if (width < 0)

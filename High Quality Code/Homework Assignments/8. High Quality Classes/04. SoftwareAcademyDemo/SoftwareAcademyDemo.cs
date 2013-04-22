@@ -4,9 +4,9 @@
 // </copyright>
 //
 // ********************************
-using SoftwareAcademy;
 using System;
 using System.Collections.Generic;
+using SoftwareAcademy;
 
 /// <summary>
 /// Used to test the software academy courses functionality.

@@ -1,9 +1,19 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Utils;
-
+﻿// ********************************
+// <copyright file="UtilsTest.cs" company="Telerik Academy">
+// Copyright (c) 2013 Telerik Academy. All rights reserved.
+// </copyright>
+//
+// ********************************
 namespace UtilsUnitTests
 {
+    using System;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Utils;
+
+    /// <summary>
+    /// Used to test the functionality of the <see cref="FileUtils"/> and
+    /// <see cref="GeometryUtils"/> classes.
+    /// </summary>
     [TestClass]
     public class UtilsTest
     {

@@ -22,6 +22,11 @@
         return document.querySelector(selector);
     }
 
+    // for private use
+    function getElements(selector) {
+        return document.querySelectorAll(selector);
+    }
+
     function addElement(parentSelector, tagName, attributes, innerHTML) {
         var parent = getElement(parentSelector);
         var newChild = createElement(tagName, attributes, innerHTML);
@@ -29,12 +34,15 @@
         parent.appendChild(newChild);
     }
 
-    function removeElement(selector) {
-        var elementToRemove = getElement(selector);
-        elementToRemove.parentNode.removeChild(elementToRemove);
+    function removeElements(parentSelector, childSelector) {
+        var elementsToRemove = getElements(parentSelector + " " + childSelector);
+
+        for (var i = 0; i < elementsToRemove.length; i++) {
+            elementsToRemove[i].parentNode.removeChild(elementsToRemove[i]);
+        }
     }
 
-    function attachEvent(selector, eventType, handler) {
+    function attachEventHandler(selector, eventType, handler) {
         var element = getElement(selector);
         if (element.addEventListener) {
             element.addEventListener(eventType, handler, false);
@@ -67,8 +75,8 @@
 
     return {
         addElement: addElement,
-        removeElement: removeElement,
-        attachEvent: attachEvent,
+        removeElements: removeElements,
+        attachEventHandler: attachEventHandler,
         addElementViaBuffer: addElementViaBuffer
     };
 })();

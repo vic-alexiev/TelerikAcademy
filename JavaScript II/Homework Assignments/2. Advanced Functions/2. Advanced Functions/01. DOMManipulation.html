@@ -12,6 +12,12 @@
             <li><a href="#">Chapter 3.</a></li>
             <li><a href="#">Chapter 4.</a></li>
         </ul>
+        <ul>
+            <li><a href="#">Chapter 11.</a></li>
+            <li><a href="#">Chapter 22.</a></li>
+            <li><a href="#">Chapter 33.</a></li>
+            <li><a href="#">Chapter 44.</a></li>
+        </ul>
     </div>
     <button>Click me!</button>
     <script>
@@ -22,10 +28,10 @@
             };
 
             dom.addElement("#table-of-contents", "li", attributes, "<a href='#'>Chapter 5.</a>");
-            dom.removeElement("li:first-child");
-            dom.attachEvent("button", "click", function () { alert("Button clicked."); });
+            dom.removeElements("ul", "li:first-child");
+            dom.attachEventHandler("button", "click", function () { alert("Button clicked."); });
 
-            for (var i = 0; i < 200; i++) {
+            for (var i = 0; i < 300; i++) {
                 dom.addElementViaBuffer("#wrapper", "div", null, "div" + i);
 
                 if (i % 2 === 0) {

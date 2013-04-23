@@ -22,8 +22,11 @@ namespace GeometryUtilsDemo
             Point point = new Point(1, 0);
             double theta = Math.PI / 2;
             Point pointRotated = AffineTransformer.RotatePoint(point, theta);
-
             Console.WriteLine(pointRotated);
+
+            Rectangle rectangle = new Rectangle(20, 10);
+            Rectangle boundingBox = AffineTransformer.GetBoundingBoxAfterRotation(rectangle, theta / 3);
+            Console.WriteLine(boundingBox);
         }
     }
 }

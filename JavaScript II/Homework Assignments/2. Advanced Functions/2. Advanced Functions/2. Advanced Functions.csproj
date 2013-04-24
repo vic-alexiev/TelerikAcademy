@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01. DOMManipulation.html" />
+    <Content Include="02. RamblingDivs.html" />
     <Content Include="scripts\dom-manipulation.js" />
+    <Content Include="scripts\rambling-divs.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

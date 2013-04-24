@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TreeView</title>
+    <script src="scripts/tree-view.js"></script>
+</head>
+<body>
+    <div class="tree-view"></div>
+    <script>
+        var treeView = new TreeView("div.tree-view");
+        var jsNode = treeView.addNode("JavaScript", "#");
+
+        var js1Subnode = jsNode.addNode("JavaScript - part 1", "#");
+        var js2Subnode = jsNode.addNode("JavaScript - part 2", "#");
+        var jsLibsSubnode = jsNode.addNode("JS Libraries", "#");
+        var jsFrameworksSubnode = jsNode.addNode("JS Frameworks and UI", "#");
+
+        var webNode = treeView.addNode("Web", "#");
+    </script>
+</body>
+</html>

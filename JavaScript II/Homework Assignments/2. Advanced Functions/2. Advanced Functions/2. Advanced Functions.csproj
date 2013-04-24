@@ -60,9 +60,14 @@
     <Content Include="01. DOMManipulation.html" />
     <Content Include="02. RamblingDivs.html" />
     <Content Include="03. ConsoleEx.html" />
+    <Content Include="04. TreeView.html" />
+    <Content Include="images\blank.png" />
+    <Content Include="images\collapsed.png" />
+    <Content Include="images\expanded.png" />
     <Content Include="scripts\dom-manipulation.js" />
     <Content Include="scripts\extended-console.js" />
     <Content Include="scripts\rambling-divs.js" />
+    <Content Include="scripts\tree-view.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

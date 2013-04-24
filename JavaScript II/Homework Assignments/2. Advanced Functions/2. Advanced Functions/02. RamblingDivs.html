@@ -6,11 +6,11 @@
 </head>
 <body>
     <div id="field">
-        <button id="add-div-ellipse-button" onclick="onAddDivButtonClick('ellipse')">Add div moving in ellipse</button>
-        <button id="add-div-rectangle-button" onclick="onAddDivButtonClick('rect')">Add div moving in rectangle</button>
+        <button id="add-div-ellipse-button" onclick="addDiv('ellipse')">Add div moving in ellipse</button>
+        <button id="add-div-rectangle-button" onclick="addDiv('rect')">Add div moving in rectangle</button>
     </div>
     <script>
-        function onAddDivButtonClick(orbitType) {
+        function addDiv(orbitType) {
             ramblingDivs.add(orbitType);
         }
     </script>

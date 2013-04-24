@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Extended console</title>
+    <script src="scripts/extended-console.js"></script>
+</head>
+<body>
+    <script>
+        // logs to the console "Message: hello"
+        consoleEx.writeLine("Message: hello");
+        // logs to the console "Message: hello"
+        consoleEx.writeLine("Message: {0}", "hello");
+        consoleEx.writeError("Error: {0}", "Something happened");
+        consoleEx.writeWarning("Warning: {0}", "A warning");
+
+        var array = [1, 2, 3, 4, 5, 6];
+
+        var circle = { center: { x: 10, y: 20 }, radius: 5 };
+
+        consoleEx.writeLine("Array: {0}", array);
+        consoleEx.writeLine("Number: {0}", 12341.2134);
+        consoleEx.writeLine("Circle: {0}", circle);
+        consoleEx.writeLine("Circle stringified: {0}", JSON.stringify(circle));
+        consoleEx.writeLine();
+    </script>
+</body>
+</html>

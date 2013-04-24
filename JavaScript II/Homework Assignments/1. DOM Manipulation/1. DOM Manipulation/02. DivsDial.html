@@ -10,7 +10,7 @@
         <button id="stop-button" onclick="onStopButtonClick(event)">Stop</button>
     </div>
     <script>
-        var timer;
+        var requestId = null;
         var count = 5;
         var width = 50;
         var height = 50;
@@ -18,17 +18,37 @@
         var centerTop = parseInt((screen.height - 300) / 2);
         var centerLeft = parseInt((screen.width - 100) / 2);
         var pathRadius = 120;
-        var minutes = [];
+        var degreesIncrement = 5;
+        var degrees = [];
 
-        function moveClockwise(element, centerTop, centerLeft, radius, minutes) {
-            // calculate the coordinates of the element as if it's at the end
-            // of a clock's minute hand
-            var minuteHandAngle = (minutes % 60) * (2 * Math.PI / 60);
+        // shim layer with setTimeout fallback 
+        window.requestAnimFrame = (function () {
+            return window.requestAnimationFrame ||
+                window.webkitRequestAnimationFrame ||
+                window.mozRequestAnimationFrame ||
+                window.oRequestAnimationFrame ||
+                window.msRequestAnimationFrame ||
+                function (callback) {
+                    window.setTimeout(callback, 1000 / 60);
+                };
+        })();
 
-            var left = parseInt(centerLeft + radius * Math.sin(minuteHandAngle));
+        window.cancelAnimFrame = (function () {
+            return window.cancelAnimationFrame ||
+                window.webkitCancelAnimationFrame ||
+                window.mozCancelAnimationFrame ||
+                window.oCancelAnimationFrame ||
+                window.msCancelAnimationFrame
+        })();
+
+        function moveClockwise(element, centerTop, centerLeft, radius, angleInDegrees) {
+            // convert degrees to radians
+            var theta = angleInDegrees * Math.PI / 180;
+
+            var left = parseInt(centerLeft + radius * Math.sin(theta));
             element.style.left = left + "px";
 
-            var top = parseInt(centerTop - radius * Math.cos(minuteHandAngle));
+            var top = parseInt(centerTop - radius * Math.cos(theta));
             element.style.top = top + "px";
         }
 
@@ -56,40 +76,48 @@
         function generateDivs() {
             var wrapper = document.getElementById("wrapper");
 
-            var initialMinutes = 0;
-            var minutesIncrement = parseInt(60 / count);
+            var initialDegrees = 0;
+            var degreesDifference = parseInt(360 / count);
 
             for (var i = 0; i < count; i++) {
                 var circle = document.createElement("div");
                 circle.classList.add("circle");
                 setElementStyle(circle, width, height, borderRadius);
 
-                moveClockwise(circle, centerTop, centerLeft, pathRadius, initialMinutes);
-                minutes.push(initialMinutes);
+                moveClockwise(circle, centerTop, centerLeft, pathRadius, initialDegrees);
+                degrees.push(initialDegrees);
 
-                initialMinutes += minutesIncrement;
+                initialDegrees += degreesDifference;
 
                 wrapper.appendChild(circle);
             }
         }
 
-        function onStartButtonClick(event) {
-            if (!event) event = window.event;
-
-            document.getElementById("start-button").disabled = true;
-            document.getElementById("stop-button").disabled = false;
+        function setDivsInMotion() {
 
             var divs = document.getElementsByClassName("circle");
 
-            timer = setInterval(function () {
-                for (var i = 0, len = divs.length; i < len; i++) {
-                    minutes[i] += 3;
-                    if (minutes[i] >= 60) {
-                        minutes[i] = minutes[i] % 60;
-                    }
-                    moveClockwise(divs[i], centerTop, centerLeft, pathRadius, minutes[i]);
+            for (var i = 0, len = divs.length; i < len; i++) {
+                degrees[i] += degreesIncrement;
+                if (degrees[i] >= 360) {
+                    degrees[i] = degrees[i] % 360;
                 }
-            }, 100);
+
+                moveClockwise(divs[i], centerTop, centerLeft, pathRadius, degrees[i]);
+            }
+
+            requestId = window.requestAnimFrame(setDivsInMotion);
+        }
+
+        function onStartButtonClick(event) {
+            if (!event) event = window.event;
+
+            if (!requestId) {
+                setDivsInMotion();
+
+                document.getElementById("start-button").disabled = true;
+                document.getElementById("stop-button").disabled = false;
+            }
 
             if (event.preventDefault) {
                 event.preventDefault();
@@ -101,9 +129,14 @@
         function onStopButtonClick(event) {
             if (!event) event = window.event;
 
-            clearInterval(timer);
-            document.getElementById("start-button").disabled = false;
-            document.getElementById("stop-button").disabled = true;
+            if (requestId) {
+                window.cancelAnimFrame(requestId);
+
+                document.getElementById("start-button").disabled = false;
+                document.getElementById("stop-button").disabled = true;
+
+                requestId = null;
+            }
 
             if (event.preventDefault) {
                 event.preventDefault();

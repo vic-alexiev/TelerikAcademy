@@ -76,7 +76,7 @@ namespace Utils
         /// <returns>True if the line is horizontal, otherwise - false.</returns>
         public static bool IsLineHorizontal(double x1, double y1, double x2, double y2)
         {
-            if (x1 == x2 && y1 == y2)
+            if (PointsCoincide(x1, y1, x2, y2))
             {
                 throw new ArgumentException("The points shouldn't coincide. A single point cannot define a line.");
             }
@@ -95,7 +95,7 @@ namespace Utils
         /// <returns>True if the line is vertical, otherwise - false.</returns>
         public static bool IsLineVertical(double x1, double y1, double x2, double y2)
         {
-            if (x1 == x2 && y1 == y2)
+            if (PointsCoincide(x1, y1, x2, y2))
             {
                 throw new ArgumentException("The points shouldn't coincide. A single point cannot define a line.");
             }
@@ -118,6 +118,19 @@ namespace Utils
         private static bool FormTriangle(double a, double b, double c)
         {
             return a + b > c && a + c > b && b + c > a;
+        }
+
+        /// <summary>
+        /// Checks if the points (x1, y1) and (x2, y2) coincide.
+        /// </summary>
+        /// <param name="x1">The x-coordinate of the first point.</param>
+        /// <param name="y1">The y-coordinate of the first point.</param>
+        /// <param name="x2">The x-coordinate of the second point.</param>
+        /// <param name="y2">The y-coordinate of the second point.</param>
+        /// <returns>True if the points coincide, otherwise - false.</returns>
+        private static bool PointsCoincide(double x1, double y1, double x2, double y2)
+        {
+            return x1 == x2 && y1 == y2;
         }
 
         #endregion

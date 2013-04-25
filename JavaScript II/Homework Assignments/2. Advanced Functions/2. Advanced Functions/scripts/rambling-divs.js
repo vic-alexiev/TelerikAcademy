@@ -145,7 +145,7 @@
 
             moveInRectangle(divsMovingInRectangle[i], rectangleCenters[i].top, rectangleCenters[i].left, MAJOR_SEMIAXIS, MINOR_SEMIAXIS, rectangleDegreePositions[i]);
         }
-    };
+    }
 
     function add(orbitType) {
 
@@ -175,5 +175,5 @@
 
     return {
         add: add
-    }
+    };
 })();

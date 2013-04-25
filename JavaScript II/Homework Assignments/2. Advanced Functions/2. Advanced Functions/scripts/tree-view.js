@@ -88,7 +88,7 @@
 
     return {
         addNode: addNode
-    }
+    };
 }
 
 function TreeView(selector) {
@@ -105,5 +105,5 @@ function TreeView(selector) {
 
     return {
         addNode: addNode
-    }
+    };
 }

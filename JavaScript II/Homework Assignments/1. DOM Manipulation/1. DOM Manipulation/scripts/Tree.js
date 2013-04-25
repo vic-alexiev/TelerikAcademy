@@ -108,5 +108,5 @@
         addTreeItem: addTreeItem,
         setParent: setParent,
         root: root
-    }
+    };
 }

@@ -38,5 +38,5 @@
         writeLine: writeLine,
         writeError: writeError,
         writeWarning: writeWarning
-    }
+    };
 })();

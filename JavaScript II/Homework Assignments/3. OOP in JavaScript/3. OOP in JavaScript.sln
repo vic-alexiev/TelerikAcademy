@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3. OOP in JavaScript", "3. OOP in JavaScript\3. OOP in JavaScript.csproj", "{CA612BDA-B7A1-4DE6-9B44-A14716CF532F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA612BDA-B7A1-4DE6-9B44-A14716CF532F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA612BDA-B7A1-4DE6-9B44-A14716CF532F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA612BDA-B7A1-4DE6-9B44-A14716CF532F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA612BDA-B7A1-4DE6-9B44-A14716CF532F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

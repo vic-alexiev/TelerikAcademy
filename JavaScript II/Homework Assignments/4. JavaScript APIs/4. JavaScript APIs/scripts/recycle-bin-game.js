@@ -4,6 +4,8 @@
     var FIELD_ID = "field";
     var RECYCLE_BIN_TOP = 10;
     var RECYCLE_BIN_LEFT = 10;
+    var RECYCLE_BIN_WIDTH = 160;
+    var RECYCLE_BIN_HEIGHT = 250;
     var MIN_TOP = 10;
     var MIN_LEFT = 280;
     var MAX_TOP = screen.height - 300;
@@ -163,6 +165,8 @@
         recycleBin.style.position = "absolute";
         recycleBin.style.top = RECYCLE_BIN_TOP + "px";
         recycleBin.style.left = RECYCLE_BIN_LEFT + "px";
+        recycleBin.setAttribute("width", RECYCLE_BIN_WIDTH);
+        recycleBin.setAttribute("height", RECYCLE_BIN_HEIGHT);
 
         if (recycleBin.addEventListener) {
             recycleBin.addEventListener("drop", dropItem, false);

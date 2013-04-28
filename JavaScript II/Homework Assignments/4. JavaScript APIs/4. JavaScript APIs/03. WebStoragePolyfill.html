@@ -3,6 +3,13 @@
 <head>
     <title>Web storage polyfill</title>
     <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/modernizr.custom.84955.js"></script>
+    <script src="WebshimsLib/js-webshim/dev/polyfiller.js"></script>
+    <script src="scripts/sizzle.js"></script>
+    <script>
+        $.webshims.polyfill('json-storage');
+    </script>
 </head>
 <body>
     <label for="textBoxKey">Key: </label>
@@ -20,14 +27,7 @@
     <button onclick="onDisplayStorage()">Display storage</button>
     <button onclick="onClearStorage()">Clear storage</button>
     <div id="js-console"></div>
-    <script src="scripts/jquery-1.9.1.js"></script>
-    <script src="scripts/modernizr.custom.84955.js"></script>
-    <script src="WebshimsLib/js-webshim/dev/polyfiller.js"></script>
-    <script src="scripts/sizzle.js"></script>
     <script src="scripts/js-console.js"></script>
-    <script>
-        $.webshims.polyfill('json-storage');
-    </script>
     <script>
         function onSetItem() {
             var key = jsConsole.read("#textBoxKey");

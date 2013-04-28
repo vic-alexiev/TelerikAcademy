@@ -21,7 +21,7 @@
     <button onclick="onDisplayStorage()">Display storage</button>
     <button onclick="onClearStorage()">Clear storage</button>
     <div id="js-console"></div>
-    <script src="scripts/js-console.js"></script>
+    <!--<script src="scripts/js-console.js"></script>-->
     <script>
         function onBodyLoad() {
             displayWebStorageData("local");
@@ -29,8 +29,11 @@
         }
 
         function onSetItem() {
-            var key = jsConsole.read("#textBoxKey");
-            var data = jsConsole.read("#textBoxData");
+            var key = document.getElementById("textBoxKey").value;
+            var data = document.getElementById("textBoxData").value;
+
+            //var key = jsConsole.read("#textBoxKey");
+            //var data = jsConsole.read("#textBoxData");
 
             var storageType = document.getElementById("selectWebStorageType").value;
             setWebStorageItem(storageType, key, data);
@@ -42,7 +45,9 @@
         }
 
         function onRemoveItem() {
-            var key = jsConsole.read("#textBoxKey");
+            //var key = jsConsole.read("#textBoxKey");
+            var key = document.getElementById("textBoxKey").value;
+
             var storageType = document.getElementById("selectWebStorageType").value;
             removeWebStorageItem(storageType, key);
         }
@@ -50,12 +55,13 @@
         function onDisplayStorage() {
             var storageType = document.getElementById("selectWebStorageType").value;
 
-            jsConsole.clear();
+            //jsConsole.clear();
             displayWebStorageData(storageType);
         }
 
         function displayWebStorageData(storageType) {
-            jsConsole.writeLine(storageType + "Storage:");
+            //jsConsole.writeLine(storageType + "Storage:");
+            console.log(storageType + "Storage:");
 
             var storage;
             if (storageType === "local") {
@@ -71,7 +77,9 @@
             for (var i = 0; i < storage.length; i++) {
                 var key = storage.key(i);
                 var value = storage.getItem(key);
-                jsConsole.writeLine("key: " + key + "; value: " + value);
+                //jsConsole.writeLine("key: " + key + "; value: " + value);
+                console.log("key: " + key + "; value: " + value);
+
             }
         }
 
@@ -85,7 +93,7 @@
 
             storage.clear();
 
-            jsConsole.clear();
+            //jsConsole.clear();
             displayWebStorageData(storageType);
         }
 
@@ -99,7 +107,7 @@
 
             storage.setItem(key, data);
 
-            jsConsole.clear();
+            //jsConsole.clear();
             displayWebStorageData(storageType);
         }
 
@@ -113,7 +121,7 @@
 
             storage.removeItem(key);
 
-            jsConsole.clear();
+            //jsConsole.clear();
             displayWebStorageData(storageType);
         }
     </script>

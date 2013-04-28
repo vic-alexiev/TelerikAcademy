@@ -1,9 +1,11 @@
 ﻿var recycleBinGame = (function () {
 
-    var ITEMS_TOTAL = 5;
+    var ITEMS_TOTAL = 10;
     var FIELD_ID = "field";
     var RECYCLE_BIN_TOP = 10;
     var RECYCLE_BIN_LEFT = 10;
+    var RECYCLE_BIN_CLOSED_IMAGE = "images/RecycleBinClosed.png";
+    var RECYCLE_BIN_OPENED_IMAGE = "images/RecycleBinOpened.png";
     var MIN_TOP = 10;
     var MIN_LEFT = 280;
     var MAX_TOP = screen.height - 300;
@@ -81,7 +83,7 @@
             var itemId = event.dataTransfer.getData("dragged-item-id");
             var item = document.getElementById(itemId);
             item.parentElement.removeChild(item);
-            eventSource.src = "images/RecycleBinClosed.png";
+            eventSource.src = RECYCLE_BIN_CLOSED_IMAGE;
 
             itemsCount--;
 
@@ -89,7 +91,7 @@
                 finishGame();
             }
         } else {
-            eventSource.src = "images/RecycleBinClosed.png";
+            eventSource.src = RECYCLE_BIN_CLOSED_IMAGE;
         }
     }
 
@@ -101,7 +103,7 @@
         if (event.clientX >= RECYCLE_BIN_LEFT + eventSource.clientWidth / 2 &&
             event.clientY <= RECYCLE_BIN_TOP + eventSource.clientHeight / 3) {
 
-            eventSource.src = "images/RecycleBinOpened.png";
+            eventSource.src = RECYCLE_BIN_OPENED_IMAGE;
         }
 
         if (event.preventDefault) {
@@ -113,7 +115,7 @@
         // ensure the event object is defined
         if (!event) event = window.event;
         var eventSource = (event.target ? event.target : event.srcElement);
-        eventSource.src = "images/RecycleBinClosed.png";
+        eventSource.src = RECYCLE_BIN_CLOSED_IMAGE;
 
         if (event.preventDefault) {
             event.preventDefault();
@@ -153,7 +155,7 @@
 
     function addRecycleBin() {
         var recycleBin = document.createElement("img");
-        recycleBin.src = "images/RecycleBinClosed.png";
+        recycleBin.src = RECYCLE_BIN_CLOSED_IMAGE;
 
         recycleBin.style.position = "absolute";
         recycleBin.style.top = RECYCLE_BIN_TOP + "px";

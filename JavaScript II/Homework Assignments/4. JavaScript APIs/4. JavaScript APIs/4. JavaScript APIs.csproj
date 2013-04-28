@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="01. RecycleBinGame.html" />
+    <Content Include="03. WebStoragePolyfill.html" />
     <Content Include="images\Apple.png" />
     <Content Include="images\Banana.png" />
     <Content Include="images\Cherries.png" />
@@ -68,7 +69,10 @@
     <Content Include="images\RecycleBinClosed.png" />
     <Content Include="images\RecycleBinOpened.png" />
     <Content Include="images\Strawberry.png" />
+    <Content Include="scripts\js-console.js" />
     <Content Include="scripts\recycle-bin-game.js" />
+    <Content Include="scripts\web-storage-polyfill.js" />
+    <Content Include="styles\js-console.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

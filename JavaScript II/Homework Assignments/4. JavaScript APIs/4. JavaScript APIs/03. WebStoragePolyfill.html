@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web storage polyfill</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <!--<script src="scripts/web-storage-polyfill.js"></script>-->
+</head>
+<body onload="onBodyLoad()">
+    <label for="textBoxKey">Key: </label>
+    <input type="text" id="textBoxKey" />
+    <label for="textBoxData">Data: </label>
+    <input type="text" id="textBoxData" />
+    <label for="selectWebStorageType">Select web storage: </label>
+    <select id="selectWebStorageType">
+        <option value="local">localStorage</option>
+        <option value="session">sessionStorage</option>
+    </select>
+    <br />
+    <button onclick="onSetItem()">Set item</button>
+    <button onclick="onRemoveItem()">Remove item</button>
+    <button onclick="onDisplayStorage()">Display storage</button>
+    <button onclick="onClearStorage()">Clear storage</button>
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function onBodyLoad() {
+            displayWebStorageData("local");
+            displayWebStorageData("session");
+        }
+
+        function onSetItem() {
+            var key = jsConsole.read("#textBoxKey");
+            var data = jsConsole.read("#textBoxData");
+
+            var storageType = document.getElementById("selectWebStorageType").value;
+            setWebStorageItem(storageType, key, data);
+        }
+
+        function onClearStorage() {
+            var storageType = document.getElementById("selectWebStorageType").value;
+            clearWebStorage(storageType);
+        }
+
+        function onRemoveItem() {
+            var key = jsConsole.read("#textBoxKey");
+            var storageType = document.getElementById("selectWebStorageType").value;
+            removeWebStorageItem(storageType, key);
+        }
+
+        function onDisplayStorage() {
+            var storageType = document.getElementById("selectWebStorageType").value;
+
+            jsConsole.clear();
+            displayWebStorageData(storageType);
+        }
+
+        function displayWebStorageData(storageType) {
+            jsConsole.writeLine(storageType + "Storage:");
+
+            var storage;
+            if (storageType === "local") {
+                storage = localStorage;
+            } else {
+                storage = sessionStorage;
+            }
+
+            if (!storage.length || storage.length == 0) {
+                return;
+            }
+
+            for (var i = 0; i < storage.length; i++) {
+                var key = storage.key(i);
+                var value = storage.getItem(key);
+                jsConsole.writeLine("key: " + key + "; value: " + value);
+            }
+        }
+
+        function clearWebStorage(storageType) {
+            var storage;
+            if (storageType === "local") {
+                storage = localStorage;
+            } else {
+                storage = sessionStorage;
+            }
+
+            storage.clear();
+
+            jsConsole.clear();
+            displayWebStorageData(storageType);
+        }
+
+        function setWebStorageItem(storageType, key, data) {
+            var storage;
+            if (storageType === "local") {
+                storage = localStorage;
+            } else {
+                storage = sessionStorage;
+            }
+
+            storage.setItem(key, data);
+
+            jsConsole.clear();
+            displayWebStorageData(storageType);
+        }
+
+        function removeWebStorageItem(storageType, key) {
+            var storage;
+            if (storageType === "local") {
+                storage = localStorage;
+            } else {
+                storage = sessionStorage;
+            }
+
+            storage.removeItem(key);
+
+            jsConsole.clear();
+            displayWebStorageData(storageType);
+        }
+    </script>
+</body>
+</html>

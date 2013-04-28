@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Recycle bin</title>
+    <script src="scripts/recycle-bin-game.js"></script>
+    <style>
+        body {
+            font-family: Corbel, sans-serif;
+            font-size: .9em;
+            background-color: bisque;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="onBodyLoad()">
+    <div id="field"></div>
+    <script>
+        function onBodyLoad() {
+            recycleBinGame.loadGame();
+        }
+    </script>
+</body>
+</html>

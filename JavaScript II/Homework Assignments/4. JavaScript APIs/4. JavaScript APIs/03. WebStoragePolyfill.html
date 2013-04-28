@@ -3,9 +3,8 @@
 <head>
     <title>Web storage polyfill</title>
     <link href="styles/js-console.css" rel="stylesheet" />
-    <!--<script src="scripts/web-storage-polyfill.js"></script>-->
 </head>
-<body onload="onBodyLoad()">
+<body>
     <label for="textBoxKey">Key: </label>
     <input type="text" id="textBoxKey" />
     <label for="textBoxData">Data: </label>
@@ -21,19 +20,18 @@
     <button onclick="onDisplayStorage()">Display storage</button>
     <button onclick="onClearStorage()">Clear storage</button>
     <div id="js-console"></div>
-    <!--<script src="scripts/js-console.js"></script>-->
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/modernizr.custom.84955.js"></script>
+    <script src="WebshimsLib/js-webshim/dev/polyfiller.js"></script>
+    <script src="scripts/sizzle.js"></script>
+    <script src="scripts/js-console.js"></script>
     <script>
-        function onBodyLoad() {
-            displayWebStorageData("local");
-            displayWebStorageData("session");
-        }
-
+        $.webshims.polyfill('json-storage');
+    </script>
+    <script>
         function onSetItem() {
-            var key = document.getElementById("textBoxKey").value;
-            var data = document.getElementById("textBoxData").value;
-
-            //var key = jsConsole.read("#textBoxKey");
-            //var data = jsConsole.read("#textBoxData");
+            var key = jsConsole.read("#textBoxKey");
+            var data = jsConsole.read("#textBoxData");
 
             var storageType = document.getElementById("selectWebStorageType").value;
             setWebStorageItem(storageType, key, data);
@@ -45,8 +43,7 @@
         }
 
         function onRemoveItem() {
-            //var key = jsConsole.read("#textBoxKey");
-            var key = document.getElementById("textBoxKey").value;
+            var key = jsConsole.read("#textBoxKey");
 
             var storageType = document.getElementById("selectWebStorageType").value;
             removeWebStorageItem(storageType, key);
@@ -55,13 +52,12 @@
         function onDisplayStorage() {
             var storageType = document.getElementById("selectWebStorageType").value;
 
-            //jsConsole.clear();
+            jsConsole.clear();
             displayWebStorageData(storageType);
         }
 
         function displayWebStorageData(storageType) {
-            //jsConsole.writeLine(storageType + "Storage:");
-            console.log(storageType + "Storage:");
+            jsConsole.writeLine(storageType + "Storage:");
 
             var storage;
             if (storageType === "local") {
@@ -77,9 +73,7 @@
             for (var i = 0; i < storage.length; i++) {
                 var key = storage.key(i);
                 var value = storage.getItem(key);
-                //jsConsole.writeLine("key: " + key + "; value: " + value);
-                console.log("key: " + key + "; value: " + value);
-
+                jsConsole.writeLine("key: " + key + "; value: " + value);
             }
         }
 
@@ -93,7 +87,7 @@
 
             storage.clear();
 
-            //jsConsole.clear();
+            jsConsole.clear();
             displayWebStorageData(storageType);
         }
 
@@ -107,7 +101,7 @@
 
             storage.setItem(key, data);
 
-            //jsConsole.clear();
+            jsConsole.clear();
             displayWebStorageData(storageType);
         }
 
@@ -121,7 +115,7 @@
 
             storage.removeItem(key);
 
-            //jsConsole.clear();
+            jsConsole.clear();
             displayWebStorageData(storageType);
         }
     </script>

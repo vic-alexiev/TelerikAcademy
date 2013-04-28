@@ -1,11 +1,9 @@
 ﻿var recycleBinGame = (function () {
 
-    var ITEMS_TOTAL = 10;
+    var ITEMS_TOTAL = 5;
     var FIELD_ID = "field";
     var RECYCLE_BIN_TOP = 10;
     var RECYCLE_BIN_LEFT = 10;
-    var RECYCLE_BIN_WIDTH = 160;
-    var RECYCLE_BIN_HEIGHT = 250;
     var MIN_TOP = 10;
     var MIN_LEFT = 280;
     var MAX_TOP = screen.height - 300;
@@ -128,14 +126,9 @@
         var milliseconds = endTime.getTime() - startTime.getTime();
         var score = milliseconds / 1000;
 
-        alert("Your score (sec): " + score);
+        var nickname = prompt("Your score (sec): " + score + "\r\nPlease enter your nickname");
 
-        var nickname;
-        do {
-            nickname = prompt("Please enter your nickname");
-        } while (!nickname);
-
-        localStorage.setItem(nickname, score);
+        localStorage.setItem(nickname ? nickname : "[anonymous]", score);
 
         if (localStorage.length > TOP_SCORES_TO_KEEP) {
 
@@ -165,8 +158,6 @@
         recycleBin.style.position = "absolute";
         recycleBin.style.top = RECYCLE_BIN_TOP + "px";
         recycleBin.style.left = RECYCLE_BIN_LEFT + "px";
-        recycleBin.setAttribute("width", RECYCLE_BIN_WIDTH);
-        recycleBin.setAttribute("height", RECYCLE_BIN_HEIGHT);
 
         if (recycleBin.addEventListener) {
             recycleBin.addEventListener("drop", dropItem, false);

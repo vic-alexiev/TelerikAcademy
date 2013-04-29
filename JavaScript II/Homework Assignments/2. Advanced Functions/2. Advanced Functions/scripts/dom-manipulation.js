@@ -1,7 +1,7 @@
 ﻿var dom = (function () {
 
     // an associative array of document fragments
-    var fragmentsBuffer = [];
+    var fragmentsBuffer = {};
     // maximum size of a document fragment
     var MAX_FRAGMENT_SIZE = 100;
 
@@ -17,12 +17,10 @@
         return child;
     }
 
-    // for private use
     function getElement(selector) {
         return document.querySelector(selector);
     }
 
-    // for private use
     function getElements(selector) {
         return document.querySelectorAll(selector);
     }
@@ -75,6 +73,8 @@
 
     return {
         addElement: addElement,
+        getElement: getElement,
+        getElements: getElements,
         removeElements: removeElements,
         attachEventHandler: attachEventHandler,
         addElementViaBuffer: addElementViaBuffer

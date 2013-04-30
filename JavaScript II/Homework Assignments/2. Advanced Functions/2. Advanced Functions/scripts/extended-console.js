@@ -20,17 +20,17 @@
     }
 
     function writeLine(value, optionalParams) {
-        var result = formatString(value, optionalParams);
+        var result = formatString.apply(null, arguments);
         console.log(result);
     }
 
     function writeError(value, optionalParams) {
-        var result = formatString(value, optionalParams);
+        var result = formatString.apply(null, arguments);
         console.error(result);
     }
 
     function writeWarning(value, optionalParams) {
-        var result = formatString(value, optionalParams);
+        var result = formatString.apply(null, arguments);
         console.warn(result);
     }
 

@@ -1,20 +1,20 @@
 ﻿var vehicles = (function () {
 
     // enumerations
-    var AfterburnerState = {
+    var AfterburnerState = Object.freeze({
         "ACTIVATED": 1,
         "DEACTIVATED": 2
-    };
+    });
 
-    var RotationDirection = {
+    var RotationDirection = Object.freeze({
         "CLOCKWISE": 1,
         "COUNTERCLOCKWISE": 2
-    };
+    });
 
-    var AmphibianMode = {
+    var AmphibianMode = Object.freeze({
         "LAND": 1,
         "WATER": 2
-    };
+    });
 
     Function.prototype.inherits = function (parent) {
         this.prototype = new parent();

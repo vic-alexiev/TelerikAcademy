@@ -60,6 +60,7 @@
     <Content Include="01. PicnicBasketGame.html" />
     <Content Include="03. WebStoragePolyfill.html" />
     <Content Include="04. Canvas.html" />
+    <Content Include="05. BouncingBalls.html" />
     <Content Include="images\Apple.png" />
     <Content Include="images\Banana.png" />
     <Content Include="images\Cherries.png" />
@@ -70,6 +71,7 @@
     <Content Include="images\Pineapple.png" />
     <Content Include="images\Raspberry.png" />
     <Content Include="images\Strawberry.png" />
+    <Content Include="scripts\bouncing-balls.js" />
     <Content Include="scripts\canvasplus1-1.js" />
     <Content Include="scripts\js-console.js" />
     <Content Include="scripts\json2.js" />

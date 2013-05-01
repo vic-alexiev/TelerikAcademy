@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Bouncing ball</title>
+    <script src="scripts/bouncing-balls.js"></script>
+    <script src="scripts/canvasplus1-1.js"></script>
+    <style>
+        body {
+            font-family: Verdana;
+            font-size: small;
+        }
+
+        canvas {
+            cursor: pointer;
+            border: 1px solid black;
+        }
+
+        div {
+            margin: 15px 0px;
+        }
+
+        button {
+            padding: 4px 10px;
+        }
+
+        input[type=number] {
+            width: 50px;
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body onload="onBodyLoad()">
+    <canvas id="canvas" width="400" height="300"></canvas>
+    <div>
+        <button onclick="addBall()">Add ball</button>
+        <button onclick="clearBalls()">Clear balls</button>
+    </div>
+    <div>
+        Ball size:
+        <input id="ball-size" type="number" min="0" max="50" value="15" />
+        Ball color:
+        <input type="color" id="ball-color" value="green" />
+    </div>
+    <script>
+        function onBodyLoad() {
+            bouncingBalls.load();
+        }
+
+        function addBall() {
+            // Get the requested size.
+            var radius = parseFloat(document.getElementById("ball-size").value);
+
+            // Get the requested color.
+            var color = document.getElementById("ball-color").value;
+
+            bouncingBalls.addBall(radius, color);
+        }
+
+        function clearBalls() {
+            bouncingBalls.clearBalls();
+        }
+    </script>
+</body>
+</html>

@@ -1,15 +1,18 @@
-﻿var recycleBinGame = (function () {
+﻿var picnicBasketGame = (function () {
 
     var ITEMS_TOTAL = 10;
     var FIELD_ID = "field";
-    var RECYCLE_BIN_TOP = 10;
-    var RECYCLE_BIN_LEFT = 10;
-    var RECYCLE_BIN_CLOSED_IMAGE = "images/RecycleBinClosed.png";
-    var RECYCLE_BIN_OPENED_IMAGE = "images/RecycleBinOpened.png";
+
+    var BASKET_TOP = screen.availHeight - 400;
+    var BASKET_LEFT = 30;
+    var BASKET_CLOSED_IMAGE = "images/PicnicBasketClosed.png";
+    var BASKET_OPENED_IMAGE = "images/PicnicBasketOpened.png";
+
     var MIN_TOP = 10;
-    var MIN_LEFT = 280;
+    var MIN_LEFT = 300;
     var MAX_TOP = screen.height - 300;
     var MAX_LEFT = screen.width - 400;
+
     var TOP_SCORES_TO_KEEP = 5;
 
     var startTime = new Date();
@@ -77,13 +80,13 @@
 
         var eventSource = (event.target ? event.target : event.srcElement);
 
-        if (event.clientX >= RECYCLE_BIN_LEFT + eventSource.clientWidth / 2 &&
-            event.clientY <= RECYCLE_BIN_TOP + eventSource.clientHeight / 3) {
+        if (event.clientX >= BASKET_LEFT + eventSource.clientWidth / 2 &&
+            event.clientY <= BASKET_TOP + eventSource.clientHeight / 3) {
 
             var itemId = event.dataTransfer.getData("dragged-item-id");
             var item = document.getElementById(itemId);
             item.parentElement.removeChild(item);
-            eventSource.src = RECYCLE_BIN_CLOSED_IMAGE;
+            eventSource.src = BASKET_CLOSED_IMAGE;
 
             itemsCount--;
 
@@ -91,7 +94,7 @@
                 finishGame();
             }
         } else {
-            eventSource.src = RECYCLE_BIN_CLOSED_IMAGE;
+            eventSource.src = BASKET_CLOSED_IMAGE;
         }
     }
 
@@ -100,10 +103,10 @@
         if (!event) event = window.event;
         var eventSource = (event.target ? event.target : event.srcElement);
 
-        if (event.clientX >= RECYCLE_BIN_LEFT + eventSource.clientWidth / 2 &&
-            event.clientY <= RECYCLE_BIN_TOP + eventSource.clientHeight / 3) {
+        if (event.clientX >= BASKET_LEFT + eventSource.clientWidth / 2 &&
+            event.clientY <= BASKET_TOP + eventSource.clientHeight / 3) {
 
-            eventSource.src = RECYCLE_BIN_OPENED_IMAGE;
+            eventSource.src = BASKET_OPENED_IMAGE;
         }
 
         if (event.preventDefault) {
@@ -115,7 +118,7 @@
         // ensure the event object is defined
         if (!event) event = window.event;
         var eventSource = (event.target ? event.target : event.srcElement);
-        eventSource.src = RECYCLE_BIN_CLOSED_IMAGE;
+        eventSource.src = BASKET_CLOSED_IMAGE;
 
         if (event.preventDefault) {
             event.preventDefault();
@@ -153,34 +156,34 @@
         loadGame();
     }
 
-    function addRecycleBin() {
-        var recycleBin = document.createElement("img");
-        recycleBin.src = RECYCLE_BIN_CLOSED_IMAGE;
+    function addBasket() {
+        var basket = document.createElement("img");
+        basket.src = BASKET_CLOSED_IMAGE;
 
-        recycleBin.style.position = "absolute";
-        recycleBin.style.top = RECYCLE_BIN_TOP + "px";
-        recycleBin.style.left = RECYCLE_BIN_LEFT + "px";
+        basket.style.position = "absolute";
+        basket.style.top = BASKET_TOP + "px";
+        basket.style.left = BASKET_LEFT + "px";
 
-        if (recycleBin.addEventListener) {
-            recycleBin.addEventListener("drop", dropItem, false);
+        if (basket.addEventListener) {
+            basket.addEventListener("drop", dropItem, false);
         } else {
-            recycleBin.attachEvent("ondrop", dropItem);
+            basket.attachEvent("ondrop", dropItem);
         }
 
-        if (recycleBin.addEventListener) {
-            recycleBin.addEventListener("dragover", allowDropItem, false);
+        if (basket.addEventListener) {
+            basket.addEventListener("dragover", allowDropItem, false);
         } else {
-            recycleBin.attachEvent("ondragover", allowDropItem);
+            basket.attachEvent("ondragover", allowDropItem);
         }
 
-        if (recycleBin.addEventListener) {
-            recycleBin.addEventListener("dragleave", restoreState, false);
+        if (basket.addEventListener) {
+            basket.addEventListener("dragleave", restoreState, false);
         } else {
-            recycleBin.attachEvent("ondragleave", restoreState);
+            basket.attachEvent("ondragleave", restoreState);
         }
 
         var field = document.getElementById(FIELD_ID);
-        field.appendChild(recycleBin);
+        field.appendChild(basket);
     }
 
     function addItem() {
@@ -274,7 +277,7 @@
         // clear field
         field.removeChild(document.querySelector("table"));
 
-        addRecycleBin();
+        addBasket();
 
         for (var i = 0; i < ITEMS_TOTAL; i++) {
             addItem();

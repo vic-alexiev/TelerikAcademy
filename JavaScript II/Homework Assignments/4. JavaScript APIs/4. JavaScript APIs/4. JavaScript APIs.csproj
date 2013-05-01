@@ -57,21 +57,21 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="01. RecycleBinGame.html" />
+    <Content Include="01. PicnicBasketGame.html" />
     <Content Include="03. WebStoragePolyfill.html" />
     <Content Include="images\Apple.png" />
     <Content Include="images\Banana.png" />
     <Content Include="images\Cherries.png" />
     <Content Include="images\Grapes.png" />
     <Content Include="images\Lemon.png" />
+    <Content Include="images\PicnicBasketClosed.png" />
+    <Content Include="images\PicnicBasketOpened.png" />
     <Content Include="images\Pineapple.png" />
     <Content Include="images\Raspberry.png" />
-    <Content Include="images\RecycleBinClosed.png" />
-    <Content Include="images\RecycleBinOpened.png" />
     <Content Include="images\Strawberry.png" />
     <Content Include="scripts\js-console.js" />
     <Content Include="scripts\json2.js" />
-    <Content Include="scripts\recycle-bin-game.js" />
+    <Content Include="scripts\picnic-basket-game.js" />
     <Content Include="scripts\sizzle.js" />
     <Content Include="scripts\storage.js" />
     <Content Include="styles\js-console.css" />

@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Canvas demos</title>
+    <script src="scripts/canvasplus1-1.js"></script>
+    <style>
+        canvas {
+            display: inline-block;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body onload="onBodyLoad()">
+    <canvas id="head" width="200" height="300"></canvas>
+    <canvas id="bicycle" width="400" height="300"></canvas>
+    <canvas id="house" width="250" height="300"></canvas>
+</body>
+<script>
+    function drawHouse() {
+        var context = canvasPlus("house");
+        context.lineWidth = 2;
+        context.fillStyle = "rgb(151, 91, 91)";
+        context.strokeStyle = "#000";
+
+        // building
+        context.drawRect("fill", 10, 130, 230, 160);
+        context.drawRect("stroke", 10, 130, 230, 160);
+
+        // front door
+        context.drawEllipse("stroke", 70, 240, 35, 20);
+
+        context.drawRect("fill", 35, 240, 70, 50);
+        context.drawRect("stroke", 35, 240, 70, 50);
+
+        // door knobs
+        context.drawCircle("stroke", 60, 270, 3);
+        context.drawCircle("stroke", 80, 270, 3);
+
+        // roof (an isosceles triangle)
+        context.drawIsosceles("fill", 125, 10, 230, 120);
+        context.drawIsosceles("stroke", 125, 10, 230, 120);
+
+        // chimney
+        context.drawRect("fill", 170, 40, 30, 70);
+        context.drawRect("stroke", 170, 40, 30, 70);
+
+        context.drawEllipse("fill", 185, 40, 15, 5);
+        context.drawEllipse("stroke", 185, 40, 15, 5);
+
+        context.strokeStyle = "rgb(151, 91, 91)";
+
+        // clear
+        context.fillStyle = "#000";
+        context.strokeStyle = "rgb(151, 91, 91)";
+
+        // clear chimney
+        context.drawLine(171, 110, 199, 110);
+
+        // clear front door
+        context.drawLine(36, 240, 104, 240);
+
+        // windows
+        context.drawRect("fill", 30, 150, 80, 50);
+
+        context.drawRect("fill", 140, 150, 80, 50);
+
+        context.drawRect("fill", 140, 220, 80, 50);
+
+        // separate the window panes
+        context.drawLine(70, 150, 70, 200);
+
+        context.drawLine(180, 150, 180, 270);
+
+        context.drawLine(30, 175, 220, 175);
+
+        context.drawLine(140, 245, 220, 245);
+
+        // finish the door
+        context.strokeStyle = "#000";
+        context.drawLine(70, 220, 70, 290);
+    }
+
+    function drawBicycle() {
+        var context = canvasPlus("bicycle");
+        context.lineWidth = 3;
+        context.fillStyle = "rgb(144, 202, 215)";
+        context.strokeStyle = "rgb(57, 139, 159)";
+
+        // rear wheel
+        context.drawCircle("fill", 80, 220, 75);
+        context.drawCircle("stroke", 80, 220, 75);
+
+        // front wheel
+        context.drawCircle("fill", 320, 220, 75);
+        context.drawCircle("stroke", 320, 220, 75);
+
+        // head tube
+        context.drawLine(320, 220, 270, 70);
+
+        // chain stays
+        context.drawLine(80, 220, 180, 220);
+
+        // seat stays
+        context.drawLine(80, 220, 118, 110);
+
+        // seat tube
+        context.drawLine(181, 221, 100, 80);
+
+        // top tube
+        context.drawLine(118, 110, 282, 110);
+
+        // down tube
+        context.drawLine(180, 220, 282, 110);
+
+        // seat
+        context.drawLine(70, 80, 130, 80);
+
+        // handlebars
+        context.drawLine(255, 90, 285, 50);
+        context.drawLine(230, 95, 255, 90);
+        context.drawLine(260, 55, 285, 50);
+
+        // chain rings
+        context.drawCircle("stroke", 180, 220, 20);
+
+        // pedals
+        context.drawLine(170, 258, 175, 238);
+        context.drawLine(185, 202, 190, 182);
+    }
+
+    function drawHead() {
+        var context = canvasPlus("head");
+        context.lineWidth = 3;
+        context.fillStyle = "rgb(144, 202, 215)";
+        context.strokeStyle = "rgb(41, 91, 102)";
+
+        // head
+        context.drawEllipse("fill", 100, 200, 80, 70);
+        context.drawEllipse("stroke", 100, 200, 80, 70);
+
+        // mouth
+        context.drawEllipse("stroke", 85, 238, 30, 10, Math.PI / 18);
+
+        // nose
+        context.drawLine(85, 180, 68, 213);
+        context.drawLine(68, 212, 85, 212);
+
+        // left eye
+        context.drawEllipse("stroke", 50, 180, 14, 10);
+
+        // right eye
+        context.drawEllipse("stroke", 120, 180, 14, 10);
+
+        // change fill style for the irides
+        context.fillStyle = "rgb(41, 91, 102)";
+
+        // left iris
+        context.drawEllipse("fill", 46, 180, 5, 8);
+
+        // right iris
+        context.drawEllipse("fill", 116, 180, 5, 8);
+
+        // hat - brim
+        context.fillStyle = "rgb(57, 102, 147)";
+        context.strokeStyle = "rgb(37, 34, 30)";
+
+        context.drawEllipse("fill", 100, 140, 85, 20);
+        context.drawEllipse("stroke", 100, 140, 85, 20);
+
+        // hat - cylinder base
+        context.drawEllipse("stroke", 100, 135, 50, 15);
+
+        // hat - cylinder
+        context.drawRect("fill", 50, 35, 100, 100);
+        context.drawRect("stroke", 50, 35, 100, 100);
+
+        // hat - top
+        context.drawEllipse("fill", 100, 35, 50, 15);
+        context.drawEllipse("stroke", 100, 35, 50, 15);
+
+        // clear line
+        context.lineWidth = 4;
+        context.strokeStyle = "rgb(57, 102, 147)";
+        context.drawLine(52, 135, 148, 135);
+    }
+
+    function onBodyLoad() {
+        drawHead();
+        drawBicycle();
+        drawHouse();
+    }
+</script>
+</html>

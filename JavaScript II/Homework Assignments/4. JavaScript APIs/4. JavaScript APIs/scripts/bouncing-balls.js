@@ -1,10 +1,5 @@
 ﻿var bouncingBalls = (function () {
 
-    var START_X = 50;
-    var START_Y = 50;
-    var SPEED_X = 10;
-    var SPEED_Y = 10;
-
     var canvas;
     var context;
 
@@ -21,9 +16,9 @@
         this.color = color;
     }
 
-    function addBall(radius, color) {
+    function addBall(startX, startY, speedX, speedY, radius, color) {
         // Create the new ball.
-        var ball = new Ball(START_X, START_Y, SPEED_X, SPEED_Y, radius, color);
+        var ball = new Ball(startX, startY, speedX, speedY, radius, color);
 
         // Store it in the balls array.
         balls.push(ball);
@@ -34,9 +29,9 @@
         balls = [];
     }
 
-    function load() {
-        canvas = document.getElementById("canvas");
-        context = canvasPlus("canvas");
+    function load(canvasId) {
+        canvas = document.getElementById(canvasId);
+        context = canvasPlus(canvasId);
 
         // Redraw every 20 milliseconds.
         setTimeout(drawFrame, 20);

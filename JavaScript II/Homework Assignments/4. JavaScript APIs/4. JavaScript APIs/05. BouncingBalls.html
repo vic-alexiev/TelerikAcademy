@@ -43,7 +43,7 @@
     </div>
     <script>
         function onBodyLoad() {
-            bouncingBalls.load();
+            bouncingBalls.load("canvas");
         }
 
         function addBall() {
@@ -53,7 +53,7 @@
             // Get the requested color.
             var color = document.getElementById("ball-color").value;
 
-            bouncingBalls.addBall(radius, color);
+            bouncingBalls.addBall(50, 50, 10, 10, radius, color);
         }
 
         function clearBalls() {

@@ -38,7 +38,7 @@ namespace Exams
             {
                 throw new ArgumentOutOfRangeException(
                     "score",
-                    string.Format("score must be in the range between zero and {0}.", maxScore));
+                    string.Format("score must be in the range between 0 and {0}.", maxScore));
             }
 
             this.Score = score;

@@ -26,7 +26,7 @@ internal class ExamsDemo
                 new CSharpExam(55, 100),
                 new CSharpExam(100, 100),
                 new SimpleMathExam(1),
-                new CSharpExam(0, -100)
+                new CSharpExam(0, 100)
             };
 
             Student peter = new Student("Peter", "Petrov", peterExams);

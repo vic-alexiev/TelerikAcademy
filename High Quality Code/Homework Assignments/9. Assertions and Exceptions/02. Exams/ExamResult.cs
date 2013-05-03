@@ -53,7 +53,7 @@ namespace Exams
             {
                 throw new ArgumentOutOfRangeException(
                     "grade",
-                    string.Format("grade should be in the range between {0} and {1}.", minGrade, maxGrade));
+                    string.Format("grade must be in the range between {0} and {1}.", minGrade, maxGrade));
             }
 
             if (string.IsNullOrWhiteSpace(comments))

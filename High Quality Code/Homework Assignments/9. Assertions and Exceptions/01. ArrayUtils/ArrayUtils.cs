@@ -19,25 +19,21 @@ public static class ArrayUtils
     /// </summary>
     /// <typeparam name="T">The type of the array elements.</typeparam>
     /// <param name="array">The array to sort.</param>
+    /// <exception cref="System.ArgumentNullException">Thrown when 
+    /// <paramref name="array"/> is null.</exception>
     public static void SelectionSort<T>(T[] array)
         where T : IComparable<T>
     {
-        Debug.Assert(array != null, "Array is null.", "Cannot sort an array which is null.");
-        Debug.Assert(array.Length > 0, "Array is empty", "An empty array cannot be sorted.");
+        if (array == null)
+        {
+            throw new ArgumentNullException("array", "Value cannot be null.");
+        }
 
         for (int index = 0; index < array.Length - 1; index++)
         {
             int minElementIndex = FindMinElementIndex(array, index, array.Length - 1);
 
-            Debug.Assert(
-                array[minElementIndex].CompareTo(array[index]) <= 0,
-                "Minimum element is not correctly identified.");
-
             Swap(ref array[index], ref array[minElementIndex]);
-
-            Debug.Assert(
-                array[index].CompareTo(array[minElementIndex]) <= 0,
-                "Swapping elements failed.");
         }
     }
 
@@ -46,34 +42,63 @@ public static class ArrayUtils
     /// in a sorted array.
     /// </summary>
     /// <typeparam name="T">The type of the array elements.</typeparam>
-    /// <param name="array">The sorted array to search in.</param>
-    /// <param name="value">The value to find.</param>
-    /// <returns>The index of <paramref name="value"/> in the array.</returns>
+    /// <param name="array">The sorted one-dimensional, zero-based array to search.</param>
+    /// <param name="value">The object to search for.</param>
+    /// <returns>The index of <paramref name="value"/> in the array, -1 if it is not found.</returns>
+    /// <exception cref="System.ArgumentNullException">Thrown when 
+    /// <paramref name="array"/> is null.</exception>
+    /// <exception cref="System.ArgumentException">Thrown when 
+    /// <paramref name="array"/> is not sorted.</exception>
+    /// <remarks>Since the algorithm doesn't work correctly for unsorted arrays, it throws
+    /// an exception in that case.</remarks>
     public static int BinarySearch<T>(T[] array, T value)
         where T : IComparable<T>
     {
-        Debug.Assert(array != null, "Array is null.", "Cannot sort an array which is null.");
-        Debug.Assert(array.Length > 0, "Array is empty", "An empty array cannot be sorted.");
-
-        for (int i = 1; i < array.Length; i++)
+        if (array == null)
         {
-            Debug.Assert(
-                array[i - 1].CompareTo(array[i]) <= 0,
-                "The array is not sorted.",
-                "The elements {0} and {1} are not in the correct order.",
-                array[i - 1],
-                array[i]);
+            throw new ArgumentNullException("array", "Value cannot be null.");
+        }
+
+        if (array.Length == 0)
+        {
+            return -1;
+        }
+
+        if (!IsSorted(array))
+        {
+            throw new ArgumentException("array is not sorted. Binary search is not applicable.", "array");
         }
 
         int index = BinarySearch(array, value, 0, array.Length - 1);
-
-        Debug.Assert(
-            index == -1 || (index >= 0 && index < array.Length),
-            "Binary search index is invalid.",
-            "Binary search returned an invalid index: {0}.",
-            index);
-
         return index;
+    }
+
+    /// <summary>
+    /// Checks if <paramref name="array"/> is sorted.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the array.</typeparam>
+    /// <param name="array">The array to check.</param>
+    /// <returns>True if <paramref name="array"/> is sorted in ascending order, 
+    /// otherwise - false.</returns>
+    /// <exception cref="System.ArgumentNullException">Thrown when 
+    /// <paramref name="array"/> is null.</exception>
+    public static bool IsSorted<T>(T[] array)
+        where T : IComparable<T>
+    {
+        if (array == null)
+        {
+            throw new ArgumentNullException("array", "Value cannot be null.");
+        }
+
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array[i - 1].CompareTo(array[i]) > 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     #endregion
@@ -92,8 +117,8 @@ public static class ArrayUtils
     private static int FindMinElementIndex<T>(T[] array, int startIndex, int endIndex)
         where T : IComparable<T>
     {
-        Debug.Assert(array != null, "Array is null.", "Cannot sort an array which is null.");
-        Debug.Assert(array.Length > 0, "Array is empty", "An empty array cannot be sorted.");
+        Debug.Assert(array != null, "Array is null.");
+        Debug.Assert(array.Length > 0, "Array is empty");
         Debug.Assert(
             startIndex >= 0 && startIndex < array.Length,
             "startIndex is invalid.",
@@ -104,7 +129,7 @@ public static class ArrayUtils
             "endIndex is invalid.",
             "endIndex is not in the range between 0 and {0}.",
             array.Length - 1);
-        Debug.Assert(startIndex <= endIndex, "startIndex should be less than or equal to endIndex.");
+        Debug.Assert(startIndex <= endIndex, "startIndex must be less than or equal to endIndex.");
 
         int minElementIndex = startIndex;
 
@@ -114,6 +139,13 @@ public static class ArrayUtils
             {
                 minElementIndex = i;
             }
+        }
+
+        for (int j = startIndex; j <= endIndex; j++)
+        {
+            Debug.Assert(
+                array[minElementIndex].CompareTo(array[j]) <= 0,
+                "Minimum element is not correctly identified.");
         }
 
         return minElementIndex;
@@ -148,8 +180,8 @@ public static class ArrayUtils
     private static int BinarySearch<T>(T[] array, T value, int startIndex, int endIndex)
         where T : IComparable<T>
     {
-        Debug.Assert(array != null, "Array is null.", "Cannot sort an array which is null.");
-        Debug.Assert(array.Length > 0, "Array is empty", "An empty array cannot be sorted.");
+        Debug.Assert(array != null, "Array is null.");
+        Debug.Assert(array.Length > 0, "Array is empty");
         Debug.Assert(
             startIndex >= 0 && startIndex < array.Length,
             "startIndex is invalid.",
@@ -160,7 +192,7 @@ public static class ArrayUtils
             "endIndex is invalid.",
             "endIndex is not in the range between 0 and {0}.",
             array.Length - 1);
-        Debug.Assert(startIndex <= endIndex, "startIndex should be less than or equal to endIndex.");
+        Debug.Assert(startIndex <= endIndex, "startIndex must be less than or equal to endIndex.");
 
         for (int i = 1; i < array.Length; i++)
         {
@@ -190,6 +222,13 @@ public static class ArrayUtils
                 // search in the left half
                 endIndex = midIndex - 1;
             }
+        }
+
+        for (int i = startIndex; i <= endIndex; i++)
+        {
+            Debug.Assert(
+                !array[i].Equals(value),
+                "The index of value cannot be -1 since value is in the array.");
         }
 
         // value not found

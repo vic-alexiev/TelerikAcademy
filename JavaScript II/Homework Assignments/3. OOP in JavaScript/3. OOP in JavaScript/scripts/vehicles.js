@@ -18,7 +18,7 @@
 
     Function.prototype.inherits = function (parent) {
         this.prototype = new parent();
-        this.prototype.constructor = parent;
+        this.prototype.constructor = this;
     };
 
     Function.prototype.extends = function (parent) {

@@ -1,0 +1,13 @@
+Performance bottleneck
+-------------------------------
+File name: OrbitsCalculator.cs
+Method: EarthRotation()
+Line: 94
+
+Fix:
+
+	private void EarthRotation()
+	{
+		EarthRotationAngle = 360 * Days / EarthRotationPeriod;
+		Update("EarthRotationAngle");
+	}

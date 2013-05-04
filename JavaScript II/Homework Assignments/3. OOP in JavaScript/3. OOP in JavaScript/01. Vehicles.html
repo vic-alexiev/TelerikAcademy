@@ -6,6 +6,8 @@
 </head>
 <body>
     <script>
+        var speedUnits = " mph";
+
         var wheels = [
             new vehicles.Wheel(10),
             new vehicles.Wheel(10),
@@ -26,54 +28,54 @@
         ];
 
         var landVehicle = new vehicles.LandVehicle(50, wheels);
-        console.log("Land vehicle speed initially: " + landVehicle.speed + "mph");
+        console.log("Land vehicle speed initially: " + landVehicle.speed + speedUnits);
         // accelerate the vehicle
         landVehicle.accelerate();
-        console.log("Land vehicle speed after acceleration: " + landVehicle.speed + "mph");
+        console.log("Land vehicle speed after acceleration: " + landVehicle.speed + speedUnits);
 
         var aircraft = new vehicles.Aircraft(100, propellingNozzles);
-        console.log("Aircraft speed initially: " + aircraft.speed + "mph");
+        console.log("Aircraft speed initially: " + aircraft.speed + speedUnits);
         // accelerate the aircraft with afterburners deactivated
         aircraft.accelerate();
-        console.log("Aircraft speed after acceleration with afterburners deactivated: " + aircraft.speed + "mph");
+        console.log("Aircraft speed after acceleration with afterburners deactivated: " + aircraft.speed + speedUnits);
 
         // activate the afterburners
         aircraft.switchAfterburners(vehicles.AfterburnerState.ACTIVATED);
         aircraft.accelerate();
-        console.log("Aircraft speed after acceleration with afterburners activated: " + aircraft.speed + "mph");
+        console.log("Aircraft speed after acceleration with afterburners activated: " + aircraft.speed + speedUnits);
 
         var watercraft = new vehicles.Watercraft(25, propellers);
-        console.log("Watercraft speed initially: " + watercraft.speed + "mph");
+        console.log("Watercraft speed initially: " + watercraft.speed + speedUnits);
 
         // accelerate the watercraft
         watercraft.accelerate();
-        console.log("Watercraft speed after acceleration with propellers rotating clockwise: " + watercraft.speed + "mph");
+        console.log("Watercraft speed after acceleration with propellers rotating clockwise: " + watercraft.speed + speedUnits);
 
         // change the propellers rotation direction
         watercraft.setPropellersRotationDirection(vehicles.RotationDirection.COUNTERCLOCKWISE);
         watercraft.accelerate();
-        console.log("Watercraft speed after acceleration with propellers rotating counterclockwise: " + watercraft.speed + "mph");
+        console.log("Watercraft speed after acceleration with propellers rotating counterclockwise: " + watercraft.speed + speedUnits);
 
         var amphibianPropellers = [
             new vehicles.Propeller(4, vehicles.RotationDirection.CLOCKWISE)
         ];
 
         var amphibian = new vehicles.Amphibian(5, amphibianPropellers, wheels, vehicles.AmphibianMode.LAND);
-        console.log("Amphibian speed initially: " + amphibian.speed + "mph");
+        console.log("Amphibian speed initially: " + amphibian.speed + speedUnits);
 
         // accelerate the amphibian
         amphibian.accelerate();
-        console.log("Amphibian speed after acceleration on land: " + amphibian.speed + "mph");
+        console.log("Amphibian speed after acceleration on land: " + amphibian.speed + speedUnits);
 
         // change amphibian mode to water
         amphibian.mode = vehicles.AmphibianMode.WATER;
         amphibian.accelerate();
-        console.log("Amphibian speed after acceleration on water with propellers rotating clockwise: " + amphibian.speed + "mph");
+        console.log("Amphibian speed after acceleration on water with propellers rotating clockwise: " + amphibian.speed + speedUnits);
 
         // change the propellers rotation direction
         amphibian.setPropellersRotationDirection(vehicles.RotationDirection.COUNTERCLOCKWISE);
         amphibian.accelerate();
-        console.log("Amphibian speed after acceleration on water with propellers rotating counterclockwise: " + amphibian.speed + "mph");
+        console.log("Amphibian speed after acceleration on water with propellers rotating counterclockwise: " + amphibian.speed + speedUnits);
     </script>
 </body>
 </html>

@@ -141,12 +141,20 @@ public static class ArrayUtils
             }
         }
 
-        for (int j = startIndex; j <= endIndex; j++)
-        {
-            Debug.Assert(
-                array[minElementIndex].CompareTo(array[j]) <= 0,
-                "Minimum element is not correctly identified.");
-        }
+        Debug.Assert(
+            new Func<bool>(() =>
+            {
+                for (int i = startIndex; i <= endIndex; i++)
+                {
+                    if (array[minElementIndex].CompareTo(array[i]) > 0)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            })(),
+            "Minimum element is not correctly identified.");
 
         return minElementIndex;
     }
@@ -194,15 +202,23 @@ public static class ArrayUtils
             array.Length - 1);
         Debug.Assert(startIndex <= endIndex, "startIndex must be less than or equal to endIndex.");
 
-        for (int i = 1; i < array.Length; i++)
-        {
-            Debug.Assert(
-                array[i - 1].CompareTo(array[i]) <= 0,
-                "The array is not sorted.",
-                "The elements {0} and {1} are not in the correct order.",
-                array[i - 1],
-                array[i]);
-        }
+        Debug.Assert(
+            new Func<bool>(() =>
+            {
+                for (int i = 1; i < array.Length; i++)
+                {
+                    if (array[i - 1].CompareTo(array[i]) > 0)
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            })(),
+            "The array is not sorted.");
+
+        int initialStartIndex = startIndex;
+        int initialEndIndex = endIndex;
 
         while (startIndex <= endIndex)
         {
@@ -224,12 +240,20 @@ public static class ArrayUtils
             }
         }
 
-        for (int i = startIndex; i <= endIndex; i++)
-        {
-            Debug.Assert(
-                !array[i].Equals(value),
-                "The index of value cannot be -1 since value is in the array.");
-        }
+        Debug.Assert(
+            new Func<bool>(() =>
+            {
+                for (int i = initialStartIndex; i <= initialEndIndex; i++)
+                {
+                    if (array[i].Equals(value))
+                    {
+                        return false;
+                    }
+                }
+
+                return true;
+            })(),
+            "The index of value cannot be -1 since value is in the array.");
 
         // value not found
         return -1;

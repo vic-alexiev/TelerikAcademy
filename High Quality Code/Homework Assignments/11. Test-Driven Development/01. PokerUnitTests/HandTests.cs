@@ -72,7 +72,7 @@ namespace PokerUnitTests
 
             IHand hand = new Hand(cards);
 
-            Assert.AreEqual("2♥ 5♦ 9♠ J♣ A♦", hand.ToString(), "Hand.ToString() does not work correctly.");
+            Assert.AreEqual("2♥ 5♦ 9♠ J♣ A♦", hand.ToString(), "Hand conversion to string does not work correctly.");
         }
 
         [TestMethod]
@@ -85,7 +85,7 @@ namespace PokerUnitTests
 
             IHand hand = new Hand(cards);
 
-            Assert.AreEqual("J♣", hand.ToString(), "Hand.ToString() does not work correctly.");
+            Assert.AreEqual("J♣", hand.ToString(), "Hand conversion to string does not work correctly.");
         }
     }
 }

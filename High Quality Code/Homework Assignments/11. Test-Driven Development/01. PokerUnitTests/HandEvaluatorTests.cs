@@ -23,7 +23,7 @@ namespace PokerUnitTests
         private static IHandEvaluator handEvaluator;
 
         [ClassInitialize]
-        public static void HandEvaluatorInit(TestContext context)
+        public static void InitHandEvaluator(TestContext context)
         {
             handEvaluator = new HandEvaluator();
         }
@@ -44,7 +44,7 @@ namespace PokerUnitTests
 
             bool validHand = handEvaluator.IsValid(hand);
 
-            Assert.AreEqual(false, validHand, "Hand validation does not work correctly.");
+            Assert.AreEqual(false, validHand, "Hand validation does not work correctly (accepts identical cards).");
         }
 
         [TestMethod]
@@ -88,7 +88,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.HighCard, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.HighCard, category, "High card is not identified correctly.");
         }
 
         [TestMethod]
@@ -98,7 +98,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.HighCard, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.HighCard, category, "High card is not identified correctly.");
         }
 
         [TestMethod]
@@ -108,7 +108,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.HighCard, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.HighCard, category, "High card is not identified correctly.");
         }
 
         [TestMethod]
@@ -118,7 +118,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.OnePair, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.OnePair, category, "One pair is not identified correctly.");
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.TwoPair, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.TwoPair, category, "Two pair is not identified correctly.");
         }
 
         [TestMethod]
@@ -138,7 +138,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.TwoPair, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.TwoPair, category, "Two pair is not identified correctly.");
         }
 
         [TestMethod]
@@ -148,7 +148,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.TwoPair, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.TwoPair, category, "Two pair is not identified correctly.");
         }
 
         [TestMethod]
@@ -158,7 +158,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.TwoPair, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.TwoPair, category, "Two pair is not identified correctly.");
         }
 
         [TestMethod]
@@ -168,7 +168,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.TwoPair, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.TwoPair, category, "Two pair is not identified correctly.");
         }
 
         [TestMethod]
@@ -178,7 +178,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.TwoPair, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.TwoPair, category, "Two pair is not identified correctly.");
         }
 
         [TestMethod]
@@ -188,7 +188,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Three of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -198,7 +198,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Three of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -208,7 +208,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Three of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -218,7 +218,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Three of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -228,7 +228,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.ThreeOfAKind, category, "Three of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -238,7 +238,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.Straight, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.Straight, category, "Straight is not identified correctly.");
         }
 
         [TestMethod]
@@ -248,7 +248,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.Straight, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.Straight, category, "Straight is not identified correctly.");
         }
 
         [TestMethod]
@@ -258,7 +258,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.Straight, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.Straight, category, "Straight is not identified correctly.");
         }
 
         [TestMethod]
@@ -268,7 +268,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.Straight, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.Straight, category, "Straight is not identified correctly.");
         }
 
         [TestMethod]
@@ -278,7 +278,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.HighCard, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.HighCard, category, "High card is not identified correctly.");
         }
 
         [TestMethod]
@@ -288,7 +288,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.Flush, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.Flush, category, "Flush is not identified correctly.");
         }
 
         [TestMethod]
@@ -298,7 +298,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.Flush, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.Flush, category, "Flush is not identified correctly.");
         }
 
         [TestMethod]
@@ -308,7 +308,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.Flush, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.Flush, category, "Flush is not identified correctly.");
         }
 
         [TestMethod]
@@ -318,7 +318,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FullHouse, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FullHouse, category, "Full house is not identified correctly.");
         }
 
         [TestMethod]
@@ -328,7 +328,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FullHouse, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FullHouse, category, "Full house is not identified correctly.");
         }
 
         [TestMethod]
@@ -338,7 +338,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FullHouse, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FullHouse, category, "Full house is not identified correctly.");
         }
 
         [TestMethod]
@@ -348,7 +348,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FullHouse, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FullHouse, category, "Full house is not identified correctly.");
         }
 
         [TestMethod]
@@ -358,7 +358,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FullHouse, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FullHouse, category, "Full house is not identified correctly.");
         }
 
         [TestMethod]
@@ -368,7 +368,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FullHouse, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FullHouse, category, "Full house is not identified correctly.");
         }
 
         [TestMethod]
@@ -378,7 +378,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FourOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FourOfAKind, category, "Four of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -388,7 +388,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FourOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FourOfAKind, category, "Four of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -398,7 +398,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.FourOfAKind, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.FourOfAKind, category, "Four of a kind is not identified correctly.");
         }
 
         [TestMethod]
@@ -408,7 +408,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.StraightFlush, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.StraightFlush, category, "Straight flush is not identified correctly.");
         }
 
         [TestMethod]
@@ -418,7 +418,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.StraightFlush, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.StraightFlush, category, "Straight flush is not identified correctly.");
         }
 
         [TestMethod]
@@ -428,7 +428,7 @@ namespace PokerUnitTests
 
             HandCategory category = handEvaluator.GetCategory(hand);
 
-            Assert.AreEqual(HandCategory.StraightFlush, category, "Hand category is not identified correctly.");
+            Assert.AreEqual(HandCategory.StraightFlush, category, "Straight flush is not identified correctly.");
         }
 
         [TestMethod]
@@ -448,7 +448,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Two pair and one pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -459,7 +459,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult < 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult < 0, "Straight flush comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -470,7 +470,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult == 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult == 0, "Straight flush comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -481,7 +481,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Four of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -492,7 +492,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Four of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -503,7 +503,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Full house comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -514,7 +514,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Full house comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -525,7 +525,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Flush comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -536,7 +536,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Flush comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -547,7 +547,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Straight comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -558,7 +558,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult == 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult == 0, "Straight comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -569,7 +569,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Three of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -580,7 +580,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Three of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -591,7 +591,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Two pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -602,7 +602,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Two pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -613,7 +613,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Two pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -624,7 +624,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "One pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -635,7 +635,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "One pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -646,7 +646,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "High card comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -657,7 +657,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "High card comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -668,7 +668,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "One pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -679,7 +679,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Three of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -690,7 +690,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult == 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult == 0, "High card comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -701,7 +701,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Three of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -712,7 +712,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Four of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -723,7 +723,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult < 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult < 0, "Four of a kind and three of a kind comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -734,7 +734,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "Straight comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -745,7 +745,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult < 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult < 0, "One pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -756,7 +756,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "One pair comparison does not work correctly.");
         }
 
         [TestMethod]
@@ -767,7 +767,7 @@ namespace PokerUnitTests
 
             int compareResult = handEvaluator.CompareHands(hand1, hand2);
 
-            Assert.IsTrue(compareResult > 0, "Hand comparison does not work correctly.");
+            Assert.IsTrue(compareResult > 0, "One pair comparison does not work correctly.");
         }
     }
 }

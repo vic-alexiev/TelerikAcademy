@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TODO list</title>
+    <script src="scripts/todo-list.js"></script>
+    <style>
+        body {
+            font-family: Corbel, sans-serif;
+            font-size: 1em;
+        }
+
+        #wrapper {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body onload="onBodyLoad()">
+    <div id="wrapper"></div>
+    <script>
+        function onBodyLoad() {
+            todoList.load("wrapper", "Don't forget to:");
+        };
+    </script>
+</body>
+</html>

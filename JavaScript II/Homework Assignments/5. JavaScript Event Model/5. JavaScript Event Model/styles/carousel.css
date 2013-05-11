@@ -1,0 +1,83 @@
+﻿#carousel {
+    display: block;
+    width: 905px;
+    height: 300px;
+    background-color: #fff;
+    border: 0;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    overflow: auto;
+}
+
+    #carousel ul,
+    #carousel li {
+        padding: 0;
+        list-style: none;
+        list-style-type: none;
+    }
+
+    #carousel ul {
+        position: relative;
+        width: 100%;
+        margin: 0;
+    }
+
+    #carousel li {
+        display: block;
+        border: 0;
+        overflow: hidden;
+        width: 16%;
+        margin: 2%;
+        height: 260px;
+        float: left;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    /* Navigation links */
+
+    #carousel a.nav {
+        display: block;
+        width: 40px;
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+    }
+
+    #carousel a.go-prev {
+        float: left;
+    }
+
+    #carousel a.go-next {
+        float: right;
+    }
+
+    #carousel li {
+        text-align: center;
+    }
+
+        #carousel li img {
+            width: 100%; /* Adapt the image to the element container width */
+        }
+
+    #carousel a.nav {
+        width: 40px;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+        #carousel a.nav.go-prev {
+            background-image: url('../images/arrow-left.png');
+        }
+
+        #carousel a.nav.go-next {
+            background-image: url('../images/arrow-right.png');
+        }

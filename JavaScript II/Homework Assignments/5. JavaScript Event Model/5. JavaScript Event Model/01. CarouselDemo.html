@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Monarchs of England and Great Britain</title>
+    <link href="styles/carousel.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.9.1.js"></script>
+    <script src="scripts/carousel.js"></script>
+    <style>
+        body {
+            font-family: 'Viner Hand ITC', serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="carousel">
+    </div>
+    <script>
+        var images = [
+                { name: "images/WilliamI.png", title: "William I (1066-1087)" },
+                { name: "images/WilliamII.png", title: "William II (1087-1100)" },
+                { name: "images/HenryI.png", title: "HenryI (1100-1135)" },
+                { name: "images/Stephen.png", title: "Stephen (1135-1154)" },
+                { name: "images/Matilda.png", title: "Matilda (1141)" },
+
+                { name: "images/HenryII.png", title: "HenryII (1154-1189)" },
+                { name: "images/RichardI.png", title: "Richard I (1189-1199)" },
+                { name: "images/John.png", title: "John (1199-1216)" },
+                { name: "images/HenryIII.png", title: "HenryIII (1216-1272)" },
+                { name: "images/EdwardI.png", title: "Edward I (1272-1307)" },
+                { name: "images/EdwardII.png", title: "Edward II (1307-1327)" },
+                { name: "images/EdwardIII.png", title: "Edward III (1327-1377)" },
+                { name: "images/RichardII.png", title: "Richard II (1377-1399)" },
+
+                { name: "images/HenryIV.png", title: "Henry IV (1399-1413)" },
+                { name: "images/HenryV.png", title: "Henry V (1413-1422)" },
+                { name: "images/HenryVI.png", title: "Henry VI (1422-1461, 1470-1471)" },
+                { name: "images/EdwardIV.png", title: "Edward IV (1461-1470, 1471-1483)" },
+                { name: "images/EdwardV.png", title: "Edward V (1483)" },
+                { name: "images/RichardIII.png", title: "Richard III (1483-1485)" },
+
+                { name: "images/HenryVII.png", title: "Henry VII (1485-1509)" },
+                { name: "images/HenryVIII.png", title: "Henry VIII (1509-1547)" },
+                { name: "images/EdwardVI.png", title: "Edward VI (1547-1553)" },
+                { name: "images/MaryTudor.png", title: "Mary Tudor (1553-1558)" },
+                { name: "images/ElizabethI.png", title: "Elizabeth I (1558-1603)" },
+
+                { name: "images/JamesI.png", title: "James I (1603-1625)" },
+                { name: "images/CharlesI.png", title: "Charles I (1625-1649)" },
+                { name: "images/CharlesII.png", title: "Charles II (1660-1685)" },
+                { name: "images/JamesII.png", title: "James II (1685-1688)" },
+                { name: "images/WilliamIII.png", title: "William III (1689-1702)" },
+                { name: "images/MaryII.png", title: "Mary II (1689-1694)" },
+                { name: "images/Anne.png", title: "Anne (1702-1714)" },
+
+                { name: "images/GeorgeI.png", title: "George I (1714-1727)" },
+                { name: "images/GeorgeII.png", title: "George II (1727-1760)" },
+                { name: "images/GeorgeIII.png", title: "George III (1760-1820)" },
+                { name: "images/GeorgeIV.png", title: "George IV (1820-1830)" },
+                { name: "images/WilliamIV.png", title: "William IV (1830-1837)" },
+                { name: "images/Victoria.png", title: "Victoria (1837-1901)" },
+
+                { name: "images/EdwardVII.png", title: "Edward VII (1901-1910)" },
+                { name: "images/GeorgeV.png", title: "George V (1910-1936)" },
+                { name: "images/EdwardVIII.png", title: "Edward VIII (1936)" },
+                { name: "images/GeorgeVI.png", title: "George VI (1936-1952)" },
+                { name: "images/ElizabethII.png", title: "Elizabeth II (1952-present)" }
+        ];
+
+        /* The startup code */
+        $(document).ready(function () {
+            jQuery("#carousel").carouselPlugin(images, { maxSize: 200, midSize: 170, minSize: 130 });
+        });
+    </script>
+</body>
+</html>

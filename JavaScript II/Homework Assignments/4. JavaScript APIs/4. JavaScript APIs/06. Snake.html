@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Snake</title>
+    <style>
+        body {
+            padding: 10px;
+        }
+
+        h1, h2 {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        canvas {
+            margin: 20px;
+            border: 10px solid darkgreen;
+            float: left;
+        }
+
+        #counter {
+            float: left;
+            padding-left: 20px;
+        }
+
+        h2.border {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid black;
+        }
+
+        #scores {
+            display: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #score ol {
+            list-style: none;
+        }
+
+        #scores li {
+            padding: 5px 0px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="game" width="600" height="400"></canvas>
+    <div id="counter">
+        <h2>Current score: <span>0</span></h2>
+        <div id="scores">
+            <h2 class="border">Top scores</h2>
+            <ol>
+            </ol>
+            <input type="button" id="clearScores" name="clearScores" value="Clear scores" onclick="clearScores();" />
+        </div>
+    </div>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="scripts/snake-game.js"></script>
+</body>
+</html>

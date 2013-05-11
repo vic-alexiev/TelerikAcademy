@@ -61,6 +61,7 @@
     <Content Include="03. WebStoragePolyfill.html" />
     <Content Include="04. Canvas.html" />
     <Content Include="05. BouncingBalls.html" />
+    <Content Include="06. Snake.html" />
     <Content Include="images\Apple.png" />
     <Content Include="images\Banana.png" />
     <Content Include="images\Cherries.png" />
@@ -77,6 +78,7 @@
     <Content Include="scripts\json2.js" />
     <Content Include="scripts\picnic-basket-game.js" />
     <Content Include="scripts\sizzle.js" />
+    <Content Include="scripts\snake-game.js" />
     <Content Include="scripts\storage.js" />
     <Content Include="styles\js-console.css" />
     <Content Include="Web.config" />

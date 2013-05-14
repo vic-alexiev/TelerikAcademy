@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. T4TemplateDemo", "02. T4TemplateDemo\02. T4TemplateDemo.csproj", "{098A1E40-36FF-478D-80D2-B2D0EFD9D32A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. VariousTools", "01. VariousTools\01. VariousTools.csproj", "{E6690A90-E794-4394-A79B-BD95168A5546}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{098A1E40-36FF-478D-80D2-B2D0EFD9D32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{098A1E40-36FF-478D-80D2-B2D0EFD9D32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{098A1E40-36FF-478D-80D2-B2D0EFD9D32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{098A1E40-36FF-478D-80D2-B2D0EFD9D32A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6690A90-E794-4394-A79B-BD95168A5546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6690A90-E794-4394-A79B-BD95168A5546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6690A90-E794-4394-A79B-BD95168A5546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6690A90-E794-4394-A79B-BD95168A5546}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

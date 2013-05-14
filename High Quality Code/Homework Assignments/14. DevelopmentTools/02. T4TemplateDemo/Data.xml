@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <table name="School">
+    <column name="Name" type="string" />
+    <column name="Address" type="string" />
+    <column name="Zip" type="int" />
+  </table>
+  <table name="Teacher">
+    <column name="FirstName" type="string" />
+    <column name="LastName" type="string" />
+    <column name="Subject" type="string" />
+  </table>
+  <table name="Bus">
+    <column name="LicensePlate" type="string" />
+    <column name="Driver" type="string" />
+  </table>
+</root>

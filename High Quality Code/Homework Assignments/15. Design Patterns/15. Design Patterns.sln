@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Strategy", "01. Strategy\01. Strategy.csproj", "{D24B070C-01E4-4E28-A4B7-C0C787B972E6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. MvcMovie", "02. MvcMovie\02. MvcMovie.csproj", "{C087FACF-C0C6-4EA8-A4FD-1A4032DDC113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. GuiSystem", "03. GuiSystem\03. GuiSystem.csproj", "{43C9F413-90BE-4B0D-9CCD-8D2BA74EB1F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D24B070C-01E4-4E28-A4B7-C0C787B972E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D24B070C-01E4-4E28-A4B7-C0C787B972E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D24B070C-01E4-4E28-A4B7-C0C787B972E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D24B070C-01E4-4E28-A4B7-C0C787B972E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C087FACF-C0C6-4EA8-A4FD-1A4032DDC113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C087FACF-C0C6-4EA8-A4FD-1A4032DDC113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C087FACF-C0C6-4EA8-A4FD-1A4032DDC113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C087FACF-C0C6-4EA8-A4FD-1A4032DDC113}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43C9F413-90BE-4B0D-9CCD-8D2BA74EB1F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43C9F413-90BE-4B0D-9CCD-8D2BA74EB1F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43C9F413-90BE-4B0D-9CCD-8D2BA74EB1F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43C9F413-90BE-4B0D-9CCD-8D2BA74EB1F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GuiSystem.WindowImplementationFactory" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAABQAAgAAAAACAAAAAAA=</HashCode>
+      <FileName>WindowImplementationFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiSystem.WindowImplementations.BaseWindowImplementation">
+    <Position X="2.5" Y="6.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAQAAAIAAA=</HashCode>
+      <FileName>WindowImplementations\BaseWindowImplementation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GuiSystem.WindowImplementations.LinuxWindowImplementation" Collapsed="true">
+    <Position X="0.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WindowImplementations\LinuxWindowImplementation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiSystem.WindowImplementations.MacOSXWindowImplementation" Collapsed="true">
+    <Position X="3.25" Y="9.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WindowImplementations\MacOSXWindowImplementation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiSystem.WindowImplementations.MSWindowsWindowImplementation" Collapsed="true">
+    <Position X="6.25" Y="9.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WindowImplementations\MSWindowsWindowImplementation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiSystem.Windows.BaseWindow">
+    <Position X="2.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAQAAAAEEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\BaseWindow.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="GuiSystem.Windows.DialogWindow">
+    <Position X="0.5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAARAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\DialogWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiSystem.Windows.PictureWindow">
+    <Position X="2.75" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\PictureWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiSystem.Windows.TextWindow">
+    <Position X="5" Y="3.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Windows\TextWindow.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="GuiSystem.IWindow" Collapsed="true">
+    <Position X="8" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IWindow.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="GuiSystem.IWindowImplementation" Collapsed="true">
+    <Position X="7.75" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAQAAAAAAAAAAAAAAAAAQAAAIAAA=</HashCode>
+      <FileName>IWindowImplementation.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

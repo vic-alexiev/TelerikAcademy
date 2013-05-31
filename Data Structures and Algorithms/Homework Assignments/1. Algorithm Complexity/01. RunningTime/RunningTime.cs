@@ -81,12 +81,15 @@ internal class RunningTime
     private static long CalcSum(int[,] matrix, int row)
     {
         long sum = 0;
-        for (int col = 0; col < matrix.GetLength(1); col++)
+        int n = matrix.GetLength(0);
+        int m = matrix.GetLength(1);
+
+        for (int col = 0; col < m; col++)
         {
             sum += matrix[row, col];
         }
 
-        if (row + 1 < matrix.GetLength(0))
+        if (row + 1 < n)
         {
             sum += CalcSum(matrix, row + 1);
         }

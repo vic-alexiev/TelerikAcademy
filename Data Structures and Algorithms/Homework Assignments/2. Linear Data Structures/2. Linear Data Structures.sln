@@ -17,7 +17,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. RemoveItemsThatOccurOdd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07. CountItemsOccurrencesInArray", "07. CountItemsOccurrencesInArray\07. CountItemsOccurrencesInArray.csproj", "{E568F6AF-71DA-461B-A624-B7C8750D3DBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. ArrayMajorant", "08. ArrayMajorant\08. ArrayMajorant.csproj", "{EA9F45BB-A812-4F18-A12B-E3D0868DBADD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08. ArrayMajorityElement", "08. ArrayMajorityElement\08. ArrayMajorityElement.csproj", "{EA9F45BB-A812-4F18-A12B-E3D0868DBADD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09. RecurrentSequence", "09. RecurrentSequence\09. RecurrentSequence.csproj", "{AFAEFF1E-3DCC-4E6E-B8F1-5AA630444221}"
 EndProject

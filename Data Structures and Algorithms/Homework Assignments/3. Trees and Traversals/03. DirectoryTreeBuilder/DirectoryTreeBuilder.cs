@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 
 internal class DirectoryTreeBuilder
@@ -75,16 +72,12 @@ internal class DirectoryTreeBuilder
 
         BuildDirectoryTree(directoryTree.Root);
 
-        //IEnumerable<TreeNode<FileSystemInfo>> directoryNodes =
-        //    directoryTree.Filter(n => n.Data is DirectoryInfo);
-
-        foreach (var parentNode in directoryTree.Root)
+        foreach (var parentNode in directoryTree.Root.Filter(fi => fi is DirectoryInfo))
         {
-            IEnumerable<TreeNode<FileSystemInfo>> fileNodes =
-                parentNode.Filter(n => n.Data is FileInfo);
-
-            long totalFileSize =
-                fileNodes.Aggregate(0L, (a, n) => a + (n.Data as FileInfo).Length);
+            long totalFileSize = parentNode.Accumulate(
+                0L,
+                (acc, fi) => acc + (fi as FileInfo).Length,
+                fi => fi is FileInfo);
 
             Console.WriteLine(
                 "Total size of files under \"{0}\": {1:N} bytes",

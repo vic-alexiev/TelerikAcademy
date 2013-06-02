@@ -35,12 +35,24 @@ public class Tree<T> : IEnumerable<T>
         return this.Root.ToStringUsingDfs();
     }
 
-    public U Accumulate<U>(U seed, Func<U, TreeNode<T>, U> func)
+    public Tree<U> Map<U>(Func<T, U> selector)
     {
-        return this.Root.Accumulate(seed, func);
+        TreeNode<U> newRoot = this.Root.Map(selector);
+        Tree<U> result = new Tree<U>(newRoot);
+        return result;
     }
 
-    public IEnumerable<TreeNode<T>> Filter(Func<TreeNode<T>, bool> predicate)
+    public U Accumulate<U>(U seed, Func<U, T, U> func)
+    {
+        return this.Accumulate(seed, func, data => true);
+    }
+
+    public U Accumulate<U>(U seed, Func<U, T, U> func, Func<T, bool> predicate)
+    {
+        return this.Root.Accumulate(seed, func, predicate);
+    }
+
+    public IEnumerable<TreeNode<T>> Filter(Func<T, bool> predicate)
     {
         return this.Root.Filter(predicate);
     }

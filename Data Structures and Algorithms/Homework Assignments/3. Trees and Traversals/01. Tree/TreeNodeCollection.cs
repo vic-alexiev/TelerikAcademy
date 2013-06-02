@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public class TreeNodeCollection<T> : List<TreeNode<T>>
 {
@@ -11,6 +12,11 @@ public class TreeNodeCollection<T> : List<TreeNode<T>>
 
     public new TreeNode<T> Add(TreeNode<T> item)
     {
+        if (item == null)
+        {
+            throw new ArgumentNullException("item", "item cannot be null.");
+        }
+
         base.Add(item);
         item.Parent = this.Parent;
         return item;

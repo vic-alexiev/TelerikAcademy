@@ -8,7 +8,7 @@ internal class Traversals
     {
         foreach (var node in nodes)
         {
-            int subtreeSum = node.Accumulate(0, (a, n) => a + n.Data);
+            int subtreeSum = node.Accumulate(0, (a, b) => a + b);
             if (subtreeSum == sum)
             {
                 Console.WriteLine(node);
@@ -161,5 +161,11 @@ internal class Traversals
         Console.WriteLine("Nodes whose subtrees sum to {0}:", sum);
 
         PrintAllSubtreesThatSumTo(nodes, sum);
+
+        Tree<double> sinTree = tree.Map<double>(i => Math.Sin(i));
+
+        Console.WriteLine("A tree created by applying Math.Sin() to the tree nodes:");
+
+        Console.WriteLine(sinTree);
     }
 }

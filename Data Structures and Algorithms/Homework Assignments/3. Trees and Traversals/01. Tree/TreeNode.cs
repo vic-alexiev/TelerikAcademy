@@ -154,6 +154,18 @@ public class TreeNode<T> : IEnumerable<TreeNode<T>>
     }
 
     /// <summary>
+    /// Applies the transform function <paramref name="selector"/>
+    /// to each element of the tree which has this node as its root.
+    /// </summary>
+    /// <typeparam name="U"></typeparam>
+    /// <param name="selector"></param>
+    /// <returns></returns>
+    public TreeNode<U> Map<U>(Func<T, U> selector)
+    {
+        return this.Map(selector, this);
+    }
+
+    /// <summary>
     /// Applies <paramref name="func"/> to each successive element
     /// in the tree and aggregates the result. Used to sum/multiply
     /// all the elements in the tree which has this node as its root.
@@ -162,9 +174,23 @@ public class TreeNode<T> : IEnumerable<TreeNode<T>>
     /// <param name="seed"></param>
     /// <param name="func"></param>
     /// <returns></returns>
-    public U Accumulate<U>(U seed, Func<U, TreeNode<T>, U> func)
+    public U Accumulate<U>(U seed, Func<U, T, U> func)
     {
-        return this.Aggregate(seed, func);
+        return this.Accumulate(seed, func, data => true);
+    }
+
+    /// <summary>
+    /// Applies <paramref name="func"/> only to the elements
+    /// for which <paramref name="predicate"/> returns true.
+    /// </summary>
+    /// <typeparam name="U"></typeparam>
+    /// <param name="seed"></param>
+    /// <param name="func"></param>
+    /// <param name="predicate"></param>
+    /// <returns></returns>
+    public U Accumulate<U>(U seed, Func<U, T, U> func, Func<T, bool> predicate)
+    {
+        return this.Accumulate(seed, func, predicate, this);
     }
 
     /// <summary>
@@ -173,9 +199,9 @@ public class TreeNode<T> : IEnumerable<TreeNode<T>>
     /// </summary>
     /// <param name="predicate"></param>
     /// <returns></returns>
-    public IEnumerable<TreeNode<T>> Filter(Func<TreeNode<T>, bool> predicate)
+    public IEnumerable<TreeNode<T>> Filter(Func<T, bool> predicate)
     {
-        return this.Where(predicate);
+        return this.Where(node => predicate(node.Data));
     }
 
     /// <summary>
@@ -244,17 +270,42 @@ public class TreeNode<T> : IEnumerable<TreeNode<T>>
 
     private void CollectDataUsingDfs(TreeNode<T> node, string space)
     {
-        if (node == null)
-        {
-            return;
-        }
-
         dataBuilder.AppendLine(space + node.Data);
 
         foreach (var childNode in node.Nodes)
         {
             this.CollectDataUsingDfs(childNode, space + "   ");
         }
+    }
+
+    private TreeNode<U> Map<U>(Func<T, U> selector, TreeNode<T> node)
+    {
+        TreeNode<U> newNode = new TreeNode<U>(selector(node.Data));
+
+        foreach (var childNode in node.Nodes)
+        {
+            TreeNode<U> newChildNode = this.Map(selector, childNode);
+            newNode.Nodes.Add(newChildNode);
+        }
+
+        return newNode;
+    }
+
+    private U Accumulate<U>(U seed, Func<U, T, U> func, Func<T, bool> predicate, TreeNode<T> node)
+    {
+        U accumulator = seed;
+
+        if (predicate(node.Data))
+        {
+            accumulator = func(seed, node.Data);
+        }
+
+        foreach (var childNode in node.Nodes)
+        {
+            accumulator = this.Accumulate(accumulator, func, predicate, childNode);
+        }
+
+        return accumulator;
     }
 
     /// <summary>

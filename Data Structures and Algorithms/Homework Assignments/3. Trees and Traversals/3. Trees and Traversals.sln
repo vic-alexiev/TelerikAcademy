@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Tree", "01. Tree\01. Tree.csproj", "{0559D738-1F8E-4099-9719-E56B6178CCB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Traversals", "01. Traversals\01. Traversals.csproj", "{DAC40814-B675-4EC0-88CC-92AD8F4F22BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. WindowsDirectoryTraversal", "02. WindowsDirectoryTraversal\02. WindowsDirectoryTraversal.csproj", "{017EA2CA-A349-4F34-86FE-836B4440BB18}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. WindowsDirectoryTraversalRunner", "02. WindowsDirectoryTraversalRunner\02. WindowsDirectoryTraversalRunner.csproj", "{B4CA8C9E-A3EF-42E8-9670-2D3C5B93FA9E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. DirectoryTreeBuilder", "03. DirectoryTreeBuilder\03. DirectoryTreeBuilder.csproj", "{BED8926F-A4CC-44D9-9917-4F7F994A6537}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0559D738-1F8E-4099-9719-E56B6178CCB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0559D738-1F8E-4099-9719-E56B6178CCB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0559D738-1F8E-4099-9719-E56B6178CCB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0559D738-1F8E-4099-9719-E56B6178CCB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAC40814-B675-4EC0-88CC-92AD8F4F22BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAC40814-B675-4EC0-88CC-92AD8F4F22BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAC40814-B675-4EC0-88CC-92AD8F4F22BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAC40814-B675-4EC0-88CC-92AD8F4F22BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{017EA2CA-A349-4F34-86FE-836B4440BB18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{017EA2CA-A349-4F34-86FE-836B4440BB18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{017EA2CA-A349-4F34-86FE-836B4440BB18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{017EA2CA-A349-4F34-86FE-836B4440BB18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4CA8C9E-A3EF-42E8-9670-2D3C5B93FA9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4CA8C9E-A3EF-42E8-9670-2D3C5B93FA9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4CA8C9E-A3EF-42E8-9670-2D3C5B93FA9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4CA8C9E-A3EF-42E8-9670-2D3C5B93FA9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED8926F-A4CC-44D9-9917-4F7F994A6537}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED8926F-A4CC-44D9-9917-4F7F994A6537}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED8926F-A4CC-44D9-9917-4F7F994A6537}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED8926F-A4CC-44D9-9917-4F7F994A6537}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

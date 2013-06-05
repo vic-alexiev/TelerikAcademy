@@ -1,0 +1,56 @@
+﻿html, body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+#favourite-sites {
+    font-family: Arial, 'Trebuchet MS', Tahoma, Verdana, sans-serif;
+    font-size: .9em;
+}
+
+    #favourite-sites ul {
+        list-style: none;
+        height: 30px;
+        color: white;
+        background-color: rgb(59, 128, 246);
+    }
+
+        #favourite-sites ul:after {
+            content: '';
+            clear: both;
+            display: block;
+        }
+
+    #favourite-sites > ul > li {
+        float: left;
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 30px;
+    }
+
+        #favourite-sites > ul > li > ul {
+            position: absolute;
+            left: 0;
+            display: none;
+            height: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            width: 200px;
+            background: rgb(28, 62, 118);
+        }
+
+        #favourite-sites > ul > li:hover {
+            background: rgb(28, 62, 118);
+        }
+
+            #favourite-sites > ul > li:hover > ul {
+                position: absolute;
+                left: 0;
+                display: block;
+            }
+
+    #favourite-sites a {
+        text-decoration: none;
+        color: white;
+    }

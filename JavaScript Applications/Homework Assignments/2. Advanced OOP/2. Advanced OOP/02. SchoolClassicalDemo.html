@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>School demo</title>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/school-classical.js"></script>
+</head>
+<body>
+    <script>
+        var douglasCrockford = new Person("Douglas", "Crockford", 60);
+        var johnResig = new Student("John", "Resig", 29, 4);
+        var joelSpolsky = new Student("Joel", "Spolsky", 48, 3);
+        var jeffreyFriedl = new Professor("Jeffrey", "Friedl", 45, "Regular Expressions");
+
+        console.log(douglasCrockford.toString());
+        console.log(johnResig.toString());
+        console.log(joelSpolsky.toString());
+        console.log(jeffreyFriedl.toString());
+
+        var students = [johnResig, joelSpolsky];
+
+        var softwareEngineering = new Course("Photography", 15, jeffreyFriedl, students);
+
+        var school = new School("University of Pennsylvania", "Philadelphia", [softwareEngineering]);
+
+        console.log(softwareEngineering.toString());
+        console.log(school.toString());
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Image slider demo</title>
+    <script src="scripts/subclassing.js"></script>
+    <script src="scripts/image-slider.js"></script>
+    <style>
+        #image-slider {
+            width: 564px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="image-slider"></div>
+    <script>
+        var images = [
+            new Image("Henry VII (1485-1509)", "images/HenryVII.png", "images/HenryVII-thumbnail.png", 332, 429, 100, 129),
+            new Image("Henry VIII (1509-1547)", "images/HenryVIII.png", "images/HenryVIII-thumbnail.png", 332, 429, 100, 129),
+            new Image("Edward VI (1547-1553)", "images/EdwardVI.png", "images/EdwardVI-thumbnail.png", 332, 429, 100, 129),
+            new Image("Mary Tudor (1553-1558)", "images/MaryTudor.png", "images/MaryTudor-thumbnail.png", 332, 429, 100, 129),
+            new Image("Elizabeth I (1558-1603)", "images/ElizabethI.png", "images/ElizabethI-thumbnail.png", 332, 429, 100, 129)
+        ];
+
+        var leftArrow = new ArrowImage("images/arrow-left.png", 32, 32);
+        var rightArrow = new ArrowImage("images/arrow-right.png", 32, 32);
+
+        var font = new Font("1.2em", "'Viner Hand ITC', serif", "bold");
+
+        var imageSlider = new ImageSlider(
+            "image-slider",
+            images,
+            leftArrow,
+            rightArrow,
+            font,
+            "#CAE1FF");
+        imageSlider.load();
+    </script>
+</body>
+</html>

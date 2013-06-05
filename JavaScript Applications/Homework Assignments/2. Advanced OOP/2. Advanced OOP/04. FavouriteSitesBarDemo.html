@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Favourite sites demo</title>
+    <link href="styles/favourite-sites-bar.css" rel="stylesheet" />
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/favourite-sites-bar.js"></script>
+</head>
+<body>
+    <div id="favourite-sites">
+    </div>
+    <script>
+        var youTube = new Site("YouTube", "http://www.youtube.com/");
+        var facebook = new Site("Facebook", "https://www.facebook.com/");
+
+        var leisure = [youTube, facebook];
+
+        var msdn = new Site("Microsoft Developer Network", "http://msdn.microsoft.com/en-US/");
+        var mdn = new Site("Mozilla Developer Network", "https://developer.mozilla.org/en-US/");
+        var aspDotNet = new Site("ASP.NET", "http://www.asp.net/");
+        var channel9 = new Site("Channel 9", "http://channel9.msdn.com/");
+        var scottGuBlog = new Site("ScottGu's Blog", "http://weblogs.asp.net/scottgu/");
+        var scottHanselman = new Site("Scott Hanselman", "http://www.hanselman.com/");
+        var martinFowler = new Site("Martin Fowler", "http://martinfowler.com/");
+        var webPlatform = new Site("WebPlatform.org", "http://www.webplatform.org/");
+        var mashable = new Site("Mashable", "http://mashable.com/");
+        var techopedia = new Site("Techopedia", "http://www.techopedia.com/");
+
+        var it = [
+            msdn,
+            mdn,
+            aspDotNet,
+            channel9,
+            scottGuBlog,
+            scottHanselman,
+            martinFowler,
+            webPlatform,
+            mashable,
+            techopedia];
+
+        var folderIT = new Folder("IT", it);
+
+        var coursera = new Site("Coursera", "https://www.coursera.org/");
+        var khanAcademy = new Site("Khan Academy", "https://www.khanacademy.org/");
+        var telerikAcademy = new Site("Telerik Academy", "http://academy.telerik.com/");
+
+        var education = [coursera, khanAcademy, telerikAcademy];
+
+        var folderEducation = new Folder("Education", education);
+
+        var bbcNews = new Site("BBC News", "http://www.bbc.co.uk/news/");
+        var cnn = new Site("CNN.com International", "http://edition.cnn.com/");
+        var btv = new Site("bTV", "http://www.btv.bg/");
+
+        var news = [bbcNews, cnn, btv];
+
+        var folderNews = new Folder("News", news);
+
+        var favouriteSites = new FavouriteSitesBar("favourite-sites", leisure, [folderIT, folderEducation, folderNews]);
+        favouriteSites.load();
+    </script>
+</body>
+</html>

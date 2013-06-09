@@ -1,0 +1,14 @@
+David Musser       | Troy, New York | 2-123-456-9887
+Alexander Stepanov | Moscow         | 7-522-345-6701
+Bjarne Stroustrup  | Aarhus         | 8-999-998-8845
+Rich Hickey        | San Francisco  | 2-946-946-9466
+Joe Armstrong      | Stockholm      | 5-878-987-8112
+Paul Graham        | Weymouth       | 9-652-508-7564
+Richard Stallman   | New York City  | 7-823-247-3815
+Kevin Clark        | Virginia beach | 1-454-345-2345
+Skiller            | San Antonio    | 1-566-533-2789
+Kevin Clark Jones  | Portland       | 1-432-556-6533
+Linda Johnson      | San Antonio    | 1-123-345-2456
+Kevin              | Phoenix        | 1-564-254-4352
+Kevin Garcia       | Virginia Beach | 1-445-456-6732
+Kevin              | Phoenix        | 1-134-654-7424

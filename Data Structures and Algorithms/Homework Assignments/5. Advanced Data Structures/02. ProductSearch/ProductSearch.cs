@@ -105,6 +105,10 @@ internal class ProductSearch
 
         OrderedMultiDictionary<double, string> products = ReadProducts(productsFilePath);
 
+        // Another solution would be to use OrderedBag<Product> (Product implements IComparable<Product>
+        // by comparing product prices). In this case the Range() method would be something like
+        // products.Range(new Product("xxx", lowerPrice), true, new Product("xxx", upperPrice), true).
+
         double lowerPrice;
         double upperPrice;
 

@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. PriorityQueueDemo", "01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. ProductSearch", "02. ProductSearch\02. ProductSearch.csproj", "{03FF1A28-9B41-4EEB-94AA-560532DDB3C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. AhoCorasickStringSearcher", "03. AhoCorasickStringSearcher\03. AhoCorasickStringSearcher.csproj", "{B6AB22AB-B822-4206-B07A-BD50B57CA88F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. AhoCorasickStringSearcherDemo", "03. AhoCorasickStringSearcherDemo\03. AhoCorasickStringSearcherDemo.csproj", "{C0FBFCF6-514A-4F2D-9C1D-08ED753F3F86}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +35,14 @@ Global
 		{03FF1A28-9B41-4EEB-94AA-560532DDB3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03FF1A28-9B41-4EEB-94AA-560532DDB3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03FF1A28-9B41-4EEB-94AA-560532DDB3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6AB22AB-B822-4206-B07A-BD50B57CA88F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6AB22AB-B822-4206-B07A-BD50B57CA88F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6AB22AB-B822-4206-B07A-BD50B57CA88F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6AB22AB-B822-4206-B07A-BD50B57CA88F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0FBFCF6-514A-4F2D-9C1D-08ED753F3F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0FBFCF6-514A-4F2D-9C1D-08ED753F3F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0FBFCF6-514A-4F2D-9C1D-08ED753F3F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0FBFCF6-514A-4F2D-9C1D-08ED753F3F86}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

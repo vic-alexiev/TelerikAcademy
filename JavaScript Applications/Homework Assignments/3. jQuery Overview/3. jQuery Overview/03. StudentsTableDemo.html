@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Students table demo</title>
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: .8em;
+        }
+
+        table, td, th {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        thead {
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="table-container"></div>
+    <script>
+        var data = {
+            columns: [
+                { name: "First Name" },
+                { name: "Last Name" },
+                { name: "Year" }
+            ],
+
+            items: [
+                ["Douglas", "Crockford", "5"],
+                ["John", "Resig", "4"],
+                ["Joel", "Spolsky", "3"],
+                ["Jeffrey", "Friedl", "5"]
+            ]
+        };
+
+        var table = createTable(data);
+        $("#table-container").append(table);
+
+        function createTable(data) {
+            var table = $("<table></table>");
+            var header = $("<thead></thead>");
+            var headerRow = $("<tr></tr>");
+
+            for (var i = 0; i < data.columns.length; i++) {
+                var column = data.columns[i];
+                headerRow.append("<th>" + escape(column.name).replace(/\%20/g, " ") + "</th>");
+            }
+
+            header.append(headerRow);
+            table.append(header);
+
+            var body = $("<tbody></tbody>");
+
+            for (var j = 0; j < data.items.length; j++) {
+                var row = $("<tr></tr>");
+
+                var item = data.items[j];
+                for (var k = 0; k < item.length; k++) {
+                    row.append("<td>" + escape(item[k]) + "</td>");
+                }
+
+                body.append(row);
+            }
+
+            table.append(body);
+            return table;
+        };
+    </script>
+</body>
+</html>

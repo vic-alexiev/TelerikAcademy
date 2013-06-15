@@ -1,0 +1,93 @@
+.slickr {
+    width: 700px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+    .slickr .slide-panel {
+        position: absolute;
+        clear: both;
+        height: 500px;
+    }
+
+    .slickr .slide-padder {
+        width: 700px;
+        height: 500px;
+        float: left;
+    }
+
+
+    .slickr .slide-valigner {
+        width: 700px;
+        height: 500px;
+        text-align: center;
+        vertical-align: middle;
+        display: table-cell;
+    }
+
+
+    .slickr .nav-left {
+        position: absolute;
+        left: 25px;
+        top: 50%;
+    }
+
+
+    .slickr .nav-right {
+        position: absolute;
+        right: 25px;
+        top: 50%;
+    }
+
+    .slickr .title-desc {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+.black {
+    border: 15px solid #000;
+    width: 702px;
+    margin-top: 30px;
+}
+
+    .black .border {
+        border: 1px solid #fff;
+    }
+
+    .black .slickr {
+        border: 10px solid #000;
+        width: 680px;
+    }
+
+        .black .slickr .slide-padder {
+            width: 680px;
+        }
+
+        .black .slickr .desc {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            text-align: center;
+            width: 680px;
+            font-family: Georgia, serif;
+            font-size: 11px;
+        }
+
+
+        .black .slickr .title-desc {
+            left: 10px;
+            top: 10px;
+            font-family: Verdana, Verdana, Geneva, sans-serif;
+        }
+
+            .black .slickr .title-desc .indicator {
+                color: #999;
+            }
+
+                .black .slickr .title-desc .indicator .currentNumber, .black .slickr .title-desc .indicator .totalNumber {
+                    color: #000;
+                    font-weight: bold;
+                }

@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>GridView demo</title>
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/gridview.js"></script>
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            font-size: .9em;
+        }
+
+        table, td, th {
+            border: 1px solid gray;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+
+        thead {
+            background-color: #A2B5CD;
+            color: white;
+        }
+
+        .primary-row {
+            background-color: #E3EFFF;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="table-container"></div>
+    <script>
+        var gridView = new controls.GridView($("#table-container"));
+        gridView.addHeader("First Name", "Last Name", "Title", "Address");
+        var firstRow = gridView.addRow("Steven", "Buchanan", "Sales Manager", "14 Garrett Hill");
+
+        gridView.addRow("Laura", "Callahan", "Inside Sales Coordinator", "4726 - 11th Ave. N.E.");
+        thirdRow = gridView.addRow("Nancy", "Davolio", "Sales Representative", "507 - 20th Ave. E. Apt. 2A");
+
+        var nestedGridView = firstRow.createNestedGridView();
+        nestedGridView.addHeader("Ship Name", "Ship Address", "Ship City", "Ship Country");
+        nestedGridView.addRow("Vins et alcools", "59 rue de l'Abbaye", "Reims", "France");
+        nestedGridView.addRow("Wellington ", "Rua do Mercado, 12", "Resende", "Brazil");
+        nestedGridView.addRow("Hanari Carnes", "Rua do Paço, 67", "Rio de Janeiro", "Brazil");
+        nestedGridView.addRow("Victuailles en stock", "2, rue du Commerce", "Lyon", "France");
+        nestedGridView.addRow("Suprêmes délices", "Boulevard Tirou, 255", "Charleroi", "Belgium");
+
+        var anotherNestedGridView = thirdRow.createNestedGridView();
+        anotherNestedGridView.addHeader("Ship Name", "Ship Address", "Ship City", "Ship Country");
+        anotherNestedGridView.addRow("Vins et alcools", "59 rue de l'Abbaye", "Reims", "France");
+        anotherNestedGridView.addRow("Wellington", "Rua do Mercado, 12", "Resende", "Brazil");
+        anotherNestedGridView.addRow("Hanari Carnes", "Rua do Paço, 67", "Rio de Janeiro", "Brazil");
+        anotherNestedGridView.addRow("Victuailles en stock", "2, rue du Commerce", "Lyon", "France");
+        anotherNestedGridView.addRow("Suprêmes délices", "Boulevard Tirou, 255", "Charleroi", "Belgium");
+
+        gridView.render();
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Slickr demo</title>
+    <link href="styles/slickr.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/slickr.js"></script>
+
+    <style>
+        .item {
+            display: inline-block;
+            width: 512px;
+            height: 341px;
+        }
+    </style>
+</head>
+<body>
+    <div class="black" style="display: none">
+        <div class="border">
+            <div id="gallery" class="slickr"></div>
+        </div>
+    </div>
+
+    <script>
+        var galleryData = [
+            { "html": "<div class=\"item\" style=\"background-color: darkgreen; color: white;\">This is a div.</div>" },
+            { "html": "<a href=\"#\" class=\"item\" style=\"background-color: skyblue; color: darkgreen;\">This is a link.</div>" },
+            { "html": "<img style=\"width: 512px; height: 341px;\" src=\"images/01.jpg\" />" },
+            { "html": "<img src=\"images/02.jpg\" />" },
+            { "html": "<img src=\"images/03.jpg\" />" },
+            { "html": "<img src=\"images/04.jpg\" />" },
+            { "html": "<img src=\"images/05.jpg\" />" },
+            { "html": "<img src=\"images/06.jpg\" />" },
+            { "html": "<img src=\"images/07.jpg\" />" },
+            { "html": "<img src=\"images/08.jpg\" />" },
+            { "html": "<img src=\"images/09.jpg\" />" },
+            { "html": "<img src=\"images/10.jpg\" />" },
+            { "html": "<img src=\"images/11.jpg\" />" }
+        ];
+
+        var options = {
+            galleryRenderer: function (self) {
+                var html =
+                  '<div class="' + self.options.slidePanelClassName + '" style="display:none"></div>' +
+                  '<a href="javascript:void(0)" class="' + self.options.navLeftClassName + '" style="display:none"><img src="images/arrow-left.gif" alt="Backward"/></a>' +
+                  '<a href="javascript:void(0)" class="' + self.options.navRightClassName + '" style="display:none"><img src="images/arrow-right.gif" alt="Forward"/></a>' +
+                  '<div class="title-desc">' +
+                  '<h1></h1>' +
+                  '<div class="indicator">SLIDE <span class="currentNumber"></span> OF <span class="totalNumber"></span></div>' +
+                  '</div>' +
+                  '<p class="desc"></p>';
+
+                return jQuery(html);
+            },
+            autoplayDelay: 4000
+        };
+
+        var slickr = new controls.Slickr(options);
+
+        jQuery("#gallery").bind("slickr.animation-completed", {}, function () {
+
+            var self = jQuery(this);
+
+            var itemData = slickr.getCurrentSlideData();
+
+            self.find("h1").text(itemData.title);
+
+            self.find(".indicator .currentNumber").text(slickr.getCurrentSlide() + 1).show();
+            self.find(".indicator .totalNumber").text(slickr.getSlidesCount()).show();
+            self.find(".desc").text(itemData.title).show();
+        });
+
+        slickr.setData(galleryData).render(jQuery('#gallery'));
+
+        jQuery(".black").show();
+    </script>
+</body>
+</html>

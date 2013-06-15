@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DOM insertion demo</title>
+    <script src="scripts/jquery-1.10.0.js"></script>
+</head>
+<body>
+    <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+        <li>List item 4</li>
+        <li>List item 5</li>
+    </ul>
+    <script>
+        $("li:first-of-type").before("<li>Inserted before the first item</li>");
+        $("li:last-of-type").after("<li>Inserted after the last item</li>");
+    </script>
+</body>
+</html>

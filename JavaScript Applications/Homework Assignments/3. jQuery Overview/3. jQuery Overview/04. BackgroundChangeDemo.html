@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Background change demo</title>
+    <link href="colorpicker/css/colorpicker.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="colorpicker/js/colorpicker.js"></script>
+</head>
+<body>
+    <div id="colorpickerHolder"></div>
+    <script>
+        $("#colorpickerHolder").ColorPicker({
+            flat: true,
+            onChange: function (hsb, hex, rgb) {
+                $("body").css("backgroundColor", "#" + hex);
+            }
+        });
+    </script>
+</body>
+</html>

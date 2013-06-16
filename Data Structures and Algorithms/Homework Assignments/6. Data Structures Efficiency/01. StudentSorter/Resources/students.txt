@@ -1,0 +1,11 @@
+David     | Musser     | C++
+Alexander | Stepanov   | C++
+Bjarne    | Stroustrup | C++
+Rich      | Hickey     | Clojure	
+Joe       | Armstrong  | Erlang
+Scott     | Guthrie    | ASP.NET
+Scott     | Hanselman  | ASP.NET
+Richard   | Stallman   | C
+Anders    | Hejlsberg  | C#
+Douglas   | Crockford  | JavaScript
+John      | Resig      | JavaScript

@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. Algorithms", "01. Algorithms\01. Algorithms.csproj", "{8557EDCB-5370-49D3-937D-42999A976238}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. AlgorithmsUnitTests", "01. AlgorithmsUnitTests\01. AlgorithmsUnitTests.csproj", "{7F03755E-450D-42FC-B7D5-FFF951B1AEAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. AlgorithmsDemo", "01. AlgorithmsDemo\01. AlgorithmsDemo.csproj", "{39CAEA1C-7F6B-4305-BA8C-5E538BB91D7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8557EDCB-5370-49D3-937D-42999A976238}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8557EDCB-5370-49D3-937D-42999A976238}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8557EDCB-5370-49D3-937D-42999A976238}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8557EDCB-5370-49D3-937D-42999A976238}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F03755E-450D-42FC-B7D5-FFF951B1AEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F03755E-450D-42FC-B7D5-FFF951B1AEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F03755E-450D-42FC-B7D5-FFF951B1AEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F03755E-450D-42FC-B7D5-FFF951B1AEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39CAEA1C-7F6B-4305-BA8C-5E538BB91D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39CAEA1C-7F6B-4305-BA8C-5E538BB91D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39CAEA1C-7F6B-4305-BA8C-5E538BB91D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39CAEA1C-7F6B-4305-BA8C-5E538BB91D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

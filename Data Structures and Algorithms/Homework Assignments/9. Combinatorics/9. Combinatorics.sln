@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. BinaryPasswords", "01. BinaryPasswords\01. BinaryPasswords.csproj", "{1A1B6F89-8ADA-4792-B92B-C6A0B74A4D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. ColourfulRabbits", "02. ColourfulRabbits\02. ColourfulRabbits.csproj", "{EDF52C0E-4E1A-455D-B8AB-7C2A2B6C488F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. Divisors", "03. Divisors\03. Divisors.csproj", "{AA3813A7-5094-407D-9534-7E7FECACD77F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. ColourfulMarbles", "04. ColourfulMarbles\04. ColourfulMarbles.csproj", "{72D21549-B4A3-4FAA-82DC-203ED7AB1B56}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A1B6F89-8ADA-4792-B92B-C6A0B74A4D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A1B6F89-8ADA-4792-B92B-C6A0B74A4D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A1B6F89-8ADA-4792-B92B-C6A0B74A4D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A1B6F89-8ADA-4792-B92B-C6A0B74A4D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF52C0E-4E1A-455D-B8AB-7C2A2B6C488F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF52C0E-4E1A-455D-B8AB-7C2A2B6C488F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF52C0E-4E1A-455D-B8AB-7C2A2B6C488F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF52C0E-4E1A-455D-B8AB-7C2A2B6C488F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA3813A7-5094-407D-9534-7E7FECACD77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA3813A7-5094-407D-9534-7E7FECACD77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA3813A7-5094-407D-9534-7E7FECACD77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA3813A7-5094-407D-9534-7E7FECACD77F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72D21549-B4A3-4FAA-82DC-203ED7AB1B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72D21549-B4A3-4FAA-82DC-203ED7AB1B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72D21549-B4A3-4FAA-82DC-203ED7AB1B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72D21549-B4A3-4FAA-82DC-203ED7AB1B56}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

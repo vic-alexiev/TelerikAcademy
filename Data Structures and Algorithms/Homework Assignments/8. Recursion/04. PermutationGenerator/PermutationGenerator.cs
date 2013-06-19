@@ -30,6 +30,8 @@ internal class PermutationGenerator
             return;
         }
 
+        GeneratePermutations2(items, position - 1);
+
         for (int i = 0; i < position; i++)
         {
             int temp = items[i];
@@ -42,13 +44,11 @@ internal class PermutationGenerator
             items[i] = items[position];
             items[position] = temp;
         }
-
-        GeneratePermutations2(items, position - 1);
     }
 
     private static void Main()
     {
-        int n = 4;
+        int n = 3;
         int[] array = new int[n];
         bool[] used = new bool[n];
 

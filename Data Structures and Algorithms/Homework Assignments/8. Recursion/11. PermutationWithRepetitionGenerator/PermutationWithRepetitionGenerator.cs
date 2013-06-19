@@ -10,6 +10,8 @@ internal class PermutationWithRepetitionGenerator
             return;
         }
 
+        GeneratePermutations(items, position - 1);
+
         for (int i = 0; i < position; i++)
         {
             if (items[i] != items[position])
@@ -25,14 +27,14 @@ internal class PermutationWithRepetitionGenerator
                 items[position] = temp;
             }
         }
-
-        GeneratePermutations(items, position - 1);
     }
 
     private static void Main()
     {
-        //int[] items = new int[] { 1, 3, 5, 5 };
-        int[] items = new int[] { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
+        int[] items = new int[] { 5, 1, 3, 5, 5 };
+        //int[] items = new int[] { 1, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5 };
+
+        Array.Sort(items);
         GeneratePermutations(items, items.Length - 1);
     }
 }

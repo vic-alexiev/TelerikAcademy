@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tree View Demo</title>
+    <link href="styles/tree-view.css" rel="stylesheet" />
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/tree-view.js"></script>
+</head>
+<body>
+    <ul id="tree-view">
+        <li><span>Item</span>
+            <ul>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li><span>Subitem</span>
+                    <ul>
+                        <li>Subitem</li>
+                        <li>Subitem</li>
+                        <li>Subitem</li>
+                        <li><span>Subitem</span>
+                            <ul>
+                                <li>Subitem</li>
+                                <li>Subitem</li>
+                                <li>Subitem</li>
+                            </ul>
+                        </li>
+                        <li>Subitem</li>
+                        <li>Subitem</li>
+                    </ul>
+                </li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+            </ul>
+        </li>
+        <li><span>Item</span>
+            <ul>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+            </ul>
+        </li>
+        <li><span>Item</span>
+            <ul>
+                <li>Subitem</li>
+                <li><span>Subitem</span>
+                    <ul>
+                        <li>Subitem</li>
+                        <li>Subitem</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li><span>Item</span>
+            <ul>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li><span>Subitem</span>
+                    <ul>
+                        <li>Subitem</li>
+                        <li><span>Subitem</span>
+                            <ul>
+                                <li>Subitem</li>
+                                <li>Subitem</li>
+                                <li>Subitem</li>
+                            </ul>
+                        </li>
+                        <li>Subitem</li>
+                    </ul>
+                </li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+            </ul>
+        </li>
+        <li><span>Item</span>
+            <ul>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+                <li>Subitem</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#tree-view").treeView();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding-left: 1.5em;
+}
+
+    li ul {
+        display: none;
+    }
+
+.handle {
+    background: transparent url(../images/arrow.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: block;
+    float: left;
+    width: 20px;
+    height: 15px;
+}
+
+.collapsed {
+    background: transparent url(../images/plus.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    cursor: pointer;
+}
+
+.expanded {
+    background: transparent url(../images/minus.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    cursor: pointer;
+}

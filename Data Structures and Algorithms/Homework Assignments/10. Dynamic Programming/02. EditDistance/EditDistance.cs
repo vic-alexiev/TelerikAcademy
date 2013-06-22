@@ -72,8 +72,8 @@ internal class EditDistance
         int m = word1.Length;
         int n = word2.Length;
 
-        string S1 = word1.Insert(0, "_");
-        string S2 = word2.Insert(0, "_");
+        string S1 = "_" + word1;
+        string S2 = "_" + word2;
 
         double[,] M = new double[m + 1, n + 1];
         Operation[,] b = new Operation[m + 1, n + 1];

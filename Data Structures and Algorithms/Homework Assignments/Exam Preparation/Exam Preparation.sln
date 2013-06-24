@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. ShoppingCenter", "05. ShoppingCenter\05. ShoppingCenter.csproj", "{274C7795-AC09-4C1C-8291-7B7DD9E36B70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. ShoppingCenterForBGCoder", "05. ShoppingCenterForBGCoder\05. ShoppingCenterForBGCoder.csproj", "{487BB064-5284-4AFE-ADF7-ACDE439287F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{274C7795-AC09-4C1C-8291-7B7DD9E36B70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274C7795-AC09-4C1C-8291-7B7DD9E36B70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274C7795-AC09-4C1C-8291-7B7DD9E36B70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274C7795-AC09-4C1C-8291-7B7DD9E36B70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{487BB064-5284-4AFE-ADF7-ACDE439287F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{487BB064-5284-4AFE-ADF7-ACDE439287F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{487BB064-5284-4AFE-ADF7-ACDE439287F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{487BB064-5284-4AFE-ADF7-ACDE439287F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

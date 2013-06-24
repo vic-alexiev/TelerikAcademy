@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. MakeChange", "01. MakeChange\01. MakeChange.csproj", "{B59A93AE-0FA0-4877-BA6B-54F5C66D964B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. DetermineWhetherAPointIsInsideATriangle", "02. DetermineWhetherAPointIsInsideATriangle\02. DetermineWhetherAPointIsInsideATriangle.csproj", "{7B61FB5C-2BB3-42A3-B883-5F2A11E83D3F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B59A93AE-0FA0-4877-BA6B-54F5C66D964B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59A93AE-0FA0-4877-BA6B-54F5C66D964B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59A93AE-0FA0-4877-BA6B-54F5C66D964B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59A93AE-0FA0-4877-BA6B-54F5C66D964B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B61FB5C-2BB3-42A3-B883-5F2A11E83D3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B61FB5C-2BB3-42A3-B883-5F2A11E83D3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B61FB5C-2BB3-42A3-B883-5F2A11E83D3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B61FB5C-2BB3-42A3-B883-5F2A11E83D3F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,165 @@
+body {
+    background-color: Silver;
+}
+
+.slickr {
+    width: 700px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+body > h1:first-of-type {
+    margin-left: 13%;
+}
+
+#search-panel {
+    margin-left: 24%;
+}
+
+.indicator {
+    float: left;
+}
+
+.border {
+    text-align: center;
+}
+
+.title-desc h1 {
+    font-size: 110%;
+    margin-top: -5px;
+}
+
+#search-box {
+    border-radius: 10px;
+    background-color: gray;
+    font-size: 15px;
+    padding: 5px;
+    color: white;
+}
+
+#search-button {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 0;
+    margin: 0;
+    background-color: #2c2f38;
+    border-color: #c1d72a;
+    color: #c1d72a;
+}
+
+#share-button {
+    width: 80px;
+    height: 30px;
+}
+
+    #share-button img {
+        width: 70px;
+        padding: 0;
+        margin: 0;
+        vertical-align: middle;
+    }
+
+.video {
+    cursor: pointer;
+}
+
+#video-player {
+    border: 10px solid gray;
+    width: 640px;
+    height: 360px;
+    border-radius: 5px;
+    margin-left: 23%;
+}
+
+.slickr .slide-panel {
+    position: absolute;
+    clear: both;
+    height: 400px;
+}
+
+.slickr .slide-padder {
+    width: 700px;
+    height: 400px;
+    float: left;
+}
+
+
+.slickr .slide-valigner {
+    width: 700px;
+    height: 300px;
+    text-align: center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.slickr .nav-left {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+}
+
+.slickr .nav-right {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+}
+
+.slickr .title-desc {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.black {
+    border: 15px solid #2c2f38;
+    border-radius: 20px;
+    width: 702px;
+    margin-top: 30px;
+    margin-left: 20%;
+}
+
+    .black .border {
+        border: 1px solid #c1d72a;
+    }
+
+#gallery-data li img {
+    width: 150px;
+    height: 100px;
+}
+
+.black .slickr {
+    border: 10px solid #2c2f38;
+    width: 680px;
+}
+
+    .black .slickr .slide-padder {
+        width: 680px;
+    }
+
+    .black .slickr .desc {
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 680px;
+        font-family: Georgia, serif;
+        font-size: 11px;
+    }
+
+    .black .slickr .title-desc {
+        left: 10px;
+        top: 10px;
+        font-family: Verdana, Verdana, Geneva, sans-serif;
+    }
+
+        .black .slickr .title-desc .indicator {
+            color: #000;
+        }
+
+            .black .slickr .title-desc .indicator .currentNumber, .black .slickr .title-desc .indicator .totalNumber {
+                color: #000;
+                font-weight: bold;
+            }

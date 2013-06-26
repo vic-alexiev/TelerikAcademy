@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Slickr gallery demo</title>
+    <link rel="stylesheet" href="styles/slickr.css" type="text/css" media="all" />
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/prototype.js"></script>
+    <script src="scripts/media-search.js"></script>
+    <script src="scripts/facebook-sharer.js"></script>
+    <script type="text/javascript" src="scripts/slickr.js"></script>
+    <script type="text/javascript" src="scripts/gallery-crawler.js"></script>
+    <script src="scripts/local-storage-extensions.js"></script>
+</head>
+<body>
+    <h1>Slickr - Image Gallery with Flickr Photos and YouTube Thumbnails</h1>
+    <div id="search-panel">
+        <input type="text" id="search-box" />
+        <button id="search-button" onclick="search();">Search</button>
+        <input type="radio" id="flickr" name="source" value="flickr" checked="checked" />
+        <label for="flickr">Flickr</label>
+        <input type="radio" id="youtube" name="source" value="youtube" />
+        <label for="youtube">YouTube</label>
+        <input type="radio" id="youtube-channel" name="source" value="youtubeChannel" />
+        <label for="youtube">YouTube Channel</label>
+        <a href="javascript:void(0);" data-theme="" id="share-button" onclick="shareToFacebook();">
+            <img src="images/fb-share.jpg" />
+        </a>
+    </div>
+
+    <ul id="gallery-data" style="display: none">
+        <li>
+            <img src="images/1.jpg" alt="Image 1" title="Description of the image 1" /></li>
+        <li>
+            <img src="images/2.jpg" alt="Image 2" title="Description of the image 2" /></li>
+        <li>
+            <img src="images/3.jpg" alt="Image 3" title="Description of the image 3" /></li>
+        <li>
+            <img src="images/4.jpg" alt="Image 4" title="Description of the image 4" /></li>
+        <li>
+            <img src="images/5.jpg" alt="Image 5" title="Description of the image 5" /></li>
+    </ul>
+
+    <div class="black" style="display: none">
+        <div class="border">
+            <div id="gallery" class="slickr"></div>
+        </div>
+    </div>
+    <div id="video-player" style="display: none"></div>
+    <script type="text/javascript">
+
+        var flickrSearcher = new mediaSearch.FlickrImageSearcher(showImages);
+        var youTubeSearcher = new mediaSearch.YouTubeVideoSearcher(showImages, "images/no-thumbnail.png");
+        var galleryData = new dataRetrieval.GalleryCrawler(jQuery("#gallery-data")).getData();
+
+        var options = {
+            galleryRenderer: function (self) {
+                var html =
+                  '<div class="' + self.options.slidePanelClassName + '" style="display:none"></div>' +
+                  '<a href="javascript:void(0)" class="' + self.options.navLeftClassName + '" style="display:none"><img src="images/arrow-left.gif" alt="Backward"/></a>' +
+                  '<a href="javascript:void(0)" class="' + self.options.navRightClassName + '" style="display:none"><img src="images/arrow-right.gif" alt="Forward"/></a>' +
+                  '<div class="title-desc">' +
+                  '<h1></h1>' +
+                  '<div class="indicator">SLIDE <span class="currentNumber"></span> OF <span class="totalNumber"></span></div>' +
+                  '</div>' +
+                  '<p class="desc"></p>';
+
+                return jQuery(html);
+            },
+            playerId: "video-player",
+            autoScrollDelay: 3000
+        };
+
+        var slickr = new controls.Slickr(options);
+
+        jQuery("#gallery").bind("slickr.animation-completed", {}, function () {
+
+            var self = jQuery(this);
+
+            var itemData = slickr.getCurrentSlideData();
+
+            if (itemData) {
+                self.find("h1").text(itemData.title).show();
+                self.find(".desc").text(itemData.title).show();
+            }
+
+            self.find(".indicator .currentNumber").text(slickr.getCurrentSlide() + 1).show();
+            self.find(".indicator .totalNumber").text(slickr.getSlidesCount()).show();
+        });
+
+        slickr.setData(galleryData).render(jQuery('#gallery'));
+
+        jQuery(".black").show();
+        autoScroll();
+
+        function search() {
+            var source = jQuery("input[name=source]:checked", "#search-panel").val();
+            var searchString = jQuery("#search-box").val();
+
+            if (source === "flickr") {
+                flickrSearcher.getImages(searchString, 10);
+
+            } else if (source === "youtube") {
+                youTubeSearcher.getMatchingVideos(searchString, "and", 10, 5);
+
+            } else {
+                youTubeSearcher.getUploadedVideos(searchString, 10, 5);
+            }
+
+            // save to local storage
+            var slickrRepo = slickr.getRepoData(searchString);
+            slickr.repository.save("slickr-repo", slickrRepo);
+        };
+
+        function shareToFacebook() {
+
+            var itemData = slickr.getCurrentSlideData();
+
+            var facebookSharer = new social.FacebookSharer();
+            facebookSharer.post(itemData);
+        };
+
+        function showImages(mediaData) {
+            jQuery(".slickr").html("");
+
+            slickr = new controls.Slickr(options);
+
+            slickr.setData(mediaData).render(jQuery("#gallery"));
+            jQuery(".black").show();
+            autoScroll();
+        };
+
+        // auto-scrolling
+        function autoScroll() {
+            slickr.autoScroll(true);
+            jQuery("#gallery").mouseout(function () { slickr.autoScroll(true); });
+            jQuery("#gallery").mouseover(function () { slickr.autoScroll(false); });
+        };
+
+        // load from local storage
+        var slickrData = slickr.repository.load("slickr-repo");
+        if (slickrData) {
+            jQuery("#search-box").val(slickrData.searchString);
+        }
+    </script>
+</body>
+</html>

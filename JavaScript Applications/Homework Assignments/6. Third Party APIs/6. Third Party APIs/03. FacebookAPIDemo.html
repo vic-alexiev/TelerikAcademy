@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Facebook API demo</title>
+    <script src="scripts/jquery-1.10.0.js"></script>
+    <script src="scripts/facebook-helper.js"></script>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <div id="profileInfo"></div>
+    <fb:login-button show-faces="true" width="200" max-rows="1"></fb:login-button>
+    <br />
+    <button onclick="showFriends()">Show my friends</button>
+    <button onclick="sendMessage()">Send a message</button>
+    <button onclick="logout()">Logout</button>
+
+    <div id="friendsContainer"></div>
+    <script>
+        function showFriends() {
+            $("#friendsContainer").empty();
+            facebookHelper.showFriends("#friendsContainer");
+        }
+
+        function sendMessage() {
+            var title = "Telerik Academy";
+            var link = "http://academy.telerik.com/";
+            facebookHelper.sendMessage(title, link);
+        }
+
+        function logout() {
+            facebookHelper.logout();
+        }
+    </script>
+</body>
+</html>

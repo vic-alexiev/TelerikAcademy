@@ -16,7 +16,7 @@ namespace StudentSystem.Client
                 studentSystem.Students.Add(new Student()
                 {
                     Name = "Svetlin Nakov",
-                    Number = 5000198
+                    Number = 5000981
                 });
 
                 studentSystem.SaveChanges();

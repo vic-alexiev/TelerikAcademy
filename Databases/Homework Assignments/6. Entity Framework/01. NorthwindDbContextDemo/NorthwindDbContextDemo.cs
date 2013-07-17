@@ -2,6 +2,7 @@
 using System;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Transactions;
 
 internal class NorthwindDbContextDemo
 {
@@ -82,22 +83,30 @@ internal class NorthwindDbContextDemo
         }
     }
 
-    private static void InsertNewOrder()
+    private static void InsertNewOrders(int count)
     {
-        DataAccess.InsertNewOrder(
-            "ALFKI",
-            9,
-            new DateTime(2013, 7, 12),
-            new DateTime(2013, 7, 19),
-            new DateTime(2013, 7, 16),
-            3,
-            20.78M,
-            "Telerik Academy",
-            "33 Alexander Malinov Blvd.",
-            "Sofia",
-            "Sofia",
-            "1729",
-            "Bulgaria");
+        using (TransactionScope scope = new TransactionScope())
+        {
+            for (int i = 0; i < count; i++)
+            {
+                DataAccess.InsertNewOrder(
+                    "ALFKI",
+                    9,
+                    new DateTime(2013, 7, 12),
+                    new DateTime(2013, 7, 19),
+                    new DateTime(2013, 7, 16),
+                    3,
+                    20.78M,
+                    "Telerik Academy",
+                    "33 Alexander Malinov Blvd.",
+                    "Sofia",
+                    "Sofia",
+                    "1729",
+                    "Bulgaria");
+            }
+
+            scope.Complete();
+        }
     }
 
     private static void PrintSupplierIncomeByYear()
@@ -150,7 +159,7 @@ internal class NorthwindDbContextDemo
                 // the property TerritoriesSet has been added.
 
                 // Task 9
-                //InsertNewOrder();
+                InsertNewOrders(10);
 
                 // Task 10
                 // The script generating the stored procedure is in the 

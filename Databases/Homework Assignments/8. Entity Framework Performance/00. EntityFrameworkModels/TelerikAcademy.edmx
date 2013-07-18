@@ -1,0 +1,657 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TelerikAcademyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TelerikAcademyModelStoreContainer">
+          <EntitySet Name="Addresses" EntityType="TelerikAcademyModel.Store.Addresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Departments" EntityType="TelerikAcademyModel.Store.Departments" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Employees" EntityType="TelerikAcademyModel.Store.Employees" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EmployeesProjects" EntityType="TelerikAcademyModel.Store.EmployeesProjects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Groups" EntityType="TelerikAcademyModel.Store.Groups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Projects" EntityType="TelerikAcademyModel.Store.Projects" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Towns" EntityType="TelerikAcademyModel.Store.Towns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Users" EntityType="TelerikAcademyModel.Store.Users" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkReports" EntityType="TelerikAcademyModel.Store.WorkReports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="WorkReportsLogs" EntityType="TelerikAcademyModel.Store.WorkReportsLogs" store:Type="Tables" store:Schema="dbo" store:Name="WorkReportsLogs">
+            <DefiningQuery>SELECT 
+      [WorkReportsLogs].[WorkReportID] AS [WorkReportID], 
+      [WorkReportsLogs].[EmployeeID] AS [EmployeeID], 
+      [WorkReportsLogs].[Date] AS [Date], 
+      [WorkReportsLogs].[Task] AS [Task], 
+      [WorkReportsLogs].[Hours] AS [Hours], 
+      [WorkReportsLogs].[Comments] AS [Comments], 
+      [WorkReportsLogs].[Action] AS [Action]
+      FROM [dbo].[WorkReportsLogs] AS [WorkReportsLogs]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Addresses_Towns" Association="TelerikAcademyModel.Store.FK_Addresses_Towns">
+            <End Role="Towns" EntitySet="Towns" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Employees" Association="TelerikAcademyModel.Store.FK_Departments_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Addresses" Association="TelerikAcademyModel.Store.FK_Employees_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Departments" Association="TelerikAcademyModel.Store.FK_Employees_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Employees" Association="TelerikAcademyModel.Store.FK_Employees_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Employees1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeesProjects_Employees" Association="TelerikAcademyModel.Store.FK_EmployeesProjects_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="EmployeesProjects" EntitySet="EmployeesProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EmployeesProjects_Projects" Association="TelerikAcademyModel.Store.FK_EmployeesProjects_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="EmployeesProjects" EntitySet="EmployeesProjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Groups" Association="TelerikAcademyModel.Store.FK_Users_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkReports_Employees" Association="TelerikAcademyModel.Store.FK_WorkReports_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="WorkReports" EntitySet="WorkReports" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Addresses">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AddressText" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TownID" Type="int" />
+        </EntityType>
+        <EntityType Name="Departments">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ManagerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="DepartmentID" Type="int" Nullable="false" />
+          <Property Name="ManagerID" Type="int" />
+          <Property Name="HireDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="Salary" Type="money" Nullable="false" />
+          <Property Name="AddressID" Type="int" />
+        </EntityType>
+        <EntityType Name="EmployeesProjects">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="ProjectID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Groups">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Description" Type="ntext" />
+          <Property Name="StartDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="EndDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="Towns">
+          <Key>
+            <PropertyRef Name="TownID" />
+          </Key>
+          <Property Name="TownID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Password" Type="nvarchar" MaxLength="30" />
+          <Property Name="LastLoginTime" Type="datetime" />
+          <Property Name="GroupId" Type="int" />
+        </EntityType>
+        <EntityType Name="WorkReports">
+          <Key>
+            <PropertyRef Name="WorkReportID" />
+          </Key>
+          <Property Name="WorkReportID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Task" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Hours" Type="int" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'TelerikAcademy.dbo.WorkReportsLogs' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="WorkReportsLogs">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Task" />
+            <PropertyRef Name="Hours" />
+            <PropertyRef Name="Action" />
+          </Key>
+          <Property Name="WorkReportID" Type="int" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Task" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="Hours" Type="int" Nullable="false" />
+          <Property Name="Comments" Type="nvarchar" MaxLength="30" />
+          <Property Name="Action" Type="nvarchar" Nullable="false" MaxLength="30" />
+        </EntityType>
+        <Association Name="FK_Addresses_Towns">
+          <End Role="Towns" Type="TelerikAcademyModel.Store.Towns" Multiplicity="0..1" />
+          <End Role="Addresses" Type="TelerikAcademyModel.Store.Addresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Towns">
+              <PropertyRef Name="TownID" />
+            </Principal>
+            <Dependent Role="Addresses">
+              <PropertyRef Name="TownID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Employees">
+          <End Role="Employees" Type="TelerikAcademyModel.Store.Employees" Multiplicity="1" />
+          <End Role="Departments" Type="TelerikAcademyModel.Store.Departments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Departments">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Addresses">
+          <End Role="Addresses" Type="TelerikAcademyModel.Store.Addresses" Multiplicity="0..1" />
+          <End Role="Employees" Type="TelerikAcademyModel.Store.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Departments">
+          <End Role="Departments" Type="TelerikAcademyModel.Store.Departments" Multiplicity="1" />
+          <End Role="Employees" Type="TelerikAcademyModel.Store.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Employees">
+          <End Role="Employees" Type="TelerikAcademyModel.Store.Employees" Multiplicity="0..1" />
+          <End Role="Employees1" Type="TelerikAcademyModel.Store.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Employees1">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeesProjects_Employees">
+          <End Role="Employees" Type="TelerikAcademyModel.Store.Employees" Multiplicity="1" />
+          <End Role="EmployeesProjects" Type="TelerikAcademyModel.Store.EmployeesProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="EmployeesProjects">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EmployeesProjects_Projects">
+          <End Role="Projects" Type="TelerikAcademyModel.Store.Projects" Multiplicity="1" />
+          <End Role="EmployeesProjects" Type="TelerikAcademyModel.Store.EmployeesProjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="ProjectID" />
+            </Principal>
+            <Dependent Role="EmployeesProjects">
+              <PropertyRef Name="ProjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Groups">
+          <End Role="Groups" Type="TelerikAcademyModel.Store.Groups" Multiplicity="0..1" />
+          <End Role="Users" Type="TelerikAcademyModel.Store.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkReports_Employees">
+          <End Role="Employees" Type="TelerikAcademyModel.Store.Employees" Multiplicity="1" />
+          <End Role="WorkReports" Type="TelerikAcademyModel.Store.WorkReports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="WorkReports">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TelerikAcademyModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TelerikAcademyEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Addresses" EntityType="TelerikAcademyModel.Address" />
+          <EntitySet Name="Departments" EntityType="TelerikAcademyModel.Department" />
+          <EntitySet Name="Employees" EntityType="TelerikAcademyModel.Employee" />
+          <EntitySet Name="Groups" EntityType="TelerikAcademyModel.Group" />
+          <EntitySet Name="Projects" EntityType="TelerikAcademyModel.Project" />
+          <EntitySet Name="Towns" EntityType="TelerikAcademyModel.Town" />
+          <EntitySet Name="Users" EntityType="TelerikAcademyModel.User" />
+          <EntitySet Name="WorkReports" EntityType="TelerikAcademyModel.WorkReport" />
+          <EntitySet Name="WorkReportsLogs" EntityType="TelerikAcademyModel.WorkReportsLog" />
+          <AssociationSet Name="FK_Addresses_Towns" Association="TelerikAcademyModel.FK_Addresses_Towns">
+            <End Role="Towns" EntitySet="Towns" />
+            <End Role="Addresses" EntitySet="Addresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Addresses" Association="TelerikAcademyModel.FK_Employees_Addresses">
+            <End Role="Addresses" EntitySet="Addresses" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Departments_Employees" Association="TelerikAcademyModel.FK_Departments_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Departments" EntitySet="Departments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Departments" Association="TelerikAcademyModel.FK_Employees_Departments">
+            <End Role="Departments" EntitySet="Departments" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Employees" Association="TelerikAcademyModel.FK_Employees_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Employees1" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_WorkReports_Employees" Association="TelerikAcademyModel.FK_WorkReports_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="WorkReports" EntitySet="WorkReports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Groups" Association="TelerikAcademyModel.FK_Users_Groups">
+            <End Role="Groups" EntitySet="Groups" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="EmployeesProjects" Association="TelerikAcademyModel.EmployeesProjects">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Address">
+          <Key>
+            <PropertyRef Name="AddressID" />
+          </Key>
+          <Property Name="AddressID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressText" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TownID" Type="Int32" />
+          <NavigationProperty Name="Town" Relationship="TelerikAcademyModel.FK_Addresses_Towns" FromRole="Addresses" ToRole="Towns" />
+          <NavigationProperty Name="Employees" Relationship="TelerikAcademyModel.FK_Employees_Addresses" FromRole="Addresses" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="DepartmentID" />
+          </Key>
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ManagerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="TelerikAcademyModel.FK_Departments_Employees" FromRole="Departments" ToRole="Employees" />
+          <NavigationProperty Name="Employees" Relationship="TelerikAcademyModel.FK_Employees_Departments" FromRole="Departments" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DepartmentID" Type="Int32" Nullable="false" />
+          <Property Name="ManagerID" Type="Int32" />
+          <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="AddressID" Type="Int32" />
+          <NavigationProperty Name="Address" Relationship="TelerikAcademyModel.FK_Employees_Addresses" FromRole="Employees" ToRole="Addresses" />
+          <NavigationProperty Name="Departments" Relationship="TelerikAcademyModel.FK_Departments_Employees" FromRole="Employees" ToRole="Departments" />
+          <NavigationProperty Name="Department" Relationship="TelerikAcademyModel.FK_Employees_Departments" FromRole="Employees" ToRole="Departments" />
+          <NavigationProperty Name="Employees1" Relationship="TelerikAcademyModel.FK_Employees_Employees" FromRole="Employees" ToRole="Employees1" />
+          <NavigationProperty Name="Employee1" Relationship="TelerikAcademyModel.FK_Employees_Employees" FromRole="Employees1" ToRole="Employees" />
+          <NavigationProperty Name="WorkReports" Relationship="TelerikAcademyModel.FK_WorkReports_Employees" FromRole="Employees" ToRole="WorkReports" />
+          <NavigationProperty Name="Projects" Relationship="TelerikAcademyModel.EmployeesProjects" FromRole="Employees" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Group">
+          <Key>
+            <PropertyRef Name="GroupId" />
+          </Key>
+          <Property Name="GroupId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Users" Relationship="TelerikAcademyModel.FK_Users_Groups" FromRole="Groups" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="ProjectID" />
+          </Key>
+          <Property Name="ProjectID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Employees" Relationship="TelerikAcademyModel.EmployeesProjects" FromRole="Projects" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Town">
+          <Key>
+            <PropertyRef Name="TownID" />
+          </Key>
+          <Property Name="TownID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Addresses" Relationship="TelerikAcademyModel.FK_Addresses_Towns" FromRole="Towns" ToRole="Addresses" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Password" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="LastLoginTime" Type="DateTime" Precision="3" />
+          <Property Name="GroupId" Type="Int32" />
+          <NavigationProperty Name="Group" Relationship="TelerikAcademyModel.FK_Users_Groups" FromRole="Users" ToRole="Groups" />
+        </EntityType>
+        <EntityType Name="WorkReport">
+          <Key>
+            <PropertyRef Name="WorkReportID" />
+          </Key>
+          <Property Name="WorkReportID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Task" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Hours" Type="Int32" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Employee" Relationship="TelerikAcademyModel.FK_WorkReports_Employees" FromRole="WorkReports" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="WorkReportsLog">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="Task" />
+            <PropertyRef Name="Hours" />
+            <PropertyRef Name="Action" />
+          </Key>
+          <Property Name="WorkReportID" Type="Int32" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Task" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Hours" Type="Int32" Nullable="false" />
+          <Property Name="Comments" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="Action" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Addresses_Towns">
+          <End Role="Towns" Type="TelerikAcademyModel.Town" Multiplicity="0..1" />
+          <End Role="Addresses" Type="TelerikAcademyModel.Address" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Towns">
+              <PropertyRef Name="TownID" />
+            </Principal>
+            <Dependent Role="Addresses">
+              <PropertyRef Name="TownID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Addresses">
+          <End Role="Addresses" Type="TelerikAcademyModel.Address" Multiplicity="0..1" />
+          <End Role="Employees" Type="TelerikAcademyModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Addresses">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Departments_Employees">
+          <End Role="Employees" Type="TelerikAcademyModel.Employee" Multiplicity="1" />
+          <End Role="Departments" Type="TelerikAcademyModel.Department" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Departments">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Departments">
+          <End Role="Departments" Type="TelerikAcademyModel.Department" Multiplicity="1" />
+          <End Role="Employees" Type="TelerikAcademyModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Departments">
+              <PropertyRef Name="DepartmentID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="DepartmentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Employees">
+          <End Role="Employees" Type="TelerikAcademyModel.Employee" Multiplicity="0..1" />
+          <End Role="Employees1" Type="TelerikAcademyModel.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Employees1">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_WorkReports_Employees">
+          <End Role="Employees" Type="TelerikAcademyModel.Employee" Multiplicity="1" />
+          <End Role="WorkReports" Type="TelerikAcademyModel.WorkReport" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="WorkReports">
+              <PropertyRef Name="EmployeeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Groups">
+          <End Role="Groups" Type="TelerikAcademyModel.Group" Multiplicity="0..1" />
+          <End Role="Users" Type="TelerikAcademyModel.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Groups">
+              <PropertyRef Name="GroupId" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="GroupId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="EmployeesProjects">
+          <End Role="Employees" Type="TelerikAcademyModel.Employee" Multiplicity="*" />
+          <End Role="Projects" Type="TelerikAcademyModel.Project" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TelerikAcademyModelStoreContainer" CdmEntityContainer="TelerikAcademyEntities">
+          <EntitySetMapping Name="Addresses">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.Address">
+              <MappingFragment StoreEntitySet="Addresses">
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+                <ScalarProperty Name="AddressText" ColumnName="AddressText" />
+                <ScalarProperty Name="TownID" ColumnName="TownID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.Department">
+              <MappingFragment StoreEntitySet="Departments">
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Groups">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.Group">
+              <MappingFragment StoreEntitySet="Groups">
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.Project">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Towns">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.Town">
+              <MappingFragment StoreEntitySet="Towns">
+                <ScalarProperty Name="TownID" ColumnName="TownID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastLoginTime" ColumnName="LastLoginTime" />
+                <ScalarProperty Name="GroupId" ColumnName="GroupId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkReports">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.WorkReport">
+              <MappingFragment StoreEntitySet="WorkReports">
+                <ScalarProperty Name="WorkReportID" ColumnName="WorkReportID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkReportsLogs">
+            <EntityTypeMapping TypeName="TelerikAcademyModel.WorkReportsLog">
+              <MappingFragment StoreEntitySet="WorkReportsLogs">
+                <ScalarProperty Name="WorkReportID" ColumnName="WorkReportID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="EmployeesProjects" TypeName="TelerikAcademyModel.EmployeesProjects" StoreEntitySet="EmployeesProjects">
+            <EndProperty Name="Employees">
+              <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+            </EndProperty>
+            <EndProperty Name="Projects">
+              <ScalarProperty Name="ProjectID" ColumnName="ProjectID" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

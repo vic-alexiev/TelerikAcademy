@@ -28,7 +28,6 @@ internal class EmployeeSelectorUsingEntityFramework
         {
             var employees = context.Employees
                 .Include(e => e.Department)
-                .Include(e => e.Address)
                 .Include(e => e.Address.Town);
 
             foreach (var employee in employees)
@@ -103,8 +102,8 @@ internal class EmployeeSelectorUsingEntityFramework
     static void Main()
     {
         //SelectEmployeesNoInclude();
-        //SelectEmployeesWithInclude();
+        SelectEmployeesWithInclude();
         //SelectEmployeesUsingToList();
-        SelectEmployeesUsingOptimization();
+        //SelectEmployeesUsingOptimization();
     }
 }

@@ -2,6 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity.Infrastructure;
+using System.Data.SqlClient;
+using System.Configuration;
 
 public static class DataAccess
 {
@@ -174,5 +177,31 @@ public static class DataAccess
 
         northwind.Orders.Add(newOrder);
         northwind.SaveChanges();
+    }
+
+    public static void GenerateDatabaseFromModel(string databaseName)
+    {
+        string createDatabaseScript = (northwind as IObjectContextAdapter).ObjectContext.CreateDatabaseScript();
+
+        SqlConnection connection = new SqlConnection(
+            ConfigurationManager.ConnectionStrings[databaseName].ConnectionString);
+        connection.Open();
+
+        using (connection)
+        {
+            SqlCommand useMasterCommand = new SqlCommand("USE master", connection);
+            useMasterCommand.ExecuteNonQuery();
+
+            SqlCommand createDatabaseCommand = new SqlCommand(
+                "CREATE DATABASE NorthwindTwin",
+                connection);
+            createDatabaseCommand.ExecuteNonQuery();
+
+            SqlCommand useNewDatabaseCommand = new SqlCommand("USE NorthwindTwin", connection);
+            useNewDatabaseCommand.ExecuteNonQuery();
+
+            SqlCommand copySchemaCommand = new SqlCommand(createDatabaseScript, connection);
+            copySchemaCommand.ExecuteNonQuery();
+        }
     }
 }

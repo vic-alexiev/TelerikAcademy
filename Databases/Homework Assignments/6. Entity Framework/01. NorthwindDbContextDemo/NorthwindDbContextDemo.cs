@@ -83,6 +83,11 @@ internal class NorthwindDbContextDemo
         }
     }
 
+    private static void GenerateDatabaseFromModel()
+    {
+        DataAccess.GenerateDatabaseFromModel("NorthwindTwin");
+    }
+
     private static void InsertNewOrders(int count)
     {
         using (TransactionScope scope = new TransactionScope())
@@ -147,9 +152,10 @@ internal class NorthwindDbContextDemo
                 //PrintSalesByRegionAndYear();
 
                 // Task 6
-                // The NorthwindTwin database script has been created 
+                // The NorthwindTwin database script can also be created 
                 // using the "Generate Database from Model..." command.
                 // It's in the \Resources folder (NorthwindTwin.sql).
+                //GenerateDatabaseFromModel();
 
                 // Task 7
                 // In a separate project
@@ -159,7 +165,7 @@ internal class NorthwindDbContextDemo
                 // the property TerritoriesSet has been added.
 
                 // Task 9
-                InsertNewOrders(10);
+                //InsertNewOrders(10);
 
                 // Task 10
                 // The script generating the stored procedure is in the 

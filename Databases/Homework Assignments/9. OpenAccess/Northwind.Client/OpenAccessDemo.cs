@@ -100,7 +100,8 @@ namespace Northwind.Client
         private static void Main()
         {
             // Task 1 - see NorthwindFramework project and code generation template DefaultTemplateCS_ver.1.tt
-            // NotificationObject.cs is the common base class 
+            // (Northwind.Model project, folder Templates)
+            // NotificationObject is the common base class 
 
             // Task 2
             SerializeDeserialize("ALFKI");

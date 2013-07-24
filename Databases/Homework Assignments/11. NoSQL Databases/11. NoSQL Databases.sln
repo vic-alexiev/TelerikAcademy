@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. MongoDictionary", "01. MongoDictionary\01. MongoDictionary.csproj", "{21D5279E-183B-4B0F-A7D5-DDE341C00802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. MongoDictionaryDemo", "01. MongoDictionaryDemo\01. MongoDictionaryDemo.csproj", "{12B6468F-5256-47F4-8DAE-E6483936F6EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00. ConsoleUtils", "00. ConsoleUtils\00. ConsoleUtils.csproj", "{44CE8987-1D52-4D92-AE61-521315888270}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. RedisDictionary", "02. RedisDictionary\02. RedisDictionary.csproj", "{33B5D53D-7FDA-42FA-B684-4E6350DA1B17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. RedisDictionaryDemo", "02. RedisDictionaryDemo\02. RedisDictionaryDemo.csproj", "{236597E4-209C-4389-83BF-49C94883B9A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21D5279E-183B-4B0F-A7D5-DDE341C00802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21D5279E-183B-4B0F-A7D5-DDE341C00802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21D5279E-183B-4B0F-A7D5-DDE341C00802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21D5279E-183B-4B0F-A7D5-DDE341C00802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12B6468F-5256-47F4-8DAE-E6483936F6EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B6468F-5256-47F4-8DAE-E6483936F6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B6468F-5256-47F4-8DAE-E6483936F6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B6468F-5256-47F4-8DAE-E6483936F6EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44CE8987-1D52-4D92-AE61-521315888270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CE8987-1D52-4D92-AE61-521315888270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CE8987-1D52-4D92-AE61-521315888270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CE8987-1D52-4D92-AE61-521315888270}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B5D53D-7FDA-42FA-B684-4E6350DA1B17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B5D53D-7FDA-42FA-B684-4E6350DA1B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B5D53D-7FDA-42FA-B684-4E6350DA1B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B5D53D-7FDA-42FA-B684-4E6350DA1B17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{236597E4-209C-4389-83BF-49C94883B9A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{236597E4-209C-4389-83BF-49C94883B9A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{236597E4-209C-4389-83BF-49C94883B9A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{236597E4-209C-4389-83BF-49C94883B9A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

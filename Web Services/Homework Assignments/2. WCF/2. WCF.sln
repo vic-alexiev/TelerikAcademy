@@ -14,6 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. StringOccurrencesServic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. StringOccurrencesService.Client", "05. StringOccurrencesService.Client\05. StringOccurrencesService.Client.csproj", "{3D86B557-38F1-4816-9F78-30612BA8E200}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. StringOccurrencesService.WebClient", "06. StringOccurrencesService.WebClient\06. StringOccurrencesService.WebClient.csproj", "{0B53F469-CD9F-49E5-8D6E-1C2D2BAD0D38}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +45,10 @@ Global
 		{3D86B557-38F1-4816-9F78-30612BA8E200}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D86B557-38F1-4816-9F78-30612BA8E200}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D86B557-38F1-4816-9F78-30612BA8E200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B53F469-CD9F-49E5-8D6E-1C2D2BAD0D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B53F469-CD9F-49E5-8D6E-1C2D2BAD0D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B53F469-CD9F-49E5-8D6E-1C2D2BAD0D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B53F469-CD9F-49E5-8D6E-1C2D2BAD0D38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

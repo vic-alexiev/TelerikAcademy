@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<topic id="69c9c349-62e7-4b0b-8a6b-1c997ce74941" revisionNumber="1">
+  <developerConceptualDocument
+    xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <!--
+    <summary>
+      <para>Optional summary abstract</para>
+    </summary>
+    -->
+
+    <introduction>
+      <!-- Uncomment this to generate an outline of the section and sub-section
+           titles.  Specify a numeric value as the inner text to limit it to
+           a specific number of sub-topics when creating the outline.  Specify
+           zero (0) to limit it to top-level sections only.  -->
+      <!-- <autoOutline /> -->
+
+      <para>Your task is to write an interactive console-based implementation of the game "King Survival" in which the king (K) tries to escape the four pawns (A, B, C, D). The game is played on a standard chessboard of size 8 x 8 squares.</para>
+    </introduction>
+
+    <!-- Add one or more top-level section elements.  These are collapsible.
+         If using <autoOutline />, add an address attribute to identify it
+         and specify a title so that it can be jumped to with a hyperlink. -->
+    <section address="Section1">
+      <title>Summary</title>
+      <content>
+        <mediaLink>
+          <caption>Fig. 1 King Survival Initial Positions</caption>
+          <image xlink:href="KingSurvivalInitialPositions"/>
+        </mediaLink>
+        <!-- Uncomment this to create a sub-section outline
+        <autoOutline /> -->
+        <para>The king is initially located at row 7 and column 3 and the pawns are located at row 0 and columns 0, 2, 4 and 6. A pawn can only move to a neighbor square down-left or down-right, while the king can go to neighbor squares in 4 directions: down-left, down-right, up-left and up-right. The pawns and the king cannot step outside of the chessboard or on a square that is already occupied. The game starts by moving the king. At odd turns the player moves the king, at even - the pawns. The player in fact plays against himself. In order to make a move the player issues a command which contains the name of the figure, i.e. K, followed by the direction to move in, e.g. KUL means King-Up-Left, while ADL means Pawn-A-Down-Left. Thus all possible commands are 12: KUL, KUR, KDL, KDR, ADL, ADR, BDL, BDR, CDL, CDR, DDL and DDR.</para>
+      </content>
+      <!-- If a section contains a sections element, its content creates
+           sub-sections.  These are not collapsible.
+      <sections>
+          <section address="SubSection1">
+              <title>Sub-section 1</title>
+              <content>
+                  <para>Sub-section content.</para>
+              </content>
+          </section>
+          <section address="SubSection2">
+              <title>Sub-section 2</title>
+              <content>
+                  <para>Sub-section content.</para>
+              </content>
+          </section>
+      </sections> -->
+    </section>
+
+    <section address="Section2">
+      <title>Sample Game</title>
+      <content>
+        <mediaLink>
+          <caption>Fig. 2 Sample Game Session</caption>
+          <image xlink:href="SampleGame"/>
+        </mediaLink>
+      </content>
+    </section>
+    <relatedTopics>
+      <!-- One or more of the following:
+           - A local link
+           - An external link
+           - A code entity reference
+
+      <link xlink:href="Other Topic's ID"/>
+      <link xlink:href="Other Topic's ID">Link inner text</link>
+
+      <externalLink>
+          <linkText>Link text</linkText>
+          <linkAlternateText>Optional alternate link text</linkAlternateText>
+          <linkUri>URI</linkUri>
+      </externalLink>
+
+      <codeEntityReference>API member ID</codeEntityReference>
+
+      Examples:
+
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8270" />
+      <link xlink:href="00e97994-e9e6-46e0-b420-5be86b2f8278">Some other topic</link>
+
+      <externalLink>
+          <linkText>SHFB on CodePlex</linkText>
+          <linkAlternateText>Go to CodePlex</linkAlternateText>
+          <linkUri>http://shfb.codeplex.com</linkUri>
+      </externalLink>
+
+      <codeEntityReference>T:TestDoc.TestClass</codeEntityReference>
+      <codeEntityReference>P:TestDoc.TestClass.SomeProperty</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.#ctor(System.String,System.Int32)</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.ToString</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.FirstMethod</codeEntityReference>
+      <codeEntityReference>M:TestDoc.TestClass.SecondMethod(System.Int32,System.String)</codeEntityReference>
+      -->
+    </relatedTopics>
+  </developerConceptualDocument>
+</topic>

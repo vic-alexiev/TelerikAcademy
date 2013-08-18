@@ -1,58 +1,63 @@
 ﻿using Newtonsoft.Json;
+using StudentsDb.Repositories;
+using StudentsDb.Services.DependencyResolvers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace StudentsDb.Services.IntegrationTests
 {
-    internal class InMemoryHttpServer
+    class InMemoryHttpServer
     {
         private readonly HttpClient client;
         private string baseUrl;
-        private IEnumerable<Route> routes;
 
-        public InMemoryHttpServer(string baseUrl)
-            : this(baseUrl, new List<Route>())
+        public InMemoryHttpServer(string baseUrl, IRepository repository)
         {
-        }
-
-        public InMemoryHttpServer(string baseUrl, IEnumerable<Route> routes)
-        {
-            this.routes = routes;
             this.baseUrl = baseUrl;
             var config = new HttpConfiguration();
             this.AddHttpRoutes(config.Routes);
             config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
 
+            var resolver = new StudentsDbDependencyResolver();
+            resolver.Repository = repository;
+            config.DependencyResolver = resolver;
+
             var server = new HttpServer(config);
             this.client = new HttpClient(server);
         }
 
-        public HttpResponseMessage Get(string requestUrl, IDictionary<string, string> headers = null, string mediaType = "application/json")
+        public HttpResponseMessage CreateGetRequest(string requestUrl, string mediaType = "application/json")
         {
             var url = requestUrl;
             var request = new HttpRequestMessage();
             request.RequestUri = new Uri(baseUrl + url);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
             request.Method = HttpMethod.Get;
-            if (headers != null)
-            {
-                foreach (var header in headers)
-                {
-                    request.Headers.Add(header.Key, header.Value);
-                }
-            }
 
             var response = this.client.SendAsync(request).Result;
             return response;
         }
 
-        public HttpResponseMessage Post(string requestUrl, object data, IDictionary<string, string> headers = null, string mediaType = "application/json")
+        public Task<HttpResponseMessage> CreateGetRequestAsync(string requestUrl, string mediaType = "application/json")
+        {
+            var url = requestUrl;
+            var request = new HttpRequestMessage();
+            request.RequestUri = new Uri(baseUrl + url);
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue(mediaType));
+            request.Method = HttpMethod.Get;
+
+            var response = this.client.SendAsync(request, new CancellationTokenSource().Token);
+            return response;
+        }
+
+        public HttpResponseMessage CreatePostRequest(string requestUrl, object data, string mediaType = "application/json")
         {
             var url = requestUrl;
             var request = new HttpRequestMessage();
@@ -61,31 +66,26 @@ namespace StudentsDb.Services.IntegrationTests
             request.Method = HttpMethod.Post;
             request.Content = new StringContent(JsonConvert.SerializeObject(data));
             request.Content.Headers.ContentType = new MediaTypeHeaderValue(mediaType);
-            if (headers != null)
-            {
-                foreach (var header in headers)
-                {
-                    request.Headers.Add(header.Key, header.Value);
-                }
-            }
+
             var response = this.client.SendAsync(request).Result;
             return response;
         }
 
         private void AddHttpRoutes(HttpRouteCollection routeCollection)
         {
-            foreach (var route in this.routes)
-            {
-                routeCollection.MapHttpRoute(
-                    route.Name,
-                    route.Template,
-                    route.Defaults);
-            }
+            var routes = GetRoutes();
+            routes.ForEach(route => routeCollection.MapHttpRoute(route.Name, route.Template, route.Defaults));
         }
 
-        private IEnumerable<Route> GetRoutes()
+        private List<Route> GetRoutes()
         {
-            return this.routes;
+            return new List<Route>
+            {
+                new Route(
+                    "DefaultApi",
+                    "api/{controller}/{id}",
+                    new { id = RouteParameter.Optional })
+            };
         }
     }
 

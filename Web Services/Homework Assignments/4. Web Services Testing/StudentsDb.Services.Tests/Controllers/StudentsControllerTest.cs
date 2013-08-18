@@ -41,9 +41,6 @@ namespace StudentsDb.Services.Tests.Controllers
         [TestMethod]
         public void Add_WhenStudentIsValid_ShouldAddTheStudent()
         {
-            bool isStudentAdded = false;
-            var repository = Mock.Create<IRepository>();
-
             var studentDto = new StudentDto()
             {
                 FirstName = "Andrew",
@@ -62,6 +59,9 @@ namespace StudentsDb.Services.Tests.Controllers
                 Grade = studentDto.Grade,
             };
 
+            bool isStudentAdded = false;
+            var repository = Mock.Create<IRepository>();
+
             Mock.Arrange(() => repository.Create(Arg.IsAny<Student>()))
                 .DoInstead(() => isStudentAdded = true)
                 .Returns(student);
@@ -78,8 +78,6 @@ namespace StudentsDb.Services.Tests.Controllers
         [TestMethod]
         public void GetAll_ShouldReturnAllStudents()
         {
-            var repository = Mock.Create<IRepository>();
-
             var student = new Student()
             {
                 Id = 1,
@@ -92,6 +90,9 @@ namespace StudentsDb.Services.Tests.Controllers
 
             IList<Student> students = new List<Student>();
             students.Add(student);
+
+            var repository = Mock.Create<IRepository>();
+
             Mock.Arrange(() => repository.All<Student>(new[] { "School", "Marks" })).Returns(() => students.AsQueryable());
 
             var controller = new StudentsController(repository);
@@ -104,7 +105,6 @@ namespace StudentsDb.Services.Tests.Controllers
         [TestMethod]
         public void GetById_ShouldReturnSingleStudent()
         {
-            var repository = Mock.Create<IRepository>();
             var student = new Student()
             {
                 Id = 1,
@@ -114,6 +114,8 @@ namespace StudentsDb.Services.Tests.Controllers
                 Grade = 4,
                 SchoolId = 1
             };
+
+            var repository = Mock.Create<IRepository>();
 
             Mock.Arrange(() => repository.Find<Student>(
                 Arg.IsAny<Expression<Func<Student, bool>>>(),
@@ -134,7 +136,6 @@ namespace StudentsDb.Services.Tests.Controllers
         [TestMethod]
         public void Filter_ShouldReturnAllStudentsMatchingThePredicate()
         {
-            var repository = Mock.Create<IRepository>();
             var student = new Student()
             {
                 Id = 1,
@@ -147,6 +148,8 @@ namespace StudentsDb.Services.Tests.Controllers
 
             IList<Student> students = new List<Student>();
             students.Add(student);
+
+            var repository = Mock.Create<IRepository>();
 
             Mock.Arrange(() => repository.Filter<Student>(
                 Arg.IsAny<Expression<Func<Student, bool>>>(),

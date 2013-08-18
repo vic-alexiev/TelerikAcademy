@@ -10,6 +10,8 @@ namespace StudentsDb.Services.DependencyResolvers
 {
     public class StudentsDbDependencyResolver : IDependencyResolver
     {
+        public IRepository Repository { get; set; }
+
         public IDependencyScope BeginScope()
         {
             return this;
@@ -19,15 +21,11 @@ namespace StudentsDb.Services.DependencyResolvers
         {
             if (serviceType == typeof(StudentsController))
             {
-                DbContext studentsDbContext = new StudentsDbContext();
-                IRepository repository = new StudentsDbRepository(studentsDbContext);
-                return new StudentsController(repository);
+                return new StudentsController(this.Repository);
             }
             else if (serviceType == typeof(SchoolsController))
             {
-                DbContext studentsDbContext = new StudentsDbContext();
-                IRepository repository = new StudentsDbRepository(studentsDbContext);
-                return new SchoolsController(repository);
+                return new SchoolsController(this.Repository);
             }
             else
             {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using StudentsDb.Models;
 using StudentsDb.Repositories;
-using StudentsDb.Services.Controllers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -12,15 +12,6 @@ namespace StudentsDb.Services.IntegrationTests
     [TestClass]
     public class StudentsControllerIntegrationTest
     {
-        private StudentsController controller;
-        private IRepository repository = Mock.Create<IRepository>();
-
-        [TestInitialize]
-        public void TestInit()
-        {
-            controller = new StudentsController(repository);
-        }
-
         [TestMethod]
         public void GetAll_WhenOneStudent_ShouldReturnStatusCode200AndNotNullContent()
         {
@@ -34,17 +25,38 @@ namespace StudentsDb.Services.IntegrationTests
                 SchoolId = 1
             });
 
+            var repository = Mock.Create<IRepository>();
+
             Mock.Arrange(() => repository.All<Student>(new[] { "School", "Marks" }))
                 .Returns(() => students.AsQueryable());
 
-            var studentsFound = controller.Get();
+            var server = new InMemoryHttpServer("http://localhost/", repository);
 
-            var server = new InMemoryHttpServer("http://localhost/");
-
-            var response = server.Get("api/students");
+            var response = server.CreateGetRequest("api/students");
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
             Assert.IsNotNull(response.Content);
+        }
+
+        [TestMethod]
+        public void PostStudent_WhenNameIsNull_ShouldReturnStatusCode400()
+        {
+            var repository = Mock.Create<IRepository>();
+
+            Mock.Arrange(() => repository
+                .Create(Arg.Matches<Student>(s => s.FirstName == null)))
+                .Throws<Exception>();
+
+
+            var server = new InMemoryHttpServer("http://localhost/", repository);
+
+            var response = server.CreatePostRequest("api/students",
+                new Student()
+                {
+                    FirstName = null
+                });
+
+            Assert.AreEqual(HttpStatusCode.BadRequest, response.StatusCode);
         }
     }
 }

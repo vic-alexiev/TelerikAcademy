@@ -15,9 +15,14 @@ namespace StudentsDb.Services.Controllers
         private ApiControllerHelper apiControllerHelper;
 
         public StudentsController()
+            : this(new StudentsDbRepository())
+        {
+        }
+
+        public StudentsController(IRepository repository)
         {
             var includes = new[] { "School", "Marks" };
-            apiControllerHelper = new ApiControllerHelper(new StudentsDbRepository(), includes);
+            apiControllerHelper = new ApiControllerHelper(repository, includes);
         }
 
         // GET api/<controller>
@@ -42,28 +47,56 @@ namespace StudentsDb.Services.Controllers
         public StudentDto Get(int id)
         {
             var student = apiControllerHelper.Get<Student>(id);
-            if (student == null)
+            if (student != null)
             {
-                throw new ArgumentException(string.Format("Student with id = {0} doesn't exist.", id));
+                return new StudentDto
+                {
+                    Id = student.Id,
+                    SchoolId = student.SchoolId,
+                    FirstName = student.FirstName,
+                    LastName = student.LastName,
+                    Age = student.Age,
+                    Grade = student.Grade,
+                    Marks =
+                    (from mark in student.Marks
+                     select new MarkDto
+                     {
+                         Id = mark.Id,
+                         Subject = mark.Subject,
+                         Value = mark.Value
+                     }).AsEnumerable()
+                };
             }
 
-            return new StudentDto
-            {
-                Id = student.Id,
-                SchoolId = student.SchoolId,
-                FirstName = student.FirstName,
-                LastName = student.LastName,
-                Age = student.Age,
-                Grade = student.Grade,
-                Marks =
-                (from mark in student.Marks
-                 select new MarkDto
-                 {
-                     Id = mark.Id,
-                     Subject = mark.Subject,
-                     Value = mark.Value
-                 }).AsEnumerable()
-            };
+            return null;
+        }
+
+        public IEnumerable<StudentDto> Get(string subject, float value)
+        {
+            var students = apiControllerHelper.Filter<Student>(s => s.Marks.Any(m => m.Subject == subject && m.Value >= value));
+
+            var result =
+                from student in students
+                select new StudentDto
+                {
+                    Id = student.Id,
+                    FirstName = student.FirstName,
+                    LastName = student.LastName,
+                    Age = student.Age,
+                    Grade = student.Grade,
+                    SchoolId = student.SchoolId,
+                    Marks =
+                    (from mark in student.Marks.Where(m => m.Subject == subject && m.Value >= value)
+                     select new MarkDto
+                     {
+                         Id = mark.Id,
+                         StudentId = mark.StudentId,
+                         Subject = mark.Subject,
+                         Value = mark.Value
+                     })
+                };
+
+            return result;
         }
 
         public HttpResponseMessage Post(StudentDto value)

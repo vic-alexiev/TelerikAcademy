@@ -15,9 +15,14 @@ namespace StudentsDb.Services.Controllers
         private ApiControllerHelper apiControllerHelper;
 
         public SchoolsController()
+            : this(new StudentsDbRepository())
+        {
+        }
+
+        public SchoolsController(IRepository repository)
         {
             var includes = new[] { "Students" };
-            apiControllerHelper = new ApiControllerHelper(new StudentsDbRepository(), includes);
+            apiControllerHelper = new ApiControllerHelper(repository, includes);
         }
 
         // GET api/<controller>

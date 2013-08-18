@@ -1,7 +1,11 @@
 ﻿using StudentsDb.Models;
 using StudentsDb.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Net.Http.Headers;
 using System.Web.Http;
 
 namespace StudentsDb.Services.Controllers
@@ -17,21 +21,24 @@ namespace StudentsDb.Services.Controllers
             this.Includes = includes;
         }
 
-        // GET api/<controller>
         public IEnumerable<T> Get<T>()
             where T : class
         {
             return DataStore.All<T>(Includes);
         }
 
-        // GET api/<controller>/5
+        public IEnumerable<T> Filter<T>(Expression<Func<T, bool>> predicate)
+            where T : class
+        {
+            return DataStore.Filter<T>(predicate, Includes);
+        }
+
         public T Get<T>(int id)
             where T : class, IIdentifier
         {
             return DataStore.Find<T>(t => t.Id == id, Includes);
         }
 
-        // POST api/<controller>
         public void Post<T>([FromBody]T value)
             where T : class
         {
@@ -45,14 +52,12 @@ namespace StudentsDb.Services.Controllers
             }
         }
 
-        // PUT api/<controller>
         public void Put<T>([FromBody]T value)
             where T : class
         {
             DataStore.Update<T>(value);
         }
 
-        // DELETE api/<controller>/5
         public void Delete<T>(int id)
             where T : class, IIdentifier
         {
@@ -63,6 +68,18 @@ namespace StudentsDb.Services.Controllers
             where T : class, IIdentifier
         {
             Delete<T>(value.Id);
+        }
+
+        public string GetHeaderValue(HttpRequestHeaders headers, string key)
+        {
+            IEnumerable<string> values;
+
+            if (headers.TryGetValues(key, out values))
+            {
+                return values.FirstOrDefault();
+            }
+
+            return null;
         }
     }
 }

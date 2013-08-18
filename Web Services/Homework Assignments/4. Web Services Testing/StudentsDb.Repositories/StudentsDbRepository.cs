@@ -1,6 +1,7 @@
 ﻿using StudentsDb.Data;
 using System;
 using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -8,11 +9,16 @@ namespace StudentsDb.Repositories
 {
     public class StudentsDbRepository : IRepository
     {
-        private StudentsDbContext dbContext;
+        private DbContext dbContext;
 
         public StudentsDbRepository()
+            : this(new StudentsDbContext())
         {
-            dbContext = new StudentsDbContext();
+        }
+
+        public StudentsDbRepository(DbContext dbContext)
+        {
+            this.dbContext = dbContext;
 
             //SERIALIZE WILL FAIL WITH PROXIED ENTITIES
             dbContext.Configuration.ProxyCreationEnabled = false;

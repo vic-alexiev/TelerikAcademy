@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StudentsDb.Services.DependencyResolvers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -23,6 +24,8 @@ namespace StudentsDb.Services
             // To disable tracing in your application, please comment out or remove the following line of code
             // For more information, refer to: http://www.asp.net/web-api
             config.EnableSystemDiagnosticsTracing();
+
+            config.DependencyResolver = new StudentsDbDependencyResolver();
         }
     }
 }

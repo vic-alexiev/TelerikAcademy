@@ -49,12 +49,10 @@
     <Compile Include="Album.cs">
       <DependentUpon>MusicStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="AlbumDto.cs" />
     <Compile Include="AlbumEx.cs" />
     <Compile Include="Artist.cs">
       <DependentUpon>MusicStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="ArtistDto.cs" />
     <Compile Include="ArtistEx.cs" />
     <Compile Include="MusicStore.Context.cs">
       <AutoGen>True</AutoGen>
@@ -75,7 +73,6 @@
     <Compile Include="Song.cs">
       <DependentUpon>MusicStore.tt</DependentUpon>
     </Compile>
-    <Compile Include="SongDto.cs" />
     <Compile Include="SongEx.cs" />
   </ItemGroup>
   <ItemGroup>

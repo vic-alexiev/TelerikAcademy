@@ -1,4 +1,5 @@
 ﻿using MusicStoreModels;
+using MusicStoreServices.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -48,7 +49,7 @@ namespace MusicStoreServices.Controllers
         }
 
         // GET api/Albums/5
-        public Album GetAlbum(int id)
+        public AlbumDto GetAlbum(int id)
         {
             Album album = db.Albums.Find(id);
             if (album == null)
@@ -56,11 +57,17 @@ namespace MusicStoreServices.Controllers
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
 
-            return album;
+            return new AlbumDto
+            {
+                AlbumId = album.AlbumId,
+                AlbumTitle = album.AlbumTitle,
+                AlbumYear = album.AlbumYear,
+                Producer = album.Producer
+            };
         }
 
         // PUT api/Albums/5
-        public HttpResponseMessage PutAlbum(int id, Album album)
+        public HttpResponseMessage PutAlbum(int id, AlbumDto album)
         {
             if (!ModelState.IsValid)
             {
@@ -71,7 +78,12 @@ namespace MusicStoreServices.Controllers
 
             if (albumToUpdate != null && album != null)
             {
-                albumToUpdate.UpdateWith(album);
+                albumToUpdate.UpdateWith(new Album
+                {
+                    AlbumTitle = album.AlbumTitle,
+                    AlbumYear = album.AlbumYear,
+                    Producer = album.Producer
+                });
             }
             else
             {
@@ -93,7 +105,7 @@ namespace MusicStoreServices.Controllers
         }
 
         // POST api/Albums
-        public HttpResponseMessage PostAlbum(string artistName, [FromBody]Album album)
+        public HttpResponseMessage PostAlbum(string artistName, [FromBody]AlbumDto album)
         {
             if (string.IsNullOrWhiteSpace(artistName))
             {
@@ -113,12 +125,19 @@ namespace MusicStoreServices.Controllers
 
             if (ModelState.IsValid)
             {
-                db.Albums.Add(album);
-                artist.Albums.Add(album);
+                var newAlbum = new Album
+                {
+                    AlbumTitle = album.AlbumTitle,
+                    AlbumYear = album.AlbumYear,
+                    Producer = album.Producer
+                };
+
+                db.Albums.Add(newAlbum);
+                artist.Albums.Add(newAlbum);
                 db.SaveChanges();
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, album);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = album.AlbumId }));
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, newAlbum);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = newAlbum.AlbumId }));
                 return response;
             }
             else

@@ -1,4 +1,5 @@
 ﻿using MusicStoreModels;
+using MusicStoreServices.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -292,7 +293,7 @@ internal class MusicStoreClient
         Client.DefaultRequestHeaders.Accept.Add(
             new MediaTypeWithQualityHeaderValue("application/xml"));
 
-        //PrintSongs(0);
+        PrintSongs(0);
 
         //PrintAlbums(0);
 

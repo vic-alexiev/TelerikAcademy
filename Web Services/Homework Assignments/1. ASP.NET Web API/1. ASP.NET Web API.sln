@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreServices", "Music
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreClient", "MusicStoreClient\MusicStoreClient.csproj", "{87FC1073-C115-4176-B99A-7F47E097957A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStoreWebClient", "MusicStoreWebClient\MusicStoreWebClient.csproj", "{C1542AA1-E43B-437B-A5B5-AECD85BEFEA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{87FC1073-C115-4176-B99A-7F47E097957A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87FC1073-C115-4176-B99A-7F47E097957A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87FC1073-C115-4176-B99A-7F47E097957A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1542AA1-E43B-437B-A5B5-AECD85BEFEA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1542AA1-E43B-437B-A5B5-AECD85BEFEA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1542AA1-E43B-437B-A5B5-AECD85BEFEA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1542AA1-E43B-437B-A5B5-AECD85BEFEA7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

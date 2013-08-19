@@ -1,4 +1,5 @@
 ﻿using MusicStoreModels;
+using MusicStoreServices.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -48,7 +49,7 @@ namespace MusicStoreServices.Controllers
         }
 
         // GET api/Artists/5
-        public Artist GetArtist(int id)
+        public ArtistDto GetArtist(int id)
         {
             Artist artist = db.Artists.Find(id);
             if (artist == null)
@@ -56,11 +57,17 @@ namespace MusicStoreServices.Controllers
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
 
-            return artist;
+            return new ArtistDto
+            {
+                ArtistId = artist.ArtistId,
+                ArtistName = artist.ArtistName,
+                Country = artist.Country,
+                DateOfBirth = artist.DateOfBirth
+            };
         }
 
         // PUT api/Artists/5
-        public HttpResponseMessage PutArtist(int id, Artist artist)
+        public HttpResponseMessage PutArtist(int id, ArtistDto artist)
         {
             if (!ModelState.IsValid)
             {
@@ -71,7 +78,12 @@ namespace MusicStoreServices.Controllers
 
             if (artistToUpdate != null && artist != null)
             {
-                artistToUpdate.UpdateWith(artist);
+                artistToUpdate.UpdateWith(new Artist
+                {
+                    ArtistName = artist.ArtistName,
+                    Country = artist.Country,
+                    DateOfBirth = artist.DateOfBirth
+                });
             }
             else
             {
@@ -93,15 +105,22 @@ namespace MusicStoreServices.Controllers
         }
 
         // POST api/Artists
-        public HttpResponseMessage PostArtist(Artist artist)
+        public HttpResponseMessage PostArtist(ArtistDto artist)
         {
             if (ModelState.IsValid)
             {
-                db.Artists.Add(artist);
+                var newArtist = new Artist
+                {
+                    ArtistName = artist.ArtistName,
+                    Country = artist.Country,
+                    DateOfBirth = artist.DateOfBirth
+                };
+
+                db.Artists.Add(newArtist);
                 db.SaveChanges();
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, artist);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = artist.ArtistId }));
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, newArtist);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = newArtist.ArtistId }));
                 return response;
             }
             else

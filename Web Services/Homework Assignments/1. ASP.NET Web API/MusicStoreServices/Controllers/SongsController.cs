@@ -1,4 +1,5 @@
 ﻿using MusicStoreModels;
+using MusicStoreServices.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -39,7 +40,7 @@ namespace MusicStoreServices.Controllers
         }
 
         // GET api/Songs/5
-        public Song GetSong(int id)
+        public SongDto GetSong(int id)
         {
             Song song = db.Songs.Find(id);
             if (song == null)
@@ -47,11 +48,19 @@ namespace MusicStoreServices.Controllers
                 throw new HttpResponseException(Request.CreateResponse(HttpStatusCode.NotFound));
             }
 
-            return song;
+            return new SongDto
+            {
+                SongId = song.SongId,
+                ArtistId = song.ArtistId,
+                AlbumId = song.AlbumId,
+                SongTitle = song.SongTitle,
+                SongYear = song.SongYear,
+                Genre = song.Genre
+            };
         }
 
         // PUT api/Songs/5
-        public HttpResponseMessage PutSong(int id, Song song)
+        public HttpResponseMessage PutSong(int id, SongDto song)
         {
             if (!ModelState.IsValid)
             {
@@ -62,7 +71,12 @@ namespace MusicStoreServices.Controllers
 
             if (songToUpdate != null && song != null)
             {
-                songToUpdate.UpdateWith(song);
+                songToUpdate.UpdateWith(new Song
+                {
+                    SongTitle = song.SongTitle,
+                    SongYear = song.SongYear,
+                    Genre = song.Genre
+                });
             }
             else
             {
@@ -84,7 +98,7 @@ namespace MusicStoreServices.Controllers
         }
 
         // POST api/Songs
-        public HttpResponseMessage PostSong(string artistName, string albumTitle, [FromBody]Song song)
+        public HttpResponseMessage PostSong(string artistName, string albumTitle, [FromBody]SongDto song)
         {
             if (string.IsNullOrWhiteSpace(artistName) ||
                 string.IsNullOrWhiteSpace(albumTitle))
@@ -111,13 +125,20 @@ namespace MusicStoreServices.Controllers
 
             if (ModelState.IsValid)
             {
-                song.Artist = artist;
-                song.Album = album;
-                db.Songs.Add(song);
+                var newSong = new Song
+                {
+                    SongTitle = song.SongTitle,
+                    SongYear = song.SongYear,
+                    Genre = song.Genre,
+                    Artist = artist,
+                    Album = album
+                };
+
+                db.Songs.Add(newSong);
                 db.SaveChanges();
 
-                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, song);
-                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = song.SongId }));
+                HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.Created, newSong);
+                response.Headers.Location = new Uri(Url.Link("DefaultApi", new { id = newSong.SongId }));
                 return response;
             }
             else

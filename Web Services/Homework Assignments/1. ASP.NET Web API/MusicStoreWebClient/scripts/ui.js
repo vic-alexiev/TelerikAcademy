@@ -24,7 +24,7 @@
     }
 
     return {
-        getSongsList: buildOpenGamesList
+        getSongsList: buildSongsList
     };
 
 }());

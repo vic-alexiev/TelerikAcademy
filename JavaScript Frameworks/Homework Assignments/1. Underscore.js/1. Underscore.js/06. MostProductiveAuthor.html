@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/class.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/underscore.js"></script>
+</head>
+<body>
+    <!--By a given collection of books, find the most productive author (the author with the greatest number of books)-->
+    <script>
+        // I solution
+        //var authorData = _.chain(books).countBy("author").invert().value();
+
+        //var maxBooks = -1;
+        //for (var key in authorData) {
+        //    if (key > maxBooks) {
+        //        maxBooks = key;
+        //    }
+        //}
+
+        //console.log(authorData[maxBooks] + ": " + maxBooks + " books");
+
+        // II solution
+        var maxBooksAuthor = _.max(_.groupBy(books, "author"), function (books) {
+            return books.length;
+        });
+        console.log(maxBooksAuthor[0].author + ": " + maxBooksAuthor.length + " books");
+    </script>
+</body>
+</html>

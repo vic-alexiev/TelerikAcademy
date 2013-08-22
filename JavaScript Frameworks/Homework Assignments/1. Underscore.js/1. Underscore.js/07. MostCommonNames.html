@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/class.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/underscore.js"></script>
+</head>
+<body>
+    <!--By an array of people find the most common first and last name.-->
+    <script>
+        var mostCommonFirstName = _.max(_.groupBy(students, "firstName"), function (students) {
+            return students.length;
+        });
+        console.log(mostCommonFirstName[0].firstName + ": " + mostCommonFirstName.length + " times");
+
+        var mostCommonLastName = _.max(_.groupBy(students, "lastName"), function (students) {
+            return students.length;
+        });
+        console.log(mostCommonLastName[0].lastName + ": " + mostCommonLastName.length + " times");
+    </script>
+</body>
+</html>

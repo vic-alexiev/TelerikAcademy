@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/class.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/underscore.js"></script>
+</head>
+<body>
+    <!--Write a function that by a given array of students finds the student with highest marks.-->
+    <script>
+        var bestStudent = _.max(students, function (s) {
+            return s.getAverageMark();
+        });
+
+        console.log(bestStudent.toString());
+    </script>
+</body>
+</html>

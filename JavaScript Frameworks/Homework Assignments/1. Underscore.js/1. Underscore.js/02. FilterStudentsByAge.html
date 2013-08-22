@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/class.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/underscore.js"></script>
+</head>
+<body>
+    <!--Write function that finds the first name and last name of all students 
+        with age between 18 and 24.-->
+    <script>
+        var filteredStudents = _.chain(students)
+            .filter(function (s) {
+                return 18 <= s.age && s.age <= 24;
+            })
+            .map(function (s) {
+                return s.getFullName();
+            })
+            .value();
+
+        console.log(filteredStudents.join(", "));
+    </script>
+</body>
+</html>

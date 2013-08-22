@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/class.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/underscore.js"></script>
+</head>
+<body>
+    <!--Write a method that from a given array of students finds all students whose first name is before 
+        their last name alphabetically. Print the students in descending order by full name. -->
+    <script>
+        var sortedFilteredStudents = _.chain(students)
+            .filter(function (s) {
+                return s.firstName.localeCompare(s.lastName) < 0;
+            })
+            .sortBy(function (s) {
+                return s.getFullName();
+            })
+            .value().reverse();
+
+        console.log(sortedFilteredStudents.join("; "));
+    </script>
+</body>
+</html>

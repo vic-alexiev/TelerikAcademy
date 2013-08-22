@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/class.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/underscore.js"></script>
+</head>
+<body>
+    <!--Write a function that by a given array of animals, groups them by species 
+        and sorts them by number of legs.-->
+    <script>
+        // I solution
+        var animalsGroupedAndSorted = {};
+
+        var groupedBySpecies = _.groupBy(animals, "animalClass");
+        _.each(groupedBySpecies, function (group, key) {
+            var groupSorted = _.sortBy(group, "legsCount");
+            animalsGroupedAndSorted[key] = groupSorted;
+        });
+
+        for (var animalClass in animalsGroupedAndSorted) {
+            console.log(animalClass + ":");
+            console.log(_.pluck(animalsGroupedAndSorted[animalClass], "species").join(", "));
+        }
+
+        // II solution
+        //var groupedBySpecies = _.map(_.groupBy(animals, "animalClass"), function (group) {
+        //    return _.sortBy(group, "legsCount");
+        //});
+
+        //for (var i = 0; i < groupedBySpecies.length; i++) {
+        //    console.log(groupedBySpecies[i][0].animalClass);
+        //    console.log(groupedBySpecies[i].join(", "));
+        //}
+    </script>
+</body>
+</html>

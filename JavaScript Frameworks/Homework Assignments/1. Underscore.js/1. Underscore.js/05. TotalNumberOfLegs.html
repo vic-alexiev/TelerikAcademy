@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="scripts/class.js"></script>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/underscore.js"></script>
+</head>
+<body>
+    <!--By a given array of animals, find the total number of legs. 
+        Each animal can have 2, 4, 6, 8 or 100 legs.-->
+    <script>
+        // I solution
+        //var legsTotal = _.chain(animals).map(function (a) {
+        //    return a.legsCount;
+        //}).reduce(function (a, b) {
+        //    return a + b;
+        //}).value();
+
+        //console.log("Total legs: " + legsTotal);
+
+        // II solution
+        var legsTotal = _.chain(animals).pluck("legsCount").reduce(function (a, b) {
+            return a + b;
+        }).value();
+
+        console.log("Total legs: " + legsTotal);
+    </script>
+</body>
+</html>

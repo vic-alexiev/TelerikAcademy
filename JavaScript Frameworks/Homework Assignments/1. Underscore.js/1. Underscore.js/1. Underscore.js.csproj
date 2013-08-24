@@ -65,7 +65,8 @@
     <Content Include="06. MostProductiveAuthor.html" />
     <Content Include="07. MostCommonNames.html" />
     <Content Include="scripts\class.js" />
-    <Content Include="scripts\data.js" />
+    <Content Include="scripts\database.js" />
+    <Content Include="scripts\data-models.js" />
     <Content Include="scripts\underscore-min.js" />
     <Content Include="scripts\underscore.js" />
     <Content Include="Web.config" />

@@ -3,12 +3,15 @@
 <head>
     <title></title>
     <script src="scripts/class.js"></script>
-    <script src="scripts/data.js"></script>
     <script src="scripts/underscore.js"></script>
+    <script src="scripts/data-models.js"></script>
+    <script src="scripts/database.js"></script>
 </head>
 <body>
     <!--By a given collection of books, find the most productive author (the author with the greatest number of books)-->
     <script>
+        var books = database.books;
+
         // I solution
         //var authorData = _.chain(books).countBy("author").invert().value();
 

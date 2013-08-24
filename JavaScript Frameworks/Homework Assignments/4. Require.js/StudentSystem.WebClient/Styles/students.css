@@ -1,0 +1,24 @@
+﻿#wrapper
+{
+    margin:auto;
+    width: 30%;
+    margin-top:50px;
+}
+
+#marks
+{
+    float:right;
+    width:49%;
+}
+#content
+{
+    width:50%;
+    float:left;
+}
+
+button
+{
+    margin-top:20px;
+    float:left;
+    clear:both;
+}

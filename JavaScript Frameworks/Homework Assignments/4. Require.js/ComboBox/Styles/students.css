@@ -1,0 +1,47 @@
+﻿html {
+    overflow-y: scroll;
+}
+
+#wrapper {
+    margin: auto;
+    width: 350px;
+    margin-top: 50px;
+}
+
+#content {
+    display: none;
+    border: 1px solid #a3e5eb;
+    border-bottom: none;
+}
+
+#selected-item {
+    border: 1px solid #a3e5eb;
+    background: url("../Images/DownArrowBlue.png");
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+    #selected-item:hover {
+        cursor: default;
+    }
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding-left: 30px;
+}
+
+#drop-down > li:hover {
+    cursor: default;
+    background-color: #a3e5eb;
+}
+
+#drop-down > li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid #a3e5eb;
+}

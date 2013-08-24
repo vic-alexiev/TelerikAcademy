@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/students.css" rel="stylesheet" />
+    <script src="Scripts/libs/require.js" data-main="Scripts/app-config"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="student-template">
+    <div id="student-name">
+        <strong>Name:</strong> {{name}}, <strong>Grade: </strong>{{grade}}
+    </div>
+    <ul id="marks-container">
+        <strong>Marks:</strong>
+        {{#marks}} 
+					<li><strong>Subject: </strong>{{subject}}, <strong>Score: </strong>{{score}}</li>
+        {{/marks}}
+        {{^marks}}	   
+					<li>This student has no marks, yet</li>
+        {{/marks}}
+    </ul>
+    </script>
+    <div id="combo-box-wrapper"></div>
+    <div id="wrapper">
+        <div id="selected-item"></div>
+        <div id="content"></div>
+    </div>
+</body>
+</html>

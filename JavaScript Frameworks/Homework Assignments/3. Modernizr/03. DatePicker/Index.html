@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-1.9.1.js"></script>
+    <script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/modernizr.custom.44830.js"></script>
+</head>
+<body>
+    <input type="text" id="datepicker" />
+    <script>
+        if (Modernizr.inputtypes.date) {
+            document.getElementById('datepicker').type = 'date';
+        } else {
+            $('#datepicker').datepicker();
+        }
+    </script>
+</body>
+</html>

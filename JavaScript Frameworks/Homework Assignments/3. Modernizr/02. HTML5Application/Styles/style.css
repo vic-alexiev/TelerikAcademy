@@ -1,0 +1,18 @@
+﻿#sample-canvas {
+    width: 150px;
+    height: 150px;
+}
+
+#location {
+    padding: 5px;
+    width: 150px;
+    margin-top: 20px;
+    background-color: #e680c2;
+}
+
+#local-storage {
+    padding: 5px;
+    width: 150px;
+    margin-top: 20px;
+    background-color: #e680c2;
+}

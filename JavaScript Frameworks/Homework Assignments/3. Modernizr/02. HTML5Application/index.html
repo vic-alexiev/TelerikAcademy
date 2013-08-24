@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/style.css" rel="stylesheet" />
+    <script src="Scripts/modernizr.custom.44830.js"></script>
+</head>
+<body>
+    <canvas id="sample-canvas" width="100" height="100"></canvas>
+    <div id="location"></div>
+    <div id="local-storage"></div>
+    <script>
+        Modernizr.load({
+            test: Modernizr.canvas,
+            nope: "Scripts/FlashCanvasPro/flashcanvas.js",
+            complete: drawInCanvas
+        });
+        Modernizr.load({
+            test: Modernizr.geolocation,
+            nope: 'Scripts/GeoLocation/geo.js',
+            complete: getLocation
+        });
+        Modernizr.load({
+            test: Modernizr.localstorage,
+            nope: 'Scripts/Storage/storage.js',
+            complete: saveInLocalStorage
+        });
+
+        function drawInCanvas() {
+            var c = document.getElementById("sample-canvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#e680c2";
+            ctx.fillRect(0, 0, 150, 75);
+        }
+
+        function getLocation() {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+
+        function showPosition(position) {
+            var locationDiv = document.getElementById("location");
+            locationDiv.innerHTML = "Latitude: " + position.coords.latitude + "<br />Longitude: " + position.coords.longitude;
+        }
+
+        function saveInLocalStorage() {
+            localStorage.setItem("test", "This is test data");
+            var storageDiv = document.getElementById("local-storage");
+            storageDiv.innerHTML = localStorage.getItem("test");
+        }
+    </script>
+</body>
+</html>

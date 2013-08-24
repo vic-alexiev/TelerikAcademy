@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/ua-parser.js"></script>
+    <script src="Scripts/jquery-2.0.3.min.js"></script>
+    <script src="Scripts/modernizr-latest.js"></script>
+    <script src="Scripts/mustache.js"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="browser-features-template">
+			<strong>Browser name: </strong>{{browser.name}}<br />
+			<strong>Browser version: </strong>{{browser.version}}<br />
+			<strong>Engine: </strong>{{engine.name}}<br />
+            <strong>OS: </strong>{{os.name}} {{os.version}}<br />
+            {{#device.model}}
+                <strong>Device: </strong>{{device.model}} {{device.type}} {{device.vendor}}<br />
+            {{/device.model}}
+            <strong>CPU architecture: </strong>{{cpu.architecture}}
+    </script>
+    <div id="browser-info"></div>
+    <div>
+        <table id="features">
+            <thead>
+                <tr>
+                    <th colspan="2">Test your browser for HTML5 support!</th>
+                </tr>
+                <tr>
+                    <th>Feature</th>
+                    <th>Supported?</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        var parser = new UAParser();
+        var browserData = parser.getResult();
+
+        var browserFeaturesTemplate = Mustache.compile(document.getElementById("browser-features-template").innerHTML);
+        var browserFeaturesHtml = browserFeaturesTemplate(browserData);
+        document.getElementById("browser-info").innerHTML = browserFeaturesHtml;
+
+        // Populate the #features table when the document is ready
+        jQuery(function ($) {
+            var target = $('#features > tbody');
+
+            var traverse = function (object, prefix) {
+                prefix = prefix ? prefix + '.' : '';
+
+                for (property in object) {
+                    if (typeof object[property] == 'object') {
+                        traverse(object[property], prefix + property);
+                    } else if (typeof object[property] == 'boolean') {
+                        var
+                            tr = $('<tr />'),
+                            name = $('<th />', {
+                                text: prefix + property
+                            }),
+                            value = $('<td />', {
+                                text: object[property] ? 'Yes' : 'Nope'
+                            });
+
+                        target.append(tr.append(name).append(value));
+                    }
+                }
+            };
+
+            traverse(Modernizr, 'Modernizr');
+        });
+    </script>
+</body>
+</html>

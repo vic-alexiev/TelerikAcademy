@@ -51,7 +51,7 @@ require(["jquery", "httpRequester", "mustache", "data/data-models", "app/table-v
     });
 
     $("#wrapper").on("click", "#back", function () {
-        $("#marks").hide();
         $("#content").show();
+        $("#marks").hide();
     });
 });

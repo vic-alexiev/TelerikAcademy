@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Styles/students.css" rel="stylesheet" />
+    <script src="Scripts/class.js"></script>
+    <script src="Scripts/mustache.js"></script>
+    <script src="Scripts/data-models.js"></script>
+    <script src="Scripts/database.js"></script>
+    <script src="Scripts/table-view.js"></script>
+    <script src="Scripts/jquery-2.0.3.min.js"></script>
+</head>
+<body>
+    <script type="x-mustache-template" id="student-template">
+			<strong>First name:</strong>{{firstName}}<br/>
+			<strong>Last name:</strong>{{lastName}}<br/>
+            <strong>Age:</strong> {{age}}<br/>
+            <strong>Grade: </strong> {{grade}}
+    </script>
+    <script type="x-mustache-template" id="student-marks-template">
+            <ul>
+                <strong>{{firstName}} {{lastName}}'s marks</strong>
+				{{#marks}} 
+					<li><strong>Subject: </strong>{{subject}}, <strong>Value: </strong>{{value}}</li>
+				{{/marks}}
+				{{^marks}}	   
+					<li>This student has no marks, yet</li>
+				{{/marks}}
+			</ul>	
+    </script>
+    <div id="wrapper">
+        <div id="master-details">
+            <div id="content"></div>
+            <div id="marks"></div>
+        </div>
+        <div id="buttons">
+            <button id="get-data">Get data</button>
+        </div>
+    </div>
+
+    <script>
+
+        var studentTemplate = Mustache.compile(document.getElementById("student-template").innerHTML);
+        var tableView = controls.getTableView(database.students, 3, 2);
+        var tableViewHtml = tableView.render(studentTemplate);
+        document.getElementById("content").innerHTML = tableViewHtml;
+
+        var marksTemplate = Mustache.compile(document.getElementById("student-marks-template").innerHTML);
+
+        $("#content").on("click", "td", function () {
+            var studentId = $(this).data("id");
+            var marksHtml = tableView.renderMarks(marksTemplate, studentId);
+            document.getElementById("marks").innerHTML = marksHtml;
+        });
+
+        $("#get-data").on("click", function () {
+            $.ajax({
+                url: "http://localhost:12576/api/students",
+                type: "GET",
+                contentType: "application/json",
+                success: function (students) {
+                    tableView = controls.getTableView(students, 3, 2);
+                    var tableViewHtml = tableView.render(studentTemplate);
+                    document.getElementById("content").innerHTML = tableViewHtml;
+                },
+                error: function (message) {
+                    console.log(message);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

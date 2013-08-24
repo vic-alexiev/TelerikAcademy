@@ -1,0 +1,53 @@
+﻿#wrapper {
+    margin: auto;
+    width: 50%;
+    margin-top: 50px;
+    display: table;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#content, #marks {
+    float: none;
+    width: 50%;
+    vertical-align: top;
+}
+
+#marks {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    display: table-cell;
+}
+
+    #marks:empty {
+        border: none;
+    }
+
+#content {
+    display: table-cell;
+}
+
+    #content table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    #content td {
+        border-collapse: collapse;
+        border: 1px solid black;
+    }
+
+        #content td:hover {
+            cursor: default;
+            background-color: #93dbf2;
+        }
+
+#getData {
+    margin-top: 20px;
+    float: left;
+    clear: both;
+}

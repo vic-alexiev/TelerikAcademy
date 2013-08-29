@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!--<script src="Scripts/libs/jquery-ui.js"></script>-->
+    <script src="Scripts/libs/jquery-2.0.3.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <script src="Scripts/libs/require.js" data-main="Scripts/app"></script>
+    <link href="Style/style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Bad+Script' rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            Battle Game
+        </header>
+        <nav id="first-page">
+            <ul class="clearfix" id="first-page-navigation">
+                <li>
+                    <a href="#/">Home</a>
+                </li>
+                <li>
+                    <a href="#/login">Login</a>
+                </li>
+                <li>
+                    <a href="#/register">Register</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+        </div>
+
+        <script type="x-mustache-template" id="login-form-template">
+            <div id="login-form-holder">
+                <form>
+                    <div id="login-form">
+                        <label for="tb-login-username">Username: </label>
+                        <input type="text" id="tb-login-username" /><br />
+                        <label for="tb-login-password">Password: </label>
+                        <input type="text" id="tb-login-password" /><br />
+                        <button id="btn-login" class="button">Login</button>
+                    </div>
+                </form>
+            </div>
+        </script>
+
+        <script type="x-mustache-template" id="open-games-template">
+            <a href="#/main" id="back">Back</a>
+            <ul id="open-games">
+            {{#.}}
+                <li data-game-id="{{id}}"><span class="game-title"><strong>Title: </strong>{{title}}</span></br><span class="game-creator"><strong>Creator: </strong>{{creator}}</span></li>
+            {{/.}}
+            {{^.}}
+                <li id="no-open-games">There are no open games.</li>
+            {{/.}}
+            </ul>
+        </script>
+
+        <script type="x-mustache-template" id="active-games-template">
+            <a href="#/main" id="back">Back</a>
+            <ul id="active-games">
+            {{#.}}
+                <li data-game-id="{{id}}"><a href="#/field/{{id}}"><span class="game-title"><strong>Title: </strong>{{title}}</span></br><span class="game-creator"><strong>Creator: </strong>{{creator}}</span>, <span class="{{status}}">{{status}}</span></a></li>
+            {{/.}}
+            {{^.}}
+                <li id="no-activeS-games">There are no active games.</li>
+            {{/.}}
+            </ul>
+        </script>
+
+        <script type="x-mustache-template" id="user-scores-template">
+            <ul id="user-scores">
+            {{#.}}
+                <li data-game-id="{{id}}"><strong>Nickname: </strong>{{nickname}}, <strong>Score: </strong>{{score}}</li>
+            {{/.}}
+            {{^.}}
+                <li id="no-user-scores">There are no user scores.</li>
+            {{/.}}
+            </ul>
+        </script>
+
+        <script type="x-mustache-template" id="game-field-cell-template">
+            <strong>{{type}}</strong><br />
+            attack: {{attack}}<br />
+            armor: {{armor}}<br />
+            hit points: {{hitPoints}}<br />
+            mode: {{mode}}
+        </script>
+    </div>
+</body>
+</html>

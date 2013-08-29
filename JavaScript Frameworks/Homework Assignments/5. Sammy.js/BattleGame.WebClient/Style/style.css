@@ -1,0 +1,230 @@
+﻿.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+body {
+    font-family: Corbel, Calibri, Arial,sans-serif;
+    font-size: 62.5%;
+    margin: 0;
+    padding: 0;
+}
+
+#wrapper {
+    width: 650px;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.hidden {
+    display: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+    a:visited {
+        color: rgb(15, 38, 173);
+    }
+
+    a:active {
+        color: red;
+    }
+
+
+header {
+    font-family: 'Bad Script';
+    font-weight: 900;
+    text-align: center;
+    font-size: 5em;
+}
+
+#first-page-navigation > li {
+    float: left;
+    margin: 10px;
+    font-size: 2em;
+}
+
+#login-form, #register-form {
+    margin-top: 30px;
+}
+
+    #login-form label, #register-form label {
+        font-style: italic;
+        font-size: 2em;
+    }
+
+label, input {
+    display: block;
+}
+
+    input.text {
+        margin-bottom: 12px;
+        width: 95%;
+        padding: .4em;
+    }
+
+#nickName h1 {
+    font-size: 2em;
+    font-family: 'Bad Script', cursive;
+}
+
+#navigation li {
+    float: left;
+    margin: 10px;
+}
+
+fieldset {
+    padding: 0;
+    border: 0;
+    margin-top: 25px;
+}
+
+h1 {
+    font-size: 1.2em;
+    margin: .6em 0;
+}
+
+div#users-contain {
+    width: 350px;
+    margin: 20px 0;
+}
+
+    div#users-contain table {
+        margin: 1em 0;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+        div#users-contain table td, div#users-contain table th {
+            border: 1px solid #eee;
+            padding: .6em 10px;
+            text-align: left;
+        }
+
+.ui-dialog .ui-state-error {
+    padding: .3em;
+}
+
+.validateTips {
+    border: 1px solid transparent;
+    padding: 0.3em;
+}
+
+#active-games, #open-games {
+    margin-top: 30px;
+    font-size: 1.7em;
+}
+
+    #active-games > li, #open-games > li {
+        margin-bottom: 10px;
+    }
+
+#back {
+    font-size: 1.7em;
+}
+
+#open-games > li {
+    cursor: pointer;
+}
+
+    #open-games > li:hover {
+        color: #808080;
+    }
+
+    #open-games > li:active {
+        color: red;
+    }
+
+
+#battle-field td {
+    font-size: 1.1em;
+    border: 1px solid black;
+}
+
+#battle-field td {
+    width: 70px;
+    height: 70px;
+}
+
+.red {
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+.blue {
+    background-color: rgba(0, 38, 255, 0.6);
+}
+
+.in-progress {
+    color: #ffd800;
+}
+
+.open {
+    color: green;
+}
+
+.full {
+    color: #808080;
+}
+
+.finished {
+    color: red;
+}
+
+.errors {
+    text-align: center;
+    font-size: 2em;
+    color: red;
+    font-weight: bold;
+}
+
+#players {
+    font-size: 1.7em;
+}
+
+#turn {
+    text-align: center;
+    font-weight: bold;
+}
+
+#red-player {
+    color: red;
+}
+
+#blue-player {
+    float: right;
+    color: blue;
+}
+
+td.warrior {
+    color: #f6da3e;
+    background-image: url('../Images/Warrior.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+}
+
+
+td.ranger {
+    background-image: url("../Images/Ranger.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: top;
+}

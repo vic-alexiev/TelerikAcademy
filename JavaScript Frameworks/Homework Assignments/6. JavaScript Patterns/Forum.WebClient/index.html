@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Telerik Academy Forum</title>
+    <script src="Scripts/libs/jquery-2.0.3.js"></script>
+    <script src="Scripts/libs/everlive.all.js"></script>
+    <script src="Scripts/libs/require.js" data-main="Scripts/app"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>Telerik Academy Forum</header>
+        <nav id="first-page">
+            <ul class="clearfix" id="first-page-navigation">
+                <li>
+                    <a href="#/">Home</a>
+                </li>
+                <li>
+                    <a href="#/login">Login</a>
+                </li>
+                <li>
+                    <a href="#/register">Register</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content"></div>
+    </div>
+
+    <script type="x-mustache-template" id="login-form-template">
+        <div id="login-form-holder">
+            <form>
+                <div id="login-form">
+                    <label for="tb-login-username">Username: </label>
+                    <input type="text" id="tb-login-username" /><br />
+                    <label for="tb-login-password">Password: </label>
+                    <input type="text" id="tb-login-password" /><br />
+                    <button id="btn-login" class="button">Login</button>
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script type="x-mustache-template" id="register-form-template">
+        <div id="register-form-holder">
+            <form>
+                <div id="register-form">
+                    <label for="tb-register-username">Username: </label>
+                    <input type="text" id="tb-register-username"><br />
+                    <label for="tb-register-display-name">Display name: </label>
+                    <input type="text" id="tb-register-display-name"><br />
+                    <label for="tb-register-email">Email: </label>
+                    <input type="text" id="tb-register-email"><br />
+                    <label for="tb-register-password">Password: </label>
+                    <input type="text" id="tb-register-password"><br />
+                    <button id="btn-register" class="button">Register</button>
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script type="x-mustache-template" id="posts-template">
+        <strong>Posts</strong>
+        <ul id="posts">
+            {{#.}}
+            <li><a href="#/posts/{{Id}}">{{Title}}</a><span class="post-date"><br />Created: {{CreatedAt}}</span></li>
+            {{/.}}
+        </ul>
+    </script>
+
+    <script type="x-mustache-template" id="single-post-template">
+        <strong>Title: {{title}}</strong>
+        <p>Content: {{content}}</p>
+        <p>
+            Tags:<br />
+            {{#tags}}
+            <span>{{Name}}</span>
+            {{/tags}}
+        </p>
+        <strong>Comments:</strong><br />
+        <ul>
+            {{#comments}}
+            <li><p>{{Content}}</p><br /><span class="comment-date">Created: {{CreatedAt}}</span></li>
+            {{/comments}}
+        </ul>
+    </script>
+</body>
+</html>

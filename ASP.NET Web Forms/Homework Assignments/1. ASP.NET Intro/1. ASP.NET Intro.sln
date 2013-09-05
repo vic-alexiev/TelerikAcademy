@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. GetSumWebForms", "02. GetSumWebForms\02. GetSumWebForms.csproj", "{6A542CE8-90E2-41BB-A804-B5605E7772CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. GetSumMvc", "02. GetSumMvc\02. GetSumMvc.csproj", "{3D296794-20B5-43D3-A7D4-C58788B046AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. TextToImageHttpHandler", "03. TextToImageHttpHandler\03. TextToImageHttpHandler.csproj", "{340B4EF8-FCE3-45EA-A753-309D54CC25A9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B087107F-FF82-4FDF-BF82-095D29A41E2B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A542CE8-90E2-41BB-A804-B5605E7772CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A542CE8-90E2-41BB-A804-B5605E7772CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A542CE8-90E2-41BB-A804-B5605E7772CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A542CE8-90E2-41BB-A804-B5605E7772CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D296794-20B5-43D3-A7D4-C58788B046AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D296794-20B5-43D3-A7D4-C58788B046AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D296794-20B5-43D3-A7D4-C58788B046AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D296794-20B5-43D3-A7D4-C58788B046AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{340B4EF8-FCE3-45EA-A753-309D54CC25A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{340B4EF8-FCE3-45EA-A753-309D54CC25A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{340B4EF8-FCE3-45EA-A753-309D54CC25A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{340B4EF8-FCE3-45EA-A753-309D54CC25A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

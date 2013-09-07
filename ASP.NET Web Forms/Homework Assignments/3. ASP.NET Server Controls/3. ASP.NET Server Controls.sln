@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. RandomGeneratorHtmlServerControls", "01. RandomGeneratorHtmlServerControls\01. RandomGeneratorHtmlServerControls.csproj", "{740C3268-DD35-4155-966E-B9A64A9A07FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. RandomGeneratorWebServerControls", "02. RandomGeneratorWebServerControls\02. RandomGeneratorWebServerControls.csproj", "{DFDABB7A-5625-429F-A7AD-0BD7D77A02D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. HtmlEscaping", "03. HtmlEscaping\03. HtmlEscaping.csproj", "{F050160E-0220-4930-A5B2-E8FD8D884FDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. RegistrationForm", "04. RegistrationForm\04. RegistrationForm.csproj", "{1F469488-3E0D-4050-B69A-569F63387F47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. WebCalculator", "06. WebCalculator\06. WebCalculator.csproj", "{B6FD8413-83A5-42C9-B458-CDFB0F698AF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D3E4EDCE-532A-4778-97D1-6A8DE12A6C73}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. TicTacToe", "05. TicTacToe\05. TicTacToe.csproj", "{7B5BC593-4054-4E2F-86F8-288EA0818087}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{740C3268-DD35-4155-966E-B9A64A9A07FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{740C3268-DD35-4155-966E-B9A64A9A07FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{740C3268-DD35-4155-966E-B9A64A9A07FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{740C3268-DD35-4155-966E-B9A64A9A07FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DFDABB7A-5625-429F-A7AD-0BD7D77A02D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFDABB7A-5625-429F-A7AD-0BD7D77A02D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFDABB7A-5625-429F-A7AD-0BD7D77A02D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFDABB7A-5625-429F-A7AD-0BD7D77A02D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F050160E-0220-4930-A5B2-E8FD8D884FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F050160E-0220-4930-A5B2-E8FD8D884FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F050160E-0220-4930-A5B2-E8FD8D884FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F050160E-0220-4930-A5B2-E8FD8D884FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F469488-3E0D-4050-B69A-569F63387F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F469488-3E0D-4050-B69A-569F63387F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F469488-3E0D-4050-B69A-569F63387F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F469488-3E0D-4050-B69A-569F63387F47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6FD8413-83A5-42C9-B458-CDFB0F698AF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6FD8413-83A5-42C9-B458-CDFB0F698AF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6FD8413-83A5-42C9-B458-CDFB0F698AF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6FD8413-83A5-42C9-B458-CDFB0F698AF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B5BC593-4054-4E2F-86F8-288EA0818087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B5BC593-4054-4E2F-86F8-288EA0818087}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B5BC593-4054-4E2F-86F8-288EA0818087}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B5BC593-4054-4E2F-86F8-288EA0818087}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

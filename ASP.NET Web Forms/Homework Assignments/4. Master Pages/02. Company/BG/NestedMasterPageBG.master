@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
+    <div class="home-link">
+        <a href="/">
+            <img runat="server" src="~/Images/home-icon.png" /></a>
+    </div>
+</asp:Content>
+
+<asp:Content ID="ContentPage" ContentPlaceHolderID="ContentPlaceHolderPageContent" runat="server">
+    <header id="bg-area">Йода АД</header>
+    <aside class="bg-sidebar">
+        <ul>
+            <li><a href="Home.aspx">Начало</a></li>
+            <li><a href="About.aspx">За нас</a></li>
+            <li><a href="Contacts.aspx">Контакти</a></li>
+        </ul>
+    </aside>
+    <div class="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderBG" runat="server" />
+    </div>
+</asp:Content>

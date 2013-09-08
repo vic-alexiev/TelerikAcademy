@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Yoda Corporation</title>
+    <link href="Site.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+        </asp:ContentPlaceHolder>
+        <div>Yoda Corporation – Company Web Site</div>
+    </header>
+
+    <form id="FormMain" runat="server">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderPageContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+
+    <footer>
+        Copyright &copy; 2013 Yoda Corp. All rights reserved.
+    </footer>
+</body>
+
+</html>

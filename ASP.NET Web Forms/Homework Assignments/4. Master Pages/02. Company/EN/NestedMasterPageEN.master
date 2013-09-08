@@ -1,0 +1,23 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" %>
+
+<asp:Content ContentPlaceHolderID="ContentPlaceHolderHeader" runat="server">
+    <div class="home-link">
+        <a href="/">
+            <img runat="server" src="~/Images/home-icon.png" /></a>
+    </div>
+</asp:Content>
+
+<asp:Content ID="ContentPage" ContentPlaceHolderID="ContentPlaceHolderPageContent" runat="server">
+    <header id="en-area">Yoda Corporation</header>
+    <div class="content">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderEN" runat="server" />
+    </div>
+    <aside class="en-sidebar">
+        <ul>
+            <li><a href="Home.aspx">Home</a></li>
+            <li><a href="About.aspx">About</a></li>
+            <li><a href="Contacts.aspx">Contact Us</a></li>
+        </ul>
+    </aside>
+</asp:Content>
+

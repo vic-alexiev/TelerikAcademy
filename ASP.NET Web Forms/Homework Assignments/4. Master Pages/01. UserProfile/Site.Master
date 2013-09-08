@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="UserProfile.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Styles.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <header id="header">
+        Robert King's Profile
+    </header>
+    <form id="formMain" runat="server">
+        <aside id="sidebar">
+            <div class="sidebar-title">Menu</div>
+            <ul>
+                <li><a href="~/" runat="server">Personal Info</a></li>
+                <li><a href="~/Friends.aspx" runat="server">Friends</a></li>
+                <li><a href="~/AdditionalInfo.aspx" runat="server">Additional Info</a></li>
+            </ul>
+        </aside>
+        <section id="main-content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolderMain" runat="server">
+            </asp:ContentPlaceHolder>
+        </section>
+    </form>
+    <footer id="footer">
+        Copyright &copy; 2013 Robert King. All rights reserved.
+    </footer>
+</body>
+</html>

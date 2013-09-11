@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<catalogue>
+  <album>
+    <title>Empire Burlesque</title>
+    <artist>Bob Dylan</artist>
+    <producer>Columbia</producer>
+    <price>10.90</price>
+    <year>1985</year>
+    <tracks>
+      <track>
+        <title>Tight Connection to My Heart (Has Anybody Seen My Love)</title>
+        <duration>5:22</duration>
+      </track>
+      <track>
+        <title>Seeing the Real You at Last</title>
+        <duration>4:21</duration>
+      </track>
+      <track>
+        <title>I'll Remember You</title>
+        <duration>4:14</duration>
+      </track>
+      <track>
+        <title>Clean Cut Kid</title>
+        <duration>4:17</duration>
+      </track>
+      <track>
+        <title>Never Gonna Be the Same Again</title>
+        <duration>3:11</duration>
+      </track>
+      <track>
+        <title>Trust Yourself</title>
+        <duration>3:29</duration>
+      </track>
+      <track>
+        <title>Emotionally Yours</title>
+        <duration>4:30</duration>
+      </track>
+      <track>
+        <title>When the Night Comes Falling from the Sky</title>
+        <duration>7:30</duration>
+      </track>
+      <track>
+        <title>Something's Burning, Baby</title>
+        <duration>4:54</duration>
+      </track>
+      <track>
+        <title>Dark Eyes</title>
+        <duration>5:07</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Hide Your Heart</title>
+    <artist>Bonnie Tyler</artist>
+    <producer>CBS Records</producer>
+    <price>9.90</price>
+    <year>1988</year>
+    <tracks>
+      <track>
+        <title>Notes from America</title>
+        <duration>4:54</duration>
+      </track>
+      <track>
+        <title>Hide Your Heart</title>
+        <duration>4:25</duration>
+      </track>
+      <track>
+        <title>Don't Turn Around</title>
+        <duration>4:18</duration>
+      </track>
+      <track>
+        <title>Save Up All Your Tears</title>
+        <duration>4:24</duration>
+      </track>
+      <track>
+        <title>To Love Somebody</title>
+        <duration>5:49</duration>
+      </track>
+      <track>
+        <title>Take Another Look at Your Heart</title>
+        <duration>3:47</duration>
+      </track>
+      <track>
+        <title>The Best</title>
+        <duration>4:16</duration>
+      </track>
+      <track>
+        <title>Shy with You</title>
+        <duration>3:40</duration>
+      </track>
+      <track>
+        <title>Streets of Little Italy</title>
+        <duration>4:37</duration>
+      </track>
+      <track>
+        <title>Turtle Blues</title>
+        <duration>4:12</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Still Got the Blues</title>
+    <artist>Gary Moore</artist>
+    <producer>Virgin Records</producer>
+    <price>10.20</price>
+    <year>1990</year>
+    <tracks>
+      <track>
+        <title>Moving On</title>
+        <duration>2:39</duration>
+      </track>
+      <track>
+        <title>Oh Pretty Woman</title>
+        <duration>4:25</duration>
+      </track>
+      <track>
+        <title>Walking by Myself</title>
+        <duration>2:56</duration>
+      </track>
+      <track>
+        <title>Still Got the Blues (For You)</title>
+        <duration>6:12</duration>
+      </track>
+      <track>
+        <title>Texas Strut</title>
+        <duration>4:51</duration>
+      </track>
+      <track>
+        <title>Too Tired</title>
+        <duration>2:51</duration>
+      </track>
+      <track>
+        <title>King of the Blues</title>
+        <duration>4:36</duration>
+      </track>
+      <track>
+        <title>As the Years Go Passing By</title>
+        <duration>7:46</duration>
+      </track>
+      <track>
+        <title>Midnight Blues</title>
+        <duration>4:58</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Eros</title>
+    <artist>Eros Ramazzotti</artist>
+    <producer>BMG</producer>
+    <price>9.90</price>
+    <year>1997</year>
+    <tracks>
+      <track>
+        <title>Terra promessa</title>
+        <duration>4:38</duration>
+      </track>
+      <track>
+        <title>Una storia importante</title>
+        <duration>4:05</duration>
+      </track>
+      <track>
+        <title>Adesso tu</title>
+        <duration>4:02</duration>
+      </track>
+      <track>
+        <title>Terra promessa</title>
+        <duration>4:38</duration>
+      </track>
+      <track>
+        <title>Ma che bello questo amore</title>
+        <duration>4:12</duration>
+      </track>
+      <track>
+        <title>Musica è</title>
+        <duration>9:46</duration>
+      </track>
+      <track>
+        <title>Occhi di speranza</title>
+        <duration>3:19</duration>
+      </track>
+      <track>
+        <title>Più bella cosa</title>
+        <duration>4:24</duration>
+      </track>
+      <track>
+        <title>Memorie</title>
+        <duration>3:31</duration>
+      </track>
+      <track>
+        <title>Cose della vita (Can't Stop Thinking of You)</title>
+        <duration>4:48</duration>
+      </track>
+      <track>
+        <title>L'aurora</title>
+        <duration>5:32</duration>
+      </track>
+      <track>
+        <title>Ancora un minuto di sole</title>
+        <duration>3:56</duration>
+      </track>
+      <track>
+        <title>Quasi amore</title>
+        <duration>5:08</duration>
+      </track>
+      <track>
+        <title>Se bastasse una canzone</title>
+        <duration>5:22</duration>
+      </track>
+      <track>
+        <title>Un'altra te</title>
+        <duration>4:40</duration>
+      </track>
+      <track>
+        <title>Favola</title>
+        <duration>4:23</duration>
+      </track>
+      <track>
+        <title>Quanto amore sei</title>
+        <duration>4:16</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>One Night Only</title>
+    <artist>Bee Gees</artist>
+    <producer>Polydor</producer>
+    <price>10.90</price>
+    <year>1998</year>
+    <tracks>
+      <track>
+        <title>Intro: You Should Be Dancing/Alone</title>
+        <duration>5:47</duration>
+      </track>
+      <track>
+        <title>Massachusetts</title>
+        <duration>2:32</duration>
+      </track>
+      <track>
+        <title>To Love Somebody</title>
+        <duration>3:10</duration>
+      </track>
+      <track>
+        <title>Words</title>
+        <duration>3:27</duration>
+      </track>
+      <track>
+        <title>Closer Than Close</title>
+        <duration>3:30</duration>
+      </track>
+      <track>
+        <title>Islands in the Stream</title>
+        <duration>3:47</duration>
+      </track>
+      <track>
+        <title>(Our Love) Don't Throw It All Away</title>
+        <duration>3:52</duration>
+      </track>
+      <track>
+        <title>Night Fever/More Than a Woman</title>
+        <duration>3:26</duration>
+      </track>
+      <track>
+        <title>Lonely Days</title>
+        <duration>3:44</duration>
+      </track>
+      <track>
+        <title>New York Mining Disaster 1941</title>
+        <duration>2:15</duration>
+      </track>
+      <track>
+        <title>I Can't See Nobody</title>
+        <duration>1:30</duration>
+      </track>
+      <track>
+        <title>And the Sun Will Shine</title>
+        <duration>1:54</duration>
+      </track>
+      <track>
+        <title>Nights on Broadway</title>
+        <duration>1:05</duration>
+      </track>
+      <track>
+        <title>How Can You Mend a Broken Heart?</title>
+        <duration>3:27</duration>
+      </track>
+      <track>
+        <title>Heartbreaker</title>
+        <duration>1:05</duration>
+      </track>
+      <track>
+        <title>Guilty</title>
+        <duration>2:21</duration>
+      </track>
+      <track>
+        <title>Immortality</title>
+        <duration>4:46</duration>
+      </track>
+      <track>
+        <title>Tragedy</title>
+        <duration>4:28</duration>
+      </track>
+      <track>
+        <title>I Started a Joke</title>
+        <duration>2:48</duration>
+      </track>
+      <track>
+        <title>Grease</title>
+        <duration>2:43</duration>
+      </track>
+      <track>
+        <title>Jive Talkin'</title>
+        <duration>4:19</duration>
+      </track>
+      <track>
+        <title>How Deep Is Your Love</title>
+        <duration>3:54</duration>
+      </track>
+      <track>
+        <title>Stayin' Alive</title>
+        <duration>3:59</duration>
+      </track>
+      <track>
+        <title>You Should Be Dancing</title>
+        <duration>4:12</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Sylvia's Mother</title>
+    <artist>Dr.Hook</artist>
+    <producer>CBS</producer>
+    <price>8.10</price>
+    <year>1973</year>
+    <tracks>
+      <track>
+        <title>Sylvia's Mother</title>
+        <duration>3:52</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Maggie May</title>
+    <artist>Rod Stewart</artist>
+    <producer>Pickwick</producer>
+    <price>8.50</price>
+    <year>1990</year>
+    <tracks>
+      <track>
+        <title>Maggie May</title>
+        <duration>5:15</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Romanza</title>
+    <artist>Andrea Bocelli</artist>
+    <producer>Polydor</producer>
+    <price>10.80</price>
+    <year>1996</year>
+    <tracks>
+      <track>
+        <title>Con te partirò</title>
+        <duration>4:09</duration>
+      </track>
+      <track>
+        <title>Vivere</title>
+        <duration>4:41</duration>
+      </track>
+      <track>
+        <title>Per Amore</title>
+        <duration>4:42</duration>
+      </track>
+      <track>
+        <title>Il Mare Calmo Della Sera</title>
+        <duration>4:40</duration>
+      </track>
+      <track>
+        <title>Caruso</title>
+        <duration>5:16</duration>
+      </track>
+      <track>
+        <title>Macchine da Guerra</title>
+        <duration>4:08</duration>
+      </track>
+      <track>
+        <title>Le Tue Parole</title>
+        <duration>3:57</duration>
+      </track>
+      <track>
+        <title>Vivo per lei</title>
+        <duration>4:23</duration>
+      </track>
+      <track>
+        <title>Romanza</title>
+        <duration>3:41</duration>
+      </track>
+      <track>
+        <title>La Luna Che Non C'è</title>
+        <duration>4:30</duration>
+      </track>
+      <track>
+        <title>Rapsodia</title>
+        <duration>5:28</duration>
+      </track>
+      <track>
+        <title>Voglio Restare Così</title>
+        <duration>3:51</duration>
+      </track>
+      <track>
+        <title>E Chiove</title>
+        <duration>4:21</duration>
+      </track>
+      <track>
+        <title>Miserere</title>
+        <duration>4:05</duration>
+      </track>
+      <track>
+        <title>Time To Say Goodbye</title>
+        <duration>4:04</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Big Willie Style</title>
+    <artist>Will Smith</artist>
+    <producer>Columbia</producer>
+    <price>9.90</price>
+    <year>1997</year>
+  </album>
+  <album>
+    <title>Tupelo Honey</title>
+    <artist>Van Morrison</artist>
+    <producer>Polydor</producer>
+    <price>8.20</price>
+    <year>1971</year>
+  </album>
+  <album>
+    <title>Stop!</title>
+    <artist>Sam Brown</artist>
+    <producer>A and M</producer>
+    <price>8.90</price>
+    <year>1988</year>
+  </album>
+  <album>
+    <title>Private Dancer</title>
+    <artist>Tina Turner</artist>
+    <producer>Capitol</producer>
+    <price>8.90</price>
+    <year>1983</year>
+    <tracks>
+      <track>
+        <title>I Might Have Been Queen</title>
+        <duration>4:10</duration>
+      </track>
+      <track>
+        <title>What's Love Got to Do with It</title>
+        <duration>3:49</duration>
+      </track>
+      <track>
+        <title>Show Some Respect</title>
+        <duration>3:18</duration>
+      </track>
+      <track>
+        <title>I Can't Stand the Rain</title>
+        <duration>3:41</duration>
+      </track>
+      <track>
+        <title>Private Dancer</title>
+        <duration>7:11</duration>
+      </track>
+      <track>
+        <title>Let's Stay Together</title>
+        <duration>5:16</duration>
+      </track>
+      <track>
+        <title>Better Be Good to Me</title>
+        <duration>5:10</duration>
+      </track>
+      <track>
+        <title>Steel Claw</title>
+        <duration>3:48</duration>
+      </track>
+      <track>
+        <title>Help!</title>
+        <duration>4:30</duration>
+      </track>
+      <track>
+        <title>1984</title>
+        <duration>3:09</duration>
+      </track>
+    </tracks>
+  </album>
+  <album>
+    <title>Pavarotti Gala Concert</title>
+    <artist>Luciano Pavarotti</artist>
+    <producer>DECCA</producer>
+    <price>9.90</price>
+    <year>1991</year>
+  </album>
+  <album>
+    <title>The Dock of the Bay</title>
+    <artist>Otis Redding</artist>
+    <producer>Atlantic</producer>
+    <price>7.90</price>
+    <year>1987</year>
+  </album>
+  <album>
+    <title>Picture Book</title>
+    <artist>Simply Red</artist>
+    <producer>Elektra</producer>
+    <price>7.20</price>
+    <year>1985</year>
+  </album>
+  <album>
+    <title>Red</title>
+    <artist>The Communards</artist>
+    <producer>London</producer>
+    <price>7.80</price>
+    <year>1987</year>
+  </album>
+  <album>
+    <title>Unchain My Heart</title>
+    <artist>Joe Cocker</artist>
+    <producer>EMI</producer>
+    <price>8.20</price>
+    <year>1987</year>
+    <tracks>
+      <track>
+        <title>Unchain My Heart</title>
+        <duration>5:04</duration>
+      </track>
+      <track>
+        <title>Two Wrongs</title>
+        <duration>4:03</duration>
+      </track>
+      <track>
+        <title>I Stand In Wonder</title>
+        <duration>4:22</duration>
+      </track>
+      <track>
+        <title>The River's Rising</title>
+        <duration>4:10</duration>
+      </track>
+      <track>
+        <title>Isolation</title>
+        <duration>3:51</duration>
+      </track>
+      <track>
+        <title>All Our Tomorrows</title>
+        <duration>4:24</duration>
+      </track>
+      <track>
+        <title>A Woman Loves a Man</title>
+        <duration>4:16</duration>
+      </track>
+      <track>
+        <title>Trust In Me</title>
+        <duration>4:14</duration>
+      </track>
+      <track>
+        <title>The One</title>
+        <duration>4:37</duration>
+      </track>
+      <track>
+        <title>Satisfied</title>
+        <duration>3:24</duration>
+      </track>
+    </tracks>
+  </album>
+</catalogue>

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToDos.aspx.cs" Inherits="ToDosManagement.ToDos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ToDos.aspx.cs" Inherits="ToDosManagement.ToDos" ValidateRequest="false" %>
 
 <!DOCTYPE html>
 
@@ -26,7 +26,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxTitle" MaxLength="50" runat="server"
-                                    Text='<%#: Bind("Title")%>'></asp:TextBox>
+                                    Text='<%# Bind("Title")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewTitle" MaxLength="50" runat="server"></asp:TextBox>
@@ -38,7 +38,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxBody" runat="server"
-                                    Text='<%#: Bind("Body")%>'></asp:TextBox>
+                                    Text='<%# Bind("Body")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewBody" runat="server"></asp:TextBox>
@@ -50,7 +50,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxLastUpdated" runat="server"
-                                    Text='<%#: Bind("LastUpdated")%>'></asp:TextBox>
+                                    Text='<%# Bind("LastUpdated")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewLastUpdated" runat="server"></asp:TextBox>
@@ -63,7 +63,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxCategoryName" runat="server"
-                                    Text='<%#: Eval("Category.Name")%>'>
+                                    Text='<%# Eval("Category.Name")%>'>
                                 </asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
@@ -104,7 +104,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxName" MaxLength="50" runat="server"
-                                    Text='<%#: Bind("Name")%>'></asp:TextBox>
+                                    Text='<%# Bind("Name")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewName" MaxLength="50" runat="server"></asp:TextBox>

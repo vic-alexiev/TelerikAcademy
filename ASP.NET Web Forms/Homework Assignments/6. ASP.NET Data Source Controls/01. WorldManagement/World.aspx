@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="World.aspx.cs" Inherits="WorldManagement.World" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="World.aspx.cs" Inherits="WorldManagement.World" ValidateRequest="false" %>
 
 <!DOCTYPE html>
 
@@ -62,7 +62,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxCountryName" MaxLength="50" runat="server"
-                                    Text='<%#: Bind("CountryName")%>'></asp:TextBox>
+                                    Text='<%# Bind("CountryName")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewCountryName" runat="server"></asp:TextBox>
@@ -75,7 +75,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxLatitude" runat="server"
-                                    Text='<%#: Bind("Latitude")%>'></asp:TextBox>
+                                    Text='<%# Bind("Latitude")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewLatitude" runat="server"></asp:TextBox>
@@ -88,7 +88,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxLongitude" runat="server"
-                                    Text='<%#: Bind("Longitude")%>'></asp:TextBox>
+                                    Text='<%# Bind("Longitude")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewLongitude" runat="server"></asp:TextBox>
@@ -101,7 +101,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxSurfaceArea" runat="server"
-                                    Text='<%#: Bind("SurfaceArea")%>'></asp:TextBox>
+                                    Text='<%# Bind("SurfaceArea")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewSurfaceArea" runat="server"></asp:TextBox>
@@ -116,7 +116,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxPopulation" runat="server"
-                                    Text='<%#: Bind("Population")%>'></asp:TextBox>
+                                    Text='<%# Bind("Population")%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewPopulation" runat="server"></asp:TextBox>
@@ -138,7 +138,7 @@
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:TextBox ID="TextBoxLanguages" runat="server"
-                                    Text='<%#: string.Join(", ", Item.Languages.Select(l => l.LanguageName))%>'></asp:TextBox>
+                                    Text='<%# string.Join(", ", Item.Languages.Select(l => l.LanguageName))%>'></asp:TextBox>
                             </EditItemTemplate>
                             <FooterTemplate>
                                 <asp:TextBox ID="TextBoxNewLanguages" runat="server"></asp:TextBox>
@@ -217,16 +217,16 @@
                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
                             </td>
                             <td>
-                                <asp:TextBox ID="CityNameTextBox" MaxLength="50" runat="server" Text='<%#: Bind("CityName") %>' />
+                                <asp:TextBox ID="CityNameTextBox" MaxLength="50" runat="server" Text='<%# Bind("CityName") %>' />
                             </td>
                             <td>
-                                <asp:TextBox ID="LatitudeTextBox" runat="server" Text='<%#: Bind("Latitude") %>' />
+                                <asp:TextBox ID="LatitudeTextBox" runat="server" Text='<%# Bind("Latitude") %>' />
                             </td>
                             <td>
-                                <asp:TextBox ID="LongitudeTextBox" runat="server" Text='<%#: Bind("Longitude") %>' />
+                                <asp:TextBox ID="LongitudeTextBox" runat="server" Text='<%# Bind("Longitude") %>' />
                             </td>
                             <td>
-                                <asp:TextBox ID="PopulationTextBox" runat="server" Text='<%#: Bind("Population") %>' />
+                                <asp:TextBox ID="PopulationTextBox" runat="server" Text='<%# Bind("Population") %>' />
                             </td>
                             <td>
                                 <asp:Label ID="CountryLabel" runat="server" Text='<%#: Eval("Country.CountryName") %>' />
@@ -247,16 +247,16 @@
                                 <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
                             </td>
                             <td>
-                                <asp:TextBox ID="CityNameTextBox" runat="server" MaxLength="50" Text='<%#: Bind("CityName") %>' />
+                                <asp:TextBox ID="CityNameTextBox" runat="server" MaxLength="50" Text='<%# Bind("CityName") %>' />
                             </td>
                             <td>
-                                <asp:TextBox ID="LatitudeTextBox" runat="server" Text='<%#: Bind("Latitude") %>' />
+                                <asp:TextBox ID="LatitudeTextBox" runat="server" Text='<%# Bind("Latitude") %>' />
                             </td>
                             <td>
-                                <asp:TextBox ID="LongitudeTextBox" runat="server" Text='<%#: Bind("Longitude") %>' />
+                                <asp:TextBox ID="LongitudeTextBox" runat="server" Text='<%# Bind("Longitude") %>' />
                             </td>
                             <td>
-                                <asp:TextBox ID="PopulationTextBox" runat="server" Text='<%#: Bind("Population") %>' />
+                                <asp:TextBox ID="PopulationTextBox" runat="server" Text='<%# Bind("Population") %>' />
                             </td>
                             <td>
                                 <asp:Label ID="CountryLabel" runat="server" Text='<%#: Eval("Country.CountryName") %>' />

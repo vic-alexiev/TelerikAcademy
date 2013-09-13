@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -432,6 +433,14 @@ namespace WorldManagement
                 int population;
                 string populationAsString = (this.ListViewCities.Items[e.ItemIndex].FindControl("PopulationTextBox") as TextBox).Text;
                 this.ValidatePopulation(populationAsString, out population);
+            }
+            catch (DbEntityValidationException ex)
+            {
+                var errors = ex.EntityValidationErrors
+                    .SelectMany(eve => eve.ValidationErrors)
+                    .Select(ve => ve.ErrorMessage);
+                this.LabelCityErrors.Text = string.Join(", ", errors);
+                e.Cancel = true;
             }
             catch (Exception ex)
             {

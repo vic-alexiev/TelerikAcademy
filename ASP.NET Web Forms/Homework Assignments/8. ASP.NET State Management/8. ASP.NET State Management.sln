@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. ClientInfoExtractor", "01. ClientInfoExtractor\01. ClientInfoExtractor.csproj", "{8C7E0389-447E-4D5A-A06C-D3DEE06D59DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. SessionStateData", "02. SessionStateData\02. SessionStateData.csproj", "{A8B5CCAA-4666-46FA-9A3D-76F49990EAFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. CookiesDemo", "03. CookiesDemo\03. CookiesDemo.csproj", "{A3DEEA7F-A35F-4678-B808-FFEDA74BD419}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04. JavaScriptInjection", "04. JavaScriptInjection\04. JavaScriptInjection.csproj", "{F41ED171-BE18-4B3D-96E2-AB3768774380}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05. VisitsCounterUsingApplicationState", "05. VisitsCounterUsingApplicationState\05. VisitsCounterUsingApplicationState.csproj", "{3AE14661-BD85-4B8F-BC65-C5473AD903E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06. VisitsCounterUsingSQLServer", "06. VisitsCounterUsingSQLServer\06. VisitsCounterUsingSQLServer.csproj", "{0AD48D53-2F55-41A6-8BB8-DA70E91E62E5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{757EC020-A418-4C49-8B64-CEB141A89B0B}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8C7E0389-447E-4D5A-A06C-D3DEE06D59DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C7E0389-447E-4D5A-A06C-D3DEE06D59DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C7E0389-447E-4D5A-A06C-D3DEE06D59DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C7E0389-447E-4D5A-A06C-D3DEE06D59DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8B5CCAA-4666-46FA-9A3D-76F49990EAFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8B5CCAA-4666-46FA-9A3D-76F49990EAFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8B5CCAA-4666-46FA-9A3D-76F49990EAFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8B5CCAA-4666-46FA-9A3D-76F49990EAFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DEEA7F-A35F-4678-B808-FFEDA74BD419}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DEEA7F-A35F-4678-B808-FFEDA74BD419}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DEEA7F-A35F-4678-B808-FFEDA74BD419}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DEEA7F-A35F-4678-B808-FFEDA74BD419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F41ED171-BE18-4B3D-96E2-AB3768774380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F41ED171-BE18-4B3D-96E2-AB3768774380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F41ED171-BE18-4B3D-96E2-AB3768774380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F41ED171-BE18-4B3D-96E2-AB3768774380}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE14661-BD85-4B8F-BC65-C5473AD903E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE14661-BD85-4B8F-BC65-C5473AD903E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE14661-BD85-4B8F-BC65-C5473AD903E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE14661-BD85-4B8F-BC65-C5473AD903E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AD48D53-2F55-41A6-8BB8-DA70E91E62E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AD48D53-2F55-41A6-8BB8-DA70E91E62E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AD48D53-2F55-41A6-8BB8-DA70E91E62E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AD48D53-2F55-41A6-8BB8-DA70E91E62E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

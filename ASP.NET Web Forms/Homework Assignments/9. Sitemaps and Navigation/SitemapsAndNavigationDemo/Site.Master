@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"
+    CodeBehind="Site.master.cs"
+    Inherits="SitemapsAndNavigationDemo.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title></title>
+    <link href="/Styles/Site.css" rel="stylesheet" type="text/css" runat="server" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+
+<body>
+    <form runat="server">
+        <div class="page">
+            <div class="header">
+                <div class="title">
+                    <h1>Yoda - Deliver More Than Needed
+                    </h1>
+                </div>
+                <div class="loginDisplay">
+                </div>
+                <div class="clear hideSkiplink">
+                    <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" SkipLinkText=""
+                        EnableViewState="False" IncludeStyleBlock="False" Orientation="Horizontal"
+                        DataSourceID="SiteMapDataSource" StaticDisplayLevels="2">
+                    </asp:Menu>
+                    <asp:SiteMapPath ID="SiteMapPathBreadcrumb" runat="server" />
+                </div>
+            </div>
+            <div class="main">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            </div>
+            <div class="clear" />
+            <div class="footer">(c) Yoda Corp., 2013</div>
+        </div>
+    </form>
+    <asp:SiteMapDataSource ID="SiteMapDataSource" runat="server" />
+</body>
+
+</html>

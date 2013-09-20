@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00. Northwind", "00. Northwind\00. Northwind.csproj", "{09AB4EB0-7526-47AF-B379-1E81572599A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01. EmployeesOrders", "01. EmployeesOrders\01. EmployeesOrders.csproj", "{D665CB30-0878-4689-8A09-FB485E33F5F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02. SimpleChat", "02. SimpleChat\02. SimpleChat.csproj", "{C67B1EA5-CE7B-4C2C-878E-959867B411E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03. PhotoAlbum", "03. PhotoAlbum\03. PhotoAlbum.csproj", "{33BEE8C6-B327-4D3E-8C3E-3FBEE7989270}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{15C3F761-DE42-4861-A1FD-E30C4DD20989}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09AB4EB0-7526-47AF-B379-1E81572599A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09AB4EB0-7526-47AF-B379-1E81572599A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09AB4EB0-7526-47AF-B379-1E81572599A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09AB4EB0-7526-47AF-B379-1E81572599A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D665CB30-0878-4689-8A09-FB485E33F5F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D665CB30-0878-4689-8A09-FB485E33F5F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D665CB30-0878-4689-8A09-FB485E33F5F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D665CB30-0878-4689-8A09-FB485E33F5F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C67B1EA5-CE7B-4C2C-878E-959867B411E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C67B1EA5-CE7B-4C2C-878E-959867B411E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C67B1EA5-CE7B-4C2C-878E-959867B411E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C67B1EA5-CE7B-4C2C-878E-959867B411E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33BEE8C6-B327-4D3E-8C3E-3FBEE7989270}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33BEE8C6-B327-4D3E-8C3E-3FBEE7989270}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33BEE8C6-B327-4D3E-8C3E-3FBEE7989270}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33BEE8C6-B327-4D3E-8C3E-3FBEE7989270}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

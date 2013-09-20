@@ -1,0 +1,17 @@
+﻿body {
+    margin: 50px 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.image-holder {
+    width: 200px;
+    height: 258px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+    .image-holder:hover {
+        cursor: crosshair;
+    }

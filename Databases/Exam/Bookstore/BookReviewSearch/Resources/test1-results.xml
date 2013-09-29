@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<search-results>
+	<result-set>
+		<review>
+			<date>18-Feb-2012</date>
+			<content>A must read</content>
+			<book>
+				<title>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</title>
+				<authors>Martin Fowler, Pramod J. Sadalage</authors>
+				<url>http://www.amazon.com/NoSQL-Distilled-Emerging-Persistence-ebook/dp/B0090J3SYW/</url>
+			</book>
+		</review>
+		<review>
+			<date>28-Feb-2012</date>
+			<content>Very good book, but too old.</content>
+			<book>
+				<title>XML: A Deep Understanding</title>
+				<authors>John Shirrell</authors>
+				<url>http://www.xmlbook.info</url>
+			</book>
+		</review>
+		<review>
+			<date>12-Apr-2012</date>
+			<content>Great book</content>
+			<book>
+				<title>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</title>
+				<authors>Martin Fowler, Pramod J. Sadalage</authors>
+				<url>http://www.amazon.com/NoSQL-Distilled-Emerging-Persistence-ebook/dp/B0090J3SYW/</url>
+			</book>
+		</review>
+		<review>
+			<date>17-Apr-2012</date>
+			<content>Please add more about MongoDB</content>
+			<book>
+				<title>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</title>
+				<authors>Martin Fowler, Pramod J. Sadalage</authors>
+				<url>http://www.amazon.com/NoSQL-Distilled-Emerging-Persistence-ebook/dp/B0090J3SYW/</url>
+			</book>
+		</review>
+		<review>
+			<date>30-Apr-2012</date>
+			<content>Kudos for this book</content>
+			<book>
+				<title>XML: A Deep Understanding</title>
+				<authors>John Shirrell</authors>
+				<url>http://www.xmlbook.info</url>
+			</book>
+		</review>
+		<review>
+			<date>02-Aug-2012</date>
+			<content>Outdated, but still a good starting point</content>
+			<book>
+				<title>SQL Server Tutorial</title>
+				<url>http://www.quackit.com/sql_server/tutorial/</url>
+			</book>
+		</review>
+		<review>
+			<date>12-Sep-2012</date>
+			<content>Another testing review</content>
+			<book>
+				<title>Just a Test</title>
+				<authors>Test Author 1, Test Author 2, Test Author 3, Test Author 4, Test Author 5</authors>
+				<isbn>3344556677889</isbn>
+			</book>
+		</review>
+		<review>
+			<date>08-Oct-2012</date>
+			<content>Testing review</content>
+			<book>
+				<title>Just a Test</title>
+				<authors>Test Author 1, Test Author 2, Test Author 3, Test Author 4, Test Author 5</authors>
+				<isbn>3344556677889</isbn>
+			</book>
+		</review>
+		<review>
+			<date>09-Oct-2012</date>
+			<content>Testing review</content>
+			<book>
+				<title>Just a Test</title>
+				<authors>Test Author 1, Test Author 2, Test Author 3, Test Author 4, Test Author 5</authors>
+				<isbn>3344556677889</isbn>
+			</book>
+		</review>
+		<review>
+			<date>18-Oct-2012</date>
+			<content>A good start</content>
+			<book>
+				<title>SQL Server Tutorial</title>
+				<url>http://www.quackit.com/sql_server/tutorial/</url>
+			</book>
+		</review>
+		<review>
+			<date>01-Dec-2012</date>
+			<content>+1 for this book</content>
+			<book>
+				<title>XML: A Deep Understanding</title>
+				<authors>John Shirrell</authors>
+				<url>http://www.xmlbook.info</url>
+			</book>
+		</review>
+		<review>
+			<date>02-Dec-2012</date>
+			<content>I recommend this book</content>
+			<book>
+				<title>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</title>
+				<authors>Martin Fowler, Pramod J. Sadalage</authors>
+				<url>http://www.amazon.com/NoSQL-Distilled-Emerging-Persistence-ebook/dp/B0090J3SYW/</url>
+			</book>
+		</review>
+		<review>
+			<date>03-Dec-2012</date>
+			<content>Highly recommended</content>
+			<book>
+				<title>NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence</title>
+				<authors>Martin Fowler, Pramod J. Sadalage</authors>
+				<url>http://www.amazon.com/NoSQL-Distilled-Emerging-Persistence-ebook/dp/B0090J3SYW/</url>
+			</book>
+		</review>
+	</result-set>
+</search-results>

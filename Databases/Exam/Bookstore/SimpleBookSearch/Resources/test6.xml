@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<query>
+</query>
+
+<!-- The result should be like the following:
+  11 book found:
+  Another Empty Book -> no reviews
+  Empty Book, Just a Title -> no reviews
+  Empty Book, Just a Title -> no reviews
+  Just a Test -> 6 reviews
+  Just a Title - No Author, ISBN, Price, ... -> no reviews
+  Learning SQL -> no reviews
+  NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence -> 8 reviews
+  SQL for Dummies -> no reviews
+  SQL for Dummies -> no reviews
+  SQL Server Tutorial -> 3 reviews
+  Svetlin Nakov's Blog -> no reviews
+-->

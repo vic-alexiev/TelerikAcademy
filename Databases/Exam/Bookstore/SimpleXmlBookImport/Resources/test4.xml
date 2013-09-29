@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<catalog>
+  <book>
+    <author>Stephane Faroult</author>
+    <title>The Art of SQL</title>
+    <isbn>9780596008949</isbn>
+    <price>29.84</price>
+    <web-site>http://www.amazon.com/The-Art-SQL-Stephane-Faroult/dp/0596008945</web-site>
+  </book>
+</catalog>

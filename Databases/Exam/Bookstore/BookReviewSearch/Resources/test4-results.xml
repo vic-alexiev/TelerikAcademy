@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<search-results>
+	<result-set>
+		<review>
+			<date>02-Aug-2012</date>
+			<content>Outdated, but still a good starting point</content>
+			<book>
+				<title>SQL Server Tutorial</title>
+				<url>http://www.quackit.com/sql_server/tutorial/</url>
+			</book>
+		</review>
+		<review>
+			<date>12-Sep-2012</date>
+			<content>Another testing review</content>
+			<book>
+				<title>Just a Test</title>
+				<authors>Test Author 1, Test Author 2, Test Author 3, Test Author 4, Test Author 5</authors>
+				<isbn>3344556677889</isbn>
+			</book>
+		</review>
+	</result-set>
+</search-results>

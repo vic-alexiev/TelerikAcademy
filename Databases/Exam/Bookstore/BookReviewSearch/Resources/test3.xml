@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" ?>
+<review-queries>
+  <query type="by-period">
+    <start-date>1-Jan-2012</start-date>
+    <end-date>18-Oct-2011</end-date>
+  </query>
+  <query type="by-author">
+    <author-name>Unknown Missing Author</author-name>
+  </query>
+</review-queries>

@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<query>
+  <title>Empty Book, Just a Title</title>
+</query>
+
+<!-- The result should be like this:
+  2 book found:
+  Empty Book, Just a Title -> no reviews
+  Empty Book, Just a Title -> no reviews
+-->

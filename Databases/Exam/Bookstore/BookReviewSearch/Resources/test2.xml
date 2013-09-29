@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<review-queries>
+  <query type="by-period">
+    <end-date>18-Oct-2012</end-date>
+    <start-date>8-Oct-2012</start-date>
+  </query>
+ </review-queries>

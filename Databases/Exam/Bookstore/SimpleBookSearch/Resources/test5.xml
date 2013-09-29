@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<query>
+  <isbn>3344556677889</isbn>
+</query>
+
+<!-- The result should be like the following:
+  1 book found:
+  Just a Test -> 6 reviews
+-->

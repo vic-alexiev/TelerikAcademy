@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" ?>
+<catalog>
+  <book>
+    <authors>
+      <author>Sajal Dam</author>
+      <author>Grant Fritchey</author>
+    </authors>
+    <title>SQL Server 2008 Query Performance Tuning Distilled (Expert's Voice in SQL Server)</title>
+    <isbn>9781430219026</isbn>
+    <web-site>http://www.amazon.com/SQL-Server-Performance-Tuning/dp/1430219025</web-site>
+    <reviews>
+      <review>
+I will suggest this book for DBAs and SQL Programmers who want to know the theories behind Index and Statistics, Blocking and Deadlocking + Fragmentation.
+      </review>
+    </reviews>
+    <price>35.03</price>
+  </book>
+</catalog>

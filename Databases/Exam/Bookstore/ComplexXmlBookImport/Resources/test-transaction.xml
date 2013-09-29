@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<catalog>
+
+  <book>
+    <title>Valid Book - Should be Inserted</title>
+    <authors>
+      <author>Martin Fowler</author>
+      <author>Pramod J. Sadalage</author>
+    </authors>
+    <reviews>
+      <review>Some review</review>
+      <review>Another review</review>
+    </reviews>
+    <price>11.00</price>
+  </book>
+
+  <!-- The transaction should stop here. The first book should be entered only.
+    The second book should be skipped due to errors in its reviews (invalid date). 
+    The third book should be skipped (due to transaction aborted before it) -->
+
+  <book>
+    <title>Invalid Book - Should NOT be Inserted</title>
+    <authors>
+      <author>Invalid Author -> Should NOT be Inserted</author>
+      <author>Invalid Author -> Should NOT be Inserted</author>
+      <author>Another Invalid Author -> Should NOT be Inserted</author>
+    </authors>
+    <reviews>
+      <review date="33-Aug-2012">Some review</review>
+      <review author="">Another review</review>
+    </reviews>
+    <price>11.00</price>
+  </book>
+
+  <book>
+    <title>Valid Book, but Should NOT Be Inserted --> Transaction Already Stopped</title>
+    <price>36.00</price>
+    <web-site>http://www.valid-web-site.org</web-site>
+  </book>
+
+</catalog>

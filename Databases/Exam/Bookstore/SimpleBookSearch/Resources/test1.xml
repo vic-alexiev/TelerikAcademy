@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<query>
+
+  <title>Learning SQL</title>
+  <author>Alan Beaulieu</author>
+  <isbn>9780596520830</isbn>
+
+  <!-- The result should be like the following:
+     1 book found:
+     Learning SQL -> no reviews
+  -->
+
+</query>

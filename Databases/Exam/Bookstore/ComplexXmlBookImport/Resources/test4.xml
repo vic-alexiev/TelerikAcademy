@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<catalog>
+  <book>
+    <title>XML: A Deep Understanding</title>
+    <authors>
+      <author>John Shirrell</author>
+    </authors>
+    <web-site>http://www.xmlbook.info</web-site>
+    <reviews>
+      <review author="Visitor">Outdated. Written in 1999, useless today.</review>
+      <review>Free e-book on XML and other XML standards</review>
+      <review date="28-Feb-2012">Very good book, but too old.</review>
+      <review author="Peter Jameson" date="30-Apr-2012">Kudos for this book</review>
+      <review date="1-Dec-2012" author="Steve Ivanov">+1 for this book</review>
+    </reviews>
+  </book>
+</catalog>

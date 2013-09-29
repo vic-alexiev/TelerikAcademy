@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" ?>
+<query>
+  <author>Martin Fowler</author>
+</query>
+
+<!-- The result should be:
+  1 book found:
+  NoSQL Distilled: A Brief Guide to the Emerging World of Polyglot Persistence -> 8 reviews
+-->

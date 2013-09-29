@@ -1,0 +1,15 @@
+﻿@using WebCalculator.Models
+@model CalculatorData
+
+<p>Storage (Kilo = @Model.SelectedKilo bits)</p>
+<table class="table table-striped table-bordered table-condensed">
+    @foreach (var item in Model.Conversions)
+    {
+        <tr>
+            <td>@item.Key</td>
+            <td>@item.Value</td>
+        </tr>
+    }
+</table>
+
+

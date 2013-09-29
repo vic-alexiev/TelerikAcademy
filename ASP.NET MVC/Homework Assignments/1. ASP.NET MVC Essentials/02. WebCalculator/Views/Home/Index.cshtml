@@ -1,0 +1,32 @@
+﻿@using WebCalculator.Models
+@model CalculatorData
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="hero-unit">
+    <h1>Calculator</h1>
+</div>
+<div class="row">
+    @using (Html.BeginForm(new { Action = "Index", Controller = "Home" }))
+    {
+        <label for="tb-quantity">Quantity</label>
+        @Html.TextBoxFor(x => x.Quantity, new { id = "tb-quantity" })
+        <br />
+        <label for="cb-unit">Type</label>
+        @Html.DropDownListFor(x => x.SelectedUnit, Model.Units, new { id = "cb-unit" })
+        <br />
+        <label for="cb-kilo">Kilo</label>
+        @Html.DropDownListFor(x => x.SelectedKilo, Model.Kilos, new { id = "cb-kilo" })
+        <br />
+
+        <input type="submit" value="GO" />
+    }
+
+    @if (ViewBag.Success != null && ViewBag.Success == true)
+    {
+        Html.RenderPartial("_Conversions", Model);
+    }
+
+</div>

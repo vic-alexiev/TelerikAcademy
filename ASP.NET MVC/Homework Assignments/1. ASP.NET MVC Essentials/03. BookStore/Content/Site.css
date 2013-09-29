@@ -1,0 +1,16 @@
+﻿body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+.hero-unit {
+    font-size:15px;
+    width:100%;
+    margin:auto;
+}
+.booksInfo {
+    float:left;
+    width:29%;
+}
+h3 {
+    text-align:center;
+}

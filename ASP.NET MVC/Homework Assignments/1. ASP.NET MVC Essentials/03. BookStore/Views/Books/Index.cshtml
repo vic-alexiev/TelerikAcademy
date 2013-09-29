@@ -1,0 +1,23 @@
+﻿@using BookStore.Models
+@model IEnumerable<BookViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="hero-unit clearfix">
+    <h3 class="well">Books</h3>
+    @foreach (var item in Model)
+    {
+        <div class="well booksInfo">
+            <h4 class="well h3">@(item.Title.Length <= 27 ? item.Title : item.Title.Substring(0, 24) + "...")</h4>
+            <h5 class="h4 well">@item.Author</h5>
+            <p class="well">
+                <span>Category: @item.Category</span><br />
+                <span>Year: @item.Year</span><br />
+                <span>ISBN: @item.ISBN</span>
+                <span><strong>Price: @item.Price $</strong></span>
+            </p>
+        </div>
+    }
+</div>

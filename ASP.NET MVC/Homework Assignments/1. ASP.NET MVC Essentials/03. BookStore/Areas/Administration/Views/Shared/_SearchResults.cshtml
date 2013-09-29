@@ -1,0 +1,14 @@
+﻿@using BookStore.Models
+@model IEnumerable<BookViewModel>
+
+@{
+    ViewBag.Title = "_SearchResults";
+}
+
+<h2>Search results for "@ViewBag.SearchString":</h2>
+
+@foreach (var item in Model)
+{
+    <div>@item.Title (category: @item.Category)</div>
+}
+

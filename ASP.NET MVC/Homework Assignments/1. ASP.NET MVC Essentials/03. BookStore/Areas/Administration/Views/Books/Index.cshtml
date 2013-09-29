@@ -1,0 +1,23 @@
+﻿@using BookStore.Models
+@model IEnumerable<BookViewModel>
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "Books", new { Area = "Administration" }, FormMethod.Post, new { @class = "input-append" }))
+{
+    <input type="text" name="searchString" />
+    <input type="submit" name="btn-submit" class="btn btn-default" value="Search" />
+}
+
+@if (ViewBag.Success != null && ViewBag.Success == true)
+{
+    Html.RenderPartial("_SearchResults", Model);
+}
+
+
+
+

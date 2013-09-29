@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.Models", "BloggingSystem.Models\BloggingSystem.Models.csproj", "{CE915F91-381A-466D-B847-0276959F3BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.Data", "BloggingSystem.Data\BloggingSystem.Data.csproj", "{65A1D23F-8893-4EAF-A84F-4F7A63784562}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.ConsoleClient", "BloggingSystem.ConsoleClient\BloggingSystem.ConsoleClient.csproj", "{407E7F5A-048B-4095-93E5-94A95EC8E447}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.Services", "BloggingSystem.Services\BloggingSystem.Services.csproj", "{C4B0351C-B2D2-4B72-BF79-8EF5BE5A0432}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloggingSystem.Services.Tests", "BloggingSystem.Services.Tests\BloggingSystem.Services.Tests.csproj", "{B66915D1-E183-4222-8874-D1FB7F1DDFDD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AEF9B288-D63D-4FF7-B269-1463EA5BCFCA}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE915F91-381A-466D-B847-0276959F3BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE915F91-381A-466D-B847-0276959F3BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE915F91-381A-466D-B847-0276959F3BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE915F91-381A-466D-B847-0276959F3BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A1D23F-8893-4EAF-A84F-4F7A63784562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A1D23F-8893-4EAF-A84F-4F7A63784562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A1D23F-8893-4EAF-A84F-4F7A63784562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A1D23F-8893-4EAF-A84F-4F7A63784562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407E7F5A-048B-4095-93E5-94A95EC8E447}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407E7F5A-048B-4095-93E5-94A95EC8E447}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407E7F5A-048B-4095-93E5-94A95EC8E447}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407E7F5A-048B-4095-93E5-94A95EC8E447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4B0351C-B2D2-4B72-BF79-8EF5BE5A0432}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4B0351C-B2D2-4B72-BF79-8EF5BE5A0432}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4B0351C-B2D2-4B72-BF79-8EF5BE5A0432}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4B0351C-B2D2-4B72-BF79-8EF5BE5A0432}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B66915D1-E183-4222-8874-D1FB7F1DDFDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B66915D1-E183-4222-8874-D1FB7F1DDFDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B66915D1-E183-4222-8874-D1FB7F1DDFDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B66915D1-E183-4222-8874-D1FB7F1DDFDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

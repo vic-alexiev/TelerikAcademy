@@ -34,6 +34,12 @@
     <div class="container">
         @RenderBody()
         <hr />
+        @if (IsSectionDefined("Logo"))
+        {
+            <aside class="span4">
+                @RenderSection("Logo", required: false)
+            </aside>
+        }
         <footer>
             <p>&copy; @DateTime.Now.Year - Book Store</p>
         </footer>

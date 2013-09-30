@@ -1,0 +1,60 @@
+﻿@using System.Web.Mvc
+
+@model MovieStore.Models.Director
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Director</legend>
+
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Birth Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+    </dl>
+</fieldset>
+
+@using (Ajax.BeginForm(
+    "Delete",
+    "Directors",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnSuccess = "reloadPage"
+    },
+    new { id = "form-delete-director" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn" />
+        <input type="button" value="Cancel" onclick="closeDeleteDirectorForm()" class="btn" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    function reloadPage() {
+        $("#single-director-form").html("");
+        window.location = "/Directors";
+    }
+
+    function closeDeleteDirectorForm() {
+        $("#single-director-form").html("");
+    }
+</script>

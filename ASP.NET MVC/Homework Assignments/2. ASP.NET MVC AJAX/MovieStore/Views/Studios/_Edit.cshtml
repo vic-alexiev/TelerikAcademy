@@ -1,0 +1,76 @@
+﻿@using System.Web.Mvc
+
+@model MovieStore.Models.Studio
+
+@using (Ajax.BeginForm(
+    "Edit",
+    "studios",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnBegin = "onValidate",
+        OnSuccess = "reloadPage"
+
+    },
+    new { id = "form-edit-studio" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Studio</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.WebSite, "Web Site", new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.WebSite)
+                @Html.ValidationMessageFor(model => model.WebSite, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Save" class="btn" />
+            <input type="button" value="Cancel" onclick="closeEditStudioForm()" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function reloadPage() {
+        $("#single-studio-form").html("");
+        window.location = "/Studios";
+    }
+
+    function closeEditStudioForm() {
+        $("#single-studio-form").html("");
+    }
+
+    var onValidate = function () {
+        $.validator.unobtrusive.parse($("#form-edit-studio"));
+        var isValid = $("#form-edit-studio").valid();
+        if (!isValid) {
+            e.abort();
+
+        } else {
+            alert("Studio edited successfully.");
+        }
+    };
+</script>

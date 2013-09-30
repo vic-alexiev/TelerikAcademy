@@ -1,0 +1,77 @@
+﻿@using System.Web.Mvc
+
+@model MovieStore.Models.Director
+
+@using (Ajax.BeginForm(
+    "Edit",
+    "Directors",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnBegin = "onValidate",
+        OnSuccess = "reloadPage"
+
+    },
+    new { id = "form-edit-director" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Director</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.BirthDate, "Birth Date", new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.BirthDate)
+                @Html.ValidationMessageFor(model => model.BirthDate, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Save" class="btn" />
+            <input type="button" value="Cancel" onclick="closeEditDirectorForm()" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function reloadPage() {
+        $("#single-director-form").html("");
+        window.location = "/Directors";
+    }
+
+    function closeEditDirectorForm() {
+        $("#single-director-form").html("");
+    }
+
+    var onValidate = function () {
+        $.validator.unobtrusive.parse($("#form-edit-director"));
+        var isValid = $("#form-edit-director").valid();
+        if (!isValid) {
+            e.abort();
+
+        } else {
+            alert("Director edited successfully.");
+        }
+    };
+</script>
+

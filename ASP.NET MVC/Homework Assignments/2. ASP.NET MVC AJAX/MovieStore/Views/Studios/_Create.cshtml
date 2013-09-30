@@ -1,0 +1,74 @@
+﻿@using System.Web.Mvc
+
+@model MovieStore.Models.Studio
+
+@using (Ajax.BeginForm(
+    "Create",
+    "Studios",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnBegin = "onValidate",
+        OnSuccess = "reloadPage"
+    },
+    new { id = "form-create-studio" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Studio</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.WebSite, "Web Site", new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.WebSite)
+                @Html.ValidationMessageFor(model => model.WebSite, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+            <input type="button" value="Cancel" onclick="closeCreateStudioForm()" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function reloadPage() {
+        $("#single-studio-form").html("");
+        window.location = "/Studios";
+    }
+
+    function closeCreateStudioForm() {
+        $("#single-studio-form").html("");
+    }
+
+    var onValidate = function (e) {
+        $.validator.unobtrusive.parse($("#form-create-studio"));
+        var isValid = $("#form-create-studio").valid();
+        if (!isValid) {
+            e.abort();
+
+        } else {
+            alert("Studio created successfully.");
+        }
+    };
+</script>
+

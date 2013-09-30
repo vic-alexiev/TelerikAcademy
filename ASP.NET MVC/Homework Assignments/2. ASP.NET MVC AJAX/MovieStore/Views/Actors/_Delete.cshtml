@@ -1,0 +1,60 @@
+﻿@using System.Web.Mvc
+
+@model MovieStore.Models.Actor
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Actor</legend>
+
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Birth Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+    </dl>
+</fieldset>
+
+@using (Ajax.BeginForm(
+    "Delete",
+    "Actors",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnSuccess = "reloadPage"
+    },
+    new { id = "form-delete-actor" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn" />
+        <input type="button" value="Cancel" onclick="closeDeleteActorForm()" class="btn" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    function reloadPage() {
+        $("#single-actor-form").html("");
+        window.location = "/Actors";
+    }
+
+    function closeDeleteActorForm() {
+        $("#single-actor-form").html("");
+    }
+</script>

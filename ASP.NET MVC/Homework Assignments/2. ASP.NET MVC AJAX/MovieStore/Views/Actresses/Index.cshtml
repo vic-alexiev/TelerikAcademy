@@ -1,0 +1,70 @@
+﻿@using System.Web.Mvc
+
+@model IEnumerable<MovieStore.Models.Actress>
+
+@{
+    ViewBag.Title = "Actresses";
+}
+
+<h2>Actresses</h2>
+
+<p>
+    @Ajax.ActionLink("Create New", "Create",
+    new AjaxOptions
+    {
+        HttpMethod = "Get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "single-actress-form"
+    })
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayName("Birth Date")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Ajax.ActionLink("Edit", "Edit", new { id = item.Id },
+                new AjaxOptions
+                {
+                    HttpMethod = "Get",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "single-actress-form"
+                }) |
+                @Ajax.ActionLink("Details", "Details", new { id = item.Id },
+                new AjaxOptions
+                {
+                    HttpMethod = "Get",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "single-actress-form"
+                }) |
+                @Ajax.ActionLink("Delete", "Delete", new { id = item.Id },
+                new AjaxOptions
+                {
+                    HttpMethod = "Get",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "single-actress-form"
+                })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div id="single-actress-form"></div>

@@ -1,0 +1,108 @@
+@using System.Web.Mvc
+
+@model MovieStore.Models.Movie
+
+@using (Ajax.BeginForm(
+    "Edit",
+    "Movies",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnBegin = "onValidate",
+        OnSuccess = "reloadPage"
+
+    },
+    new { id = "form-edit-movie" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Movie</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Year, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Year)
+                @Html.ValidationMessageFor(model => model.Year, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.DirectorId, "Director", new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("DirectorId", String.Empty)
+                @Html.ValidationMessageFor(model => model.DirectorId, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ActorId, "Leading Actor", new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("ActorId", String.Empty)
+                @Html.ValidationMessageFor(model => model.ActorId, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ActressId, "Leading Actress", new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("ActressId", String.Empty)
+                @Html.ValidationMessageFor(model => model.ActressId, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.StudioId, "Studio", new { @class = "control-label" })
+            <div class="controls">
+                @Html.DropDownList("StudioId", String.Empty)
+                @Html.ValidationMessageFor(model => model.StudioId, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Save" class="btn" />
+            <input type="button" value="Cancel" onclick="closeEditMovieForm()" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function reloadPage() {
+        $("#single-movie-form").html("");
+        window.location = "/Movies";
+    }
+
+    function closeEditMovieForm() {
+        $("#single-movie-form").html("");
+    }
+
+    var onValidate = function () {
+        $.validator.unobtrusive.parse($("#form-edit-movie"));
+        var isValid = $("#form-edit-movie").valid();
+        if (!isValid) {
+            e.abort();
+
+        } else {
+            alert("Movie edited successfully.");
+        }
+    };
+</script>

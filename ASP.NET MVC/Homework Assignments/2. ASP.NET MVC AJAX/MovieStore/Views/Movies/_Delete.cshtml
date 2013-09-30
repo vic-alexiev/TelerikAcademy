@@ -1,0 +1,92 @@
+@using System.Web.Mvc
+
+@model MovieStore.Models.Movie
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Movie</legend>
+
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Leading Actor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Leading Actress")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actress.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Director")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Studio")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Studio.Name)
+        </dd>
+
+    </dl>
+</fieldset>
+
+@using (Ajax.BeginForm(
+    "Delete",
+    "Movies",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnSuccess = "reloadPage"
+    },
+    new { id = "form-delete-movie" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn" />
+        <input type="button" value="Cancel" onclick="closeDeleteMovieForm()" class="btn" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    function reloadPage() {
+        $("#single-movie-form").html("");
+        window.location = "/Movies";
+    }
+
+    function closeDeleteMovieForm() {
+        $("#single-movie-form").html("");
+    }
+</script>

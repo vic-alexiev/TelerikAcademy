@@ -1,0 +1,35 @@
+﻿@model MovieStore.Models.Studio
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Studio</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Web Site")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebSite)
+        </dd>
+
+    </dl>
+</fieldset>
+<p>
+    @Ajax.ActionLink("Edit", "Edit", new { id = Model.Id },
+    new AjaxOptions
+    {
+        HttpMethod = "Get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "single-studio-form"
+    }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

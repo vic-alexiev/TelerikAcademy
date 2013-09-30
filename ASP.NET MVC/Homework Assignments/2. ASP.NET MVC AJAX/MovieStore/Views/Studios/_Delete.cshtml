@@ -1,0 +1,60 @@
+﻿@using System.Web.Mvc
+
+@model MovieStore.Models.Studio
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Studio</legend>
+
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Web Site")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WebSite)
+        </dd>
+
+    </dl>
+</fieldset>
+
+@using (Ajax.BeginForm(
+    "Delete",
+    "Studios",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnSuccess = "reloadPage"
+    },
+    new { id = "form-delete-studio" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn" />
+        <input type="button" value="Cancel" onclick="closeDeleteStudioForm()" class="btn" />
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<script>
+    function reloadPage() {
+        $("#single-studio-form").html("");
+        window.location = "/Studios";
+    }
+
+    function closeDeleteStudioForm() {
+        $("#single-studio-form").html("");
+    }
+</script>

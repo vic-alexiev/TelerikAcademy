@@ -1,0 +1,67 @@
+﻿@model MovieStore.Models.Movie
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Movie</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Leading Actor")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Leading Actress")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actress.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Director")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Director.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Studio")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Studio.Name)
+        </dd>
+
+    </dl>
+</fieldset>
+<p>
+    @Ajax.ActionLink("Edit", "Edit", new { id = Model.Id },
+    new AjaxOptions
+    {
+        HttpMethod = "Get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "single-movie-form"
+    }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

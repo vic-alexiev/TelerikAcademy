@@ -1,0 +1,74 @@
+﻿@using System.Web.Mvc
+
+@model MovieStore.Models.Actor
+
+@using (Ajax.BeginForm(
+    "Create",
+    "Actors",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnBegin = "onValidate",
+        OnSuccess = "reloadPage"
+    },
+    new { id = "form-create-actor" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <legend>Actor</legend>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Name)
+                @Html.ValidationMessageFor(model => model.Name, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.BirthDate, "Birth Date", new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.BirthDate)
+                @Html.ValidationMessageFor(model => model.BirthDate, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="btn" />
+            <input type="button" value="Cancel" onclick="closeCreateActorForm()" class="btn" />
+        </div>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function reloadPage() {
+        $("#single-actor-form").html("");
+        window.location = "/Actors";
+    }
+
+    function closeCreateActorForm() {
+        $("#single-actor-form").html("");
+    }
+
+    var onValidate = function (e) {
+        $.validator.unobtrusive.parse($("#form-create-actor"));
+        var isValid = $("#form-create-actor").valid();
+        if (!isValid) {
+            e.abort();
+
+        } else {
+            alert("Actor created successfully.");
+        }
+    };
+</script>
+

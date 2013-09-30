@@ -1,0 +1,35 @@
+﻿@model MovieStore.Models.Director
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Director</legend>
+    <dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Birth Date")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+    </dl>
+</fieldset>
+<p>
+    @Ajax.ActionLink("Edit", "Edit", new { id = Model.Id },
+    new AjaxOptions
+    {
+        HttpMethod = "Get",
+        InsertionMode = InsertionMode.Replace,
+        UpdateTargetId = "single-director-form"
+    }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

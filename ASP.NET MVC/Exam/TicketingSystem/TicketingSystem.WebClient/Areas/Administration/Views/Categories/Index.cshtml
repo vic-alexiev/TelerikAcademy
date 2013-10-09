@@ -1,0 +1,35 @@
+﻿@using TicketingSystem.WebClient.Models
+
+@{
+    ViewBag.Title = "Categories";
+}
+
+<h2>All categories</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@(Html.Kendo().Grid<CategoryViewModel>()
+    .Name("categories-grid")
+    .Columns(columns =>
+    {
+        columns.Bound(c => c.Id).Hidden();
+        columns.Bound(c => c.Name);
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(200);
+    })
+    .Editable(e => e.Mode(GridEditMode.InLine))
+    .Sortable()
+    .Filterable()
+    .DataSource(dataSource => dataSource
+            .Ajax()
+            .Model(model =>
+            {
+                model.Id(c => c.Id);
+                model.Field(c => c.Id).Editable(false);
+            })
+            .PageSize(10)
+            .Read(read => read.Action("Read", "Categories"))
+            .Update(update => update.Action("Edit", "Categories"))
+            .Destroy(destroy => destroy.Action("Delete", "Categories"))
+            )
+)

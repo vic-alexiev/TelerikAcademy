@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Ticketing System</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/kendo")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+
+</head>
+<body>
+    <div class="container">
+        <div>
+            @(Html.Kendo().Menu().Name("main-menu").Direction(MenuDirection.Bottom).Items(
+                    items =>
+                    {
+                        items.Add().Text("Home").Action("Index", "Home", new { area = "" });
+                        if (Request.IsAuthenticated)
+                        {
+
+                            if (!User.IsInRole("Administrator"))
+                            {
+                                items.Add().Text("Add ticket").Action("Create", "Tickets");
+                                items.Add().Text("View all tickets").Action("List", "Tickets");
+
+                            }
+
+                            if (User.IsInRole("Administrator"))
+                            {
+                                items.Add().Text("Categories").Action("Index", "Categories", new { area = "Administration" });
+                                items.Add().Text("Comments").Action("Index", "Comments", new { area = "Administration" });
+                            }
+
+                            items.Add().Text("Logout").HtmlAttributes(new { onclick = "getElementById('logoutForm').submit()", style = "float:right" });
+                            items.Add().Text("Hello, " + User.Identity.GetUserName() + "!").Action("Manage", "Account").HtmlAttributes(new { style = "float:right" });
+                        }
+                        else
+                        {
+                            items.Add().Text("Login").Action("Login", "Account");
+                            items.Add().Text("Register").Action("Register", "Account");
+                        }
+                    }))
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        <h1>Ticketing System</h1>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Ticketing System</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</body>
+</html>

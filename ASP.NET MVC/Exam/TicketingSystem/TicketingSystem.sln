@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingSystem.WebClient", "TicketingSystem.WebClient\TicketingSystem.WebClient.csproj", "{D239A0AD-9906-44C1-859A-807DFA4662E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingSystem.Models", "TicketingSystem.Models\TicketingSystem.Models.csproj", "{6FE1318B-C8A7-4D0D-B3A4-6E901C72854C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingSystem.Data", "TicketingSystem.Data\TicketingSystem.Data.csproj", "{194877EF-1B53-4F47-90EC-88BBD96D6A26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketingSystem.Repository", "TicketingSystem.Repository\TicketingSystem.Repository.csproj", "{630B04A6-7BC4-447E-A109-E5FF50DD4A61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{64EB4360-CFBB-4DD5-83B4-90394E2D8352}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D239A0AD-9906-44C1-859A-807DFA4662E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D239A0AD-9906-44C1-859A-807DFA4662E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D239A0AD-9906-44C1-859A-807DFA4662E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D239A0AD-9906-44C1-859A-807DFA4662E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FE1318B-C8A7-4D0D-B3A4-6E901C72854C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FE1318B-C8A7-4D0D-B3A4-6E901C72854C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FE1318B-C8A7-4D0D-B3A4-6E901C72854C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FE1318B-C8A7-4D0D-B3A4-6E901C72854C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194877EF-1B53-4F47-90EC-88BBD96D6A26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194877EF-1B53-4F47-90EC-88BBD96D6A26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194877EF-1B53-4F47-90EC-88BBD96D6A26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194877EF-1B53-4F47-90EC-88BBD96D6A26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{630B04A6-7BC4-447E-A109-E5FF50DD4A61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630B04A6-7BC4-447E-A109-E5FF50DD4A61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630B04A6-7BC4-447E-A109-E5FF50DD4A61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630B04A6-7BC4-447E-A109-E5FF50DD4A61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

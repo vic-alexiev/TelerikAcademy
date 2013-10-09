@@ -1,0 +1,31 @@
+﻿@using TicketingSystem.WebClient.Models
+@model IEnumerable<TicketViewModel>
+
+@{
+    ViewBag.Title = "Search result";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row-fluid">
+    @for (int i = 0; i < Model.Count(); i++)
+    {
+        var ticket = Model.ElementAt(i);
+        <div class="span4">
+            <h2>@ticket.Title</h2>
+            <div><strong>Category: </strong>@ticket.Category</div>
+            <div><strong>Author: </strong>@ticket.Author</div>
+            <div>@ticket.CommentsCount comment(s)</div>
+            <p><a class="btn" href="@Url.Action("Details", "Tickets", new { ticket.Id })">Details...</a></p>
+        </div>
+
+        if (i > 0 && i % 3 == 2)
+        {
+            @:</div>
+            @:<div class="row-fluid">
+        }
+    }
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

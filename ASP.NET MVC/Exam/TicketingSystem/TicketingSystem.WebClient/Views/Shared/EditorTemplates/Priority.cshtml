@@ -1,0 +1,14 @@
+﻿@using TicketingSystem.Models
+@using TicketingSystem.WebClient.Helpers
+    @model Priority
+
+    @{
+        Layout = null;
+    }
+
+
+    @(Html.Kendo()
+    .DropDownList()
+    .Name("Priority")
+    .BindTo(EnumsHelper.EnumToDropDownList(typeof(Priority)))
+    )

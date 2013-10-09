@@ -1,0 +1,79 @@
+﻿@using TicketingSystem.WebClient.Models
+@model TicketDetailedViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Title</h2>
+<h3>Category: @Model.Category</h3>
+
+<div class="row-fluid">
+    <div class="span4">
+        <div><strong>Author: </strong>@Model.Author</div>
+        <div><strong>Priority: </strong>@Model.PriorityName</div>
+    </div>
+    <div class="span4">
+        <img src="@Model.ScreenshotUrl" width="200" alt="@Model.Title" />
+    </div>
+    <div class="span4">
+        @if (!string.IsNullOrWhiteSpace(Model.Description))
+        {
+            <div><strong>Description: </strong>@Model.Description</div>
+        }
+    </div>
+</div>
+<div class="span12">
+    <div id="comments" class="span6">
+        @foreach (var comment in Model.Comments)
+        {
+            @Html.Partial("_Comment", comment)
+        }
+    </div>
+</div>
+
+@if (User.Identity.IsAuthenticated)
+{
+    using (Ajax.BeginForm(
+        "CreateComment",
+        "Tickets",
+        new { ticketId = Model.Id },
+        new AjaxOptions
+        {
+            HttpMethod = "Post",
+            OnSuccess = "clearInput",
+            OnBegin = "return validateContent(document.getElementById('content').value)",
+            InsertionMode = InsertionMode.InsertAfter,
+            UpdateTargetId = "comments"
+        },
+        new { id = "form-create-comment" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+        <fieldset>
+            <legend>Post comment</legend>
+            @Html.TextArea("content")
+            <br />
+            <input type="submit" class="btn" value="Submit" />
+        </fieldset>
+    }
+}
+<script>
+    function clearInput() {
+        $("#content").val("");
+    }
+
+    function validateContent(input) {
+
+        if (input == "") {
+            alert("Content cannot be empty.");
+            return false;
+        }
+
+        return true;
+    }
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

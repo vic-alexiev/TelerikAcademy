@@ -1,0 +1,60 @@
+﻿@using TicketingSystem.WebClient.Models
+
+<div class="row-fluid">
+    @using (Html.BeginForm("Search", "Tickets", FormMethod.Post))
+    {
+        <div>
+            Search by category
+        </div>
+        @(Html.Kendo()
+        .DropDownList()
+        .Name("Category")
+        .DataTextField("CategoryName")
+        .DataValueField("CategoryName")
+        .OptionLabel("All")
+        .DataSource(data =>
+        {
+            data.Read(read => read.Action("GetCategoriesData", "Tickets"));
+            data.ServerFiltering(true);
+        }))
+        <br />
+
+        <div>
+            <input type="submit" value="Search" class="btn" />
+        </div>
+    }
+</div>
+<br />
+
+@(Html.Kendo()
+    .ListView<TicketViewModel>()
+    .Name("tickets")
+    .TagName("div")
+    .ClientTemplateId("ticket-template")
+    .Pageable()
+    .DataSource(data =>
+    {
+        data.Read("GetTickets", "Tickets");
+        data.ServerOperation(true);
+        data.PageSize(6);
+    }))
+
+<script id="ticket-template" type="text/x-kendo-template">
+    <div class="row-fluid">
+        <div class="span3">
+            <h3>#: Title #</h3>
+        </div>
+        <div class="span2">
+            <h3>#: Category #</h3>
+        </div>
+        <div class="span2">
+            <h3>#: Author #</h3>
+        </div>
+        <div class="span2">
+            <h3>#: PriorityName #</h3>
+        </div>
+        <div class="span3">
+            <p><a href="/Tickets/Details/#: Id #" class="btn">Details...</a></p>
+        </div>
+    </div>
+</script>

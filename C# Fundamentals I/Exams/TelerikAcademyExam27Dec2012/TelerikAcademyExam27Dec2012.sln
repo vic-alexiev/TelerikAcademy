@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextDate", "NextDate\NextDate.csproj", "{63D1650B-68A9-4E9D-9768-66159935958B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TribonacciTriangle", "TribonacciTriangle\TribonacciTriangle.csproj", "{77D3E449-1261-476A-8DEE-19EA389B1D17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sheets", "Sheets\Sheets.csproj", "{1EE8CC87-AAEB-4339-84EE-C1D7BED190D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carpets", "Carpets\Carpets.csproj", "{C61603BF-FDB0-452D-9FE7-45B47EC678FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormulaBit1", "FormulaBit1\FormulaBit1.csproj", "{6C2BD629-6E61-4333-9E42-5787C7E09EE2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B826D4A8-9533-45B2-A6B6-420B828826C0}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\1. Next Date.docx = Docs\1. Next Date.docx
+		Docs\2. Tribonacci Triangle.doc = Docs\2. Tribonacci Triangle.doc
+		Docs\3. Sheets.doc = Docs\3. Sheets.doc
+		Docs\4. Carpets.doc = Docs\4. Carpets.doc
+		Docs\5. Formula Bit 1.doc = Docs\5. Formula Bit 1.doc
+		Docs\Problems.doc = Docs\Problems.doc
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63D1650B-68A9-4E9D-9768-66159935958B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D1650B-68A9-4E9D-9768-66159935958B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D1650B-68A9-4E9D-9768-66159935958B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D1650B-68A9-4E9D-9768-66159935958B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77D3E449-1261-476A-8DEE-19EA389B1D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77D3E449-1261-476A-8DEE-19EA389B1D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77D3E449-1261-476A-8DEE-19EA389B1D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77D3E449-1261-476A-8DEE-19EA389B1D17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EE8CC87-AAEB-4339-84EE-C1D7BED190D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EE8CC87-AAEB-4339-84EE-C1D7BED190D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EE8CC87-AAEB-4339-84EE-C1D7BED190D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EE8CC87-AAEB-4339-84EE-C1D7BED190D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61603BF-FDB0-452D-9FE7-45B47EC678FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61603BF-FDB0-452D-9FE7-45B47EC678FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61603BF-FDB0-452D-9FE7-45B47EC678FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61603BF-FDB0-452D-9FE7-45B47EC678FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2BD629-6E61-4333-9E42-5787C7E09EE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2BD629-6E61-4333-9E42-5787C7E09EE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2BD629-6E61-4333-9E42-5787C7E09EE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2BD629-6E61-4333-9E42-5787C7E09EE2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

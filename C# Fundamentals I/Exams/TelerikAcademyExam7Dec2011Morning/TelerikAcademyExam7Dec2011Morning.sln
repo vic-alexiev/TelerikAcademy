@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FighterAttack", "FighterAttack\FighterAttack.csproj", "{C1ED4F3B-DD85-41ED-91AD-B674DE654979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstrologicalDigits", "AstrologicalDigits\AstrologicalDigits.csproj", "{F6593811-7679-4939-B21D-98A585F32B06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandGlass", "SandGlass\SandGlass.csproj", "{6CC01E9D-3F4F-498E-A87A-5C9CDABFACD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lines", "Lines\Lines.csproj", "{9D778FDA-1DBF-4D42-BAF1-0A69D899CE96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DancingBits", "DancingBits\DancingBits.csproj", "{10728342-129E-4F74-BDAD-EA7DCAA137B5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{863AEF04-7C8A-416B-9F45-B1DD2B85C5CF}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\Problem 1 – Fighter Attack.doc = Docs\Problem 1 – Fighter Attack.doc
+		Docs\Problem 2 – Astrological Digits.doc = Docs\Problem 2 – Astrological Digits.doc
+		Docs\Problem 3 – Sand-glass.doc = Docs\Problem 3 – Sand-glass.doc
+		Docs\Problem 4 – Dancing Bits.doc = Docs\Problem 4 – Dancing Bits.doc
+		Docs\Problem 5 – Lines.doc = Docs\Problem 5 – Lines.doc
+		Docs\Variant 2.doc = Docs\Variant 2.doc
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1ED4F3B-DD85-41ED-91AD-B674DE654979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1ED4F3B-DD85-41ED-91AD-B674DE654979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1ED4F3B-DD85-41ED-91AD-B674DE654979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1ED4F3B-DD85-41ED-91AD-B674DE654979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6593811-7679-4939-B21D-98A585F32B06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6593811-7679-4939-B21D-98A585F32B06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6593811-7679-4939-B21D-98A585F32B06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6593811-7679-4939-B21D-98A585F32B06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC01E9D-3F4F-498E-A87A-5C9CDABFACD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC01E9D-3F4F-498E-A87A-5C9CDABFACD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC01E9D-3F4F-498E-A87A-5C9CDABFACD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC01E9D-3F4F-498E-A87A-5C9CDABFACD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D778FDA-1DBF-4D42-BAF1-0A69D899CE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D778FDA-1DBF-4D42-BAF1-0A69D899CE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D778FDA-1DBF-4D42-BAF1-0A69D899CE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D778FDA-1DBF-4D42-BAF1-0A69D899CE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10728342-129E-4F74-BDAD-EA7DCAA137B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10728342-129E-4F74-BDAD-EA7DCAA137B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10728342-129E-4F74-BDAD-EA7DCAA137B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10728342-129E-4F74-BDAD-EA7DCAA137B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

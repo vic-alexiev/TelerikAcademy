@@ -1,0 +1,10 @@
+﻿<Window x:Class="ObjBinRemover.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="358.955" Width="762.313">
+    <Grid>
+        <Button x:Name="buttonBrowse" Margin="591,39,39,223" Click="buttonBrowse_Click">...</Button>
+        <TextBox x:Name="textBoxChosenFolder" Margin="24,39,181,223"></TextBox>
+        <Button x:Name="buttonOK" Margin="591,172,39,90" Content="OK" RenderTransformOrigin="0.086,3.427" Click="buttonOK_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Joro the Naughty</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/JoroTheNaughty.js"></script>
+</head>
+<body onload="handleSolveIO()">
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function handleSolveIO() {
+
+            jsConsole.clear();
+
+            var args = ["6 7 3", "0 0", "2 2", "-2 2", "3 -1"];
+
+            var result = Solve(args);
+
+            jsConsole.writeLine(result);
+        }
+    </script>
+</body>
+</html>

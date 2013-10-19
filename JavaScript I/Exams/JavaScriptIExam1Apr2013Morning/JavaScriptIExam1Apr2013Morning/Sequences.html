@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Web page for JS testing purposes</title>
+    <link href="styles/js-console.css" rel="stylesheet" />
+    <script src="scripts/Sequences.js"></script>
+</head>
+<body onload="handleSolveIO()">
+    <div id="js-console"></div>
+    <script src="scripts/js-console.js"></script>
+    <script>
+        function handleSolveIO() {
+
+            jsConsole.clear();
+
+            var params = ["9", "1", "8", "8", "7", "6", "5", "7", "7", "6"];
+
+            var result = Solve(params);
+
+            jsConsole.writeLine(result);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicLanguage", "BasicLanguage\BasicLanguage.csproj", "{51DD96A2-FFD3-43D1-BEE9-64D3484FA570}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessagesInABottle", "MessagesInABottle\MessagesInABottle.csproj", "{543A7F42-2983-4D0A-944A-F52160433989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cooking", "Cooking\Cooking.csproj", "{C29F1266-E888-4444-8102-A0BF7280056F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeDSlices", "ThreeDSlices\ThreeDSlices.csproj", "{99287323-C185-41BA-B5D8-6B5FEFBC0B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecretLanguage", "SecretLanguage\SecretLanguage.csproj", "{9D6DC665-3D62-4AAB-AC79-771D40A2373C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{654AC875-DAF5-485A-BC3D-D7322A15C88C}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\CSharp-Exam-II-Second-Day-7-Feb-2012.pdf = Docs\CSharp-Exam-II-Second-Day-7-Feb-2012.pdf
+		Docs\Problem 1 Basic Language.doc = Docs\Problem 1 Basic Language.doc
+		Docs\Problem 2 Messages in a Bottle.doc = Docs\Problem 2 Messages in a Bottle.doc
+		Docs\Problem 3 Cooking.doc = Docs\Problem 3 Cooking.doc
+		Docs\Problem 4 3D Slices.doc = Docs\Problem 4 3D Slices.doc
+		Docs\Problem 5 Secret Language.doc = Docs\Problem 5 Secret Language.doc
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51DD96A2-FFD3-43D1-BEE9-64D3484FA570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51DD96A2-FFD3-43D1-BEE9-64D3484FA570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51DD96A2-FFD3-43D1-BEE9-64D3484FA570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51DD96A2-FFD3-43D1-BEE9-64D3484FA570}.Release|Any CPU.Build.0 = Release|Any CPU
+		{543A7F42-2983-4D0A-944A-F52160433989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{543A7F42-2983-4D0A-944A-F52160433989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{543A7F42-2983-4D0A-944A-F52160433989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{543A7F42-2983-4D0A-944A-F52160433989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C29F1266-E888-4444-8102-A0BF7280056F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C29F1266-E888-4444-8102-A0BF7280056F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C29F1266-E888-4444-8102-A0BF7280056F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C29F1266-E888-4444-8102-A0BF7280056F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99287323-C185-41BA-B5D8-6B5FEFBC0B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99287323-C185-41BA-B5D8-6B5FEFBC0B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99287323-C185-41BA-B5D8-6B5FEFBC0B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99287323-C185-41BA-B5D8-6B5FEFBC0B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D6DC665-3D62-4AAB-AC79-771D40A2373C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D6DC665-3D62-4AAB-AC79-771D40A2373C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D6DC665-3D62-4AAB-AC79-771D40A2373C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D6DC665-3D62-4AAB-AC79-771D40A2373C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

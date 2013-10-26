@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Library</title>
+    <link href="Content/normalize.css" rel="stylesheet" />
+    <link href="Content/style.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <script type="text/x-handlebars">
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#">Library</a>
+                <ul class="nav">
+                    <li>{{#link-to 'books'}}Books{{/link-to}}</li>
+                    <li>{{#link-to 'about'}}About{{/link-to}}</li>
+                </ul>
+            </div>
+        </div>
+
+        {{outlet}}
+    </script>
+
+    <script type="text/x-handlebars" id="books">
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span4">
+                    <table class='table'>
+                        <thead>
+                            <tr><th>Books</th></tr>
+                        </thead>
+                        {{#each model}}
+                        <tr>
+                            <td>
+                                {{#link-to 'book' this}}{{title}} <small class='muted'>by {{author}}</small>{{/link-to}}
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </table>
+                </div>
+                <div class="span8">
+                    {{outlet}}
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="books/index">
+        <p class="text-warning">Please select a book.</p>
+    </script>
+
+    <script type="text/x-handlebars" id="book">
+        {{#if isEditing}}
+        {{partial 'book/edit'}}
+        <button class="btn" {{action 'doneEditing' }}>Done</button>
+        {{else}}
+        <button class="btn" {{action 'edit' }}>Edit</button>
+        {{/if}}
+
+        <button class="btn" {{action 'remove' }}>Delete</button>
+
+        <h1>{{title}}</h1>
+        <h2>by {{author}} <small class='muted'>({{format-date publicationDate}})</small></h2>
+
+        <p><strong>Web site: </strong><a target="_blank" {{bind-attr href="webSite" }}>{{webSite}}</a></p>
+        <p><strong>ISBN: </strong>{{isbn}}</p>
+        <p><strong>Category: </strong>{{category}}</p>
+
+        <hr>
+
+        <div class='below-the-fold'>
+            {{format-markdown description}}
+        </div>
+    </script>
+
+    <script type="text/x-handlebars" id="book/edit">
+        <table>
+            <tr>
+                <td class="left-col"><strong>Title:&nbsp;</strong></td>
+                <td>{{input type="text" value=title}}</td>
+            </tr>
+            <tr>
+                <td class="left-col"><strong>Web site:&nbsp;</strong></td>
+                <td>{{input type="text" value=webSite}}</td>
+            </tr>
+            <tr>
+                <td class="left-col"><strong>ISBN:&nbsp;</strong></td>
+                <td>{{input type="text" value=isbn}}</td>
+            </tr>
+            <tr>
+                <td class="left-col"><strong>Category:&nbsp;</strong></td>
+                <td>{{input type="text" value=category}}</td>
+            </tr>
+            <tr>
+                <td class="left-col"><strong>Description:&nbsp;</strong></td>
+                <td>{{textarea value=description}}</td>
+            </tr>
+        </table>
+    </script>
+
+    <script type="text/x-handlebars" id="about">
+        <div class="about">
+            <h1>British Library</h1>
+            <p>The British Library is the national library of the United Kingdom. The library is a major research library, holding over 150 million items from many countries, in many languages and in many formats, both print and digital: books, manuscripts, journals, newspapers, magazines, sound and music recordings, videos, play-scripts, patents, databases, maps, stamps, prints, drawings. The Library's collections include around 14 million books, along with substantial holdings of manuscripts and historical items dating back as far as 2000 BC. British Library is one of the two largest libraries in the world, the other being the Library of Congress of the United States.</p>
+            <p>As a legal deposit library, the British Library receives copies of all books produced in the United Kingdom and Ireland, including a significant proportion of overseas titles distributed in the UK. It also has a programme for content acquisitions. The British Library adds some three million items every year occupying 9.6 kilometres (6.0 mi) of new shelf space.</p>
+            <p>The library is a non-departmental public body sponsored by the Department for Culture, Media and Sport. It is located on the north side of Euston Road in St Pancras, London (between Euston railway station and St Pancras railway station) and has a document storage centre and reading room at Boston Spa, Wetherby in West Yorkshire.</p>
+            <p>The library was originally a department of the British Museum and from the mid-19th century occupied the famous circular British Museum Reading Room. It became legally separate in 1973, and by 1997 had moved into its new purpose-built building at St Pancras, London.</p>
+        </div>
+    </script>
+
+    <script src="Scripts/libs/jquery-1.8.3.js"></script>
+    <script src="Scripts/libs/handlebars.js"></script>
+    <script src="Scripts/libs/ember-1.0.0.debug.js"></script>
+    <script src="Scripts/libs/ember-data.js"></script>
+    <script src="Scripts/libs/showdown.min.js"></script>
+    <script src="Scripts/libs/moment.min.js"></script>
+    <script src="Scripts/libs/http-requester.js"></script>
+    <script src="Scripts/app/app.js"></script>
+</body>
+</html>

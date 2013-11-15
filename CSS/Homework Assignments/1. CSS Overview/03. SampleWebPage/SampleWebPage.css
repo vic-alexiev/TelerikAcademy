@@ -1,0 +1,53 @@
+﻿body {
+    font-family: 'Times New Roman', serif;
+    background-color: rgb(169, 169, 169);
+    font-size: 1em;
+    color: black;
+}
+
+h1 {
+    color: rgb(250, 250, 210);
+}
+
+body > header > h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+article > header > h1 {
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.7em;
+        font-weight: bold;
+    }
+
+.current {
+    background-color: rgb(211, 211, 211);
+}
+
+nav ul li:last-of-type a {
+    text-decoration: underline;
+}
+
+article > p {
+    font-size: 1.2em;
+}
+
+p a {
+    text-decoration: none;
+    color: black;
+}
+
+body > footer {
+    font-size: 1.2em;
+    text-align: center;
+}

@@ -1,0 +1,91 @@
+﻿.directory-view ul,
+.directory-view li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.directory-view input {
+    position: absolute;
+    opacity: 0;
+}
+
+.directory-view {
+    font: normal 11px "Segoe UI", Arial, Sans-serif;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+    .directory-view a {
+        color: #000;
+        text-decoration: none;
+    }
+
+        .directory-view a:hover {
+            text-decoration: underline;
+        }
+
+    .directory-view input + label + ul {
+        margin: 0 0 0 22px;
+    }
+
+    .directory-view input ~ ul {
+        display: none;
+    }
+
+    .directory-view label,
+    .directory-view label::before {
+        cursor: pointer;
+    }
+
+    .directory-view input:checked ~ ul {
+        display: block;
+    }
+
+    .directory-view label,
+    .directory-view label::before {
+        background: url("images/icons.png") no-repeat;
+    }
+
+        .directory-view label,
+        .directory-view a,
+        .directory-view label::before {
+            display: inline-block;
+            height: 16px;
+            line-height: 16px;
+            vertical-align: middle;
+        }
+
+    .directory-view label {
+        background-position: 18px 0;
+    }
+
+        .directory-view label::before {
+            content: "";
+            width: 16px;
+            margin: 0 22px 0 0;
+            vertical-align: middle;
+            background-position: 0 -32px;
+        }
+
+    .directory-view input:checked + label::before {
+        background-position: 0 -16px;
+    }
+
+/* webkit adjacent element selector bugfix */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .directory-view {
+        -webkit-animation: webkit-adjacent-element-selector-bugfix infinite 1s;
+    }
+
+    @-webkit-keyframes webkit-adjacent-element-selector-bugfix {
+        from {
+            padding: 0;
+        }
+
+        to {
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,94 @@
+﻿body {
+    background-color: #3B3B3B;
+    color: #A4A4A4;
+    padding: 0px;
+    margin: 0px;
+    font: 13px/17px Verdana, Arial, Helvetica, sans-serif;
+}
+
+div, h2, p, img {
+    margin: 0px;
+    padding: 0px;
+}
+
+#top {
+    width: 778px;
+    height: 77px;
+    position: relative;
+    margin: 0 auto;
+    background: url(images/form_shadow.jpg) 0 100% no-repeat;
+}
+
+    #top form {
+        width: 690px;
+        height: 77px;
+        margin: 0;
+        padding: 0 0 0 88px;
+    }
+
+        #top form label {
+            width: 177px;
+            height: 44px;
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #3B3B3B;
+            display: block;
+            float: left;
+            background-image: url(images/level.jpg);
+            background-repeat: no-repeat;
+            background-position: left top;
+            padding-left: 60px;
+            line-height: 44px;
+            margin-top: 17px;
+        }
+
+        #top form input {
+            width: 135px;
+            height: 18px;
+            float: left;
+            display: block;
+            margin: 28px 25px 0 0;
+            padding: 0 0 0 10px;
+        }
+
+            #top form input.button {
+                width: 56px;
+                height: 28px;
+                float: left;
+                background: url(images/button.gif) 0 0 no-repeat #3A3A3A;
+                border: none;
+                color: #fff;
+                font: 14px/28px Verdana, Arial, Helvetica, sans-serif;
+                margin: 26px 0 0;
+                padding: 0px;
+            }
+
+
+#main {
+    width: 602px;
+    position: relative;
+    margin: 0 auto;
+    padding: 0 88px;
+    clear: both;
+}
+
+    #main h2 {
+        width: 400px;
+        height: 68px;
+        display: block;
+        background: #3B3B3B;
+        color: #FBD61A;
+        font: 28px/68px Georgia, "Times New Roman", Times, serif;
+        font-weight: normal;
+    }
+
+    #main p.lasttext {
+        padding: 0 0 25px 0;
+    }
+
+    #main p span {
+        background: #3B3B3B;
+        color: #fff;
+    }

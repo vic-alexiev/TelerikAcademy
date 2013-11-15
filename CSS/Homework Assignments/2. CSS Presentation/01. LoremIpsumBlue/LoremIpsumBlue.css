@@ -1,0 +1,15 @@
+﻿body {
+    font-family: Consolas, monospace;
+    font-size: 1em;
+    color: #0094ff;
+}
+
+p:first-letter {
+    font-family: 'Edwardian Script ITC', Consolas, monospace;
+    font-size: 2.2em;
+}
+
+p:first-line {
+    font-weight: bold;
+    line-height: 40px;
+}

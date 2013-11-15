@@ -1,0 +1,57 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    background-color: rgb(89, 89, 89);
+}
+
+th, td {
+    text-align: left;
+    vertical-align: top;
+}
+
+td {
+    height: 40px;
+}
+
+th#ticket-id {
+    height: 50px;
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+td.left-col {
+    width: 145px;
+    font-style: italic;
+    color: rgb(232, 232, 232);
+}
+
+td#name, a#email, a#link-to-public-post {
+    color: rgb(235, 225, 163);
+    text-decoration: none;
+}
+
+div#name-remark {
+    padding-top: 7px;
+    padding-bottom: 20px;
+    color: rgb(253, 6, 10);
+    font-weight: bold;
+}
+
+td#response-time, td#last-action, th#ticket-id {
+    color: rgb(172, 172, 172);
+}
+
+td#status {
+    font-weight: bold;
+    color: rgb(221, 105, 41);
+}
+
+div#circle {
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    background-color: rgb(113, 180, 122);
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+}

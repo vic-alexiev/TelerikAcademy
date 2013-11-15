@@ -1,0 +1,224 @@
+﻿/*
+      Created by Keith Donegan of Code-Sucks.com
+	  
+	  E-Mail: Keithdonegan@gmail.com
+	  
+	  You can do whatever you want with these layouts,
+	  but it would be greatly appreciated if you gave a link
+	  back to http://www.code-sucks.com
+	  
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    font-size: .7em;
+    color: black;
+    background-color: #f1f1f1;
+}
+
+img {
+    border: 0;
+}
+
+#wrapper {
+    width: 900px;
+}
+
+#leftcolumn {
+    border: none;
+    color: #900B09;
+    background: #f1f1f1;
+    margin: 2px 2px 5px 2px;
+    padding-left: 1px;
+    width: 137px;
+    float: left;
+}
+
+    #leftcolumn nav > ul > li {
+        margin-top: 13px;
+    }
+
+#middlecolumn {
+    float: left;
+    border: 1px solid gray;
+    background: white;
+    margin: 2px 2px 5px 0px;
+    padding: 5px;
+    width: 488px;
+    display: inline;
+}
+
+#rightcolumn {
+    background: #f1f1f1;
+    margin: 2px 0px 5px 0px;
+    height: 500px;
+    float: left;
+    position: relative;
+}
+
+a:link {
+    color: #900B09;
+    background-color: transparent;
+}
+
+a:visited {
+    color: #900B09;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #FF0000;
+    background-color: transparent;
+}
+
+a:active {
+    color: #FF0000;
+    background-color: transparent;
+}
+
+a.left:link {
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+}
+
+a.left:visited {
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+}
+
+a.left:hover {
+    text-decoration: underline;
+    color: black;
+    background-color: transparent;
+}
+
+a.left:active {
+    text-decoration: underline;
+    color: black;
+    background-color: transparent;
+}
+
+h1, h2 {
+    background-color: transparent;
+    color: black;
+}
+
+h1 {
+    font-size: 1.6em;
+    margin: 12px 0 12px 0;
+}
+
+hr {
+    height: 1px;
+    margin: 6px 0 5px 0;
+}
+
+    hr#hr-middle {
+        margin-bottom: 6px;
+    }
+
+article#first-article {
+    margin-bottom: 23px;
+}
+
+article#last-article {
+    margin-bottom: 29px;
+}
+
+article + article {
+    margin-bottom: 11px;
+}
+
+h2.tutheader {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    padding: 0 0 1px 4px;
+    color: #ffffff;
+    background-color: #808080;
+}
+
+img#css-image {
+    float: left;
+    margin-right: 15px;
+}
+
+div#css-tutorial {
+    float: left;
+    display: inline;
+    width: 378px;
+}
+
+p.intro {
+    text-align: left;
+    font-size: 1em;
+    font-weight: bold;
+    color: black;
+    background-color: transparent;
+}
+
+.para-first {
+    margin-top: 10px;
+}
+
+.para-middle {
+    margin-top: 11px;
+}
+
+.para-last {
+    margin-top: 12px;
+}
+
+section.right {
+    width: 143px;
+    color: black;
+    background-color: white;
+    border: 1px solid gray;
+    padding-bottom: 6px;
+    margin-bottom: 1px;
+    text-align: center;
+}
+
+section.no-heading {
+    padding-top: 3px;
+}
+
+h2.right {
+    font-size: 1em;
+    text-align: center;
+    color: white;
+    background-color: #808080;
+    padding-bottom: 2px;
+    margin-bottom: 3px;
+}
+
+form#search-form {
+    margin-top: 9px;
+    margin-bottom: 6px;
+}
+
+    form#search-form input[type=text] {
+        width: 90px;
+        height: 15px;
+        vertical-align: middle;
+    }
+
+    form#search-form input[type=submit] {
+        width: 20px;
+        height: 19px;
+        font-weight: bold;
+        vertical-align: middle;
+    }

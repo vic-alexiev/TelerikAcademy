@@ -1,0 +1,32 @@
+﻿body {
+    font-family: 'Times New Roman',serif;
+    font-size: 1em;
+}
+
+ul#treeview > li > a {
+    color: black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+    ul li ul {
+        display: none;
+    }
+
+    ul li:hover > ul {
+        display: block;
+    }
+
+    ul li ul li a {
+        color: rgb(159, 171, 185);
+    }
+
+    ul li a {
+        text-decoration: none;
+    }
+
+        ul li a:hover {
+            text-decoration: underline;
+        }

@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Windows Calculator</title>
+    <link rel="stylesheet" type="text/css" href="WindowsCalculator.css" />
+    <script src="WindowsCalculator.js"></script>
+</head>
+<body>
+    <form>
+        <div id="main">
+            <div id="menubar">
+                <ul id="menu">
+                    <li><a href="#">View</a></li>
+                    <li><a href="#">Edit</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div>
+            <div id="content">
+                <div id="result">
+                    <input type="text" id="textbox" value="8854455" readonly="readonly" />
+                </div>
+                <div id="binary-representation">
+                    <ul class="binary-row">
+                        <li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li><li>00</li>
+                    </ul>
+                    <ul class="index-row">
+                        <li>63</li><li>47</li><li>32</li>
+                    </ul>
+                    <ul class="binary-row">
+                        <li>00</li><li>00</li><li>00</li><li>00</li><li>10</li><li>00</li><li>01</li><li>11</li><li>00</li><li>01</li><li>10</li><li>11</li><li>10</li><li>11</li><li>01</li><li>11</li>
+                    </ul>
+                    <ul class="index-row">
+                        <li>31</li><li>15</li><li>0</li>
+                    </ul>
+                </div>
+
+
+                <div class="big-button-container clearfix">
+                    <div class="groupbox">
+                        <ul class="radiobuttons">
+                            <li>
+                                <label>
+                                    <input type="radio" name="numeralSystem" value="hex" />
+                                    Hex</label>
+
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="numeralSystem" value="dec" checked="checked" />
+                                    Dec</label>
+
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="numeralSystem" value="oct" />
+                                    Oct</label>
+
+                            </li>
+                            <li>
+                                <label>
+                                    <input type="radio" name="numeralSystem" value="bin" />
+                                    Bin</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="button-container">
+                        <button id="dummy"></button>
+                        <button class="operator">Mod</button>
+                        <button class="disabled hex-digit">A</button>
+                        <button class="memory">MC</button>
+                        <button class="memory">MR</button>
+                        <button class="memory">MS</button>
+                        <button class="memory">M+</button>
+                        <button class="memory">M-</button>
+                    </div>
+
+                    <div class="button-container">
+                        <button class="operator">(</button>
+                        <button class="operator">)</button>
+                        <button class="disabled hex-digit">B</button>
+                        <button class="operator" onmouseover="swapImage('on')" onmouseout="swapImage('off')">
+                            <img id="left-arrow" width="18" height="8" src="images/LeftArrow.png" /></button>
+                        <button class="operator">CE</button>
+                        <button class="operator">C</button>
+                        <button class="operator">&#177;</button>
+                        <button class="disabled disabled-operator">&radic;</button>
+                    </div>
+
+                    <div class="button-container">
+                        <button class="operator">RoL</button>
+                        <button class="operator">RoR</button>
+                        <button class="disabled hex-digit">C</button>
+                        <button class="dec-digit">7</button>
+                        <button class="dec-digit">8</button>
+                        <button class="dec-digit">9</button>
+                        <button class="operator">/</button>
+                        <button class="disabled disabled-operator">%</button>
+                    </div>
+                </div>
+
+
+
+                <div class="big-button-container clearfix">
+                    <div class="groupbox">
+                        <ul class="radiobuttons">
+                            <li>
+                                <label>
+                                    <input type="radio" name="wordSize" value="qword" checked="checked" />
+                                    Qword</label>
+                            </li>
+                            <li>
+
+                                <label>
+                                    <input type="radio" name="wordSize" value="dword" />
+                                    Dword</label>
+                            </li>
+                            <li>
+
+                                <label>
+                                    <input type="radio" name="wordSize" value="word" />
+                                    Word</label>
+                            </li>
+                            <li>
+
+                                <label>
+                                    <input type="radio" name="wordSize" value="byte" />
+                                    Byte</label>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="button-container">
+                        <button class="operator">Or</button>
+                        <button class="operator">Xor</button>
+                        <button class="disabled hex-digit">D</button>
+                        <button class="dec-digit">4</button>
+                        <button class="dec-digit">5</button>
+                        <button class="dec-digit">6</button>
+                        <button class="operator basic-operator">*</button>
+                        <button class="disabled disabled-operator">1/<span id="x">x</span></button>
+                    </div>
+
+                    <div id="composite-button-container">
+                        <div class="button-container">
+                            <button class="operator">Lsh</button>
+                            <button class="operator">Rsh</button>
+                            <button class="disabled hex-digit">E</button>
+                            <button class="dec-digit">1</button>
+                            <button class="dec-digit">2</button>
+                            <button class="dec-digit">3</button>
+                            <button class="operator basic-operator">-</button>
+                        </div>
+
+                        <div class="button-container">
+                            <button class="operator">Not</button>
+                            <button class="operator">And</button>
+                            <button class="disabled hex-digit">F</button>
+                            <button id="zero" class="dec-digit">0</button>
+                            <button class="disabled disabled-operator basic-operator">.</button>
+                            <button class="operator basic-operator">+</button>
+                        </div>
+                    </div>
+
+                    <button id="equals-operator" class="operator">=</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

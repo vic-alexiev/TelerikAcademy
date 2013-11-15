@@ -1,0 +1,33 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  background-image: url("../images/fleurdelis.png");
+  font-size: 1em; }
+  body img {
+    border: none; }
+  body div#main ul {
+    margin-left: 8px;
+    list-style-type: none; }
+    body div#main ul li {
+      display: inline-block; }
+      body div#main ul li input[type=radio] {
+        position: absolute;
+        top: -9999px;
+        left: -9999px; }
+      body div#main ul li figure {
+        display: none;
+        position: absolute;
+        left: 8px;
+        width: 332px;
+        height: 429px; }
+        body div#main ul li figure figcaption {
+          color: #eee9b8;
+          background-color: #040b26;
+          text-align: center;
+          font-family: 'Viner Hand ITC', serif;
+          font-weight: bold; }
+      body div#main ul li input[type=radio]:checked ~ figure {
+        display: block; }
+

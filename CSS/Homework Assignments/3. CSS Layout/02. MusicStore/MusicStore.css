@@ -1,0 +1,91 @@
+﻿html, body, h2 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    color: #333;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    a:hover {
+        color: #f00;
+    }
+
+.left {
+    float: left;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+body {
+    font: 12px arial, sans-serif;
+}
+
+#wrapper {
+    margin: 0 auto;
+    background: #eee;
+    padding: 28px 23px 28px 31px;
+    width: 440px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+#main {
+    width: 384px;
+    background: #eee;
+}
+
+    #main .box {
+        padding: 15px;
+        background: #fff;
+        border: 1px solid #999;
+        margin: 3em 0;
+    }
+
+    #main h2 {
+        font: 18px "arial narrow", arial, sans-serif;
+    }
+
+    #main .box p {
+        text-align: left;
+        margin: 0 0 1em 0;
+    }
+
+    #main .box .left {
+        margin-right: 15px;
+        border: 1px solid #999;
+    }
+
+    #main .box .buttons {
+        text-align: right;
+        padding-top: 10px;
+        position: relative;
+    }
+
+.buttons a {
+    background: left #CC0000 url(images/button.gif) repeat-y;
+    border: 2px solid #E68282;
+    border-color: #E68282 #650000 #650000 #9C2828;
+    color: #fff;
+    font-weight: normal;
+    padding: 3px 15px 3px 20px;
+    position: relative;
+}
+
+    .buttons a:hover {
+        background-color: #EF1818;
+        color: #fff;
+    }

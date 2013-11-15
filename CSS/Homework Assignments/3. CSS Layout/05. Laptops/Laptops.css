@@ -1,0 +1,140 @@
+﻿/*
+      Created by Keith Donegan of Code-Sucks.com
+	  
+	  E-Mail: Keithdonegan@gmail.com
+	  
+	  You can do whatever you want with these layouts,
+	  but it would be greatly appreciated if you gave a link
+	  back to http://www.code-sucks.com
+	  
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+body {
+    font-family: Corbel, sans-serif;
+    font-size: 1em;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 662px;
+    border: 2px ridge rgb(144, 144, 144);
+}
+
+#navigation {
+    text-align: center;
+    width: 660px;
+    float: left;
+    padding: 5px 0 5px 0;
+    height: 30px;
+}
+
+hr {
+    width: 622px;
+    height: 1px;
+    background: rgb(60, 60, 60);
+    margin: 3px auto auto auto;
+}
+
+#leftcolumn {
+    border: 2px ridge rgb(144, 144, 144);
+    margin: 6px 0 6px 6px;
+    padding: 10px 0 10px 5px;
+    width: 433px;
+    float: left;
+}
+
+#rightcolumn {
+    float: right;
+    width: 203px;
+    padding-top: 66px;
+    display: inline;
+    position: relative;
+}
+
+ul#laptop-brands {
+    list-style-type: none;
+}
+
+    ul#laptop-brands li {
+        font-size: 1.4em;
+        font-weight: bold;
+        display: inline;
+    }
+
+        ul#laptop-brands li a {
+            color: rgb(0, 171, 239);
+        }
+
+section.laptop {
+    width: 200px;
+    float: left;
+    border: 2px ridge rgb(144, 144, 144);
+    display: inline-block;
+    padding: 0 0 6px 5px;
+    margin: 12px 6px 0 0;
+}
+
+    section.laptop div.container {
+        float: left;
+        display: inline-block;
+    }
+
+    section.laptop header h1 {
+        width: 132px;
+        font-size: 1em;
+        font-weight: normal;
+        background-color: white;
+        text-align: center;
+        margin: -11px auto 0 auto;
+        padding: 0 8px 0 4px;
+    }
+
+    section.laptop div.container img {
+        margin-top: 6px;
+    }
+
+    section.laptop div.container div.price {
+        margin-top: 13px;
+        margin-left: 31px;
+    }
+
+    section.laptop div.container div.ssd {
+        margin-top: 28px;
+    }
+
+    section.laptop div.container div.ddr, section.laptop div.container div.cpu {
+        margin-top: 10px;
+    }
+
+div.parameter {
+    width: 100%;
+    font-size: 1.3em;
+    margin-top: 13px;
+}
+
+    div.parameter span.price {
+        display: inline-block;
+        margin-left: 16px;
+    }
+
+    div.parameter span.ram {
+        display: inline-block;
+        margin-left: 25px;
+    }
+
+    div.parameter input {
+        width: 161px;
+        margin: 8px 0 0 8px;
+    }

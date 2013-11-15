@@ -1,0 +1,51 @@
+﻿body {
+    font-family: 'Segoe UI', Candara, Arial, sans-serif;
+    font-size: .9em;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px ridge rgb(212, 211, 194);
+}
+
+tr:nth-child(2n) {
+    background-color: rgb(236, 236, 216);
+}
+
+thead {
+    background-color: rgb(84, 183, 6);
+    text-align: left;
+    color: rgb(246, 254, 247);
+}
+
+th, td {
+    height: 30px;
+    font-weight: normal;
+    padding-left: 7px;
+}
+
+col#contact-name {
+    width: 160px;
+}
+
+col#city {
+    width: 130px;
+}
+
+col#country {
+    width: 150px;
+}
+
+col#is-promoted {
+    width: 90px;
+}
+
+img {
+    vertical-align: top;
+    padding-top: 2px;
+}
+
+span.country {
+    padding-top: 2px;
+    margin-left: 5px;
+}

@@ -1,0 +1,12 @@
+﻿body {
+    width: 600px;
+}
+
+div {
+    background-color: black;
+    border: 1px solid red;
+    border-radius: 70px;
+    padding-right: 5px;
+    width: 96%;
+    float: left;
+}

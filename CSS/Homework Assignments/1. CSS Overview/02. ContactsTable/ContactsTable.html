@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Contacts</title>
+    <link rel="stylesheet" type="text/css" href="ContactsTable.css" />
+</head>
+<body>
+    <form name="contactsForm" method="get">
+        <table>
+            <colgroup>
+                <col id="contact-name" />
+                <col id="city" />
+                <col id="country" />
+                <col id="is-promoted" />
+            </colgroup>
+            <thead>
+                <tr>
+                    <th>Contact name</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Is Promoted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Maria Anders</td>
+                    <td>Berlin</td>
+                    <td>
+                        <img src="images/FlagOfGermany.png" width="26" height="19" alt="Flag of Germany" />
+                        <span class="country">Germany</span>
+                    </td>
+                    <td>
+                        <input type="checkbox" disabled="disabled" /></td>
+                </tr>
+
+                <tr>
+                    <td>Ana Trujillo</td>
+                    <td>M&eacute;xico D.F.</td>
+                    <td>
+                        <img src="images/FlagOfMexico.png" width="26" height="19" alt="Flag of Mexico" />
+                        <span class="country">Mexico</span>
+                    </td>
+                    <td>
+                        <input type="checkbox" disabled="disabled" /></td>
+                </tr>
+
+                <tr>
+                    <td>Antonio Moreno</td>
+                    <td>M&eacute;xico D.F.</td>
+                    <td>
+                        <img src="images/FlagOfMexico.png" width="26" height="19" alt="Flag of Mexico" />
+                        <span class="country">Mexico</span>
+                    </td>
+                    <td>
+                        <input type="checkbox" checked="checked" disabled="disabled" /></td>
+                </tr>
+
+                <tr>
+                    <td>Thomas Hardy</td>
+                    <td>London</td>
+                    <td>
+                        <img src="images/FlagOfTheUnitedKingdom.png" width="26" height="19" alt="Flag of United Kingdom" />
+                        <span class="country">UK</span>
+                    </td>
+                    <td>
+                        <input type="checkbox" disabled="disabled" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

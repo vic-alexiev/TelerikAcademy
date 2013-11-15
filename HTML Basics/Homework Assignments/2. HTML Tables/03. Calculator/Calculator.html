@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="Calculator.css" />
+</head>
+<body>
+    <form name="keypad">
+        <table>
+            <tr>
+                <td colspan="5">
+                    <input type="text" name="result" value="0" readonly="readonly" />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="cell-1x1">
+                    <input type="button" value="1" onclick="numPressed(1)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="2" onclick="numPressed(2)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="3" onclick="numPressed(3)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="+" onclick="operation('+')" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="C" onclick="clearAll()" />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="cell-1x1">
+                    <input type="button" value="4" onclick="numPressed(4)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="5" onclick="numPressed(5)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="6" onclick="numPressed(6)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="-" onclick="operation('-')" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="CE" onclick="clearEntry()" />
+                </td>
+            </tr>
+
+            <tr>
+                <td class="cell-1x1">
+                    <input type="button" value="7" onclick="numPressed(7)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="8" onclick="numPressed(8)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="9" onclick="numPressed(9)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="*" onclick="operation('*')" />
+                </td>
+                <td class="cell-2x1" rowspan="2">
+                    <input type="button" value="=" onclick="operation('=')" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <input type="button" value="0" onclick="numPressed(0)" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="." onclick="decimal()" />
+                </td>
+                <td class="cell-1x1">
+                    <input type="button" value="/" onclick="operation('/')" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript" src="Calculator.js"></script>
+</body>
+</html>

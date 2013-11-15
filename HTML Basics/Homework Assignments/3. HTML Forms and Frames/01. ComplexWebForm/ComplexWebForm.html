@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="ComplexWebForm.css" />
+</head>
+<body>
+    <form method="get">
+        <table>
+            <tfoot>
+                <tr>
+                    <td colspan="4">
+                        <input type="submit" value="Submit" />
+                        <input type="reset" value="Clear This Form" />
+                    </td>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <td class="left-col">
+                        <label for="lastName">Last Name</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="lastName" required="required" size="45" placeholder="Nakov"
+                            value="" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="firstName">First Name</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="firstName" required="required" size="45" placeholder="Svetlin"
+                            value="" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="address">Address</label>
+                    </td>
+                    <td colspan="3">
+                        <textarea id="address" required="required" placeholder="17 Hristo Botev Str. floor 3, apt. 12"></textarea>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="city">City</label>
+                    </td>
+                    <td>
+                        <input type="text" id="city" required="required" size="30" placeholder="Kaspichan"
+                            value="" />
+                    </td>
+                    <td id="state-cell">
+                        <label for="state">State</label>
+                    </td>
+                    <td>
+                        <input type="text" id="state" size="3" maxlength="3" required="required" value="" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="zip">Zip/Postal Code</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="zip" required="required" size="7" maxlength="4" placeholder="9325"
+                            value="" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="country">Country</label>
+                    </td>
+                    <td colspan="3">
+                        <select id="country" required="required">
+                            <option value="" selected="selected">Bulgaria</option>
+                            <option value="US">USA</option>
+                            <option value="CA">Canada</option>
+                            <option value="AU">Australia</option>
+                            <option value="GB">UK</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="countryCode">Phone (country code, area code, number)</label>
+                    </td>
+                    <td colspan="3">
+                        <label for="countryCode">(+</label>
+                        <input type="text" id="countryCode" required="required" size="3" maxlength="3" placeholder="359"
+                            value="" />
+                        <label for="areaCode">)</label>
+                        <input type="text" id="areaCode" required="required" size="3" maxlength="3" placeholder="88"
+                            value="" />
+                        <label for="number">-</label>
+                        <input type="text" id="number" required="required" placeholder="8334343" value="" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="email">E-mail</label>
+                    </td>
+                    <td colspan="3">
+                        <input id="email"
+                            type="email"
+                            title="e.g. pesho@gmail.com"
+                            required="required"
+                            size="45"
+                            pattern="[a-zA-Z0-9._]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}"
+                            placeholder="nakov@kaspichan.org"
+                            value="" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="month">Birth date</label>
+                    </td>
+                    <td colspan="3">
+                        <label for="month">Month</label>
+                        <input type="text" id="month" required="required" size="2" maxlength="2" placeholder="06"
+                            value="" />
+                        <label for="day">Day</label>
+                        <input type="text" id="day" required="required" size="2" maxlength="2" placeholder="14"
+                            value="" />
+                        <label for="year">Year (4 digit)</label>
+                        <input type="text" id="year" required="required" size="4" maxlength="4" placeholder="1980"
+                            value="" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="gender">Gender</label>
+                    </td>
+                    <td colspan="3">
+                        <select id="gender" required="required">
+                            <option value="" selected="selected">Male</option>
+                            <option value="F">Female</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="spring">Starting date</label>
+                    </td>
+                    <td colspan="3">
+                        <input type="radio" id="spring" name="startingDate" value="spring" checked="checked" />
+                        <label for="spring">Spring 2006</label>
+                        <input type="radio" id="summer" name="startingDate" value="summer" />
+                        <label for="summer">Summer 2006</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="left-col">
+                        <label for="comments">Comments/Questions</label>
+                    </td>
+                    <td colspan="3">
+                        <textarea id="comments" required="required" placeholder="Please send me more information about the lodging."></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>

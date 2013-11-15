@@ -1,0 +1,12 @@
+﻿table {
+    font-family: 'Times New Roman', serif;
+    font-size: 1em;
+    border-collapse: collapse;
+    width: 390px;
+    margin: auto;
+}
+
+th {
+    font-size: 1.6em;
+    font-style: italic;
+}

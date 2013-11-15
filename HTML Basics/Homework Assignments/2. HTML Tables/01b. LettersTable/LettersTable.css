@@ -1,0 +1,27 @@
+﻿table {
+    font-family: 'Times New Roman', serif;
+    font-size: 1em;
+    border: outset 1px;
+    margin: auto;
+}
+
+td {
+    border: inset 1px;
+    text-align: center;
+}
+
+    td.cell-1x1 {
+        width: 30px;
+    }
+
+    td.letter-right-aligned {
+        text-align: right;
+    }
+
+    td.letter-left-aligned {
+        text-align: left;
+    }
+
+    td#j-cell {
+        vertical-align: bottom;
+    }

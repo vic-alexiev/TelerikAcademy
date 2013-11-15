@@ -1,0 +1,39 @@
+﻿body {
+    font-family: Calibri, Arial, Verdana, sans-serif;
+    font-size: 1.2em;
+}
+
+article {
+    border: 2px solid #000;
+}
+
+img {
+    margin-left: 50px;
+    float: left;
+}
+
+h1 {
+    position: relative;
+    top: 9px;
+    left: 150px;
+}
+
+nav {
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+table, th, td {
+    border: 2px solid #000;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 50px;
+    margin-bottom: 50px;
+}

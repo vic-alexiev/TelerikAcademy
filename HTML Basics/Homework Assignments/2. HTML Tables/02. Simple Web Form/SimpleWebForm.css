@@ -1,0 +1,8 @@
+﻿body {
+    font-family: 'Times New Roman', serif;
+    font-size: 1em;
+}
+
+label.required {
+    font-weight: bold;
+}

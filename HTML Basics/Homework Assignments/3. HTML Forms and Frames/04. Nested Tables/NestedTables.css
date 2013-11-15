@@ -1,0 +1,66 @@
+﻿body {
+    font-family: Corbel, sans-serif;
+    font-size: 1em;
+}
+
+body, table, td, ul {
+    padding: 0;
+    margin: 0;
+}
+
+#header-cell {
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+ul#laptop-brands {
+    list-style-type: none;
+}
+
+    ul#laptop-brands li {
+        display: inline;
+    }
+
+a {
+    color: rgb(0, 171, 239);
+}
+
+.big-table {
+    float: left;
+}
+
+#parent-table, #header-cell, #left-big-table, fieldset {
+    border: 1px solid rgb(42, 42, 42);
+    border-collapse: collapse;
+    margin: 6px;
+}
+
+.laptop-table td {
+    padding-bottom: 10px;
+}
+
+.laptop-table .top-right-cell {
+    padding-top: 25px;
+}
+
+#right-big-table {
+    font-size: 1.2em;
+    margin-top: 76px;
+    margin-left: 5px;
+    margin-right: 12px;
+}
+
+    #right-big-table td {
+        height: 45px;
+    }
+
+    #right-big-table .right-column {
+        text-align: right;
+    }
+
+input {
+    width: 100%;
+}

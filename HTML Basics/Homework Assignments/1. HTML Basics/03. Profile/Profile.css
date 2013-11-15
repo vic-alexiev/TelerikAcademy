@@ -1,0 +1,73 @@
+﻿body {
+    color: rgb(42, 73, 135);
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    background-color: rgb(204, 236, 255);
+}
+
+h1 {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+ul.menu a {
+    font-size: 0.9em;
+}
+
+a:link {
+    color: rgb(42, 73, 135);
+}
+
+a:visited {
+    color: rgb(128, 117, 117);
+}
+
+a:hover {
+    color: rgb(42, 73, 135);
+}
+
+a:active {
+    color: rgb(42, 73, 135);
+}
+
+ol.friends {
+    font-style: italic;
+    list-style-type: decimal;
+}
+
+    ol.friends li {
+        margin-bottom: 5px;
+    }
+
+ul.menu {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 30px;
+    padding-left: 0;
+}
+
+    ul.menu li {
+        display: inline;
+        margin-right: 70px;
+    }
+
+ul.info {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+    ul.info li {
+        margin-bottom: 5px;
+    }
+
+img {
+    border: 1px;
+}
+
+.occupation {
+    font-style: normal;
+    margin-left: 35px;
+    line-height: 2em;
+}

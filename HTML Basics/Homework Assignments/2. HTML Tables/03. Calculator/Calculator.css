@@ -1,0 +1,40 @@
+﻿body {
+    background-color: rgb(0, 0, 0);
+}
+
+table {
+    border-collapse: collapse;
+    background-color: rgb(50, 56, 57);
+    margin: auto;
+}
+
+td {
+    border-color: rgb(130, 180, 192);
+    border-style: solid;
+    border-width: 2px;
+    height: 70px;
+}
+
+    td.cell-1x1, td.cell-2x1 {
+        width: 60px;
+    }
+
+    td.cell-2x1 {
+        height: 140px;
+    }
+
+input {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    font-family: Consolas, Verdana, Arial, sans-serif;
+    font-size: 2.4em;
+    font-weight: bold;
+    color: rgb(140, 244, 242);
+    background-color: rgb(50, 56, 57);
+    border-style: none;
+}
+
+    input[type=text] {
+        text-align: right;
+    }

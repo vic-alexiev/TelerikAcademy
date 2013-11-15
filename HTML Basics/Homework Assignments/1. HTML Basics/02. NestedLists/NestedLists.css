@@ -1,0 +1,27 @@
+﻿body {
+    font-family: Calibri, Verdana, Arial, sans-serif;
+}
+
+#uppercase-roman {
+    list-style-type: upper-roman;
+}
+
+#lowercase-letter {
+    list-style-type: lower-alpha;
+}
+
+#number {
+    list-style-type: decimal;
+}
+
+#circle {
+    list-style-type: circle;
+}
+
+#square {
+    list-style-type: square;
+}
+
+#disc {
+    list-style-type: disc;
+}

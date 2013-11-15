@@ -1,0 +1,97 @@
+﻿body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: .7em;
+}
+
+table {
+    border-collapse: collapse;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+td {
+    padding-top: 2px;
+    padding-right: 5px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    height: 25px;
+}
+
+thead td, tfoot, tbody {
+    border: 1px solid rgb(164, 171, 178);
+}
+
+    tbody td {
+        border: 1px ridge rgb(208, 215, 229);
+    }
+
+thead, tfoot {
+    background-color: rgb(223, 227, 232);
+}
+
+a {
+    color: black;
+    text-decoration: none;
+    padding-right: 6px;
+}
+
+span#first-anchor {
+    border: 1px solid rgb(201, 92, 5);
+    border-radius: 3px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    padding-left: 3px;
+    margin-right: 4px;
+}
+
+input#product-id {
+    width: 25px;
+}
+
+#col-product-id {
+    width: 50px;
+}
+
+input#product-name {
+    width: 140px;
+}
+
+#col-product-name {
+    width: 240px;
+}
+
+input#unit-price, input#units-in-stock {
+    width: 80px;
+}
+
+#col-unit-price, #col-quantity-per-unit {
+    width: 160px;
+}
+
+#col-units-in-stock {
+    width: 180px;
+}
+
+input#quantity-per-unit {
+    width: 100px;
+}
+
+input[type=image] {
+    vertical-align: top;
+    padding-top: 2px;
+}
+
+input#discontinued {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+#navigation {
+    line-height: 25px;
+    padding-right: 10px;
+}
+
+#cell-items-count {
+    text-align: right;
+}

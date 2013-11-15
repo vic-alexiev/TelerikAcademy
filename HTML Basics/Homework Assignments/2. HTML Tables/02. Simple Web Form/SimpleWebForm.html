@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="SimpleWebForm.css" />
+</head>
+<body>
+    <form method="get">
+        <label for="name">Member name:&nbsp;</label>
+        <input type="text" id="name" required="required" value="" />
+        <label for="name" class="required">*req</label>
+        <br />
+        <label for="email">Email:&nbsp;</label>
+        <input id="email"
+            type="email"
+            title="e.g. pesho@gmail.com"
+            required="required"
+            pattern="[a-zA-Z0-9_]{3,}@[a-zA-Z0-9_]{3,}.[a-zA-Z0-9_]{2,4}"
+            value="" />
+        <label for="email" class="required">*req</label>
+        <br />
+        <label for="school">School:&nbsp;</label>
+        <input type="text" id="school" required="required" value="" />
+        <label for="school" class="required">*req</label>
+        <br />
+        <input type="image" width="57" height="38" src="images/submit-button.png" alt="Submit" />
+    </form>
+</body>
+</html>

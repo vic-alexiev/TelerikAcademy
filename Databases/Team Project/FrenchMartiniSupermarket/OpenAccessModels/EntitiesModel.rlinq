@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DomainModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="2.0.0.0" name="SupermarketModel" namespace="OpenAccessModels" showPropertiesCompartment="true" xmlns="http://www.telerik.com/ORM">
+  <orm:orm name="SupermarketModel" backend="mysql" xmlns:orm="http://tempuri.org/ORM">
+    <orm:namespace name="OpenAccessModels" default="true">
+      <orm:class name="Vendor" uniqueId="3c8b4127-7eec-46f8-8e36-bbadc0c8adac">
+        <orm:table name="vendors" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_vendorID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_vendorID" property="VendorID" behavior="readwrite" uniqueId="406ba1f0-79ce-4901-bceb-e20d302d7fca" type="System.Int32">
+          <orm:column name="VendorID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_vendorName" property="VendorName" behavior="readwrite" uniqueId="57dce26f-1b29-4b4e-aa2c-2f0118d388fd" type="System.String">
+          <orm:column name="VendorName" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_products" property="Products" behavior="readwrite" uniqueId="60a1518a-6ddd-4f9c-83fc-95469f27dc50" type="OpenAccessModels.Product">
+          <orm:collection element-class="OpenAccessModels.Product" inverse-field="_vendor" order-by="" uniqueId="a982fa38-1ca8-4420-94bb-31f11bffb48a" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Unit" uniqueId="6fcceb0d-dfde-4bb0-a712-6609e4c67cd1">
+        <orm:table name="units" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_unitID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_unitID" property="UnitID" behavior="readwrite" uniqueId="41d7fd74-1fa7-4737-9ad0-821e7a1750b2" type="System.Int32">
+          <orm:column name="UnitID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_unitName" property="UnitName" behavior="readwrite" uniqueId="b8b1e487-09fc-4b75-b27f-281b56d094c8" type="System.String">
+          <orm:column name="UnitName" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_products" property="Products" behavior="readwrite" uniqueId="ffe078ef-aa5b-4fd7-969d-ddd6bd284d75" type="OpenAccessModels.Product">
+          <orm:collection element-class="OpenAccessModels.Product" inverse-field="_unit" order-by="" uniqueId="20c6d934-50fc-45ed-928c-5ed9cbad468b" />
+        </orm:field>
+      </orm:class>
+      <orm:class name="Product" uniqueId="ac3cc675-4e2b-4c78-92d9-060036567f0b">
+        <orm:table name="products" />
+        <orm:identity>
+          <orm:key-generator name="autoinc" />
+          <orm:single-field field-name="_productID" />
+        </orm:identity>
+        <orm:concurrency strategy="changed" />
+        <orm:field name="_productID" property="ProductID" behavior="readwrite" uniqueId="18c542c3-2623-46db-abe7-a126d5ee36c8" type="System.Int32">
+          <orm:column name="ProductID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_vendorID" property="VendorID" behavior="readwrite" uniqueId="1a6d73fe-b0b5-4717-807b-62248add88b1" type="System.Int32">
+          <orm:column name="VendorID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_productName" property="ProductName" behavior="readwrite" uniqueId="f09aa7b3-b9d2-4f46-b926-1179a970b24a" type="System.String">
+          <orm:column name="ProductName" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        </orm:field>
+        <orm:field name="_unitID" property="UnitID" behavior="readwrite" uniqueId="7ce6e141-c641-4dba-827c-554508480acf" type="System.Int32">
+          <orm:column name="UnitID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        </orm:field>
+        <orm:field name="_basePrice" property="BasePrice" behavior="readwrite" uniqueId="54871885-b9df-4a6e-b847-dab5ca4551b6" type="System.Decimal">
+          <orm:column name="BasePrice" sql-type="decimal" nullable="false" length="18" scale="2" ado-type="Decimal" />
+        </orm:field>
+        <orm:field name="_unit" property="Unit" behavior="readwrite" uniqueId="8410e013-b40e-435e-850e-76d93e77765c" type="OpenAccessModels.Unit">
+          <orm:reference uniqueId="20c6d934-50fc-45ed-928c-5ed9cbad468b">
+            <orm:column name="UnitID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:reference>
+        </orm:field>
+        <orm:field name="_vendor" property="Vendor" behavior="readwrite" uniqueId="0d662a6f-6d36-4b48-a646-3b168fcaa27c" type="OpenAccessModels.Vendor">
+          <orm:reference uniqueId="a982fa38-1ca8-4420-94bb-31f11bffb48a">
+            <orm:column name="VendorID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:reference>
+        </orm:field>
+        <orm:index name="fk_Products_Units_idx">
+          <orm:columnMapping>
+            <orm:column name="UnitID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="fk_Products_Vendors_idx">
+          <orm:columnMapping>
+            <orm:column name="VendorID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:class>
+    </orm:namespace>
+    <orm:schema schema="">
+      <orm:table name="vendors">
+        <orm:column name="VendorID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="VendorName" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="units">
+        <orm:column name="UnitID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="UnitName" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+      </orm:table>
+      <orm:table name="products">
+        <orm:column name="ProductID" sql-type="integer" nullable="false" length="0" scale="0" primary-key="true" backend-calculated="true" ado-type="Int32" />
+        <orm:column name="VendorID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="ProductName" sql-type="nvarchar" nullable="false" length="45" scale="0" ado-type="UnicodeStringVariableLength" />
+        <orm:column name="UnitID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+        <orm:column name="BasePrice" sql-type="decimal" nullable="false" length="18" scale="2" ado-type="Decimal" />
+        <orm:index name="fk_Products_Units_idx">
+          <orm:columnMapping>
+            <orm:column name="UnitID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+        <orm:index name="fk_Products_Vendors_idx">
+          <orm:columnMapping>
+            <orm:column name="VendorID" sql-type="integer" nullable="false" length="0" scale="0" ado-type="Int32" />
+          </orm:columnMapping>
+        </orm:index>
+      </orm:table>
+    </orm:schema>
+    <orm:relational-naming-settings>
+      <orm:remove-camel-case>False</orm:remove-camel-case>
+      <orm:source-strategy>Property</orm:source-strategy>
+    </orm:relational-naming-settings>
+  </orm:orm>
+  <ModelSettings xmlns="">
+    <AppConfigConnectionPropertyName>Connection</AppConfigConnectionPropertyName>
+    <AppConfigConnectionString>server=localhost;user id=root; password=team4all; database=supermarket; pooling=false</AppConfigConnectionString>
+    <NamingSettings>
+      <ClassRules>
+        <CaseMode>PascalCase</CaseMode>
+        <PluralizationMode>Singularize</PluralizationMode>
+      </ClassRules>
+      <FieldRules>
+        <AddPrefix>_</AddPrefix>
+        <CaseMode>CamelCase</CaseMode>
+      </FieldRules>
+      <PropertyRules>
+        <CaseMode>PascalCase</CaseMode>
+      </PropertyRules>
+    </NamingSettings>
+    <CodeGenerationSettings>
+      <MappingDefinitionType>Xml</MappingDefinitionType>
+    </CodeGenerationSettings>
+    <SchemaUpdateSettings />
+    <BackendConfigurationSettings>
+      <BackendConfiguration>
+        <Backend>MySql</Backend>
+        <ProviderName>MySql.Data.MySqlClient</ProviderName>
+      </BackendConfiguration>
+    </BackendConfigurationSettings>
+    <UseSchemaAsNamespace>true</UseSchemaAsNamespace>
+    <CreateDiagramPerSchema>true</CreateDiagramPerSchema>
+  </ModelSettings>
+  <Types>
+    <DomainClass Id="3c8b4127-7eec-46f8-8e36-bbadc0c8adac" name="Vendor" namespace="OpenAccessModels" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="406ba1f0-79ce-4901-bceb-e20d302d7fca" name="VendorID" type="Int32" label="VendorID : Int32" kind="Persistent" identity="true" fieldName="_vendorID" />
+      <Property Id="57dce26f-1b29-4b4e-aa2c-2f0118d388fd" name="VendorName" label="VendorName : String" kind="Persistent" fieldName="_vendorName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="c57d508f-5abe-44ef-b39d-95c2a0263653">
+          <NavigationalProperty Id="60a1518a-6ddd-4f9c-83fc-95469f27dc50" name="Products" type="IList&lt;Product&gt;" label="Products : IList&lt;Product&gt;" nullable="true" kind="Persistent" fieldName="_products" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="6fcceb0d-dfde-4bb0-a712-6609e4c67cd1" name="Unit" namespace="OpenAccessModels" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="41d7fd74-1fa7-4737-9ad0-821e7a1750b2" name="UnitID" type="Int32" label="UnitID : Int32" kind="Persistent" identity="true" fieldName="_unitID" />
+      <Property Id="b8b1e487-09fc-4b75-b27f-281b56d094c8" name="UnitName" label="UnitName : String" kind="Persistent" fieldName="_unitName" />
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="be2c5fdb-6f40-4478-adea-9fd66890d18d">
+          <NavigationalProperty Id="ffe078ef-aa5b-4fd7-969d-ddd6bd284d75" name="Products" type="IList&lt;Product&gt;" label="Products : IList&lt;Product&gt;" nullable="true" kind="Persistent" fieldName="_products" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+    <DomainClass Id="ac3cc675-4e2b-4c78-92d9-060036567f0b" name="Product" namespace="OpenAccessModels" showPropertiesCompartment="true" identityMechanism="DatabaseServerCalculated" concurrencyMode="Changed" showNavigationCompartment="true" showImplementationCompartment="true">
+      <Property Id="18c542c3-2623-46db-abe7-a126d5ee36c8" name="ProductID" type="Int32" label="ProductID : Int32" kind="Persistent" identity="true" fieldName="_productID" />
+      <Property Id="54871885-b9df-4a6e-b847-dab5ca4551b6" name="BasePrice" type="Decimal" label="BasePrice : Decimal" kind="Persistent" fieldName="_basePrice" />
+      <Property Id="f09aa7b3-b9d2-4f46-b926-1179a970b24a" name="ProductName" label="ProductName : String" kind="Persistent" fieldName="_productName" />
+      <Property Id="7ce6e141-c641-4dba-827c-554508480acf" name="UnitID" type="Int32" label="UnitID : Int32" kind="Persistent" fieldName="_unitID" />
+      <Property Id="1a6d73fe-b0b5-4717-807b-62248add88b1" name="VendorID" type="Int32" label="VendorID : Int32" kind="Persistent" fieldName="_vendorID" />
+      <AssociationTargets>
+        <Association Id="20c6d934-50fc-45ed-928c-5ed9cbad468b" SourceMultiplicity="ZeroOne" name="ProductHasUnit">
+          <DomainClassMoniker name="/SupermarketModel/Unit" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="c203d7b2-6607-4a65-bea6-534eed9feacf">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Unit/Products" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="3031d664-6804-4957-b2b6-a3a3ea7f4fd1">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Product/Unit" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+        <Association Id="a982fa38-1ca8-4420-94bb-31f11bffb48a" SourceMultiplicity="ZeroOne" name="ProductHasVendor">
+          <DomainClassMoniker name="/SupermarketModel/Vendor" />
+          <targetNavigationalProperty>
+            <associationDefinesTargetProperty Id="e76687ac-6e93-4fbc-82ae-97f60ef9d0b7">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Vendor/Products" />
+            </associationDefinesTargetProperty>
+          </targetNavigationalProperty>
+          <sourceNavigationalProperty>
+            <associationDefinesSourceProperty Id="aa06533c-b263-4499-988b-ee6c4a8ca2c9">
+              <NavigationalPropertyMoniker name="/SupermarketModel/Product/Vendor" />
+            </associationDefinesSourceProperty>
+          </sourceNavigationalProperty>
+        </Association>
+      </AssociationTargets>
+      <navigationalProperties>
+        <classHasNavigationalProperties Id="6c78704d-351a-455d-928d-09873e43df2e">
+          <NavigationalProperty Id="8410e013-b40e-435e-850e-76d93e77765c" name="Unit" type="Unit" label="Unit : Unit" nullable="true" kind="Persistent" fieldName="_unit" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+        <classHasNavigationalProperties Id="9325d8c7-c0b7-49d2-8422-4ff4b0d7224b">
+          <NavigationalProperty Id="0d662a6f-6d36-4b48-a646-3b168fcaa27c" name="Vendor" type="Vendor" label="Vendor : Vendor" nullable="true" kind="Persistent" fieldName="_vendor" isDependent="false" isManaged="false" />
+        </classHasNavigationalProperties>
+      </navigationalProperties>
+    </DomainClass>
+  </Types>
+  <domainContext>
+    <domainModelHasDomainContext Id="1933ee96-6545-4308-b946-93ec2c6376d6">
+      <domainContainer name="SupermarketModel" namespace="OpenAccessModels" showPropertiesCompartment="true">
+        <entitySetProperty name="Vendors" namespace="OpenAccessModels" type="Vendor" label="Vendors : IQueryable&lt;OpenAccessModels.Vendor&gt;" />
+        <entitySetProperty name="Units" namespace="OpenAccessModels" type="Unit" label="Units : IQueryable&lt;OpenAccessModels.Unit&gt;" />
+        <entitySetProperty name="Products" namespace="OpenAccessModels" type="Product" label="Products : IQueryable&lt;OpenAccessModels.Product&gt;" />
+      </domainContainer>
+    </domainModelHasDomainContext>
+  </domainContext>
+</DomainModel>

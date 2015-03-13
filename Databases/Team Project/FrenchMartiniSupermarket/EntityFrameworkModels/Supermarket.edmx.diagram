@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="bca39ff9389941cb875eb0a696cc010f" Name="Diagram1">
+        <EntityTypeShape EntityType="SupermarketModel.LocalShop" Width="1.5" PointX="7.625" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Product" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Report" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Sale" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Unit" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SupermarketModel.Vendor" Width="1.5" PointX="3.125" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="SupermarketModel.FK_Reports_LocalShops" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Products_Units" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Products_Vendors" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Sales_Products" ManuallyRouted="false" />
+        <AssociationConnector Association="SupermarketModel.FK_Sales_Reports" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SupermarketModel.VendorExpense" Width="1.5" PointX="0.625" PointY="4.25" />
+        <AssociationConnector Association="SupermarketModel.FK_VendorExpenses_Vendors" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

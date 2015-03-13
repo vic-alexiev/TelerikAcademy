@@ -1,0 +1,451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SupermarketModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="SupermarketModelStoreContainer">
+          <EntitySet Name="LocalShops" EntityType="SupermarketModel.Store.LocalShops" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Products" EntityType="SupermarketModel.Store.Products" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Reports" EntityType="SupermarketModel.Store.Reports" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sales" EntityType="SupermarketModel.Store.Sales" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Units" EntityType="SupermarketModel.Store.Units" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="VendorExpenses" EntityType="SupermarketModel.Store.VendorExpenses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vendors" EntityType="SupermarketModel.Store.Vendors" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Products_Units" Association="SupermarketModel.Store.FK_Products_Units">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Vendors" Association="SupermarketModel.Store.FK_Products_Vendors">
+            <End Role="Vendors" EntitySet="Vendors" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reports_LocalShops" Association="SupermarketModel.Store.FK_Reports_LocalShops">
+            <End Role="LocalShops" EntitySet="LocalShops" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Products" Association="SupermarketModel.Store.FK_Sales_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Reports" Association="SupermarketModel.Store.FK_Sales_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VendorExpenses_Vendors" Association="SupermarketModel.Store.FK_VendorExpenses_Vendors">
+            <End Role="Vendors" EntitySet="Vendors" />
+            <End Role="VendorExpenses" EntitySet="VendorExpenses" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="LocalShops">
+          <Key>
+            <PropertyRef Name="LocalShopId" />
+          </Key>
+          <Property Name="LocalShopId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LocalShopName" Type="nvarchar" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VendorId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" Nullable="false" MaxLength="45" />
+          <Property Name="UnitId" Type="int" Nullable="false" />
+          <Property Name="BasePrice" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="ReportId" />
+          </Key>
+          <Property Name="ReportId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="LocalShopId" Type="int" Nullable="false" />
+          <Property Name="ReportDate" Type="datetime" Nullable="false" />
+          <Property Name="ReportTotalSum" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sales">
+          <Key>
+            <PropertyRef Name="ReportId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ReportId" Type="int" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductQuantity" Type="float" Nullable="false" />
+          <Property Name="ProductUnitPrice" Type="money" Nullable="false" />
+          <Property Name="ProductTotalSum" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Units">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="nvarchar" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <EntityType Name="VendorExpenses">
+          <Key>
+            <PropertyRef Name="VendorExpenseId" />
+          </Key>
+          <Property Name="VendorExpenseId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VendorId" Type="int" Nullable="false" />
+          <Property Name="Month" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="money" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vendors">
+          <Key>
+            <PropertyRef Name="VendorId" />
+          </Key>
+          <Property Name="VendorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="VendorName" Type="nvarchar" Nullable="false" MaxLength="45" />
+        </EntityType>
+        <Association Name="FK_Products_Units">
+          <End Role="Units" Type="SupermarketModel.Store.Units" Multiplicity="1" />
+          <End Role="Products" Type="SupermarketModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Vendors">
+          <End Role="Vendors" Type="SupermarketModel.Store.Vendors" Multiplicity="1" />
+          <End Role="Products" Type="SupermarketModel.Store.Products" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendors">
+              <PropertyRef Name="VendorId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="VendorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reports_LocalShops">
+          <End Role="LocalShops" Type="SupermarketModel.Store.LocalShops" Multiplicity="1" />
+          <End Role="Reports" Type="SupermarketModel.Store.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalShops">
+              <PropertyRef Name="LocalShopId" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="LocalShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Products">
+          <End Role="Products" Type="SupermarketModel.Store.Products" Multiplicity="1" />
+          <End Role="Sales" Type="SupermarketModel.Store.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Reports">
+          <End Role="Reports" Type="SupermarketModel.Store.Reports" Multiplicity="1" />
+          <End Role="Sales" Type="SupermarketModel.Store.Sales" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="ReportId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VendorExpenses_Vendors">
+          <End Role="Vendors" Type="SupermarketModel.Store.Vendors" Multiplicity="1" />
+          <End Role="VendorExpenses" Type="SupermarketModel.Store.VendorExpenses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendors">
+              <PropertyRef Name="VendorId" />
+            </Principal>
+            <Dependent Role="VendorExpenses">
+              <PropertyRef Name="VendorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SupermarketModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SupermarketEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="LocalShops" EntityType="SupermarketModel.LocalShop" />
+          <EntitySet Name="Products" EntityType="SupermarketModel.Product" />
+          <EntitySet Name="Reports" EntityType="SupermarketModel.Report" />
+          <EntitySet Name="Sales" EntityType="SupermarketModel.Sale" />
+          <EntitySet Name="Units" EntityType="SupermarketModel.Unit" />
+          <EntitySet Name="Vendors" EntityType="SupermarketModel.Vendor" />
+          <AssociationSet Name="FK_Reports_LocalShops" Association="SupermarketModel.FK_Reports_LocalShops">
+            <End Role="LocalShops" EntitySet="LocalShops" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Units" Association="SupermarketModel.FK_Products_Units">
+            <End Role="Units" EntitySet="Units" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Products_Vendors" Association="SupermarketModel.FK_Products_Vendors">
+            <End Role="Vendors" EntitySet="Vendors" />
+            <End Role="Products" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Products" Association="SupermarketModel.FK_Sales_Products">
+            <End Role="Products" EntitySet="Products" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sales_Reports" Association="SupermarketModel.FK_Sales_Reports">
+            <End Role="Reports" EntitySet="Reports" />
+            <End Role="Sales" EntitySet="Sales" />
+          </AssociationSet>
+          <EntitySet Name="VendorExpenses" EntityType="SupermarketModel.VendorExpense" />
+          <AssociationSet Name="FK_VendorExpenses_Vendors" Association="SupermarketModel.FK_VendorExpenses_Vendors">
+            <End Role="Vendor" EntitySet="Vendors" />
+            <End Role="VendorExpens" EntitySet="VendorExpenses" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="LocalShop">
+          <Key>
+            <PropertyRef Name="LocalShopId" />
+          </Key>
+          <Property Name="LocalShopId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LocalShopName" Type="String" Nullable="false" MaxLength="45" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Reports" Relationship="SupermarketModel.FK_Reports_LocalShops" FromRole="LocalShops" ToRole="Reports" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" Nullable="false" MaxLength="45" Unicode="true" FixedLength="false" />
+          <Property Name="UnitId" Type="Int32" Nullable="false" />
+          <Property Name="BasePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Unit" Relationship="SupermarketModel.FK_Products_Units" FromRole="Products" ToRole="Units" />
+          <NavigationProperty Name="Vendor" Relationship="SupermarketModel.FK_Products_Vendors" FromRole="Products" ToRole="Vendors" />
+          <NavigationProperty Name="Sales" Relationship="SupermarketModel.FK_Sales_Products" FromRole="Products" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="ReportId" />
+          </Key>
+          <Property Name="ReportId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="LocalShopId" Type="Int32" Nullable="false" />
+          <Property Name="ReportDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ReportTotalSum" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="LocalShop" Relationship="SupermarketModel.FK_Reports_LocalShops" FromRole="Reports" ToRole="LocalShops" />
+          <NavigationProperty Name="Sales" Relationship="SupermarketModel.FK_Sales_Reports" FromRole="Reports" ToRole="Sales" />
+        </EntityType>
+        <EntityType Name="Sale">
+          <Key>
+            <PropertyRef Name="ReportId" />
+            <PropertyRef Name="ProductId" />
+          </Key>
+          <Property Name="ReportId" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductQuantity" Type="Double" Nullable="false" />
+          <Property Name="ProductUnitPrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="ProductTotalSum" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Product" Relationship="SupermarketModel.FK_Sales_Products" FromRole="Sales" ToRole="Products" />
+          <NavigationProperty Name="Report" Relationship="SupermarketModel.FK_Sales_Reports" FromRole="Sales" ToRole="Reports" />
+        </EntityType>
+        <EntityType Name="Unit">
+          <Key>
+            <PropertyRef Name="UnitId" />
+          </Key>
+          <Property Name="UnitId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UnitName" Type="String" Nullable="false" MaxLength="45" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="SupermarketModel.FK_Products_Units" FromRole="Units" ToRole="Products" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="VendorId" />
+          </Key>
+          <Property Name="VendorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorName" Type="String" Nullable="false" MaxLength="45" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Products" Relationship="SupermarketModel.FK_Products_Vendors" FromRole="Vendors" ToRole="Products" />
+          <NavigationProperty Name="VendorExpenses" Relationship="SupermarketModel.FK_VendorExpenses_Vendors" FromRole="Vendor" ToRole="VendorExpens" />
+        </EntityType>
+        <Association Name="FK_Reports_LocalShops">
+          <End Role="LocalShops" Type="SupermarketModel.LocalShop" Multiplicity="1" />
+          <End Role="Reports" Type="SupermarketModel.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LocalShops">
+              <PropertyRef Name="LocalShopId" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="LocalShopId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Units">
+          <End Role="Units" Type="SupermarketModel.Unit" Multiplicity="1" />
+          <End Role="Products" Type="SupermarketModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Units">
+              <PropertyRef Name="UnitId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="UnitId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Products_Vendors">
+          <End Role="Vendors" Type="SupermarketModel.Vendor" Multiplicity="1" />
+          <End Role="Products" Type="SupermarketModel.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendors">
+              <PropertyRef Name="VendorId" />
+            </Principal>
+            <Dependent Role="Products">
+              <PropertyRef Name="VendorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Products">
+          <End Role="Products" Type="SupermarketModel.Product" Multiplicity="1" />
+          <End Role="Sales" Type="SupermarketModel.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Products">
+              <PropertyRef Name="ProductId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sales_Reports">
+          <End Role="Reports" Type="SupermarketModel.Report" Multiplicity="1" />
+          <End Role="Sales" Type="SupermarketModel.Sale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reports">
+              <PropertyRef Name="ReportId" />
+            </Principal>
+            <Dependent Role="Sales">
+              <PropertyRef Name="ReportId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="VendorExpense">
+          <Key>
+            <PropertyRef Name="VendorExpenseId" />
+          </Key>
+          <Property Type="Int32" Name="VendorExpenseId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="VendorId" Nullable="false" />
+          <Property Type="Int32" Name="Month" Nullable="false" />
+          <Property Type="Int32" Name="Year" Nullable="false" />
+          <Property Type="Decimal" Name="Amount" Nullable="false" Precision="19" Scale="4" />
+          <NavigationProperty Name="Vendor" Relationship="SupermarketModel.FK_VendorExpenses_Vendors" FromRole="VendorExpens" ToRole="Vendor" />
+        </EntityType>
+        <Association Name="FK_VendorExpenses_Vendors">
+          <End Type="SupermarketModel.Vendor" Role="Vendor" Multiplicity="1" />
+          <End Type="SupermarketModel.VendorExpense" Role="VendorExpens" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendor">
+              <PropertyRef Name="VendorId" />
+            </Principal>
+            <Dependent Role="VendorExpens">
+              <PropertyRef Name="VendorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SupermarketModelStoreContainer" CdmEntityContainer="SupermarketEntities">
+          <EntitySetMapping Name="LocalShops">
+            <EntityTypeMapping TypeName="SupermarketModel.LocalShop">
+              <MappingFragment StoreEntitySet="LocalShops">
+                <ScalarProperty Name="LocalShopId" ColumnName="LocalShopId" />
+                <ScalarProperty Name="LocalShopName" ColumnName="LocalShopName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="SupermarketModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="BasePrice" ColumnName="BasePrice" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="SupermarketModel.Report">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="LocalShopId" ColumnName="LocalShopId" />
+                <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+                <ScalarProperty Name="ReportTotalSum" ColumnName="ReportTotalSum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sales">
+            <EntityTypeMapping TypeName="SupermarketModel.Sale">
+              <MappingFragment StoreEntitySet="Sales">
+                <ScalarProperty Name="ReportId" ColumnName="ReportId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+                <ScalarProperty Name="ProductUnitPrice" ColumnName="ProductUnitPrice" />
+                <ScalarProperty Name="ProductTotalSum" ColumnName="ProductTotalSum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Units">
+            <EntityTypeMapping TypeName="SupermarketModel.Unit">
+              <MappingFragment StoreEntitySet="Units">
+                <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+                <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendors">
+            <EntityTypeMapping TypeName="SupermarketModel.Vendor">
+              <MappingFragment StoreEntitySet="Vendors">
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="VendorName" ColumnName="VendorName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VendorExpenses">
+            <EntityTypeMapping TypeName="SupermarketModel.VendorExpense">
+              <MappingFragment StoreEntitySet="VendorExpenses">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="VendorId" ColumnName="VendorId" />
+                <ScalarProperty Name="VendorExpenseId" ColumnName="VendorExpenseId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

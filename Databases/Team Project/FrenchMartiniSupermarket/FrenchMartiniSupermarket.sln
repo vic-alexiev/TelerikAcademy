@@ -1,0 +1,81 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpenAccessModels", "OpenAccessModels\OpenAccessModels.csproj", "{C50145E6-A244-4F1F-B41F-90D1925B4A00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkModels", "EntityFrameworkModels\EntityFrameworkModels.csproj", "{B69E0808-219D-429E-B246-F0A4E31C8A45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SupermarketClient", "SupermarketClient\SupermarketClient.csproj", "{7E996180-FC50-4B1B-8AAB-D684AE0B011A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelExportFiles", "ExcelExportFiles\ExcelExportFiles.csproj", "{20917597-E55F-4D33-8ECB-7707C225B16E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFConverter", "PDFConverter\PDFConverter.csproj", "{927B2681-741C-4EBE-BFDC-ED8D0414943D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSONProductReports", "JSONProductReports\JSONProductReports.csproj", "{8F709A6F-FEEB-42B2-A32C-298CA3B4B3D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlLib", "XmlLib\XmlLib.csproj", "{E058016F-3918-47A6-BF7D-7BF29200176B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDataModels", "MongoDataModels\MongoDataModels.csproj", "{4E8F1EAD-16AF-4F2C-9227-0687CB865CCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VendorFinalReport", "Task6\VendorFinalReport.csproj", "{13FC0018-2FE8-44BB-97A8-5A79BF949D76}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B6DC35CE-DEFE-47FC-89B3-06A9C3080338}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50145E6-A244-4F1F-B41F-90D1925B4A00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69E0808-219D-429E-B246-F0A4E31C8A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69E0808-219D-429E-B246-F0A4E31C8A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69E0808-219D-429E-B246-F0A4E31C8A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69E0808-219D-429E-B246-F0A4E31C8A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E996180-FC50-4B1B-8AAB-D684AE0B011A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E996180-FC50-4B1B-8AAB-D684AE0B011A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E996180-FC50-4B1B-8AAB-D684AE0B011A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E996180-FC50-4B1B-8AAB-D684AE0B011A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20917597-E55F-4D33-8ECB-7707C225B16E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20917597-E55F-4D33-8ECB-7707C225B16E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20917597-E55F-4D33-8ECB-7707C225B16E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20917597-E55F-4D33-8ECB-7707C225B16E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{927B2681-741C-4EBE-BFDC-ED8D0414943D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{927B2681-741C-4EBE-BFDC-ED8D0414943D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{927B2681-741C-4EBE-BFDC-ED8D0414943D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{927B2681-741C-4EBE-BFDC-ED8D0414943D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F709A6F-FEEB-42B2-A32C-298CA3B4B3D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F709A6F-FEEB-42B2-A32C-298CA3B4B3D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F709A6F-FEEB-42B2-A32C-298CA3B4B3D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F709A6F-FEEB-42B2-A32C-298CA3B4B3D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E058016F-3918-47A6-BF7D-7BF29200176B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E058016F-3918-47A6-BF7D-7BF29200176B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E058016F-3918-47A6-BF7D-7BF29200176B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E058016F-3918-47A6-BF7D-7BF29200176B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E8F1EAD-16AF-4F2C-9227-0687CB865CCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E8F1EAD-16AF-4F2C-9227-0687CB865CCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E8F1EAD-16AF-4F2C-9227-0687CB865CCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E8F1EAD-16AF-4F2C-9227-0687CB865CCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13FC0018-2FE8-44BB-97A8-5A79BF949D76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13FC0018-2FE8-44BB-97A8-5A79BF949D76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13FC0018-2FE8-44BB-97A8-5A79BF949D76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13FC0018-2FE8-44BB-97A8-5A79BF949D76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

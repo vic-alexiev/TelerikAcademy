@@ -1,6 +1,6 @@
-#C# Fundamentals I
+# C# Fundamentals I
 
-##Homework Assignments
+## Homework Assignments
 
 1. <a href="../../../TelerikAcademy/tree/master/C%23%20Fundamentals%20I/Homework%20Assignments/1.%20Intro%20Programming">
 Intro Programming</a> -
@@ -21,9 +21,9 @@ Conditional Statements</a> -
 Loops</a> -
 (<a href="../../../TelerikAcademy/tree/master/C%23%20Fundamentals%20I/Homework%20Assignments/6.%20Loops/README.md">assignment</a>)
 
-#C# Fundamentals II
+# C# Fundamentals II
 
-##Homework Assignments
+## Homework Assignments
     
 1. <a href="../../../TelerikAcademy/tree/master/C%23%20Fundamentals%20II/Homework%20Assignments/1.%20Arrays">
 Arrays</a> -

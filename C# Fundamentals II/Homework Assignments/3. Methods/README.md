@@ -18,7 +18,7 @@
     * Calculates the average of a sequence of integers;
     * Solves the linear equation _a * x + b = 0_.
 
-  Create appropriate methods. Provide a simple text-based menu for the user to select the task they want to solve. Validate the input data:
+    Create appropriate methods. Provide a simple text-based menu for the user to select the task they want to solve. Validate the input data:
     * The decimal number should be non-negative;
     * The sequence should not be empty;
     * *a* should not be equal to *0*.

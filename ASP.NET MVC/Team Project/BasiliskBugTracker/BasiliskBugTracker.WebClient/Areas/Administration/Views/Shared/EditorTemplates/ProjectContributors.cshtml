@@ -1,0 +1,12 @@
+@(Html.Kendo().DropDownList()
+                .Name("AssignedTo") // Name of the widget should be the same as the name of the property
+                .DataValueField("Id")
+                .DataTextField("Name")
+                .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetProjectContributors", "Projects");
+                    });
+                })
+)

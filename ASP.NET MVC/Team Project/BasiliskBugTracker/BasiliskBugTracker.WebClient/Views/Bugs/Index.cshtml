@@ -1,0 +1,135 @@
+﻿@model IEnumerable<BasiliskBugTracker.WebClient.Models.BugViewModel>
+
+@{
+    ViewBag.Title = "Bugs";
+}
+<p>
+    <span id="undo" class="k-button">Report bug</span>
+</p>
+
+@(Html.Kendo().Grid(Model)
+    .Name("bugs-grid")
+    .Columns(columns =>
+    {
+        columns.Bound(b => b.Title);
+        columns.Bound(b => b.Owner).ClientTemplate("#:Owner.Name#");
+        columns.Bound(b => b.Priority);
+        columns.Bound(b => b.DateDiscovered).Format("{0:MMMM d, yyyy hh:mm}");
+        columns.Bound(b => b.Description);
+        columns.Bound(b => b.Project).ClientTemplate("#:Project.Name#");
+        columns.Bound(b => b.Priority);
+        columns.Bound(b => b.Status);
+        columns.Bound(b => b.AssignedTo).ClientTemplate("#: (AssignedTo.Name != null) ? (AssignedTo.Name) : 'No user assigned' #");
+        columns.Bound(b => b.Attachments).ClientTemplate("<div class='attachments-view k-widget'></div>");
+    })
+    .Pageable()
+    .Sortable()
+    .Events(ev => ev.DataBound("getAttachments"))
+        .DataSource(dataSource => dataSource
+                .Ajax()
+                .Events(events => events.Error("error_handler"))
+                .Model(model =>
+                {
+                    model.Id(b => b.Id);
+                    model.Field(b => b.Id).Editable(false);
+                })
+                .PageSize(10)
+                    .Read(read => read.Action("Read", "Bugs"))
+                )
+)
+
+<script type="text/javascript">
+    function getAttachments() {
+        $.each($('.attachments-view'), function () {
+            var grid = $('#bugs-grid').data().kendoGrid;
+            var row = $(this).closest('tr');
+            var dataItem = grid.dataItem(row);
+            if (dataItem.Attachments && dataItem.Attachments.length > 0) {
+                $(this).kendoListView({
+                    dataSource: { data: dataItem.Attachments },
+                    template: kendo.template($("#template").html())
+                });
+
+            } else {
+                $(this).html("<a href='#' class='btn btn-info btn-mini disabled'><i class='icon-white icon-remove'></i> No attachments</a>");
+            }
+        });
+    }
+</script>
+
+<script type="text/x-kendo-template" id="listview-template">
+    @(Html.Kendo().ListView<string>()
+    .Name("listView")
+    .TagName("div")
+    .ClientTemplateId("template")
+    .ToClientTemplate()
+    )
+</script>
+
+@(Html.Kendo().Window()
+    .Name("create")
+    .Title("Report bug")
+    .LoadContentFrom("Create", "Bugs")
+    .Draggable()
+    .Resizable().Visible(false)
+    .Width(600).Position(x => { x.Top(200); x.Left(300); })
+    .Actions(actions => actions.Close())
+)
+
+<script type="text/x-kendo-template" id="template">
+    <a href="#: data#" class="btn btn-primary btn-mini"><i class="icon-white icon-hdd"></i> Download</a>
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var kendoWindow = $("#create").data("kendoWindow");
+
+        $("#undo").bind("click", function () {
+            kendoWindow.open();
+        });
+
+        kendoWindow.bind("refresh", onValidate);
+    });
+
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+    function onUpload(e) {
+        // Array with information about the uploaded files
+        var files = e.files;
+
+        // Check the extension of each file and abort the upload if it is not .jpg
+        $.each(files, function () {
+            if (this.extension != ".zip") {
+                alert("This file type is not supported. Only .zip files can be uploaded.")
+                e.preventDefault();
+                return false;
+            }
+        });
+    }
+
+    var onValidate = function (e) {
+        $.validator.unobtrusive.parse($("#form-create-bug"));
+        var isValid = $("#form-create-bug").valid();
+        if (!isValid) {
+            e.abort();
+        }
+    };
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+

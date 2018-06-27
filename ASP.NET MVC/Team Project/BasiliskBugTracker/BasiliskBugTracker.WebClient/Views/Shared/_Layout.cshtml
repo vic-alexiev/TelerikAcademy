@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Basilisk</title>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/kendo")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div class="container">
+        <div>
+            @(Html.Kendo().Menu().Name("main-menu").Direction(MenuDirection.Bottom).Items(
+                    items =>
+                    {
+                        items.Add().Text("Home").Action("Index", "Home", new { area = "" });
+                        if (Request.IsAuthenticated)
+                        {
+                            items.Add().Text("Bugs").Action("Index", "Bugs", new { area = "" });
+
+                            if (!User.IsInRole("Administrator"))
+                            {
+                                items.Add().Text("Projects").Action("Index", "Projects");
+                            }
+
+                            if (User.IsInRole("Administrator") || User.IsInRole("ProjectManager"))
+                            {
+                                items.Add().Text("Projects").Action("Index", "Projects", new { area = "Administration" });
+                                items.Add().Text("Users").Action("Index", "Users", new { area = "Administration" });
+                            }
+                            items.Add().Text("Logout").HtmlAttributes(new { onclick = "getElementById('logoutForm').submit()", style = "float:right" });
+                            items.Add().Text("Hello, " + User.Identity.GetUserName() + "!").Action("Manage", "Account").HtmlAttributes(new { style = "float:right" });
+                        }
+                        else
+                        {
+                            items.Add().Text("Login").Action("Login", "Account");
+                            items.Add().Text("Register").Action("Register", "Account");
+                        }
+
+                    }))
+        </div>
+    </div>
+    <br />
+    <div class="container">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p class="text-center text-info">&copy; @DateTime.Now.Year - Basilisk Bug Tracker</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @using (Html.BeginForm("LogOff", "Account", new { area = "" }, FormMethod.Post, new { id = "logoutForm" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+</body>
+</html>

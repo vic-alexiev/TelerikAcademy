@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="well h2 text-center text-info">Users administration</h3>
+
+@Html.AntiForgeryToken()
+
+@(Html.Kendo().Grid<BasiliskBugTracker.WebClient.Areas.Administration.Models.UserViewModel>()
+    .Name("grid")
+    .Columns(columns =>
+    {
+        columns.Bound(u => u.Id).Hidden();
+        columns.Bound(u => u.UserName).Width(100);
+        columns.Bound(u => u.Name).Width(200);
+        columns.Bound(u => u.Phone).Width(100);
+        columns.Bound(u => u.Email).Width(150);
+        columns.Bound(u => u.Roles).Width(200).ClientTemplate("#: generateCol(Roles) #").Sortable(false);
+        columns.Bound(u => u.IsDeleted).Width(100);
+                
+        columns.Command(command => { command.Edit(); command.Destroy(); }).Width(172);
+    })
+    .ToolBar(toolbar => toolbar.Template(@<text><span id="undo" class="btn btn-primary"><i class="icon-white icon-plus"></i> Create user</span></text>))
+    .Editable(editable => editable.Mode(GridEditMode.InLine))
+    .Pageable()
+    .Sortable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(10)
+        .Events(events => events.Error("error_handler"))
+        .Model(model => model.Id(u => u.Id))
+        .Create(update => update.Action("Register", "Users").Data("serialize"))
+        .Read(read => read.Action("GetAllUsers", "Users"))
+        .Update(update => update.Action("Update", "Users").Data("serialize"))
+        .Destroy(update => update.Action("Delete", "Users"))
+    )
+)
+
+@(Html.Kendo().Window()
+    .Name("create")
+    .Title("Create new user")
+    .LoadContentFrom("CreateUser", "Users")
+    .Draggable()
+    .Resizable()
+    .Visible(false)
+    .Width(600).Position(x => { x.Top(200); x.Left(300); })
+    .Actions(actions => actions.Close())
+)
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+
+    $(document).ready(function () {
+        $("#undo").bind("click", function () {
+            $("#create").data("kendoWindow").open();
+        });
+    });
+    
+    function generateCol(data) {
+        var result="";
+        for (var i = 0; i < data.length; i++) {
+            result += data[i].Name + ", ";
+        }
+
+        return result.substring(0, result.length - 2);
+    }
+
+    function serialize(data) {
+        for (var property in data) {
+            if ($.isArray(data[property])) {
+                serializeArray(property, data[property], data);
+            }
+        }
+
+        return { "__RequestVerificationToken": $('input[name=__RequestVerificationToken]').val() }
+    }
+
+    function serializeArray(prefix, array, result) {
+        for (var i = 0; i < array.length; i++) {
+            if ($.isPlainObject(array[i])) {
+                for (var property in array[i]) {
+                    result[prefix + "[" + i + "]." + property] = array[i][property];
+                }
+            }
+            else {
+                result[prefix + "[" + i + "]"] = array[i];
+            }
+        }
+    }
+</script>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

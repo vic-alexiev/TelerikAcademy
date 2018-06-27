@@ -1,0 +1,14 @@
+﻿@using BasiliskBugTracker.Models
+@using BasiliskBugTracker.WebClient.Areas.Administration.Controllers
+@model BasiliskBugTracker.Models.Priority
+
+@{
+    Layout = null;
+}
+
+
+@(Html.Kendo()
+    .DropDownList()
+    .Name("Priority")
+    .BindTo(EnumsController.EnumToDropDownList(typeof(Priority)))
+)

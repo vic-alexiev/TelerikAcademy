@@ -1,0 +1,35 @@
+﻿@model IEnumerable<BasiliskBugTracker.WebClient.Models.BugViewModel>
+
+@{
+    ViewBag.Title = "Bugs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="well h2 text-center text-info">All bugs</h2>
+
+@(Html.Kendo().Grid(Model)
+    .Name("bugs-grid")
+    .Columns(columns =>
+    {
+        columns.Bound(b => b.Owner.Name).Title("Owner");
+        columns.Bound(b => b.Priority);
+        columns.Bound(b => b.DateDiscovered).Format("{0:MMMM d, yyyy hh:mm}");
+        columns.Bound(b => b.Description);
+        columns.Bound(b => b.Status);
+        columns.Bound(b => b.AssignedTo.Name).Title("Assigned to");
+    })
+    .Editable(e => e.Mode(GridEditMode.InLine))
+    .DataSource(dataSource => dataSource
+            .Ajax()
+            .Events(events => events.Error("error_handler"))
+            .Model(model =>
+            {
+                model.Id(b => b.Id);
+                model.Field(b => b.Id).Editable(false);
+            })
+            .PageSize(10)
+            .Read(read => read.Action("Read", "Bugs", new { id = Request.Params[0] }))
+            .Update(update => update.Action("Edit", "Bugs"))
+            .Destroy(destroy => destroy.Action("Delete", "Bugs"))
+            )
+)

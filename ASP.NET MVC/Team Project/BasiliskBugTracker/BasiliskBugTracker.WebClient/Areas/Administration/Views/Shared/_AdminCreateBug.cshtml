@@ -1,0 +1,85 @@
+﻿@model BasiliskBugTracker.WebClient.Models.BugViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+@using (Html.BeginForm(
+    "Create",
+    "Bugs",
+    FormMethod.Post,
+    new { id = "form-create-bug", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset class="form-horizontal">
+        <div class="control-group">
+            @Html.LabelFor(model => model.Title, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Description, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Attachments, new { @class = "control-label" })
+            <div class="controls">
+                @(Html.Kendo()
+                .Upload()
+                .Name("attachments")
+                .Multiple(true)
+                .Events(ev => ev.Select("onUpload"))
+                )
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Priority, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(model => model.Priority)
+                @Html.ValidationMessageFor(model => model.Priority, null, new { @class = "help-inline" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.AssignedTo, new { @class = "control-label" })
+            <div class="controls">
+                @(Html.Kendo().DropDownList()
+                .Name("AssignedTo") // Name of the widget should be the same as the name of the property
+                .DataValueField("Id")
+                .DataTextField("Name")
+                .DataSource(source =>
+                {
+                    source.Read(read =>
+                    {
+                        read.Action("GetProjectContributors", "Projects");
+                    });
+                })
+                )
+            </div>
+        </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Create" class="k-button" />
+            <input type="button" value="Cancel" onclick="closeForm()" class="k-button" />
+        </div>
+    </fieldset>
+}
+
+<script>
+    function closeForm() {
+        var kendoWindow = $("#create").data("kendoWindow");
+        kendoWindow.close();
+    }
+</script>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

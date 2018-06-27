@@ -1,0 +1,13 @@
+﻿@using BasiliskBugTracker.Models
+@using BasiliskBugTracker.WebClient.Areas.Administration.Controllers
+@model BasiliskBugTracker.Models.Status
+
+@{
+    Layout = null;
+}
+
+@(Html.Kendo()
+    .DropDownList()
+    .Name("Status")
+    .BindTo(EnumsController.EnumToDropDownList(typeof(Status)))
+)

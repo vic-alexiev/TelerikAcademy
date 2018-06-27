@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.20827.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasiliskBugTracker.Models", "BasiliskBugTracker.Models\BasiliskBugTracker.Models.csproj", "{04842EE9-B424-479D-A38A-015652BAE1D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasiliskBugTracker.Data", "BasiliskBugTracker.Data\BasiliskBugTracker.Data.csproj", "{BBE21879-9186-4115-B174-13932B052136}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasiliskBugTracker.WebClient", "BasiliskBugTracker.WebClient\BasiliskBugTracker.WebClient.csproj", "{9EE8B7D4-734F-44E9-83FD-95E740285562}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasiliskBugTracker.WebClient.Tests", "BasiliskBugTracker.WebClient.Tests\BasiliskBugTracker.WebClient.Tests.csproj", "{57C26014-A9C7-47CD-A7D3-F41312942EEF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{CCE00313-D6AA-4D3E-A95A-38114E3661D3}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasiliskBugTracker.Repository", "BasiliskBugTracker.Repository\BasiliskBugTracker.Repository.csproj", "{E6B61666-D4EC-4D97-9554-8401A50D9905}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://tfs.codeplex.com/tfs/tfs15
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BasiliskBugTracker.Data\\BasiliskBugTracker.Data.csproj
+		SccProjectName1 = BasiliskBugTracker.Data
+		SccLocalPath1 = BasiliskBugTracker.Data
+		SccProjectUniqueName2 = BasiliskBugTracker.Models\\BasiliskBugTracker.Models.csproj
+		SccProjectName2 = BasiliskBugTracker.Models
+		SccLocalPath2 = BasiliskBugTracker.Models
+		SccProjectUniqueName3 = BasiliskBugTracker.WebClient.Tests\\BasiliskBugTracker.WebClient.Tests.csproj
+		SccProjectName3 = BasiliskBugTracker.WebClient.Tests
+		SccLocalPath3 = BasiliskBugTracker.WebClient.Tests
+		SccProjectUniqueName4 = BasiliskBugTracker.WebClient\\BasiliskBugTracker.WebClient.csproj
+		SccProjectName4 = BasiliskBugTracker.WebClient
+		SccLocalPath4 = BasiliskBugTracker.WebClient
+		SccProjectUniqueName5 = BasiliskBugTracker.Repository\\BasiliskBugTracker.Repository.csproj
+		SccProjectName5 = BasiliskBugTracker.Repository
+		SccLocalPath5 = BasiliskBugTracker.Repository
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{04842EE9-B424-479D-A38A-015652BAE1D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04842EE9-B424-479D-A38A-015652BAE1D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04842EE9-B424-479D-A38A-015652BAE1D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04842EE9-B424-479D-A38A-015652BAE1D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBE21879-9186-4115-B174-13932B052136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBE21879-9186-4115-B174-13932B052136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBE21879-9186-4115-B174-13932B052136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBE21879-9186-4115-B174-13932B052136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE8B7D4-734F-44E9-83FD-95E740285562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE8B7D4-734F-44E9-83FD-95E740285562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE8B7D4-734F-44E9-83FD-95E740285562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE8B7D4-734F-44E9-83FD-95E740285562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57C26014-A9C7-47CD-A7D3-F41312942EEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57C26014-A9C7-47CD-A7D3-F41312942EEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57C26014-A9C7-47CD-A7D3-F41312942EEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57C26014-A9C7-47CD-A7D3-F41312942EEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B61666-D4EC-4D97-9554-8401A50D9905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B61666-D4EC-4D97-9554-8401A50D9905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B61666-D4EC-4D97-9554-8401A50D9905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B61666-D4EC-4D97-9554-8401A50D9905}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

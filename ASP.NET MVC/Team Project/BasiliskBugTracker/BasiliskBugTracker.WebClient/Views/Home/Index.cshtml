@@ -1,0 +1,66 @@
+﻿@using BasiliskBugTracker.WebClient.Models
+@model IEnumerable<BasiliskBugTracker.WebClient.Models.ChartViewModel>
+@{
+    ViewBag.Title = "Basilisk Bug Tracker";
+}
+
+
+<div class="text-center hero-unit">
+    <img src="~/img/basilisk-left.png" width="100" alt="basilisk logo" />
+    <h2 id="main-heading">BASILISK&trade; BUG TRACKER</h2>
+    <img src="~/img/basilisk-right.png" width="100" alt="basilisk logo" />
+</div>
+<div class="chart-wrapper">
+
+    @foreach (var project in Model)
+    {
+        if (project.Bugs.Any())
+        {
+            @(Html.Kendo().Chart()
+            .Name(project.Id.ToString())
+            .Title(title => title
+                .Text(project.Name + " bugs")
+                .Position(ChartTitlePosition.Bottom))
+                .HtmlAttributes(new { @class = "small-chart" })
+        .Legend(legend => legend
+            .Position(ChartLegendPosition.Top)
+        )
+        .Series(series =>
+        {
+            series.Pie(project.Bugs)
+            .Labels(labels => labels
+                .Template("#: category #")
+                .Background("transparent")
+                .Visible(true)
+                .Padding(1)
+            ).Padding(60)
+            .StartAngle(150);
+        })
+        .Tooltip(tooltip => tooltip
+            .Visible(true)
+            .Template("#:category# bugs: #:kendo.format('{0}', value)#")
+        )
+            )
+        }
+    }
+
+    <style scoped>
+        .chart-wrapper {
+            text-align: center;
+            width: 900px;
+            margin: 0 auto;
+        }
+
+            .chart-wrapper h3 {
+                padding: 1em 0;
+                font-size: 1.5em;
+                font-weight: normal;
+            }
+
+        .k-chart.small-chart {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</div>

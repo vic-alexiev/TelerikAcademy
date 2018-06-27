@@ -1,0 +1,14 @@
+﻿@model IEnumerable<BasiliskBugTracker.WebClient.Areas.Administration.Models.RoleViewModel>
+
+@{
+    Layout = null;
+}
+
+@(Html.Kendo()
+        .MultiSelect()
+        .Name("Roles")
+        .DataTextField("Name")
+        .DataValueField("Id")
+        .Placeholder("Select roles...")
+        .DataSource(datasource => datasource.Read(read => read.Action("GetRoles", "Users")))
+)

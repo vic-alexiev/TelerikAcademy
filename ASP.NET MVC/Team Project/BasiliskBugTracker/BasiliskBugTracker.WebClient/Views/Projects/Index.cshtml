@@ -1,0 +1,95 @@
+﻿@using BasiliskBugTracker.WebClient.Models
+@model IEnumerable<ProjectViewModelEx>
+
+@{
+    ViewBag.Title = "Projects";
+}
+
+<h2>Projects</h2>
+
+@(Html.Kendo().Grid(Model)
+    .Name("ProjectGrid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.Name);
+    })
+    .Pageable()
+    .Sortable()
+    .ClientDetailTemplateId("template")
+    .Filterable()
+    .DataSource(dataSource => dataSource
+            .Ajax()
+            .Events(events => events.Error("error_handler"))
+            .Model(model =>
+            {
+                model.Id(b => b.Id);
+                model.Field(b => b.Id).Editable(false);
+            })
+            .PageSize(10)
+            )
+)
+<script id="template" type="text/kendo-tmpl">
+    @(Html.Kendo().TabStrip()
+            .Name("tabStrip_#=Id#")
+            .SelectedIndex(0)
+            .Animation(animation => animation.Open(open => open.Fade(FadeDirection.In)))
+            .Items(items =>
+            {
+                items.Add().Text("Contributors").Content(
+                    @<text>
+                        <h5>Manager:</h5><span>#: Manager.Name #</span>
+                        <h5>Contributors:</h5>
+                        @(Html.Kendo().ListView<BasiliskBugTracker.WebClient.Areas.Administration.Models.UserViewModel>()
+                                .Name("listViewContributors_#=Id#")
+                                .TagName("div")
+                        .DataSource(dataSource =>
+                        {
+                            dataSource.Read(read => read.Action("Contributors_Read", "Projects", new { projectId = "#=Id#" }));
+                        })
+                        .ClientTemplateId("contributorsTemplate")
+                        .ToClientTemplate()
+                        )
+                    </text>
+                );
+                items.Add().Text("Bugs").Content(
+                    @<text>
+                        @(Html.Kendo().ListView<BasiliskBugTracker.WebClient.Models.BugViewModel>()
+                                .Name("listViewBugs_#=Id#")
+                                .TagName("div")
+                        .DataSource(dataSource =>
+                        {
+                            dataSource.Read(read => read.Action("Bugs_Read", "Projects", new { projectId = "#=Id#" }));
+                            dataSource.PageSize(5);
+                        })
+                            .Pageable()
+                        .ClientTemplateId("bugsTemplate")
+                        .ToClientTemplate()
+                        )
+                    </text>
+                );
+            }).ToClientTemplate())
+</script>
+<script type="text/x-kendo-template" id="contributorsTemplate">
+    <div>#: Name#</div>
+</script>
+<script type="text/x-kendo-template" id="bugsTemplate">
+    <p>
+        <span><strong>Title:</strong> #: Title# <strong>Status:</strong> #: StatusName#</span>
+    </p>
+</script>
+
+<script type="text/javascript">
+    function error_handler(e) {
+        if (e.errors) {
+            var message = "Errors:\n";
+            $.each(e.errors, function (key, value) {
+                if ('errors' in value) {
+                    $.each(value.errors, function () {
+                        message += this + "\n";
+                    });
+                }
+            });
+            alert(message);
+        }
+    }
+</script>

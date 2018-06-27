@@ -1,0 +1,94 @@
+﻿@using BasiliskBugTracker.WebClient.Areas.Administration.Models
+@model RegisterUserViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+@using (Ajax.BeginForm(
+    "Register",
+    "Users",
+    new AjaxOptions
+    {
+        HttpMethod = "Post",
+        OnBegin = "onValidate",
+        OnSuccess = "closeForm"
+
+    },
+    new { id = "form-create-user" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset class="form-horizontal">
+        <br />
+        <div class="control-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(m => m.UserName)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+            <div class="controls">
+                @Html.PasswordFor(m => m.Password)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+            <div class="controls">
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(m => m.Email)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+            <div class="controls">
+                @Html.TextBoxFor(m => m.Name)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Phone, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(m => m.Phone)
+            </div>
+        </div>
+        <div class="control-group">
+            @Html.LabelFor(m => m.Roles, new { @class = "control-label" })
+            <div class="controls">
+                @Html.EditorFor(m => m.Roles)
+            </div>
+        </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Register" class="btn" />
+            <input type="button" value="Cancel" onclick="closeForm()" class="k-button" />
+        </div>
+    </fieldset>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+<script>
+    function closeForm() {
+        var kendoWindow = $("#create").data("kendoWindow");
+        kendoWindow.close();
+        kendoWindow.refresh();
+        window.location = "/Administration/Users";
+    }
+
+    var onValidate = function (e) {
+        $.validator.unobtrusive.parse($("#form-create-user"));
+        var isValid = $("#form-create-user").valid();
+        if (!isValid) {
+            e.abort();
+        } else {
+            alert("Created");
+        }
+    };
+</script>

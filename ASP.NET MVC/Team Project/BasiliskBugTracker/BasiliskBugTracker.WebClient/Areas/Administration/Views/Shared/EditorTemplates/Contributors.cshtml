@@ -1,0 +1,15 @@
+﻿@model IEnumerable<BasiliskBugTracker.WebClient.Models.UserInProjectViewModel>
+
+@{
+    Layout = null;
+}
+
+@(Html.Kendo()
+        .MultiSelect()
+        .Name("Contributors")
+        .DataTextField("Name")
+        .DataValueField("Id")
+        .Placeholder("Select users...")
+        .DataSource(datasource => datasource.Read(read => read.Action("GetUsers", "Projects")))
+        .Value(ViewBag.ProjectContributors)
+)

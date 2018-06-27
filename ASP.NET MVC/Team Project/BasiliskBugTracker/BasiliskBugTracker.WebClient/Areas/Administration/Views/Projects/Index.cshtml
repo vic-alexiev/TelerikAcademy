@@ -1,0 +1,56 @@
+﻿@using BasiliskBugTracker.WebClient.Areas.Administration.Models
+@model IEnumerable<ProjectViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2 class="well h2 text-center text-info">Projects administration</h2>
+<p>
+    <a href="/Administration/Projects/Create" class="btn btn-primary"><i class="icon-white icon-plus"></i> Create new project</a>
+</p>
+<br />
+<table class="table table-hover table-bordered table-striped">
+    <tr>
+        <th class="span1">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="span2">
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th class="span2">
+            @Html.DisplayNameFor(model => model.Manager)
+        </th>
+        <th class="span3">
+            @Html.DisplayNameFor(model => model.Contributors)
+        </th>
+        <th class="span1">Bugs count</th>
+        <th class="span3"></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manager.Name)
+            </td>
+            <td>
+                @(item.Contributors != null ? string.Join(", ", item.Contributors.Select(c => c.Name)) : "no contributors")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BugsCount)
+            </td>
+            <td>
+                <a href="/Administration/Projects/Details/@item.Id" class="btn btn-primary btn-small"><i class="icon-white icon-eye-open"></i> Bugs</a>
+                <a href="/Administration/Projects/Edit/@item.Id" class="btn btn-info btn-small"><i class="icon-white icon-pencil"></i> Edit</a>
+                <a href="/Administration/Projects/Delete/@item.Id" class="btn btn-danger btn-small"><i class="icon-white icon-trash"></i> Delete</a>
+            </td>
+        </tr>
+    }
+</table>
